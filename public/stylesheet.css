@@ -28,7 +28,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 0;
+  padding: 30px 0;
 }
 
 section:not(slider):nth-child(even) {
@@ -265,12 +265,16 @@ h1 {
 .announcediv {
   height: 250;
   width: 30%;
-  padding: 20px;
+  padding: 20px 20px 30px;
 }
 
 .announcediv p {
-  padding: 0 10px;
+  padding: 0 0 20px;
   color: hsl(15, 86%, 30%);
+}
+
+.announcediv h4 {
+  line-height: 20px;
 }
 
 .moreAnnouncementsBtn {
