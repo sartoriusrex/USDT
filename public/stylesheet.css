@@ -1,0 +1,291 @@
+/* GENERAL STYLES */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+  font: normal 16px san-serif;
+  color: hsl(0, 0%, 0%);
+}
+
+nav, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+section:not(slider):nth-child(even) {
+  background-color: hsl(43, 13%, 90%);
+}
+
+/* color styles
+primary colors:
+  red:
+    hsl(360, 92%, 20%)
+    hsl(360, 64%, 55%)
+    hsl(360, 85%, 25%)
+    hsl(360, 71%, 66%)
+    hsl(360, 79%, 32%)
+    hsl(360, 77%, 78%)
+    hsl(360, 72%, 38%)
+    hsl(360, 82%, 89%)
+    hsl(360, 67%, 44%)
+    hsl(360, 100%, 97%)
+  yellow:
+    hsl(15, 86%, 30%)
+    hsl(44, 92%, 63%)
+    hsl(22, 82%, 39%)
+    hsl(48, 94%, 68%)
+    hsl(29, 80%, 44%)
+    hsl(48, 95%, 76%)
+    hsl(36, 77%, 49%)
+    hsl(48, 100%, 88%)
+    hsl(42, 87%, 55%)
+    hsl(49, 100%, 96%)
+neutrals:
+  hsl(42, 15%, 13%)
+  hsl(41, 8%, 61%)
+  hsl(40, 13%, 23%)
+  hsl(39, 11%, 69%)
+  hsl(37, 11%, 28%)
+  hsl(40, 15%, 80%)
+  hsl(43, 13%, 90%)
+  hsl(41, 8%, 48%)
+  hsl(40, 23%, 97%)
+  hsl(41, 9%, 35%)
+supporting:
+  cyan:
+    hsl(184, 91%, 17%)
+    hsl(185, 84%, 25%)
+    hsl(185, 81%, 29%)
+    hsl(184, 77%, 34%)
+    hsl(185, 62%, 45%)
+    hsl(185, 57%, 50%)
+    hsl(184, 65%, 59%)
+    hsl(184, 80%, 74%)
+    hsl(185, 94%, 87%)
+    hsl(186, 100%, 94%)
+  lime green:
+    hsl(81, 86%, 14%)
+    hsl(81, 78%, 21%)
+    hsl(83, 74%, 27%)
+    hsl(83, 70%, 34%)
+    hsl(83, 64%, 42%)
+    hsl(83, 55%, 52%)
+    hsl(83, 63%, 61%)
+    hsl(83, 68%, 74%)
+    hsl(84, 77%, 86%)
+    hsl(83, 88%, 94%)
+*/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: hsl(40, 23%, 97%);
+}
+
+/* HEADER STYLE */
+.header {
+  background-color: hsl(360, 92%, 20%);
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  float: left;
+}
+
+.logotext {
+  color: hsl(40, 23%, 97%);
+  padding: 10px;
+}
+
+h1 {
+  text-shadow: 0 0 15px black; 
+  font-family: Merriweather;
+  font-weight: 700;
+}
+
+.logotext p {
+  text-shadow: 0 0 5px black;
+  font-family: Merriweather;
+}
+
+/* NAV STYLE */
+
+.navlist {
+  display: flex;
+  justify-content: space-around;
+  color: hsl(49, 100%, 96%);
+  width: 100%;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: hsl(40, 15%, 80%);
+}
+
+.navlist li {
+  margin: 0 15px;
+}
+
+.navli a {
+  opacity: 0.8;
+}
+
+.navli a:hover {
+  opacity: 1;
+}
+
+/* SLIDER GENERAL STYLE */
+
+.sliderListI {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.slider {
+  position: relative;
+}
+
+.sliderContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  height: 350px;
+}
+
+.sliderContainer a {
+  opacity: 1;
+}
+
+.sliderText, .sliderPhoto {
+  flex: 1 1 100%;
+  width: 50%;
+}
+
+.sliderText h2,
+.sliderText p,
+.sliderText a {
+  padding: 0 20px;
+  margin: 0 10px;
+}
+
+.sliderText h2 {
+  color: hsl(360, 92%, 20%);
+}
+
+.sliderText span {
+  font-weight: bold;
+}
+
+.sliderText p {
+  padding: 10px 0;
+}
+
+.sliderArticleBtn {
+  background-color:hsl(41, 8%, 48%);
+  border-radius: 5px;
+  color: hsl(40, 23%, 97%);
+}
+
+.sliderIndicator {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.square {
+  background-color: hsl(360, 92%, 20%);
+  height: 15px;
+  width: 15px;
+  margin: 10px;
+}
+
+/* Slider Nav Button Styles */
+
+.slideleft, .slideright {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: hsl(360, 92%, 20%);
+  z-index: 1;
+  opacity: .9;
+  position: absolute;
+  font-size: 30px;
+  color: hsl(49, 100%, 96%);
+}
+.slideleft {
+  top: 40%;
+  left: -35px;
+}
+
+.slideright {
+  top: 40%;
+  right: -35px;
+}
+
+/* ANNOUNCEMENTS STYLE */
+.announcements {
+  flex-flow: column wrap;
+  justify-content: space-around;
+}
+
+.announcements h2 {
+
+}
+
+.announcementsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.announcediv {
+  height: 250;
+  width: 30%;
+  padding: 20px;
+}
+
+.announcediv p {
+  padding: 0 10px;
+  color: hsl(15, 86%, 30%);
+}
+
+.moreAnnouncementsBtn {
+  background-color:hsl(41, 8%, 48%);
+  border-radius: 5px;
+  color: hsl(40, 23%, 97%);
+  padding: 0 20px;
+}
+
+/* NEWS STYLE */
+
+
+
+/* REPORTS STYLE */
+
+
+
+/* FOOTER STYLE */
