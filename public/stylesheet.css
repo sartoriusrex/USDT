@@ -156,27 +156,23 @@ h1 {
 
 /* SLIDER GENERAL STYLE */
 
+.slider {
+  position: relative; /*to position nav arrows on left and right */
+}
+
 .sliderListI {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
 }
 
-.slider {
-  position: relative;
-}
-
 .sliderContainer {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
   width: 90%;
   height: 350px;
-}
-
-.sliderContainer a {
-  opacity: 1;
 }
 
 .sliderText, .sliderPhoto {
@@ -189,6 +185,7 @@ h1 {
 .sliderText a {
   padding: 0 20px;
   margin: 0 10px;
+  width: inherit;
 }
 
 .sliderText h2 {
@@ -209,6 +206,8 @@ h1 {
   color: hsl(40, 23%, 97%);
 }
 
+/* Slider Article Small Thumbnail */
+
 .sliderIndicator {
   display: flex;
   flex-flow: row nowrap;
@@ -221,6 +220,8 @@ h1 {
   height: 15px;
   width: 15px;
   margin: 10px;
+  border-radius: 4px;
+  opacity: 0.5;
 }
 
 /* Slider Nav Button Styles */
