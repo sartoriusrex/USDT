@@ -28,7 +28,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 30px 0;
 }
 
@@ -102,27 +102,29 @@ h1 {
   overflow: hidden;
 }
 
-.sliderListI {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-
 .sliderContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100vh;
+  width: 90%;
   height: 350px;
 }
 
 .sliderText, .sliderPhoto {
   flex: 1 1 100%;
-  width: 450px;
 }
 
 .sliderText {
   padding-right: 30px;
+  max-width: 50%;
+}
+
+.sliderPhotoLink {
+  max-width: 50%;
+}
+
+.sliderPhoto {
+  width: 100%;
 }
 
 .sliderText h2,
@@ -193,14 +195,6 @@ h1 {
 }
 
 /* ANNOUNCEMENTS STYLE */
-.announcements {
-  flex-flow: column wrap;
-  justify-content: space-around;
-}
-
-.announcements h2 {
-
-}
 
 .announcementsContainer {
   display: flex;
@@ -232,7 +226,44 @@ h1 {
 
 /* NEWS STYLE */
 
+.newsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
 
+.newsLink{
+  max-width: 30%;
+  padding: 20px;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsDiv {
+  max-width: 30%;
+  padding: 20px;
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsPhoto {
+  width: 25%;
+  padding-right: 5%;
+}
+
+.newsText {
+  width: 75%;
+}
+
+.newsDesc {
+  font-size: 16px;
+}
 
 /* REPORTS STYLE */
 
