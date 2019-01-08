@@ -240,12 +240,17 @@ h1 {
 }
 
 .newsPhoto {
-  width: 25%;
+  width: 50%;
   padding-right: 5%;
 }
 
 .newsText {
   width: 75%;
+}
+
+.newsText h4,
+.newsText p {
+  padding-bottom: 10px;
 }
 
 .newsDesc {
@@ -272,3 +277,14 @@ h1 {
 }
 
 /* FOOTER STYLE */
+
+footer {
+  background-color: hsl(360, 92%, 20%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+footer div ul li a{
+  color: hsl(40, 23%, 97%);
+}
