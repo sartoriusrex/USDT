@@ -254,6 +254,21 @@ h1 {
 
 /* REPORTS STYLE */
 
+.report h2 {
+  padding-bottom: 20px;
+}
 
+.report p {
+  width: 90%;
+  padding-bottom: 20px;
+}
+
+.reportCrimesBtn {
+  background-color:hsl(44, 92%, 63%);
+  border-radius: 5px;
+  color: hsl(42, 15%, 13%);
+  padding: 10px 20px;
+  font-size: 20px;
+}
 
 /* FOOTER STYLE */
