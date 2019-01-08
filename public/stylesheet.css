@@ -91,8 +91,10 @@ h1 {
   background-color: hsl(40, 15%, 80%);
 }
 
-.navlist li {
+.navlist li,
+.navlist .search-bar {
   margin: 0 15px;
+  font-weight: bold;
 }
 
 .navli a {
@@ -101,6 +103,12 @@ h1 {
 
 .navli a:hover {
   opacity: 1;
+}
+
+.search-bar input {
+  border-radius: 5px;
+  box-shadow: 2px hsl(37, 11%, 28%);
+  height: 100%;
 }
 
 /* SLIDER GENERAL STYLE */
@@ -283,6 +291,12 @@ footer {
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
+  padding: 20px 0;
+}
+
+footer div ul li {
+  padding: 3px 0;
+  margin: 2px 0;
 }
 
 footer div ul li a{
