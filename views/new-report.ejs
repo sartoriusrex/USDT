@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<section>
+
+<h2>Report a Truth Crime</h2>
+<hr>
+<div class="formdiv">
+  <form action="/reports" method="POST">
+    <div class="reportSection">
+      <div class="reportSectionName">
+        <h3>Identity</h3>
+        <p>We verify your identity to prevent you from having false claims  made on your behalf or against you.</p>
+      </div>
+      <div class="reportDataArea">
+        <input class="reportInput" type="text" name="firstName" placeholder="First Name">
+        <input class="reportInput" type="text" name="lastName" placeholder="Last Name">
+        <input type="date" class="reportInput" name="dob" placeholder="Date of Birth" min="01-01-1900" max="12-12-2018">
+        <input type="number" class="reportInput" name="ssn" placeholder="Social Security Number">
+      </div>
+    </div>
+  </form>
+</div>
+
+</section>
+
+<% include ./partials/footer %>
