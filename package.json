@@ -1,7 +1,7 @@
 {
   "name": "usdt",
   "version": "1.0.0",
-  "description": "US Dep of Truth",
+  "description": "US Dep of Truth, Satirical Website, Personal Project, MIT Licence",
   "main": "app.js",
   "dependencies": {
     "async": "^2.6.1",
