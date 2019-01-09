@@ -15,6 +15,30 @@ app.get('/', function(req,res){
   res.render('index');
 });
 
+//Index Page - News
+
+app.get('/news', function(req,res){
+  res.send("index page for news");
+});
+
+//Show Page - News
+
+app.get('/news/:id', function(req,res){
+  res.send("news show page");
+});
+
+//Index Page - Announcements
+
+app.get('/announcements', function(req,res){
+  res.send("announcements index page");
+});
+
+//New Report Page
+
+app.get("/report/new", function(req,res){
+  res.send("send a new report");
+});
+
 app.listen(3000, function(){
   console.log("listening");
 });
