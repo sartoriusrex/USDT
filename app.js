@@ -9,36 +9,68 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
 
-//Routes
+//ROUTES
+  //Home
 
 app.get('/', function(req,res){
   res.render('index');
 });
 
-//Index Page - News
+//NEWS
+  //Index Page - News
 
-app.get('/news', function(req,res){
-  res.send("index page for news");
-});
+  app.get('/news', function(req,res){
+    res.send("index page for news");
+  });
 
-//Show Page - News
+  //Show Page - News
 
-app.get('/news/:id', function(req,res){
-  res.send("news show page");
-});
+  app.get('/news/:id', function(req,res){
+    res.send("news show page");
+  });
 
-//Index Page - Announcements
+  //New Page - News
 
-app.get('/announcements', function(req,res){
-  res.send("announcements index page");
-});
+  app.get('/news/new', function(req,res){
+    res.send("This is a page for a new news article");
+  });
 
-//New Report Page
+//ANNOUNCEMENTS
+  //Index Page - Announcements
 
-app.get("/report/new", function(req,res){
-  res.send("send a new report");
-});
+  app.get('/announcements', function(req,res){
+    res.send("announcements index page");
+  });
 
+  //No Show Page for Announcements, because they are short
+
+  //New Page - Announcements
+
+  app.get('/announcements/new', function(req,res){
+    res.send('page for new announcements');
+  });
+
+//REPORTS
+
+  //New Report Page
+
+  app.get("/reports/new", function(req,res){
+    res.render("new-report");
+  });
+
+  //Index Page - Reports
+
+  app.get('/reports', function(req,res){
+    res.send("index page for reports");
+  });
+
+  //Show Page - Reports
+
+  app.get('/reports/:id', function(req,res){
+    res.send("show page for reports");
+  });
+
+//LISTENING ON PORT
 app.listen(3000, function(){
   console.log("listening");
 });
