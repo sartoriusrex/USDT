@@ -86,6 +86,7 @@ input:focus {
 }
 
 /* HEADER STYLE */
+
 .header {
   background-color: hsl(360, 92%, 20%);
   padding-bottom: 20px;
@@ -355,7 +356,7 @@ h1 {
   justify-content: space-between;
   align-items: flex-start;
   width: 90%;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .reportSectionName {
@@ -388,21 +389,56 @@ h1 {
 
 .reportInputDiv label {
   padding: 0 5px 3px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .reportInputDiv input{
   width: 100%;
-  height: 20px;
+  height: 30px;
   border: 1px solid hsl(40, 15%, 80%);
   border-radius: 4px;
 }
 
 .reportInputDiv textarea {
   width: 100%;
-  height: 60px;
+  height: 100px;
   border: 1px solid hsl(40, 15%, 80%);
   border-radius: 4px;
 }
+
+.formBtns {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.formBtn {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+
+.backBtn {
+  background-color: hsl(43, 13%, 90%);
+  color: hsl(40, 13%, 23%);
+}
+
+.submitBtn {
+  background-color: hsl(15, 86%, 30%);
+  color: hsl(40, 23%, 97%);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: hsl(41, 9%, 35%);
+  font-size: 14px;
+}
+
 
 /* FOOTER STYLE */
 
