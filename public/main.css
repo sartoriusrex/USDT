@@ -20,7 +20,7 @@ a {
   color: inherit;
 }
 
-a:not(.btn):hover {
+a:not(.btn .subscribeToNewsletterBtn):hover {
   text-decoration: underline;
 }
 
@@ -89,7 +89,7 @@ input:focus {
 /* HEADER STYLE */
 
 .header {
-  background-color: hsl(360, 92%, 20%);
+  background-color: hsl(360, 85%, 25%);
   padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
@@ -151,7 +151,6 @@ h1 {
 
 .search-bar input {
   border-radius: 4px;
-  box-shadow: 2px hsl(37, 11%, 28%);
   border: none;
   padding-left: 5px;
 }
@@ -344,30 +343,66 @@ h1 {
   padding-bottom: 40px;
 }
 
+.newsletterGrouping {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 200px;
+}
+
+.newsletterPhoto {
+  flex: 1 1 30%;
+}
+
+.newsletterAction {
+  flex: 1 1 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletterAction > p {
+  flex: 1 1 80%;
+  width: 80%;
+  padding-bottom: 40px;
+}
+
 .subscribeGroup {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  width: 80%;
+  height: 40px;
   justify-content: center;
-  align-items: center;
-  border-radius: 5px;
+  align-items: flex-end;
 }
 
 .emailSubscribeInput {
-  height: 30px;
-  width: 80%;
-  border: 1px solid hsl(40, 15%, 80%);
+  height: 100%;
   border-radius: 5px 0 0 5px;
+  text-indent: 10px;
+  flex: 1 1 75%;
+  border: 1px solid hsl(360, 85%, 25%);
+}
+
+.emailSubscribeInput::placeholder {
+  text-indent: 10px;
 }
 
 .subscribeToNewsletterBtn {
-  height: 30px;
-  width: 20%;
-  background-color: hsl(360, 79%, 32%);
+  height: 100%;
+  background-color: hsl(360, 85%, 25%);
   color: hsl(40, 23%, 97%);
   border-radius: 0 5px 5px 0;
-  padding: 4px;
+  border: none;
   font-size: 20px;
+  flex: 1 1 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* New Report Form Styling */
