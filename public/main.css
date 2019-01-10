@@ -78,6 +78,7 @@ hr {
 
 input {
   border: none;
+  text-indent: 5px;
 }
 
 input:focus {
@@ -357,7 +358,7 @@ h1 {
 }
 
 .reportSectionName {
-  width: 40%;
+  width: 30%;
 }
 
 .reportSectionName h3 {
@@ -369,7 +370,7 @@ h1 {
 }
 
 .reportDataArea {
-  width: 60%;
+  width: 70%;
   display: grid;
   grid-template-columns: repeat(3, auto);
 }
@@ -385,13 +386,19 @@ h1 {
 }
 
 .reportInputDiv label {
-  padding-bottom: 3px;
+  padding: 0 5px 3px;
 }
 
-.reportInputDiv input {
-  border-radius: 5px;
+.reportInputDiv input{
   width: 100%;
   height: 20px;
+  border: 1px solid hsl(40, 15%, 80%);
+  border-radius: 4px;
+}
+
+.reportInputDiv textarea {
+  width: 100%;
+  height: 60px;
   border: 1px solid hsl(40, 15%, 80%);
   border-radius: 4px;
 }
