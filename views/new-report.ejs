@@ -1,28 +1,118 @@
 <% include ./partials/header %>
 
-<section>
+<section class="reportCrime">
 
 <h2>Report a Truth Crime</h2>
-<hr>
+
 <div class="formdiv">
-  <form action="/reports" method="POST">
+  <form class="newReportForm" action="/reports" method="POST">
+    <hr>
     <div class="reportSection">
       <div class="reportSectionName">
         <h3>Identity</h3>
         <p>We verify your identity to prevent you from having false claims  made on your behalf or against you.</p>
       </div>
       <div class="reportDataArea">
-        <label for="firstName">First Name</label>
-        <input class="reportInput" type="text" name="firstName" id='firstName' placeholder="Steve">
-        <label for="lastName">Last Name</label>
-        <input class="reportInput" type="text" name="lastName" id="lastname" placeholder="Tesich">
-        <label for="dob">Date of Birth i.e. 09-29-1942</label>
-        <input type="date" class="reportInput" name="dob" id="dob" min="01-01-1900" max="12-12-2018">
-        <label for="ssn">Social Security Number</label>
-        <input type="number" class="reportInput" name="ssn" id="ssn" placeholder="xxx-xx-xxxx">
+        <div class="reportInputDiv">
+          <label for="firstName">First Name</label>
+          <input class="reportInput" type="text" name="firstName" id='firstName' placeholder="Stojan">
+        </div>
+        <div class="reportInputDiv">
+            <label for="middleInitial">Middle Initial</label>
+            <input class="reportInput" type="text" name="middleInitial" id='middleInitial' placeholder="S">
+          </div>
+        <div class="reportInputDiv">
+          <label for="lastName">Last Name</label>
+          <input class="reportInput" type="text" name="lastName" id="lastname" placeholder="Tesich">
+        </div>
+        <div class="reportInputDiv">
+          <label for="dob">Date of Birth</label>
+          <input type="date" class="reportInput" name="dob" id="dob" min="1900-01-01" max="2018-12-12" value="1942-09-29">
+        </div>
+        <div class="reportInputDiv">
+          <label for="ssn">Social Security Number</label>
+          <input type="number" class="reportInput" name="ssn" id="ssn" placeholder="xxx-xx-xxxx">
+        </div>
       </div>
     </div>
+    <hr>
+    <div class="reportSection">
+      <div class="reportSectionName">
+        <h3>Contact</h3>
+        <p>In the event that we need to follow up, please specify your contact information</p>
+      </div>
+      <div class="reportDataArea">
+        <div class="reportInputDiv">
+          <label for="primaryPhone">Primary Phone Number</label>
+          <input class="reportInput" type="number" name="primaryPhone" id='primaryPhone' placeholder="808-911-1800">
+        </div>
+        <div class="reportInputDiv">
+            <label for="secondaryPhone">Secondary Phone Number</label>
+            <input class="reportInput" type="number" name="secondaryPhone" id='secondaryPhone' placeholder="808-199-0081">
+          </div>
+        <div class="reportInputDiv">
+          <label for="email">Primary Email Address</label>
+          <input class="reportInput" type="email" name="email" id="email" placeholder="doctor.strange@theavengers.com">
+        </div>
+        <div class="reportInputDiv">
+          <label for="mailingAddress">Mailing Address</label>
+          <input type="text" class="reportInput" name="mailingAddress" id="mailingAddress" placeholder="1404 Real Street">
+        </div>
+        <div class="reportInputDiv">
+          <label for="mailingCity">City</label>
+          <input type="text" class="reportInput" name="city" id="city" placeholder="Nantucket">
+        </div>
+        <div class="reportInputDiv">
+          <label for="mailingState">State</label>
+          <input type="text" class="reportInput" name="state" id="state" placeholder="KY">
+        </div>
+        <div class="reportInputDiv">
+          <label for="zip">Zip Code</label>
+          <input type="number" class="reportInput" name="zip" id="zip" placeholder="78781">
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="reportSection">
+      <div class="reportSectionName">
+        <h3>Crime Details</h3>
+        <p>Explain the nature of the crime and any and all details.</p>
+      </div>
+      <div class="reportDataArea reportDataAreaCrime">
+        <div class="reportInputDiv">
+          <label for="crimeType">Type of Crime</label>
+          <select id="crimeType" name="crimeType"  class="reportInput" value="Social">
+            <option>Academic & Scientific</option>
+            <option>Economic</option>
+            <option>Media</option>
+            <option>Personal & Social</option>
+            <option>Political</option>
+          </select>
+        </div>
+        <div class="reportInputDiv">
+            <label for="crimeDate">Date of Incident</label>
+            <input class="reportInput" type="date" name="crimeDate" id='crimeDate' min="1900-01-01" max="2018-12-12" value="2016-11-08">
+          </div>
+        <div class="reportInputDiv">
+          <label for="crimeLocation">Location of Incident </label>
+          <input class="reportInput" type="text" name="crimeLocation" id="crimeLocation" placeholder="Nantucket, KY">
+        </div>
+        <div class="reportInputDiv reportInputDetails">
+          <label for="crimeDetails">Details and Description of the Incident</label>
+          <textarea class="reportInput" name="crimeDetails" id="crimeDetails" placeholder="Jeremy Irons tweeted that he was the king now, but that can't be."></textarea>
+        </div>
+      </div>
+    </div>
+    <hr>
   </form>
+  <div class="formBtns">
+    <div class="formBtn btn backBtn">
+      <a href="/">Go Back</a>
+    </div>
+    <div class="formBtn btn submitBtn">
+      <a href="#">Submit</a>
+    </div>
+  </div>
 </div>
 
 </section>
