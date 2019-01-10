@@ -20,7 +20,7 @@ a {
   color: inherit;
 }
 
-a :not(.btn):hover {
+a:not(.btn):hover {
   text-decoration: underline;
 }
 
@@ -76,7 +76,8 @@ hr {
   border-radius: 50%;
 }
 
-input {
+input,
+textarea {
   border: none;
   text-indent: 5px;
 }
@@ -89,9 +90,10 @@ input:focus {
 
 .header {
   background-color: hsl(360, 92%, 20%);
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
+  height: 120px;
 }
 
 .logo {
@@ -122,7 +124,7 @@ h1 {
   align-items: center;
   color: hsl(49, 100%, 96%);
   width: 100%;
-  padding: 10px 0;
+  padding: 3px 0;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -316,9 +318,10 @@ h1 {
   font-size: 16px;
 }
 
-/* REPORTS STYLE */
+/* REPORTS SECTION STYLE */
 
-.report .sectionTitleDiv {
+.report .sectionTitleDiv,
+.newsletterSubscribe .sectionTitleDiv {
   padding-bottom: 40px;
 }
 
@@ -329,9 +332,41 @@ h1 {
 
 .reportCrimesBtn {
   background-color:hsl(44, 92%, 63%);
-  border-radius: 5px;
+  border-radius: 4px;
   color: hsl(42, 15%, 13%);
   padding: 10px 20px;
+  font-size: 20px;
+}
+
+/* NEWSLETTER SUBSCRIBE SECTION*/
+
+.newsletterSubscribe p {
+  padding-bottom: 40px;
+}
+
+.subscribeGroup {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.emailSubscribeInput {
+  height: 30px;
+  width: 80%;
+  border: 1px solid hsl(40, 15%, 80%);
+  border-radius: 5px 0 0 5px;
+}
+
+.subscribeToNewsletterBtn {
+  height: 30px;
+  width: 20%;
+  background-color: hsl(360, 79%, 32%);
+  color: hsl(40, 23%, 97%);
+  border-radius: 0 5px 5px 0;
+  padding: 4px;
   font-size: 20px;
 }
 
@@ -377,6 +412,10 @@ h1 {
   grid-template-columns: repeat(3, auto);
 }
 
+.reportDataAreaCrime {
+  grid-template-rows: repeat(2,auto);
+}
+
 .reportDataArea .name {
 }
 
@@ -393,7 +432,8 @@ h1 {
   font-size: 14px;
 }
 
-.reportInputDiv input{
+.reportInputDiv input,
+.reportInputDiv select {
   width: 100%;
   height: 30px;
   border: 1px solid hsl(40, 15%, 80%);
@@ -402,9 +442,13 @@ h1 {
 
 .reportInputDiv textarea {
   width: 100%;
-  height: 100px;
+  height: 120px;
   border: 1px solid hsl(40, 15%, 80%);
   border-radius: 4px;
+}
+
+.reportInputDetails {
+  grid-area: 2/1/2/4;
 }
 
 .formBtns {
@@ -434,11 +478,11 @@ h1 {
 }
 
 input::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+input[type="date"] {
   color: hsl(41, 9%, 35%);
   font-size: 14px;
 }
-
 
 /* FOOTER STYLE */
 
