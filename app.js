@@ -36,6 +36,10 @@ var reportsSchema = new mongoose.Schema({
   createdByUser: String
 });
 
+var Report = mongoose.model("Report",reportsSchema);
+
+
+//APP SETTINGS & CONFIG
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
