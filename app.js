@@ -1,7 +1,8 @@
 var express         = require("express"),
     app             = express(),
     bodyParser      = require("body-parser"),
-    mongoose        = require("mongoose");
+    mongoose        = require("mongoose"),
+    Schema          = mongoose.Schema;
 
 
 // MONGOOSE SETTINGS
@@ -15,7 +16,7 @@ db.once('open', function() {
 
 //REPORTS SCHEMA
 
-var reportsSchema = new mongoose.Schema({
+var reportsSchema = new Schema({
   first: String,
   middle: String,
   last: String,
