@@ -11,6 +11,11 @@ html {
   color: hsl(0, 0%, 0%);
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: hsl(40, 23%, 97%);
+}
+
 nav, ul {
   list-style: none;
 }
@@ -55,19 +60,6 @@ section:not(slider):nth-child(even) {
   font-size: 20px;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: hsl(40, 23%, 97%);
-}
-
-.readMoreBtn {
-  background-color:hsl(41, 8%, 48%);
-  border-radius: 5px;
-  color: hsl(40, 23%, 97%);
-  padding: 5px 20px;
-  margin: 20px 0;
-}
-
 hr {
   background-color: hsl(41, 8%, 61%);
   width: 90%;
@@ -85,6 +77,16 @@ textarea {
 input:focus {
   outline: 0;
 }
+
+.readMoreBtn {
+  background-color:hsl(41, 8%, 48%);
+  border-radius: 5px;
+  color: hsl(40, 23%, 97%);
+  padding: 5px 20px;
+  margin: 20px 0;
+}
+
+/* ================================================ */
 
 /* HEADER STYLE */
 
@@ -115,6 +117,8 @@ h1 {
   text-shadow: 0 0 5px black;
   font-family: Merriweather;
 }
+
+/* =================================================== */
 
 /* NAV STYLE */
 
@@ -158,6 +162,10 @@ h1 {
 .search-icon {
   padding: 5px;
 }
+
+
+/* =================================================== */
+
 
 /* SLIDER GENERAL STYLE */
 
@@ -221,6 +229,8 @@ h1 {
   padding: 5px 10px;
 }
 
+/* ------------------------------------------ */
+
 /* Slider Article Small Thumbnail */
 
 .sliderIndicator {
@@ -238,6 +248,8 @@ h1 {
   border-radius: 4px;
   opacity: 0.5;
 }
+
+/* ------------------------------------------ */
 
 /* Slider Nav Button Styles */
 
@@ -261,6 +273,8 @@ h1 {
   top: 40%;
   right: -25px;
 }
+
+/* =================================================== */
 
 /* ANNOUNCEMENTS STYLE */
 
@@ -287,6 +301,8 @@ h1 {
 .announcediv h4 {
   line-height: 20px;
 }
+
+/* ------------------------------------------ */
 
 /* NEWS STYLE */
 
@@ -317,6 +333,8 @@ h1 {
   font-size: 16px;
 }
 
+/* ------------------------------------------ */
+
 /* REPORTS SECTION STYLE */
 
 .report .sectionTitleDiv,
@@ -336,6 +354,8 @@ h1 {
   padding: 10px 20px;
   font-size: 20px;
 }
+
+/* ------------------------------------------ */
 
 /* NEWSLETTER SUBSCRIBE SECTION*/
 
@@ -379,6 +399,10 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+
+/* =================================================== */
+
 
 /* New Report Form Styling */
 
@@ -424,9 +448,6 @@ h1 {
 
 .reportDataAreaCrime {
   grid-template-rows: repeat(2,auto);
-}
-
-.reportDataArea .name {
 }
 
 .reportInputDiv {
@@ -493,6 +514,10 @@ input[type="date"] {
   color: hsl(41, 9%, 35%);
   font-size: 14px;
 }
+
+
+/* =================================================== */
+
 
 /* FOOTER STYLE */
 

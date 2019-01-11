@@ -4,15 +4,21 @@ var express         = require("express"),
     mongoose        = require("mongoose"),
     Schema          = mongoose.Schema;
 
+// ========================================
 
 // MONGOOSE SETTINGS
 mongoose.set("useFindAndModify", false);
-mongoose.connect("mongodb://localhost/test", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost/USDT", {useNewUrlParser: true});
+
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   // we're connected!
 });
+
+// =======================================
+
+// SCHEMAS
 
 //REPORTS SCHEMA
 
@@ -40,11 +46,16 @@ var reportsSchema = new Schema({
 var Report = mongoose.model("Report",reportsSchema);
 
 
+// =======================================
+
 //APP SETTINGS & CONFIG
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
+
+
+// =======================================
 
 //ROUTES
   //Home
@@ -106,6 +117,9 @@ app.get('/', function(req,res){
   app.get('/reports/:id', function(req,res){
     res.send("show page for reports");
   });
+
+  
+// =======================================
 
 //LISTENING ON PORT
 app.listen(3000, function(){
