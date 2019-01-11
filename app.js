@@ -1,10 +1,42 @@
 var express         = require("express"),
     app             = express(),
-    bodyParser      = require("body-parser");
-//     mongoose        = require("mongoose");
+    bodyParser      = require("body-parser"),
+    mongoose        = require("mongoose");
 
-// mongoose.set("useFindAndModify", false);
-// mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true});
+
+// MONGOOSE SETTINGS
+mongoose.set("useFindAndModify", false);
+mongoose.connect("mongodb://localhost/test", {useNewUrlParser: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
+
+//REPORTS SCHEMA
+
+var reportsSchema = new mongoose.Schema({
+  first: String,
+  middle: String,
+  last: String,
+  dob: String,
+  ssn: String,
+  primaryPhone: String,
+  secondaryPhone: String,
+  email: String,
+  mailingAddress: String,
+  mailingCity: String,
+  mailingState: String,
+  mailingZip: String,
+  crimeType: String,
+  location: String,
+  crimeDate: Date,
+  crimeDescription: String,
+  createdDate: Date,
+  createdByUser: String
+});
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine","ejs");
