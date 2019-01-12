@@ -86,7 +86,9 @@ input:focus {
   margin: 20px 0;
 }
 
+
 /* ================================================ */
+
 
 /* HEADER STYLE */
 
@@ -125,27 +127,51 @@ h1 {
   justify-content: space-around;
   align-items: flex-end;
   color: hsl(49, 100%, 96%);
+  padding-right: 20px;
 }
 
 .userLoginDiv {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
 .userLoginDiv > div {
   padding: 5px 10px;
 }
 
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 10px;
+  flex: 0 1 50%;
+}
+
+.smcontainer {
+  border-radius: 50%;
+  background-color: hsl(40, 23%, 97%);
+  margin: 3px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .socialMediaIcon {
   height: 30px;
   width: 30px;
   padding: 2px;
-  margin: 5px;
+  margin: 3px;
 }
 
+
 /* =================================================== */
+
 
 /* NAV STYLE */
 
@@ -301,7 +327,9 @@ h1 {
   right: -25px;
 }
 
+
 /* =================================================== */
+
 
 /* ANNOUNCEMENTS STYLE */
 
