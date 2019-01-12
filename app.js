@@ -4,7 +4,9 @@ var express         = require("express"),
     mongoose        = require("mongoose"),
     Schema          = mongoose.Schema;
 
+
 // ========================================
+
 
 // MONGOOSE SETTINGS
 mongoose.set("useFindAndModify", false);
@@ -16,7 +18,9 @@ db.once('open', function() {
   // we're connected!
 });
 
+
 // =======================================
+
 
 // SCHEMAS
 
@@ -48,6 +52,7 @@ var Report = mongoose.model("Report",reportsSchema);
 
 // =======================================
 
+
 //APP SETTINGS & CONFIG
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -57,12 +62,16 @@ app.set("view engine","ejs");
 
 // =======================================
 
+
 //ROUTES
+
   //Home
 
 app.get('/', function(req,res){
   res.render('index');
 });
+
+//--------------------------------
 
 //NEWS
   //Index Page - News
@@ -83,6 +92,8 @@ app.get('/', function(req,res){
     res.send("This is a page for a new news article");
   });
 
+//--------------------------------
+
 //ANNOUNCEMENTS
   //Index Page - Announcements
 
@@ -97,6 +108,8 @@ app.get('/', function(req,res){
   app.get('/announcements/new', function(req,res){
     res.send('page for new announcements');
   });
+
+//--------------------------------
 
 //REPORTS
 
@@ -118,8 +131,9 @@ app.get('/', function(req,res){
     res.send("show page for reports");
   });
 
-  
+
 // =======================================
+
 
 //LISTENING ON PORT
 app.listen(3000, function(){

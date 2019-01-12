@@ -15,7 +15,7 @@
       <div class="reportDataArea">
         <div class="reportInputDiv">
           <label for="firstName">First Name</label>
-          <input class="reportInput" type="text" name="firstName" id='firstName' placeholder="Stojan">
+          <input class="reportInput" type="text" name="firstName" id='firstName' placeholder="Stojan" required>
         </div>
         <div class="reportInputDiv">
             <label for="middleInitial">Middle Initial</label>
@@ -23,15 +23,15 @@
           </div>
         <div class="reportInputDiv">
           <label for="lastName">Last Name</label>
-          <input class="reportInput" type="text" name="lastName" id="lastname" placeholder="Tesich">
+          <input class="reportInput" type="text" name="lastName" id="lastname" placeholder="Tesich" required>
         </div>
         <div class="reportInputDiv">
           <label for="dob">Date of Birth</label>
-          <input type="date" class="reportInput" name="dob" id="dob" min="1900-01-01" max="2018-12-12" value="1942-09-29">
+          <input type="date" class="reportInput" name="dob" id="dob" min="1900-01-01" max="2018-12-12" value="1942-09-29" required>
         </div>
         <div class="reportInputDiv">
           <label for="ssn">Social Security Number</label>
-          <input type="number" class="reportInput" name="ssn" id="ssn" placeholder="xxx-xx-xxxx">
+          <input type="text" class="reportInput" name="ssn" id="ssn" placeholder="xxx-xx-xxxx" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}">
         </div>
       </div>
     </div>
@@ -43,32 +43,32 @@
       </div>
       <div class="reportDataArea">
         <div class="reportInputDiv">
-          <label for="primaryPhone">Primary Phone Number</label>
-          <input class="reportInput" type="number" name="primaryPhone" id='primaryPhone' placeholder="808-911-1800">
+          <label for="primaryPhone">Primary Phone Number (US only)</label>
+          <input class="reportInput" type="tel" name="primaryPhone" id='primaryPhone' placeholder="808-911-1800" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
         </div>
         <div class="reportInputDiv">
-            <label for="secondaryPhone">Secondary Phone Number</label>
-            <input class="reportInput" type="number" name="secondaryPhone" id='secondaryPhone' placeholder="808-199-0081">
+            <label for="secondaryPhone">Secondary Phone Number (US only)</label>
+            <input class="reportInput" type="tel" name="secondaryPhone" id='secondaryPhone' placeholder="808-199-0081" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
           </div>
         <div class="reportInputDiv">
           <label for="email">Primary Email Address</label>
-          <input class="reportInput" type="email" name="email" id="email" placeholder="doctor.strange@theavengers.com">
+          <input class="reportInput" type="email" name="email" id="email" placeholder="doctor.strange@theavengers.com" required>
         </div>
         <div class="reportInputDiv">
           <label for="mailingAddress">Mailing Address</label>
-          <input type="text" class="reportInput" name="mailingAddress" id="mailingAddress" placeholder="1404 Real Street">
+          <input type="text" class="reportInput" name="mailingAddress" id="mailingAddress" placeholder="1404 Real Street" required>
         </div>
         <div class="reportInputDiv">
           <label for="mailingCity">City</label>
-          <input type="text" class="reportInput" name="city" id="city" placeholder="Nantucket">
+          <input type="text" class="reportInput" name="city" id="city" placeholder="Nantucket" required>
         </div>
         <div class="reportInputDiv">
           <label for="mailingState">State</label>
-          <input type="text" class="reportInput" name="state" id="state" placeholder="KY">
+          <input type="text" class="reportInput" name="state" id="state" placeholder="KY" required>
         </div>
         <div class="reportInputDiv">
           <label for="zip">Zip Code</label>
-          <input type="number" class="reportInput" name="zip" id="zip" placeholder="78781">
+          <input type="number" class="reportInput" name="zip" id="zip" placeholder="78781" required>
         </div>
       </div>
     </div>
@@ -81,25 +81,26 @@
       <div class="reportDataArea reportDataAreaCrime">
         <div class="reportInputDiv">
           <label for="crimeType">Type of Crime</label>
-          <select id="crimeType" name="crimeType"  class="reportInput" value="Social">
+          <select id="crimeType" name="crimeType"  class="reportInput" value="Social" required>
             <option>Academic & Scientific</option>
             <option>Economic</option>
             <option>Media</option>
             <option>Personal & Social</option>
             <option>Political</option>
+            <option>Other</option>
           </select>
         </div>
         <div class="reportInputDiv">
             <label for="crimeDate">Date of Incident</label>
-            <input class="reportInput" type="date" name="crimeDate" id='crimeDate' min="1900-01-01" max="2018-12-12" value="2016-11-08">
+            <input class="reportInput" type="date" name="crimeDate" id='crimeDate' min="1900-01-01" max="2018-12-12" value="2016-11-08" required>
           </div>
         <div class="reportInputDiv">
           <label for="crimeLocation">Location of Incident </label>
-          <input class="reportInput" type="text" name="crimeLocation" id="crimeLocation" placeholder="Nantucket, KY">
+          <input class="reportInput" type="text" name="crimeLocation" id="crimeLocation" placeholder="Nantucket, KY" required>
         </div>
         <div class="reportInputDiv reportInputDetails">
           <label for="crimeDetails">Details and Description of the Incident</label>
-          <textarea class="reportInput" name="crimeDetails" id="crimeDetails" placeholder="Jeremy Irons tweeted that he was the king now, but that can't be."></textarea>
+          <textarea class="reportInput" required name="crimeDetails" id="crimeDetails" placeholder="Jeremy Irons tweeted that he was the king now, but that can't be."></textarea>
         </div>
       </div>
     </div>
