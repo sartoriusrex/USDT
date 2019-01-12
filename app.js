@@ -122,7 +122,13 @@ app.get('/', function(req,res){
   //Index Page - Reports
 
   app.get('/reports', function(req,res){
-    res.send("index page for reports");
+    Report.find({}, function callback(err, report){
+      if (err){
+        console.log(err);
+      } else {
+        res.render("reports/report-index", {reports: reports});
+      }
+    });
   });
 
   //Show Page - Reports
