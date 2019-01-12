@@ -116,7 +116,7 @@ app.get('/', function(req,res){
   //New Report Page
 
   app.get("/reports/new", function(req,res){
-    res.render("new-report");
+    res.render("reports/new-report");
   });
 
   //Index Page - Reports
