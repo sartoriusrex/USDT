@@ -122,7 +122,7 @@ app.get('/', function(req,res){
   //Index Page - Reports
 
   app.get('/reports', function(req,res){
-    Report.find({}, function callback(err, report){
+    Report.find({}, function callback(err, reports){
       if (err){
         console.log(err);
       } else {
