@@ -609,3 +609,18 @@ footer {
   width: 100%;
   padding: 10px 20px;
 }
+
+
+/* =============================================== */
+
+
+/* REPORTS INDEX STYLING */
+
+table {
+  width: 90%;
+  border: 2px solid hsl(360, 92%, 20%);
+}
+
+.details {
+  display: hidden;
+}

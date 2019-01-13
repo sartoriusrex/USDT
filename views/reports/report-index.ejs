@@ -6,20 +6,49 @@
 
 <table>
   <thead>
-    <tr>
-      <td>Date Created</td>
-      <td>Date of Incident</td>
-      <td>Submitted By</td>
-      <td>Incident Location</td>
-      <td>Incident Type</td>
+    <tr class="reportsTableRow">
+      <td class="overview">Date Created</td>
+      <td class="overview">Date of Incident</td>
+      <td class="overview">Submitted By</td>
+      <td class="overview">Incident Location</td>
+      <td class="overview">Incident Type</td>
+      <td class="details">Details</td>
+      <td class="details">User Name</td>
+      <td class="details">Primary Phone</td>
     </tr>
   </thead>
   <tbody>
-
+    <% reports.forEach( function(report){ %>
+      <tr class="reportsTableRow">
+        <td class="overview">
+          <%>reports.createdDate<%>
+        </td>
+        <td class="overview">
+          <%>reports.incidentDate<%>
+        </td>
+        <td class="overview">
+          <%>reports.createdByUser<%>
+        </td>
+        <td class="overview">
+          <%>reports.incidentLocation<%>
+        </td>
+        <td class="overview">
+          <%>reports.incidentType<%>
+        </td>
+        <td></td>
+        <td class="details">
+          <%>reports.incidentDetails<%>
+        </td>
+        <td class="details">
+          <%>reports.first + " " + reports.last<%>
+        </td>
+        <td class="details">
+          <%>reports.primaryPhone<%>
+        </td>
+      </tr>
+    <%  }) %>
   </tbody>
 </table>
-<!-- <% reports.forEach( function(report){ %>
-<%  }) %> -->
 
 </section>
 

@@ -39,10 +39,10 @@ var reportsSchema = new Schema({
   mailingCity: String,
   mailingState: String,
   mailingZip: String,
-  crimeType: String,
-  location: String,
-  crimeDate: Date,
-  crimeDescription: String,
+  incidentType: String,
+  incidentLocation: String,
+  incidentDate: Date,
+  incidentDetails: String,
   createdDate: Date,
   createdByUser: String
 });
