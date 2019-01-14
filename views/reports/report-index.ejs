@@ -12,13 +12,15 @@
       <th class="overview">Submitted By</th>
       <th class="overview">Incident Location</th>
       <th class="overview">Incident Type</th>
+      <th class="overview">Show More</th>
+      <th class="overview">Show Report</th>
       <th class="details">Details</th>
       <th class="details">User Name</th>
       <th class="details">Primary Phone</th>
     </tr>
   </thead>
   <tbody>
-    <% reports.forEach(function(report){ %>
+    <% report.forEach(function(report){ %>
       <tr class="reportsTableRow">
         <td class="overview">
           <%=report.createdDate%>
@@ -35,7 +37,9 @@
         <td class="overview">
           <%=report.incidentType%>
         </td>
-        <td></td>
+        <td>
+          <a href="/reports/<%=report._id%>">Show Report</a>
+        </td>
         <td class="details">
           <%=report.incidentDetails%>
         </td>

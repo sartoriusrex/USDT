@@ -1,0 +1,170 @@
+<% include ../partials/header %>
+
+<section class="reportCrime">
+
+    <h2>Report ID: <%=report._id%></h2>
+    
+    <div class="formdiv">
+      <form class="newReportForm" action="/reports" method="POST">
+        <hr>
+        <div class="reportSection">
+          <div class="reportSectionName">
+            <h3>Identity</h3>
+            <p>We verify your identity to prevent you from having false claims  made on your behalf or against you.</p>
+          </div>
+          <div class="reportDataArea">
+            <div class="reportInputDiv">
+              <label for="firstName">First Name</label>
+              <input class="reportInput" type="text" name="firstName" required id='firstName' value="<%= report.first %>">
+            </div>
+            <div class="reportInputDiv">
+                <label for="middleInitial">Middle Initial</label>
+                <input class="reportInput" type="text" name="middleInitial" id='middleInitial' value="<%= report.middle %>">
+              </div>
+            <div class="reportInputDiv">
+              <label for="lastName">Last Name</label>
+              <input class="reportInput" type="text" name="lastName" id="lastname" value="<%= report.last %>" required>
+            </div>
+            <div class="reportInputDiv">
+              <label for="dob">Date of Birth</label>
+              <input type="date" class="reportInput" name="dob" id="dob" min="1900-01-01" max="2018-12-12" value="1942-09-29" required>
+            </div>
+            <div class="reportInputDiv">
+              <label for="ssn">Social Security Number</label>
+              <input type="text" class="reportInput" name="ssn" id="ssn" placeholder="xxx-xx-xxxx" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="reportSection">
+          <div class="reportSectionName">
+            <h3>Contact</h3>
+            <p>In the event that we need to follow up, please specify your contact information</p>
+          </div>
+          <div class="reportDataArea">
+            <div class="reportInputDiv">
+              <label for="primaryPhone">Primary Phone Number (US only)</label>
+              <input class="reportInput" type="tel" name="primaryPhone" id='primaryPhone' placeholder="808-911-1800" required pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+            </div>
+            <div class="reportInputDiv">
+                <label for="secondaryPhone">Secondary Phone Number (US only)</label>
+                <input class="reportInput" type="tel" name="secondaryPhone" id='secondaryPhone' placeholder="8081990081" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+              </div>
+            <div class="reportInputDiv">
+              <label for="email">Primary Email Address</label>
+              <input class="reportInput" type="email" name="email" id="email" placeholder="doctor.strange@theavengers.com" required>
+            </div>
+            <div class="reportInputDiv">
+              <label for="mailingAddress">Mailing Address</label>
+              <input type="text" class="reportInput" name="mailingAddress" id="mailingAddress" placeholder="1404 Real Street" required>
+            </div>
+            <div class="reportInputDiv">
+              <label for="mailingCity">City</label>
+              <input type="text" class="reportInput" name="city" id="city" placeholder="Nantucket" required>
+            </div>
+            <div class="reportInputDiv">
+              <label for="mailingState">State</label>
+              <select class="reportInput" name="mailingState" id="mailingState" value="AL" required>
+                <option value="AL">Alabama (AL)</option>
+                <option value="AK">Alaska (AK)</option>
+                <option value="AZ">Arizona (AZ)</option>
+                <option value="AR">Arkansas (AR)</option>
+                <option value="CA">California (CA)</option>
+                <option value="CO">Colorado (CO)</option>
+                <option value="CT">Connecticut (CT)</option>
+                <option value="DE">Delaware (DE)</option>
+                <option value="DC">District Of Columbia (DC)</option>
+                <option value="FL">Florida (FL)</option>
+                <option value="GA">Georgia (GA)</option>
+                <option value="HI">Hawaii (HI)</option>
+                <option value="ID">Idaho (ID)</option>
+                <option value="IL">Illinois (IL)</option>
+                <option value="IN">Indiana (IN)</option>
+                <option value="IA">Iowa (IA)</option>
+                <option value="KS">Kansas (KS)</option>
+                <option value="KY">Kentucky (KY)</option>
+                <option value="LA">Louisiana (LA)</option>
+                <option value="ME">Maine (ME)</option>
+                <option value="MD">Maryland (MD)</option>
+                <option value="MA">Massachusetts (MA)</option>
+                <option value="MI">Michigan (MI)</option>
+                <option value="MN">Minnesota (MN)</option>
+                <option value="MS">Mississippi (MS)</option>
+                <option value="MO">Missouri (MO)</option>
+                <option value="MT">Montana (MT)</option>
+                <option value="NE">Nebraska (NE)</option>
+                <option value="NV">Nevada (NV)</option>
+                <option value="NH">New Hampshire (NH)</option>
+                <option value="NJ">New Jersey (NJ)</option>
+                <option value="NM">New Mexico (NM)</option>
+                <option value="NY">New York (NY)</option>
+                <option value="NC">North Carolina (NC)</option>
+                <option value="ND">North Dakota (ND)</option>
+                <option value="OH">Ohio (OH)</option>
+                <option value="OK">Oklahoma (OK)</option>
+                <option value="OR">Oregon (OR)</option>
+                <option value="PA">Pennsylvania (PA)</option>
+                <option value="RI">Rhode Island (RI)</option>
+                <option value="SC">South Carolina (SC)</option>
+                <option value="SD">South Dakota (SD)</option>
+                <option value="TN">Tennessee (TN)</option>
+                <option value="TX">Texas (TX)</option>
+                <option value="UT">Utah (UT)</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
+            </div>
+            <div class="reportInputDiv">
+              <label for="zip">Zip Code</label>
+              <input type="number" class="reportInput" name="zip" id="zip" placeholder="78781" required>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="reportSection">
+          <div class="reportSectionName">
+            <h3>Crime Details</h3>
+            <p>Explain the nature of the crime and any and all details.</p>
+          </div>
+          <div class="reportDataArea reportDataAreaCrime">
+            <div class="reportInputDiv">
+              <label for="incidentType">Type of Incident</label>
+              <select id="incidentType" name="incidentType"  class="reportInput" value="Social" required>
+                <option>Academic & Scientific</option>
+                <option>Economic</option>
+                <option>Media</option>
+                <option>Personal & Social</option>
+                <option>Political</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="reportInputDiv">
+                <label for="incidentDate">Date of Incident</label>
+                <input class="reportInput" type="date" name="incidentDate" id='incidentDate' min="1900-01-01" max="2018-12-12" value="2016-11-08" required>
+              </div>
+            <div class="reportInputDiv">
+              <label for="incidentLocation">Location of Incident </label>
+              <input class="reportInput" type="text" name="incidentLocation" id="incidentLocation" placeholder="Nantucket, KY" required>
+            </div>
+            <div class="reportInputDiv reportInputDetails">
+              <label for="incidentDetails">Details and Description of the Incident</label>
+              <textarea class="reportInput" required name="incidentDetails" id="incidentDetails" placeholder="Jeremy Irons tweeted that he was the king now, but that can't be."></textarea>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="formBtns">
+          <div class="formBtn btn backBtn">
+            <a href="/reports">Go Back</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    </section>
+
+<% include ../partials/footer %>

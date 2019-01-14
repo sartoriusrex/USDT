@@ -86,6 +86,10 @@ input:focus {
   outline: 0;
 }
 
+input[value] {
+  color: hsl(42, 15%, 13%);
+}
+
 .readMoreBtn {
   background-color:hsl(41, 8%, 48%);
   border-radius: 5px;
@@ -566,9 +570,13 @@ h1 {
   color: hsl(40, 13%, 23%);
 }
 
-.submitBtn {
+.submitBtn,
+.submitBtn input {
   background-color: hsl(15, 86%, 30%);
   color: hsl(40, 23%, 97%);
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 input::placeholder,
@@ -636,3 +644,4 @@ table {
 .details {
   display: none;
 }
+

@@ -159,13 +159,13 @@ app.get('/', function(req,res){
       incidentDetails: incidentDetails,
       createdDate: createdDate,
       createdByUser: createdByUser
-    }
+    };
     Report.create(newReport, function (err, aNewReport) {
       if (err) {
         console.log(err);
         res.redirect('back');
       } else {
-        res.redirect('reports/report-index');
+        res.redirect('reports');
       }
     });
   });
@@ -177,7 +177,7 @@ app.get('/', function(req,res){
       if (err){
         console.log(err);
       } else {
-        res.render("reports/report-index", {reports: allReports});
+        res.render("reports/report-index", {report: allReports});
       }
     });
   });
@@ -185,7 +185,13 @@ app.get('/', function(req,res){
   //Show Page - Reports
 
   app.get('/reports/:id', function(req,res){
-    res.send("show page for reports");
+    Report.findById(req.params.id).populate('reports').exec(function callback(err, foundReport){
+      if (err){
+        console.log(err);
+      } else {
+        res.render("reports/report-show", {report: foundReport});
+      }
+    });
   });
 
 
