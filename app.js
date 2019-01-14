@@ -121,7 +121,7 @@ app.get('/', function(req,res){
 
   //New Report Post Page
 
-  app.post('/reports/new', function(req,res){
+  app.post('/reports', function(req,res){
     var first = req.body.first,
         middle = req.body.middle,
         last = req.body.last,

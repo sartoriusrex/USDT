@@ -33,6 +33,14 @@ a:not(.btn .subscribeToNewsletterBtn):hover {
   box-shadow: 0 2px 2px hsl(40, 15%, 80%);
 }
 
+button {
+  border: none;
+  color: hsl(40, 23%, 97%);
+  background-color: hsl(15, 86%, 30%);
+  font: normal 16px sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
 button:hover {
   cursor: pointer;
 }
