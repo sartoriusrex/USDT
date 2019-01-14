@@ -77,9 +77,11 @@ hr {
 }
 
 input,
-textarea {
+textarea,
+select {
   border: none;
   text-indent: 5px;
+  background-color: hsl(43, 13%, 90%);
 }
 
 input:focus {

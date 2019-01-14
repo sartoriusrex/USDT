@@ -15,7 +15,7 @@
       <div class="reportDataArea">
         <div class="reportInputDiv">
           <label for="first">First Name</label>
-          <input class="reportInput" type="text" name="first" id='first' placeholder="Stojan" required>
+          <input class="reportInput" type="text" name="first" id='first' placeholder="Stojan" autofocus required>
         </div>
         <div class="reportInputDiv">
             <label for="middle">Middle Initial</label>
@@ -48,7 +48,7 @@
         </div>
         <div class="reportInputDiv">
             <label for="secondaryPhone">Secondary Phone Number (US only)</label>
-            <input class="reportInput" type="tel" name="secondaryPhone" id='secondaryPhone' placeholder="8081990081" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <input class="reportInput" type="tel" name="secondaryPhone" id='secondaryPhone' placeholder="8081990081" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
           </div>
         <div class="reportInputDiv">
           <label for="email">Primary Email Address</label>
@@ -60,7 +60,7 @@
         </div>
         <div class="reportInputDiv">
           <label for="mailingCity">City</label>
-          <input type="text" class="reportInput" name="city" id="city" placeholder="Nantucket" required>
+          <input type="text" class="reportInput" name="mailingCity" id="mailingCity" placeholder="Nantucket" required>
         </div>
         <div class="reportInputDiv">
           <label for="mailingState">State</label>
@@ -81,7 +81,7 @@
             <option value="IL">Illinois (IL)</option>
             <option value="IN">Indiana (IN)</option>
             <option value="IA">Iowa (IA)</option>
-            <option value="KS">Kansas (KS)</option>
+            <option selected value="KS">Kansas (KS)</option>
             <option value="KY">Kentucky (KY)</option>
             <option value="LA">Louisiana (LA)</option>
             <option value="ME">Maine (ME)</option>
@@ -119,8 +119,8 @@
           </select>
         </div>
         <div class="reportInputDiv">
-          <label for="zip">Zip Code</label>
-          <input type="number" class="reportInput" name="zip" id="zip" placeholder="78781" required>
+          <label for="mailingZip">Zip Code</label>
+          <input type="number" class="reportInput" name="mailingZip" id="mailingZip" placeholder="78781" required>
         </div>
       </div>
     </div>
@@ -133,10 +133,10 @@
       <div class="reportDataArea reportDataAreaCrime">
         <div class="reportInputDiv">
           <label for="incidentType">Type of Incident</label>
-          <select id="incidentType" name="incidentType"  class="reportInput" value="Social" required>
+          <select id="incidentType" name="incidentType"  class="reportInput" required>
             <option>Academic & Scientific</option>
             <option>Economic</option>
-            <option>Media</option>
+            <option selected>Media</option>
             <option>Personal & Social</option>
             <option>Political</option>
             <option>Other</option>
