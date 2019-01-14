@@ -7,43 +7,43 @@
 <table>
   <thead>
     <tr class="reportsTableRow">
-      <td class="overview">Date Created</td>
-      <td class="overview">Date of Incident</td>
-      <td class="overview">Submitted By</td>
-      <td class="overview">Incident Location</td>
-      <td class="overview">Incident Type</td>
-      <td class="details">Details</td>
-      <td class="details">User Name</td>
-      <td class="details">Primary Phone</td>
+      <th class="overview">Date Created</th>
+      <th class="overview">Date of Incident</th>
+      <th class="overview">Submitted By</th>
+      <th class="overview">Incident Location</th>
+      <th class="overview">Incident Type</th>
+      <th class="details">Details</th>
+      <th class="details">User Name</th>
+      <th class="details">Primary Phone</th>
     </tr>
   </thead>
   <tbody>
-    <% reports.forEach( function(report){ %>
+    <% reports.forEach(function(report){ %>
       <tr class="reportsTableRow">
         <td class="overview">
-          <%>reports.createdDate<%>
+          <%=report.createdDate%>
         </td>
         <td class="overview">
-          <%>reports.incidentDate<%>
+          <%=report.incidentDate%>
         </td>
         <td class="overview">
-          <%>reports.createdByUser<%>
+          <%=report.createdByUser%>
         </td>
         <td class="overview">
-          <%>reports.incidentLocation<%>
+          <%=report.incidentLocation%>
         </td>
         <td class="overview">
-          <%>reports.incidentType<%>
+          <%=report.incidentType%>
         </td>
         <td></td>
         <td class="details">
-          <%>reports.incidentDetails<%>
+          <%=report.incidentDetails%>
         </td>
         <td class="details">
-          <%>reports.first + " " + reports.last<%>
+          <%=report.first + " " + report.last%>
         </td>
         <td class="details">
-          <%>reports.primaryPhone<%>
+          <%=report.primaryPhone%>
         </td>
       </tr>
     <%  }) %>
