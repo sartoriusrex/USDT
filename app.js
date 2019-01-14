@@ -43,7 +43,7 @@ var reportsSchema = new Schema({
   incidentLocation: String,
   incidentDate: Date,
   incidentDetails: String,
-  createdDate: Date,
+  createdDate: { type: Date, default: Date.now },
   createdByUser: String
 });
 
@@ -80,16 +80,16 @@ app.get('/', function(req,res){
     res.send("index page for news");
   });
 
-  //Show Page - News
-
-  app.get('/news/:id', function(req,res){
-    res.send("news show page");
-  });
-
   //New Page - News
 
   app.get('/news/new', function(req,res){
     res.send("This is a page for a new news article");
+  });
+
+  //Show Page - News
+
+  app.get('/news/:id', function(req,res){
+    res.send("news show page");
   });
 
 //--------------------------------
@@ -101,17 +101,34 @@ app.get('/', function(req,res){
     res.send("announcements index page");
   });
 
-  //No Show Page for Announcements, because they are short
-
   //New Page - Announcements
 
   app.get('/announcements/new', function(req,res){
     res.send('page for new announcements');
   });
 
+  //Show Page for Announcements
+
+  app.get('/announcements/:id', function(req,res){
+    res.send('show page for an announcement');
+  });
+
+
 //--------------------------------
 
 //REPORTS
+
+//Index Page - Reports
+
+app.get('/reports', function(req,res){
+  Report.find({}, function callback(err, allReports){
+    if (err){
+      console.log(err);
+    } else {
+      res.render("reports/report-index", {report: allReports});
+    }
+  });
+});
 
   //New Report Form Page
 
@@ -170,22 +187,10 @@ app.get('/', function(req,res){
     });
   });
 
-  //Index Page - Reports
-
-  app.get('/reports', function(req,res){
-    Report.find({}, function callback(err, allReports){
-      if (err){
-        console.log(err);
-      } else {
-        res.render("reports/report-index", {report: allReports});
-      }
-    });
-  });
-
   //Show Page - Reports
 
   app.get('/reports/:id', function(req,res){
-    Report.findById(req.params.id).populate('reports').exec(function callback(err, foundReport){
+    Report.findById(req.params.id).exec(function callback(err, foundReport){
       if (err){
         console.log(err);
       } else {
