@@ -14,9 +14,9 @@
       <th class="overview">Incident Type</th>
       <th class="overview">Show More</th>
       <th class="overview">Show Report</th>
-      <th class="details">Details</th>
-      <th class="details">User Name</th>
-      <th class="details">Primary Phone</th>
+      <th class="details hidden">Details</th>
+      <th class="details hidden">User Name</th>
+      <th class="details hidden">Primary Phone</th>
     </tr>
   </thead>
   <tbody>
@@ -38,15 +38,18 @@
           <%=report.incidentType%>
         </td>
         <td>
+          <button>Show More</button>
+        </td>
+        <td>
           <a href="/reports/<%=report._id%>">Show Report</a>
         </td>
-        <td class="details">
+        <td class="details hidden">
           <%=report.incidentDetails%>
         </td>
-        <td class="details">
+        <td class="details hidden">
           <%=report.first + " " + report.last%>
         </td>
-        <td class="details">
+        <td class="details hidden">
           <%=report.primaryPhone%>
         </td>
       </tr>
