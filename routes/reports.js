@@ -41,8 +41,8 @@ router.post('/reports', function(req,res){
       incidentLocation = req.body.incidentLocation,
       incidentDate = req.body.incidentDate,
       incidentDetails = req.body.incidentDetails,
-      createdDate = req.body.createdDate,
-      createdByUser = req.body.createdByUser;
+      dateCreated = req.body.createdDate,
+      author = req.body.createdByUser;
   var newReport = {
     first: first,
     middle: middle,
@@ -60,8 +60,8 @@ router.post('/reports', function(req,res){
     incidentLocation: incidentLocation,
     incidentDate: incidentDate,
     incidentDetails: incidentDetails,
-    createdDate: createdDate,
-    createdByUser: createdByUser
+    dateCreated: dateCreated,
+    author: author
   };
   Report.create(newReport, function (err, aNewReport) {
     if (err) {

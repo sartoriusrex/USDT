@@ -1,9 +1,13 @@
-var express         = require("express"),
-    app             = express(),
-    bodyParser      = require("body-parser"),
-    mongoose        = require("mongoose"),
-    Schema          = mongoose.Schema,
-    Report          = require('./models/reports');
+const express         = require("express"),
+      app             = express(),
+      bodyParser      = require("body-parser"),
+      mongoose        = require("mongoose"),
+      Schema          = mongoose.Schema,
+      Report          = require('./models/reports'),
+      Announcement    = require('./models/announcements'),
+      User            = require('./models/users'),
+      News            = require('./models/news'),
+      Comment         = require('./models/comments');
 
 
 // ========================================
