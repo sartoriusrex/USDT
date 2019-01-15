@@ -2,7 +2,8 @@ var express         = require("express"),
     app             = express(),
     bodyParser      = require("body-parser"),
     mongoose        = require("mongoose"),
-    Schema          = mongoose.Schema;
+    Schema          = mongoose.Schema,
+    Report          = require('./models/reports/reports');
 
 
 // ========================================
@@ -17,37 +18,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   // we're connected!
 });
-
-
-// =======================================
-
-
-// SCHEMAS
-
-//REPORTS SCHEMA
-
-var reportsSchema = new Schema({
-  first: String,
-  middle: String,
-  last: String,
-  dob: Date,
-  ssn: String,
-  primaryPhone: String,
-  secondaryPhone: String,
-  email: String,
-  mailingAddress: String,
-  mailingCity: String,
-  mailingState: String,
-  mailingZip: String,
-  incidentType: String,
-  incidentLocation: String,
-  incidentDate: Date,
-  incidentDetails: String,
-  createdDate: { type: Date, default: Date.now },
-  createdByUser: String
-});
-
-var Report = mongoose.model("Report",reportsSchema);
 
 
 // =======================================
