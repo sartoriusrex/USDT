@@ -100,10 +100,6 @@ input[value] {
   margin: 20px 0;
 }
 
-.hidden {
-  display: none;
-}
-
 /* ================================================ */
 
 
@@ -645,5 +641,4 @@ table {
   width: 90%;
   border: 2px solid hsl(360, 92%, 20%);
 }
-
 
