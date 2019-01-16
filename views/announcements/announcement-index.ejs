@@ -4,6 +4,29 @@
 
 <h2>All Announcements</h2>
 
+<% announcement.forEach(function(announcement){ %>
+  <div class="announcementContainer">
+    <div class="dateUpdated">
+      <h4>Last Updated:</h4>
+      <p><%= announcement.dateLastUpdate %></p>
+    </div>
+    <div class="dateCreated">
+      <h4>Created:</h4>
+      <p><%= announcement.dateCreated %></p>
+    </div>
+    <div class="announcementBody">
+      <p><%= announcement.author %> - </p>
+      <p><%= announcement.body %></p>
+    </div>
+    <a class="updateAnnouncement" href="#">
+      Update
+    </a>
+    <a class="deleteAnnouncement" href="#">
+      Delete
+    </a>
+  </div>
+<% }) %>
+
 </section>
 
 <% include ../partials/footer %>

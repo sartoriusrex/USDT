@@ -649,3 +649,42 @@ table {
   border: 2px solid hsl(360, 92%, 20%);
 }
 
+/* =============================================== */
+
+
+/* ANNOUNCEMENTS INDEX STYLING */
+
+.allAnnouncements h2 {
+  padding-bottom: 20px;
+}
+
+.announcementContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 90%;
+  padding-bottom: 20px;
+  background-color: hsl(40, 15%, 80%);
+  border-radius: 4px;
+  box-shadow: 0 2px 2px hsl(37, 11%, 28%);
+  margin-bottom: 20px;
+}
+
+.announcementContainer div:not(.announcementBody),
+.announcementContainer a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 5%;
+  height: 100%;
+}
+
+.announcementBody {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

@@ -11,7 +11,7 @@ router.get('/announcements', (req,res) => {
       console.log(err);
       res.redirect('back');
     } else {
-      res.render("announcements/announcement-index");
+      res.render("announcements/announcement-index", {announcement: allAnnouncements});
     }
   });
 });
