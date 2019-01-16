@@ -4,7 +4,7 @@ const mongoose      = require('mongoose'),
 const announcementsSchema = new Schema({
   author: String,
   dateCreated: { type: Date, default: Date.now },
-  dateLastUpdate: Date,
+  dateLastUpdate: { type: Date, default: Date.now },
   body: String
 });
 

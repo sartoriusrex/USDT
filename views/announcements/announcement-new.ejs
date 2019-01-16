@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<section>
+
+<h2>Make a New Announcement</h2>
+
+<div class="formdiv">
+  <form class="newForm" action="/announcements" method="POST">
+    <hr>
+    <div class="formSection">
+      <div class="formSectionName">
+        <h3>Announcement</h3>
+        <p>What do you want to broadcast to the world?</p>
+      </div>
+      <div class="formDataArea gridTemplateTwoRow">
+        <div class="formInputDiv gridArea2124">
+          <label for="body">Make your Announcement here.</label>
+          <textarea required name="body" id="body" placeholder="Truth is not True. The World has entered the Post-Truth Era in which the Truth is what information circulates the most and has the most profound impact."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="formBtns">
+      <div class="formBtn btn backBtn">
+        <a href="/">Go Back</a>
+      </div>
+      <div class="formBtn btn submitBtn">
+        <input type="submit"></input>
+      </div>
+    </div>
+  </form>
+</div>
+
+</section>
+
+<% include ../partials/footer %>

@@ -4,19 +4,19 @@ const   express     = require('express'),
 
 // Index Page - News
 
-router.get('/news', function(req,res){
+router.get('/news', (req,res) => {
   res.send("index page for news");
 });
 
 //New Page - News
 
-router.get('/news/new', function(req,res){
+router.get('/news/new', (req,res) => {
   res.send("This is a page for a new news article");
 });
 
 //Show Page - News
 
-router.get('/news/:id', function(req,res){
+router.get('/news/:id', (req,res) => {
   res.send("news show page");
 });
 
