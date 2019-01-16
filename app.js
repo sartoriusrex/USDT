@@ -39,9 +39,15 @@ app.set("view engine","ejs");
 
 //ROUTES
 
-var reportRoutes    = require('./routes/reports');
+var reportRoutes        = require('./routes/reports')
+    announcementRoutes  = require('./routes/announcements'),
+    newsRoutes          = require('./routes/news')
+    commentRoutes       = require('./routes/comments');
 
 app.use(reportRoutes);
+app.use(announcementRoutes);
+app.use(newsRoutes);
+app.use(commentRoutes);
 
 
   //Home
