@@ -50,48 +50,6 @@ app.get('/', function(req,res){
   res.render('index');
 });
 
-//--------------------------------
-
-//NEWS
-  //Index Page - News
-
-  app.get('/news', function(req,res){
-    res.send("index page for news");
-  });
-
-  //New Page - News
-
-  app.get('/news/new', function(req,res){
-    res.send("This is a page for a new news article");
-  });
-
-  //Show Page - News
-
-  app.get('/news/:id', function(req,res){
-    res.send("news show page");
-  });
-
-//--------------------------------
-
-//ANNOUNCEMENTS
-  //Index Page - Announcements
-
-  app.get('/announcements', function(req,res){
-    res.send("announcements index page");
-  });
-
-  //New Page - Announcements
-
-  app.get('/announcements/new', function(req,res){
-    res.send('page for new announcements');
-  });
-
-  //Show Page for Announcements
-
-  app.get('/announcements/:id', function(req,res){
-    res.send('show page for an announcement');
-  });
-
 // =======================================
 
 

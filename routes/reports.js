@@ -1,8 +1,6 @@
-var   express     = require('express'),
-      router      = express.Router(),
-      Report      = require('../models/reports');
-
-//REPORTS
+const   express     = require('express'),
+        router      = express.Router(),
+        Report      = require('../models/reports');
 
 //Index Page - Reports
 
