@@ -709,7 +709,7 @@ table {
   flex: 0 1 100%;
 }
 
-.updateAnnouncement a {
+.updateAnnouncement div {
   background-color: hsl(29, 80%, 44%);
   color: hsl(43, 13%, 90%);
 }
@@ -726,7 +726,7 @@ table {
   border-radius: 0 30px 30px 0;
 }
 
-.deleteAnnouncement a {
+.deleteAnnouncement div {
   background-color: hsl(360, 79%, 32%);
   color: hsl(43, 13%, 90%);
 }
