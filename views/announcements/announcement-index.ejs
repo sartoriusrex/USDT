@@ -8,7 +8,7 @@
   <div class="announcementContainer">
     <div class="dateUpdated">
       <h4>Last Updated:</h4>
-      <p><%= announcement.dateLastUpdate %></p>
+      <p><%= moment(announcement.dateLastUpdate).fromNow() %></p>
     </div>
     <div class="announcementBody">
       <p><em>Author: <%= announcement.author %></em></p>
