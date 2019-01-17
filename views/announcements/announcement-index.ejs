@@ -10,20 +10,21 @@
       <h4>Last Updated:</h4>
       <p><%= announcement.dateLastUpdate %></p>
     </div>
-    <div class="dateCreated">
-      <h4>Created:</h4>
-      <p><%= announcement.dateCreated %></p>
-    </div>
     <div class="announcementBody">
-      <p><%= announcement.author %> - </p>
+      <p><em>Author: <%= announcement.author %></em></p>
+      <br>
       <p><%= announcement.body %></p>
     </div>
-    <a class="updateAnnouncement" href="#">
-      Update
-    </a>
-    <a class="deleteAnnouncement" href="#">
-      Delete
-    </a>
+    <div class="updateAnnouncement" href="#">
+      <a>
+        Update
+      </a>
+    </div>
+    <div class="deleteAnnouncement" href="#">
+      <a>
+        Delete
+      </a>
+    </div>
   </div>
 <% }) %>
 
