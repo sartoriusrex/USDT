@@ -54,7 +54,9 @@ router.get('/announcements/:id/edit', (req,res) => {
 });
 
 // Update Page for Announcements
-
+// router.post('/announcements/:id', (req,res) => {
+//   Announcement.findByIdAndUpdate(req.params.id, {$set: {dateCreated: }})
+// });
 
 
 // Delete Route for Announcements
