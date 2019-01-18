@@ -26,13 +26,9 @@ router.get('/announcements/new', (req,res) => {
 
 router.post('/announcements', (req,res) => {
   var author = req.body.author,
-      dateCreated = req.body.dateCreated,
-      dateLastUpdate = req.body.dateLastUpdate,
       body = req.body.body;
   var newAnnouncement = {
     author: author,
-    dateCreated: dateCreated,
-    dateLastUpdate: dateLastUpdate,
     body: body
   };
   Announcement.create(newAnnouncement, (err, aNewAnnouncement) => {
