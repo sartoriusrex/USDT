@@ -81,7 +81,7 @@ textarea,
 select {
   border: none;
   text-indent: 5px;
-  background-color: hsl(43, 13%, 90%);
+  background-color: hsl(40, 23%, 97%);
 }
 
 input:focus {
@@ -567,7 +567,7 @@ h1 {
 }
 
 .backBtn {
-  background-color: hsl(43, 13%, 90%);
+  background-color: hsl(40, 23%, 97%);
   color: hsl(40, 13%, 23%);
 }
 
@@ -587,11 +587,24 @@ h1 {
   font-size: 16px;
 }
 
+input,
+select,
+textarea,
 input::placeholder,
 textarea::placeholder,
 input[type="date"] {
   color: hsl(41, 9%, 35%);
   font-size: 14px;
+}
+
+textarea,
+textarea::placeholder {
+  padding: 3px;
+  line-height: 1.5
+}
+
+label {
+  margin-bottom: 3px;
 }
 
 
@@ -647,6 +660,7 @@ footer {
 table {
   width: 90%;
   border: 2px solid hsl(360, 92%, 20%);
+  background-color: hsl(40, 23%, 97%);
 }
 
 /* =============================================== */
@@ -656,6 +670,18 @@ table {
 
 .allAnnouncements h2 {
   padding-bottom: 20px;
+}
+
+#createAnnouncement {
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(81, 78%, 21%);
+  color: hsl(40, 23%, 97%);
+  border-radius: 4px;
+  box-shadow: 0 2px 2px hsl(39, 11%, 69%);
 }
 
 .announcementContainer {

@@ -3,8 +3,13 @@
 <section class="allAnnouncements">
 
 <h2>All Announcements</h2>
+<a href="/announcements/new" id="createAnnouncement">
+  <div>
+      <i class="fas fa-plus"></i> Create Announcement
+  </div>
+</a>
 
-<% announcement.forEach(function(announcement){ %>
+<% announcement.slice().reverse().forEach(function(announcement){ %>
   <div class="announcementContainer">
     <div class="dateUpdated">
       <h4>Last Updated:</h4>
@@ -15,7 +20,7 @@
       <br>
       <p><%= announcement.body %></p>
     </div>
-    <a class="updateAnnouncement" href="#">
+    <a class="updateAnnouncement" href="/announcements/<%=announcement._id%>/edit">
       <div>
       Update
       </div>

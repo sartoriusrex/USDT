@@ -19,10 +19,10 @@
     <% report.forEach(function(report){ %>
       <tr class="reportsTableRow">
         <td class="overview">
-          <%=report.dateCreated%>
+          <%=moment(report.dateCreated).format('YYYY-DD-MM')%>
         </td>
         <td class="overview">
-          <%=report.incidentDate%>
+          <%=moment(report.incidentDate).format('YYYY-DD-MM')%>
         </td>
         <td class="overview">
           <%=report.author%>

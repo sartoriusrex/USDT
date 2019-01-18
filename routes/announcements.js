@@ -45,10 +45,24 @@ router.post('/announcements', (req,res) => {
   });
 });
 
-//Show Page for Announcements
+//Edit Page for Announcements
 
-router.get('/announcements/:id', (req,res) => {
-  res.send('show page for an announcement');
+router.get('/announcements/:id/edit', (req,res) => {
+  Announcement.findById(req.params.id, (err, foundAnnouncement) => {
+    if (err || !foundAnnouncement) {
+      console.log(err);
+    } else {
+      res.render('announcements/announcement-edit', {announcement: foundAnnouncement});
+    }
+  });
 });
+
+// Update Page for Announcements
+
+
+
+// Delete Route for Announcements
+
+
 
 module.exports = router;
