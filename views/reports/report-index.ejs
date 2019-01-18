@@ -6,14 +6,13 @@
 
 <table>
   <thead>
-    <tr class="reportsTableRow">
-      <th class="overview">Date Created</th>
-      <th class="overview">Date of Incident</th>
-      <th class="overview">Submitted By</th>
-      <th class="overview">Incident Location</th>
-      <th class="overview">Incident Type</th>
-      <th class="overview">Show Report</th>
-    </tr>
+    <th class="overview">Date Created</th>
+    <th class="overview">Incident Date</th>
+    <th class="overview">Submitted By</th>
+    <th class="overview">Details</th>
+    <th class="overview">Incident Location</th>
+    <th class="overview">Incident Type</th>
+    <th class="overview">More Details</th>
   </thead>
   <tbody>
     <% report.forEach(function(report){ %>
@@ -26,6 +25,9 @@
         </td>
         <td class="overview">
           <%=report.author%>
+        </td>
+        <td class="overview">
+          <%=report.incidentDetails%>
         </td>
         <td class="overview">
           <%=report.incidentLocation%>
@@ -41,8 +43,8 @@
   </tbody>
 </table>
 
-<div class="homeBtn">
-  <a href="/">Home</a>
+<div class="formBtn btn backBtn">
+  <a href="/">Go Back</a>
 </div>
 
 </section>

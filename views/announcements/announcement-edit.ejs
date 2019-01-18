@@ -5,7 +5,7 @@
 <h2>Edit Announcement ID: <%=announcement._id%></h2>
 
 <div class="formdiv">
-  <form class="newForm" action="/announcements" method="POST">
+  <form class="newForm" action="/announcements/<%=announcement._id%>_method=PUT" method="POST">
     <hr>
     <div class="formSection">
       <div class="formSectionName">
@@ -14,8 +14,8 @@
       </div>
       <div class="formDataArea gridTemplateTwoRow">
         <div class="formInputDiv gridArea2124">
-          <label for="body">Previous Announcement.</label>
-          <textarea required readonly name="body" id="body" maxlength="500"><%=announcement.body%></textarea>
+          <label for="previousBody">Previous Announcement.</label>
+          <textarea required readonly name="previousBody" id="previousBody" maxlength="500"><%=announcement.body%></textarea>
         </div>
       </div>
     </div>
@@ -29,8 +29,8 @@
       </div>
       <div class="formDataArea gridTemplateTwoRow">
         <div class="formInputDiv gridArea2124">
-          <label for="body-append">Append to your Announcement here.</label>
-          <textarea required name="body-append" id="body-append" maxlength="500" placeholder="To all those affected by this crisis, please accept my sincere apology. I attempted to announce that the Incoming Missle Alert affecting Hawaii and surrounding islands is a false alarm, but I forgot the password to my Twitter Account."></textarea>
+          <label for="appendToBody">Append to your Announcement here.</label>
+          <textarea required name="appendToBody" id="appendToBody" maxlength="500" placeholder="To all those affected by this crisis, please accept my sincere apology. I attempted to announce that the Incoming Missle Alert affecting Hawaii and surrounding islands is a false alarm, but I forgot the password to my Twitter Account."></textarea>
         </div>
       </div>
     </div>

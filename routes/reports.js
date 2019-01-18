@@ -39,7 +39,6 @@ router.post('/reports', (req,res) => {
       incidentLocation = req.body.incidentLocation,
       incidentDate = req.body.incidentDate,
       incidentDetails = req.body.incidentDetails,
-      dateCreated = Date.now,
       author = req.body.createdByUser;
   var newReport = {
     first: first,
@@ -58,7 +57,6 @@ router.post('/reports', (req,res) => {
     incidentLocation: incidentLocation,
     incidentDate: incidentDate,
     incidentDetails: incidentDetails,
-    dateCreated: dateCreated,
     author: author
   };
   Report.create(newReport, (err, aNewReport) => {
