@@ -2,8 +2,7 @@ const mongoose      = require('mongoose'),
       Schema        = mongoose.Schema;
 
 const newsSchema = new Schema ({
-  dateCreated: Date,
-  datePosted: Date,
+  dateCreated: { type: Date, default: Date.now},
   title: String,
   subheading: String,
   author: String,

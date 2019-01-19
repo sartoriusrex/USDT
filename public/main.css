@@ -363,12 +363,12 @@ h1 {
   padding: 20px 20px 30px;
 }
 
-.announcediv p {
+.announceDate {
   padding: 0 0 20px;
   color: hsl(15, 86%, 30%);
 }
 
-.announcediv h4 {
+.announceText {
   line-height: 20px;
 }
 

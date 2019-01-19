@@ -68,7 +68,8 @@ router.put('/announcements/:id', (req,res) => {
   var updatedBody = req.body.previousBody + " Updated: " + timeNow + " : " + req.body.appendToBody;
 
   var updatedAnnouncement = {
-    body: updatedBody
+    body: updatedBody,
+    dateLastUpdate: today,
   };
 
   Announcement.findByIdAndUpdate(req.params.id, updatedAnnouncement, (err,foundAnnouncement) => {

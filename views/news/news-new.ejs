@@ -1,0 +1,51 @@
+<% include ../partials/header %>
+
+<section>
+
+<h2>Create a new News Article</h2>
+
+<div class="formdiv">
+  <form class="newForm" action="/announcements/<%=announcement._id%>?_method=PUT" method="POST">
+    <hr>
+    <div class="formSection">
+      <div class="formSectionName">
+        <h3>Announcement</h3>
+        <p>You cannot change previous announcements, but you can append more information, including edits.</p>
+      </div>
+      <div class="formDataArea gridTemplateTwoRow">
+        <div class="formInputDiv gridArea2124">
+          <label for="previousBody">Previous Announcement.</label>
+          <textarea required readonly name="previousBody" id="previousBody" maxlength="500"><%=announcement.body%>&#010;</textarea>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="formSection">
+      <div class="formSectionName">
+        <h3>Announcement Update</h3>
+        <p>Update your Announcement here</p>
+      </div>
+      <div class="formDataArea gridTemplateTwoRow">
+        <div class="formInputDiv gridArea2124">
+          <label for="appendToBody">Append to your Announcement here.</label>
+          <textarea required name="appendToBody" id="appendToBody" maxlength="500" placeholder="To all those affected by this crisis, please accept my sincere apology. I attempted to announce that the Incoming Missle Alert affecting Hawaii and surrounding islands is a false alarm, but I forgot the password to my Twitter Account."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="formBtns">
+      <div class="formBtn btn backBtn">
+        <a href="/announcements">Go Back</a>
+      </div>
+      <div class="formBtn btn submitBtn">
+        <input type="submit"></input>
+      </div>
+    </div>
+  </form>
+</div>
+
+</section>
+
+<% include ../partials/footer %>
