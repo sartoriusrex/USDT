@@ -16,19 +16,6 @@ router.get('/announcements', (req,res) => {
   });
 });
 
-// Show Page - Announcements
-
-router.get('/announcements:id', (req,res) => {
-  Announcement.findById(req.params.id, (req,res) => {
-    if(err) {
-      console.log(err);
-      res.redirect('back');
-    } else {
-      res.render('announcements/announcement-show');
-    }
-  });
-});
-
 //New Announcement Form Page
 
 router.get('/announcements/new', (req,res) => {
@@ -68,7 +55,7 @@ router.get('/announcements/:id/edit', (req,res) => {
 
 // Update Page for Announcements
 
-router.post('/announcements/:id', (req,res) => {
+router.put('/announcements/:id', (req,res) => {
   var today = new Date(),
       dd    = today.getDate(),
       mm    = today.getMonth() + 1,
@@ -76,7 +63,7 @@ router.post('/announcements/:id', (req,res) => {
       hh    = today.getHours(),
       min   = today.getMinutes();
 
-  var timeNow   = yy + " - " + mm + " - " + dd + " at: " + hh + ":" + min;
+  var timeNow = yy + " - " + mm + " - " + dd + " at: " + hh + ":" + min;
 
   var updatedBody = req.body.previousBody + " Updated: " + timeNow + " : " + req.body.appendToBody;
 
