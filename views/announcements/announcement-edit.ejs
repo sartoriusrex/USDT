@@ -5,7 +5,7 @@
 <h2>Edit Announcement ID: <%=announcement._id%></h2>
 
 <div class="formdiv">
-  <form class="newForm" action="/announcements/<%=announcement._id%>_method=PUT" method="POST">
+  <form class="newForm" action="/announcements/<%=announcement._id%>?_method=PUT" method="POST">
     <hr>
     <div class="formSection">
       <div class="formSectionName">
@@ -15,7 +15,7 @@
       <div class="formDataArea gridTemplateTwoRow">
         <div class="formInputDiv gridArea2124">
           <label for="previousBody">Previous Announcement.</label>
-          <textarea required readonly name="previousBody" id="previousBody" maxlength="500"><%=announcement.body%></textarea>
+          <textarea required readonly name="previousBody" id="previousBody" maxlength="500"><%=announcement.body%>&#010;</textarea>
         </div>
       </div>
     </div>

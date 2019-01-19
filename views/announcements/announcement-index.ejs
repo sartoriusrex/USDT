@@ -16,20 +16,22 @@
       <p><%= moment(announcement.dateLastUpdate).fromNow() %></p>
     </div>
     <div class="announcementBody">
-      <p><em>Author: <%= announcement.author %></em></p>
-      <br>
-      <p><%= announcement.body %></p>
+      <a href="/announcements/:id">
+        <p><em>Author: <%= announcement.author %></em></p>
+        <br>
+        <p><%= announcement.body %></p>
+      </a>
     </div>
     <a class="updateAnnouncement" href="/announcements/<%=announcement._id%>/edit">
       <div>
       Update
       </div>
     </a>
-    <a class="deleteAnnouncement" href="#">
-      <div>
-      Delete
-      </div>
-    </a>
+    <div class="deleteAnnouncement">
+      <form action="/announcements/<%= announcement._id %>?_method=DELETE" method="POST" class="delete-form">
+        <button>Delete</button>
+      </form>
+    </div>
   </div>
 <% }) %>
 
