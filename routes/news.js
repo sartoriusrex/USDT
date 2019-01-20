@@ -4,20 +4,23 @@ const   express     = require('express'),
 
 // Index Page - News
 
-router.get('/news', (req,res) => {
-  res.send("index page for news");
+router.get('/news', ( req,res ) => {
+  News.find( {} , ( err, allArticles ) => {
+    if(err) {
+      console.log( err );
+      res.redirect( 'back' );
+    } else {
+    res.render( "news/news-index", { news: allArticles });
+    }
+  });
+  
 });
 
-//Show Page - News
-
-router.get('/news/:id', (req,res) => {
-  res.send("news show page");
-});
 
 //New Article Form - News
 
 router.get('/news/new', (req,res) => {
-  res.send("This is a page for a new news article");
+  res.render("news/news-new");
 });
 
 // Create Article Page - News
@@ -29,6 +32,14 @@ router.get('/news/new', (req,res) => {
 
 
 // Update News Page - News
+
+
+
+//Show Page - News
+
+router.get('/news/:id', (req,res) => {
+  res.send("news show page");
+});
 
 
 

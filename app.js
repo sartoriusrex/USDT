@@ -10,6 +10,37 @@ const express         = require("express"),
       News            = require('./models/news'),
       Comment         = require('./models/comments');
 
+// data = [
+//   {
+//     title: "Test 1",
+//     subtitle: "Subtitle 1",
+//     author: "Groundhog",
+//     coverImage: "/photos/amflag-closeup.jpg",
+//     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt a nibh at ultrices. Phasellus finibus mi porttitor volutpat placerat. Ut congue lacus enim, ac egestas tortor commodo non. Quisque maximus, nibh cursus rutrum pellentesque, libero ante interdum metus, et malesuada arcu felis id turpis. Cras a lacus nec enim placerat posuere vel ut ligula. Proin a ante eros. Vestibulum quis ligula id magna lobortis mattis. Aenean eleifend nisi at magna interdum, vitae venenatis magna elementum. Praesent lectus est, viverra tempus finibus non, dapibus lobortis metus. Donec ornare aliquam pulvinar. Pellentesque nisi mauris, consectetur a sagittis at, ornare vel neque. Integer tincidunt vel purus at placerat."
+//   },
+//   {
+//     title: "Test 2",
+//     subtitle: "Subtitle 2",
+//     author: "Groundhog",
+//     coverImage: "/photos/amflag-gray.jpg",
+//     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt a nibh at ultrices. Phasellus finibus mi porttitor volutpat placerat. Ut congue lacus enim, ac egestas tortor commodo non. Quisque maximus, nibh cursus rutrum pellentesque, libero ante interdum metus, et malesuada arcu felis id turpis. Cras a lacus nec enim placerat posuere vel ut ligula. Proin a ante eros. Vestibulum quis ligula id magna lobortis mattis. Aenean eleifend nisi at magna interdum, vitae venenatis magna elementum. Praesent lectus est, viverra tempus finibus non, dapibus lobortis metus. Donec ornare aliquam pulvinar. Pellentesque nisi mauris, consectetur a sagittis at, ornare vel neque. Integer tincidunt vel purus at placerat."
+//   },
+//   {
+//     title: "Test 3",
+//     subtitle: "Subtitle 3",
+//     author: "Groundhog",
+//     coverImage: "/photos/amflag-middle.jpg",
+//     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt a nibh at ultrices. Phasellus finibus mi porttitor volutpat placerat. Ut congue lacus enim, ac egestas tortor commodo non. Quisque maximus, nibh cursus rutrum pellentesque, libero ante interdum metus, et malesuada arcu felis id turpis. Cras a lacus nec enim placerat posuere vel ut ligula. Proin a ante eros. Vestibulum quis ligula id magna lobortis mattis. Aenean eleifend nisi at magna interdum, vitae venenatis magna elementum. Praesent lectus est, viverra tempus finibus non, dapibus lobortis metus. Donec ornare aliquam pulvinar. Pellentesque nisi mauris, consectetur a sagittis at, ornare vel neque. Integer tincidunt vel purus at placerat."
+//   },
+// ];
+
+// News.create(data, (err, createdArticle) => {
+//   if(err) {
+//     console.log(err);
+//   } else {
+//     console.log("success!");
+//   }
+// });
 
 // ========================================
 

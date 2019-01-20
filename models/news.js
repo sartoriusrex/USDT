@@ -4,9 +4,10 @@ const mongoose      = require('mongoose'),
 const newsSchema = new Schema ({
   dateCreated: { type: Date, default: Date.now},
   title: String,
-  subheading: String,
+  subtitle: String,
   author: String,
   body: String,
+  coverImage: String,
   comments: {}
 });
 
