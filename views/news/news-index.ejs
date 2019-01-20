@@ -7,15 +7,18 @@
 <% news.slice().reverse().forEach( function(news){ %>
 
 <div class="articleContainer">
-  <div class="textContainer">
-    <h3><%=news.title%></h3>
-    <h4><%=news.subtitle%></h4>
-    <p><%=news.author%></p>
-    <p><%=moment(news.dateCreated).format('YYYY-MM-DD')%></p>
-  </div>
+
   <div class="coverImageContainer">
     <img src="./<%=news.coverImage%>" alt="">
   </div>
+
+  <div class="textContainer">
+    <h3><u><%=news.title%></u></h3>
+    <h4><%=news.subtitle%></h4>
+    <p>By <em><%=news.author%></em></p>
+    <p><%=moment(news.dateCreated).format('YYYY-MM-DD')%></p>
+  </div>
+
 </div>
 
 <% }) %>
