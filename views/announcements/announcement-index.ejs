@@ -12,7 +12,7 @@
 <% announcement.slice().reverse().forEach(function(announcement){ %>
   <div class="announcementContainer">
     <div class="dateUpdated">
-      <h4>Last Updated:</h4>
+      <h4>Updated:</h4>
       <p><%= moment(announcement.dateLastUpdate).fromNow() %></p>
     </div>
     <div class="announcementBody">
@@ -22,12 +22,12 @@
     </div>
     <a class="updateAnnouncement" href="/announcements/<%=announcement._id%>/edit">
       <div>
-      Update
+          <i class="fas fa-edit"></i> Update
       </div>
     </a>
     <div class="deleteAnnouncement">
       <form action="/announcements/<%= announcement._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
+        <button><i class="fas fa-trash-alt"></i> Delete</button>
       </form>
     </div>
   </div>

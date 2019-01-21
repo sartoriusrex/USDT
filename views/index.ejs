@@ -23,19 +23,18 @@
       <i class="fas fa-scroll"></i>
       <h2>Announcements</h2>
     </div>
+
     <div class="announcementsContainer">
-      <div class="announcediv">
-        <p class="announceDate">Date</p>
-        <p class="announceText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis ab at nostrum omnis provident, aspernatur minima nisi, ipsum rerum eveniet cumque facere fugit numquam, maxime laboriosam! Numquam, laboriosam facilis. Reprehenderit.</p>
-      </div>
-      <div class="announcediv">
-        <p class="announceDate">Date</p>
-        <p class="announceText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis ab at nostrum omnis provident, aspernatur minima nisi, ipsum rerum eveniet cumque facere fugit numquam, maxime laboriosam! Numquam, laboriosam facilis. Reprehenderit.</p>
-      </div>
-      <div class="announcediv">
-        <p class="announceDate">Date</p>
-        <p class="announceText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis ab at nostrum omnis provident, aspernatur minima nisi, ipsum rerum eveniet cumque facere fugit numquam, maxime laboriosam! Numquam, laboriosam facilis. Reprehenderit.</p>
-      </div>
+
+      <% announcement.slice(3).reverse().forEach( function (announcement){ %>
+
+        <div class="announcediv">
+          <p class="announceDate"><%=moment(announcement.dateLastUpdate).format('YYYY-MM-DD')%></p>
+          <p class="announceText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis ab at nostrum omnis provident, aspernatur minima nisi, ipsum rerum eveniet cumque facere fugit numquam, maxime laboriosam! Numquam, laboriosam facilis. Reprehenderit.</p>
+        </div>
+
+      <% }) %>
+
     </div>
     <div>
       <a href="/announcements" class="readMoreBtn btn moreAnnouncements">Read More Announcements</a>

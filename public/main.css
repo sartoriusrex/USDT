@@ -865,6 +865,7 @@ u {
 .coverImageContainer img {
   max-height: 100%;
   max-width: 100%;
+  box-shadow: 0 0 20px hsl(41, 8%, 61%);
 }
 
 .coverImageContainer {
