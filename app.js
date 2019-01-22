@@ -114,7 +114,13 @@ app.get('/', (req,res) => {
     if( err ) {
       console.log( err );
     } else {
-      res.render('index', { announcement: allAnnouncements });
+      News.find({}, ( err, allNews ) => {
+        if ( err ) {
+          console.log ( err );
+        } else {
+          res.render('index', { announcement: allAnnouncements, news: allNews });
+        }
+      });
     }
   });
 });
