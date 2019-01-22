@@ -110,7 +110,13 @@ app.use(commentRoutes);
   //Home
 
 app.get('/', (req,res) => {
-  res.render('index');
+  Announcement.find({}, ( err, allAnnouncements) => {
+    if( err ) {
+      console.log( err );
+    } else {
+      res.render('index', { announcement: allAnnouncements });
+    }
+  });
 });
 
 // =======================================

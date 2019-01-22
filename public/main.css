@@ -370,10 +370,12 @@ h1 {
 .announceDate {
   padding: 0 0 20px;
   color: hsl(15, 86%, 30%);
+  font-weight: bold;
 }
 
 .announceText {
   line-height: 20px;
+  text-align: justify;
 }
 
 /* ------------------------------------------ */

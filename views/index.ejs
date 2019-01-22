@@ -26,11 +26,11 @@
 
     <div class="announcementsContainer">
 
-      <% announcement.slice(3).reverse().forEach( function (announcement){ %>
+      <% announcement.slice(-3).reverse().forEach( function (announcement){ %>
 
         <div class="announcediv">
-          <p class="announceDate"><%=moment(announcement.dateLastUpdate).format('YYYY-MM-DD')%></p>
-          <p class="announceText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis ab at nostrum omnis provident, aspernatur minima nisi, ipsum rerum eveniet cumque facere fugit numquam, maxime laboriosam! Numquam, laboriosam facilis. Reprehenderit.</p>
+          <p class="announceDate"><%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY, h:mm a")%></p>
+          <p class="announceText"><%=announcement.body.substring(0,200)%> . . .</p>
         </div>
 
       <% }) %>
