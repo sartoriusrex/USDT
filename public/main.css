@@ -391,11 +391,11 @@ h1 {
 /* NEWS STYLE */
 
 .newsLink{
-  max-width: 33%;
+  max-width: 40%;
   padding: 10px;
   flex: 1 1 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
