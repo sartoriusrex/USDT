@@ -131,6 +131,12 @@ input[value] {
   flex-direction: row;
 }
 
+.usdtLogo {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
 .logotext {
   color: hsl(40, 23%, 97%);
   padding: 10px;
@@ -366,7 +372,7 @@ h1 {
   flex-flow: row wrap;
   width: 100%;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px 0;
 }
 
@@ -377,7 +383,7 @@ h1 {
 }
 
 .announceDate {
-  padding: 0 0 20px;
+  padding-bottom: 5px;
   color: hsl(15, 86%, 30%);
   font-weight: bold;
 }
@@ -390,7 +396,7 @@ h1 {
 
 /* NEWS STYLE */
 
-.newsLink{
+.newsLinkRow{
   max-width: 40%;
   padding: 10px;
   flex: 1 1 100%;
@@ -399,19 +405,34 @@ h1 {
   justify-content: space-between;
 }
 
-.newsPhoto {
+.newsLinkColumn{
+  max-width: 40%;
+  padding: 10px;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsPhotoRow {
   width: 50%;
   padding-right: 2%;
 }
 
+.newsPhotoColumn {
+  width: 90%;
+  padding-bottom: 2%;
+}
+
 .newsText {
-  width: 75%;
+  width: 90%;
   text-align: justify;
 }
 
 .newsText h4,
 .newsText p {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .newsDate {
