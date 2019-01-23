@@ -259,12 +259,17 @@ h1 {
   overflow: hidden;
 }
 
-.sliderContainer {
+.sliderContainer,
+.sliderLI {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 90%;
   height: 350px;
+}
+
+.sliderLI {
+  width: 100%;
 }
 
 .sliderText, .sliderPhoto {
@@ -282,24 +287,25 @@ h1 {
 
 .sliderPhotoLink {
   max-width: 50%;
+  max-height: 100%;
 }
 
+
 .sliderPhoto {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .sliderText h2,
 .sliderText p {
-  padding: 0 20px;
   width: inherit;
 }
 
 .sliderText h2 {
   color: hsl(360, 92%, 20%);
-  padding-bottom: 20px;
 }
 
-.sliderText span {
+.sliderDate {
   font-weight: bold;
 }
 

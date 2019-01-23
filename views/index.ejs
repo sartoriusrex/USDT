@@ -2,12 +2,23 @@
 
   <section class='slider'>
     <div class="sliderContainer">
-      <div class="sliderText">
-        <a href='#'><h2>This is the Title for an Article in the Slider</h2></a>
-        <p><span>Date: 05/18/2018 </span>This is the Paragraph for an Article in the Slider Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis placeat impedit consequuntur obcaecati sit quisquam iure sunt deserunt exercitationem illo incidunt, beatae aliquam dignissimos delectus esse.</p>
-        <a class="sliderArticleBtn btn" href='#'>Read Full Text</a>
-      </div>
-      <a href="#" class ='sliderPhotoLink'><img class='sliderPhoto' src="/photos/science-truth.jpg" alt="science truth"></a>
+      <ul>
+
+        <% news.slice(-3).reverse().forEach( ( news ) => { %> 
+          <li class="sliderLI">
+            <div class="sliderText">
+              <a href='#'><h2><%=news.title%></h2></a>
+              <p class="sliderDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
+              <p><%=news.body.substring(0,250)%>...</p>
+              <a class="sliderArticleBtn btn" href='#'>Read Full Text</a>
+            </div>
+            <a href="#" class ='sliderPhotoLink'>
+              <img class='sliderPhoto' src="<%=news.coverImage%>" alt="science truth">
+            </a>
+          </li>
+        <% }); %>
+
+      </ul>
     </div>
     <div class="sliderIndicator">
         <a href="#" class="sliderArticleInd, article1"><div class="square"></div></a>
