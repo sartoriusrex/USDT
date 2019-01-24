@@ -1047,39 +1047,45 @@ u {
 
 
 .newsShowContainer {
-  width: 90%;
+  width: 70%;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50vh 50vh;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   grid-template-areas: 
     "image title" "body body";
 }
 
 .newsShowImgContainer {
-  width: 50%;
+  width: 100%;
   padding-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: 20px; */
+  margin-right: 10px;
   grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .newsShowContainer > div > img{
   max-height: 100%;
-  max-width: 100%;
+  max-width: 90%;
+  object-fit: scale-down;
 }
 
 .titleContainer {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 20px;
   grid-area: title;
 }
 
-.newsShowText * {
+.titleContainer * {
   padding-bottom: 10px;
 }
 
 .newsShowBody {
+  margin: auto 20px;
+  width: 100%;
   text-indent: 15px;
   grid-area: body;
 }
