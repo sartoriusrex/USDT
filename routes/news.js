@@ -38,7 +38,14 @@ router.get('/news/new', (req,res) => {
 //Show Page - News
 
 router.get('/news/:id', (req,res) => {
-  res.send("news show page");
+  News.findById(req.params.id, ( err, foundArticle) => {
+    if ( err || !foundArticle) {
+      console.log(err);
+      res.redirect("back");
+    } else {
+      res.render("news/news-show", { news: foundArticle });
+    }
+  });
 });
 
 

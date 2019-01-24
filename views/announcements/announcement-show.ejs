@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+
+<section>
+  <div>
+    <%=announcement.author%>
+    <%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY")%>
+    <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%>
+  </div>
+  <div>
+    <%=announcement.body%>
+  </div>
+</section>
+
+<% include ../partials/footer %>

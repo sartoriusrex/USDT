@@ -22,7 +22,7 @@ router.get('/announcements/new', (req,res) => {
   res.render('announcements/announcement-new');
 });
 
-//New Announcement Post Page
+//Create Announcement Post Page
 
 router.post('/announcements', (req,res) => {
   var author = req.body.author,
@@ -37,6 +37,19 @@ router.post('/announcements', (req,res) => {
       res.redirect('back');
     } else {
       res.redirect('/announcements');
+    }
+  });
+});
+
+// Announcment Show Page
+
+router.get('/announcements/:id', ( req, res ) => {
+  Announcement.findById(req.params.id, ( err, foundAnnouncement ) => {
+    if ( err || !foundAnnouncement ) {
+      console.log( err );
+      res.redirect("back");
+    } else {
+      res.render("announcements/announcement-show", { announcement: foundAnnouncement });
     }
   });
 });
@@ -73,7 +86,7 @@ router.put('/announcements/:id', (req,res) => {
   };
 
   Announcement.findByIdAndUpdate(req.params.id, updatedAnnouncement, (err,foundAnnouncement) => {
-    if(err) {
+    if( err || !foundAnnouncement ) {
       console.log(err);
       res.redirect('back');
     } else {
@@ -82,12 +95,11 @@ router.put('/announcements/:id', (req,res) => {
   });
 });
 
-
 // Delete Route for Announcements
 
 router.delete('/announcements/:id', (req,res) => {
   Announcement.findByIdAndDelete(req.params.id, (err) => {
-    if(err) {
+    if( err ) {
       console.log(err);
       res.redirect('back');
     } else {

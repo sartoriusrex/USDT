@@ -15,11 +15,11 @@
       <h4>Updated:</h4>
       <p><%= moment(announcement.dateLastUpdate).fromNow() %></p>
     </div>
-    <div class="announcementBody">
+    <a class="announcementBody" href="/announcements/<%=announcement._id%>">
       <p><em>Author: <%= announcement.author %></em></p>
       <br>
       <p><%= announcement.body %></p>
-    </div>
+    </a>
     <a class="updateAnnouncement" href="/announcements/<%=announcement._id%>/edit">
       <div>
           <i class="fas fa-edit"></i> Update
