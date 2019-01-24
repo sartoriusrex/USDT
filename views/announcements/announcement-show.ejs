@@ -1,14 +1,34 @@
 <% include ../partials/header %>
 
-<section>
+<section class="announcementShowContainer">
+
+  <h2>Announcement from <%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY, h:mm a")%></h2>
+
   <div>
-    <h2>Announcement <%=announcement.id%></h2>
-    <p>Created by <%=announcement.author%> on <%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY")%></p>
-    <p>Last Updated <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%></p>
+    <p>Created by <em><%=announcement.author%></em></p>
+    <p><strong>Last Updated <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%></strong></p>
   </div>
+
   <div>
-    <p><%=announcement.body%></p>
+    <p ><%=announcement.body%></p>
   </div>
+
+  <div class="announceShowNavBtns">
+    <a class="readMoreBtn" href="/announcements">Go Back</a>
+    <div class="announceShowEdits">
+      <a class="updateAnnouncementShow" href="/announcements/<%=announcement._id%>/edit">
+        <div>
+            <i class="fas fa-edit"></i> Update
+        </div>
+      </a>
+      <div class="deleteAnnouncementShow">
+        <form action="/announcements/<%= announcement._id %>?_method=DELETE" method="POST">
+          <button><i class="fas fa-trash-alt"></i> Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <% include ../partials/footer %>

@@ -6,7 +6,7 @@
 
 <% news.slice().reverse().forEach( function(news){ %>
 
-<div class="articleContainer">
+<a class="articleContainer" href="news/<%=news._id%>">
 
   <div class="coverImageContainer">
     <img src="./<%=news.coverImage%>" alt="">
@@ -19,7 +19,7 @@
     <p><%=moment(news.dateCreated).format('ddd, MMM Do YYY, h:mm a')%></p>
   </div>
 
-</div>
+</a>
 
 <% }) %>
 

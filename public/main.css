@@ -552,6 +552,51 @@ h1 {
 
 
 /* =================================================== */
+/* =================================================== */
+/* =================================================== */
+
+
+/* FOOTER STYLE */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(360, 92%, 20%);
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.footerLinks div ul li {
+  padding: 3px 0;
+  margin: 2px 0;
+}
+
+.footerLinks div ul li a,
+.madeby,
+.madeby a {
+  color: hsl(40, 23%, 97%);
+}
+
+/* Attribution for Social Media Icons */
+.madeby {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+
 
 
 /* New Report Form Styling */
@@ -687,47 +732,6 @@ label {
   margin-bottom: 3px;
 }
 
-
-/* =================================================== */
-
-
-/* FOOTER STYLE */
-
-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: hsl(360, 92%, 20%);
-}
-
-.footerLinks {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  padding: 20px 0;
-  width: 100%;
-}
-
-.footerLinks div ul li {
-  padding: 3px 0;
-  margin: 2px 0;
-}
-
-.footerLinks div ul li a,
-.madeby,
-.madeby a {
-  color: hsl(40, 23%, 97%);
-}
-
-/* Attribution for Social Media Icons */
-.madeby {
-  width: 100%;
-  padding: 10px 20px;
-}
-
-
 /* =============================================== */
 
 
@@ -800,7 +804,10 @@ td a {
   border-radius: 4px;
 }
 
-/* =============================================== */
+
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
 
 
 /* ANNOUNCEMENTS INDEX STYLING */
@@ -882,14 +889,93 @@ td a {
   border-radius: 0 15px 15px 0;
 }
 
+.deleteAnnouncement form,
 .deleteAnnouncement form button {
   background-color: hsl(360, 71%, 66%);
   color: hsl(40, 13%, 23%);
   font-size: 16px;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 15px 15px 0;
 }
 
 
 /* ========================================== */
+
+
+/* Announcement Show Style */
+
+.announcementShowContainer > div:not(.announceShowNavBtns) {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.announcementShowContainer div p {
+  padding-bottom: 20px;
+}
+
+.announceShowNavBtns {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.announceShowEdits {
+  display: flex;
+  max-width: 50%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%
+}
+
+.updateAnnouncementShow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(48, 94%, 68%);
+  max-width: 50%;
+  flex: 0 1 100%;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.updateAnnouncementShow div {
+  background-color: hsl(48, 94%, 68%);
+  color: hsl(40, 13%, 23%);
+}
+
+.deleteAnnouncementShow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(360, 71%, 66%);
+  max-width: 50%;
+  flex: 0 1 100%;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.deleteAnnouncementShow form,
+.deleteAnnouncementShow form button {
+  background-color: hsl(360, 71%, 66%);
+  color: hsl(40, 13%, 23%);
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 15px 15px 0;
+}
+/* =================================================== */
+/* =================================================== */
+/* =================================================== */
+
 
 
 /* News Index Page */
@@ -952,3 +1038,11 @@ u {
   margin-right: 10px;
   border-radius: 4px 0 0 4px;
 }
+
+
+/* =================================================== */
+
+
+/* News Show Style */
+
+
