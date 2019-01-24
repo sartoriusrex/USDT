@@ -43,10 +43,10 @@
 
       <% announcement.slice(-3).reverse().forEach( function (announcement){ %>
 
-        <div class="announcediv">
+        <a class="announcediv" href="/announcements/<%=announcement.id%>">
           <p class="announceDate"><%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY, h:mm a")%></p>
           <p class="announceText"><%=announcement.body.substring(0,200)%>...</p>
-        </div>
+        </a>
 
       <% }) %>
 

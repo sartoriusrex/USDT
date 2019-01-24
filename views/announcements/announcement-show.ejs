@@ -2,12 +2,12 @@
 
 <section>
   <div>
-    <%=announcement.author%>
-    <%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY")%>
-    <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%>
+    <h2>Announcement <%=announcement.id%></h2>
+    <p>Created by <%=announcement.author%> on <%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY")%></p>
+    <p>Last Updated <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%></p>
   </div>
   <div>
-    <%=announcement.body%>
+    <p><%=announcement.body%></p>
   </div>
 </section>
 
