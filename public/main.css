@@ -1046,3 +1046,40 @@ u {
 /* News Show Style */
 
 
+.newsShowContainer {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50vh 50vh;
+  grid-template-areas: 
+    "image title" "body body";
+}
+
+.newsShowImgContainer {
+  width: 50%;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-area: image;
+}
+
+.newsShowContainer > div > img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.titleContainer {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  grid-area: title;
+}
+
+.newsShowText * {
+  padding-bottom: 10px;
+}
+
+.newsShowBody {
+  text-indent: 15px;
+  grid-area: body;
+}

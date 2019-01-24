@@ -1,20 +1,24 @@
 <% include ../partials/header %>
 
-<section>
-  <div>
-    <img src="<%=news.coverImage%>" alt="">
-  </div>
-  <div>
-    <div class="titleBar">
-      <h2><%= news.title%></h2>
-      <h3><%=news.subtitle%></h3>
-      <p><%=news.author%></p>
-      <p><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
+<section class="newsShowSection">
+  <div class="newsShowContainer">
+
+    <div class="newsShowImgContainer">
+      <img src="<%=news.coverImage%>" alt="">
     </div>
-    <div>
+
+    <div class="titleContainer">
+      <p><strong><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></strong></p>
+      <h2><%= news.title%></h2>
+      <h4><%=news.subtitle%></h3>
+      <p>By <em></em><%=news.author%></em></p>
+    </div>
+    
+    <div class="newsShowBody">
       <p><%=news.body%></p>
     </div>
   </div>
+  
 </section>
 
 <% include ../partials/footer %>
