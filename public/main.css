@@ -983,26 +983,56 @@ td a {
 .articleContainer {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   width: 90%;
-  height: 150px;
   margin: 5px 5px 20px 5px;
   background-color: hsl(40, 23%, 97%);
   border-radius: 4px;
   box-shadow: 0 2px hsl(39, 11%, 69%);
 }
 
-.textContainer,
+.coverImageContainer {
+  max-width: 30%;
+  max-height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: hsl(41, 8%, 61%);
+  margin-right: 10px;
+  border-radius: 4px 0 0 4px;
+}
+
+.coverImageContainer img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 4px 0 0 4px;
+  object-fit: scale-down;
+}
+
+.textContainer {
+  padding-left: 30px;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* .textContainer,
 .coverImageContainer,
 .textContainer h3,
 .textContainer h4,
 .textContainer p{
   flex: 1 1 100%;
-}
+} */
 
 .textContainer h3,
 .textContainer p{
   padding-bottom: 5px;
+}
+
+.textContainer h3 {
+  padding-top: 20px;
 }
 
 u {
@@ -1012,31 +1042,6 @@ u {
 
 .textContainer h4 {
   padding-bottom: 10px;
-}
-
-.textContainer {
-  padding-right: 30px;
-  max-width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.coverImageContainer img {
-  max-height: 100%;
-  max-width: 100%;
-  box-shadow: 0 0 20px hsl(41, 8%, 61%);
-}
-
-.coverImageContainer {
-  max-width: 30%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: hsl(41, 8%, 61%);
-  margin-right: 10px;
-  border-radius: 4px 0 0 4px;
 }
 
 
