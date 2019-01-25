@@ -131,106 +131,133 @@
   // =====================================================
   // Slideshow display logic;
 
-  var sliderIndex;
-  var myTimer;
 
-  function slideShow( n ) {
-    var i;
-    // Grab Elements and convert Node list to Array
-    var sliderListItems = Array.from(document.getElementsByClassName("sliderLI"));
-    var articleIndicators = Array.from(document.getElementsByClassName("square"));
+  var sliderIndex = 0;
+  slideShow();
 
-    // var sliderListArray = Array.from(sliderListItems);
-    // var articleIndArray = Array.from(articleIndicators);
+  function slideShow() {
+    var sliderListItems = document.getElementsByClassName("sliderLI");
+    var articleIndicators = document.getElementsByClassName("square");
 
-    // Remove visibility and active class from buttons
-  for (i = 0; i < sliderListItems.length; i++) {
-    sliderListItems[i].style.display = "none";
-  }
+    var sliderListArray = Array.from(sliderListItems);
+    var articleIndArray = Array.from(articleIndicators);
 
-  for (i = 0; i < articleIndicators.length; i++) {
-    articleIndicators[i].classList.remove("active");
-    articleIndicators[i].addEventListener("click", currentSlide ( i + 1 ));
-  }
+    sliderListArray.forEach( (li) => {
+      li.style.display = "none";
+    });
+    articleIndArray.forEach( (ind) => {
+      ind.classList.remove("active");
+    });
 
-    // sliderListItems.forEach( (li) => {
-    //   li.style.display = "none";
-    // });
-    // articleIndicators.forEach( (ind, index) => {
-    //   ind.classList.remove("active");
-
-      // Add currentSlide function to article Indicators (red buttons)
-    //   ind.addEventListener("click",currentSlide( index+1 ));
-    // });
-
-    // Set SliderIndex based on var n passed in
-
-    if ( n > sliderListItems.length) {
+    sliderIndex++;
+    if( sliderIndex > sliderListArray.length) {
       sliderIndex = 1;
     }
 
-    if ( n < 1 ) {
-      sliderIndex = sliderListItems.length;
-    }
-
-    // Show buttons and list item based on sliderIndex
-
-    sliderListItems[sliderIndex-1].style.display = "flex";
-    articleIndicators[sliderIndex-1].classList.add("active");
+    sliderListArray[sliderIndex-1].style.display = "flex";
+    articleIndArray[sliderIndex-1].classList.add("active");
+    setTimeout(slideShow, 4000);
   }
+  // var sliderIndex;
+  // var myTimer;
 
-  // -----------------------------------------------------
-  // Next / Previous Logic
+  // function slideShow( n ) {
+  //   var i;
+  //   // Grab Elements and convert Node list to Array
+  //   var sliderListItems = Array.from(document.getElementsByClassName("sliderLI"));
+  //   var articleIndicators = Array.from(document.getElementsByClassName("square"));
 
-  plusSlides = ( n ) => {
-    clearInterval(myTimer);
-    this.slideShow( sliderIndex += n );
-    if ( n = -1 ) {
-      myTimer = setInterval(() => {
-        this.plusSlides( n + 2 );
-      }, 4000);
-    } else {
-      myTimer = setInterval(() => {
-        this.plusSlides( n + 1 );
-      }, 4000);
-    }
-  }
+  //   // var sliderListArray = Array.from(sliderListItems);
+  //   // var articleIndArray = Array.from(articleIndicators);
 
-  // ------------------------------------------------------
-  // Begin Slideshow
+  //   // Remove visibility and active class from buttons
+  // for (i = 0; i < sliderListItems.length; i++) {
+  //   sliderListItems[i].style.display = "none";
+  // }
 
-  mountSlideshow = () => {
-    this.slideShow( sliderIndex );
-    myTimer = setInterval(() => {
-      this.plusSlides(1);
-    }, 4000);
-  }
+  // for (i = 0; i < articleIndicators.length; i++) {
+  //   articleIndicators[i].classList.remove("active");
+  //   articleIndicators[i].addEventListener("click", currentSlide ( i + 1 ));
+  // }
 
-  // -----------------------------------------------------
-  // Navigate to any slide based on red nav button
+  //   // sliderListItems.forEach( (li) => {
+  //   //   li.style.display = "none";
+  //   // });
+  //   // articleIndicators.forEach( (ind, index) => {
+  //   //   ind.classList.remove("active");
 
-  currentSlide = ( n ) => {
-    clearInterval(myTimer);
-    this.slideShow( sliderIndex = n );
-    if ( n = -1 ) {
-      myTimer = setInterval(() => {
-        this.plusSlides( n + 2 );
-      }, 4000);
-    } else {
-      myTimer = setInterval(() => {
-        this.plusSlides( n + 1 );
-      }, 4000);
-    }
-  }
+  //     // Add currentSlide function to article Indicators (red buttons)
+  //   //   ind.addEventListener("click",currentSlide( index+1 ));
+  //   // });
 
-  // -------------------------------------------------
-  // Navigate slide by next / previous buttons
+  //   // Set SliderIndex based on var n passed in
 
-  var leftSlide = document.getElementsByClassName("slideleft");
-  var rightSlide = document.getElementsByClassName("slideright");
+  //   if ( n > sliderListItems.length) {
+  //     sliderIndex = 1;
+  //   }
 
-  leftSlide.addEventListener("click", plusSlides(-1));
-  rightSlide.addEventListener("click", plusSlides(1));
+  //   if ( n < 1 ) {
+  //     sliderIndex = sliderListItems.length;
+  //   }
+
+  //   // Show buttons and list item based on sliderIndex
+
+  //   sliderListItems[sliderIndex-1].style.display = "flex";
+  //   articleIndicators[sliderIndex-1].classList.add("active");
+  // }
+
+  // // -----------------------------------------------------
+  // // Next / Previous Logic
+
+  // plusSlides = ( n ) => {
+  //   clearInterval(myTimer);
+  //   this.slideShow( sliderIndex += n );
+  //   if ( n = -1 ) {
+  //     myTimer = setInterval(() => {
+  //       this.plusSlides( n + 2 );
+  //     }, 4000);
+  //   } else {
+  //     myTimer = setInterval(() => {
+  //       this.plusSlides( n + 1 );
+  //     }, 4000);
+  //   }
+  // }
+
+  // // ------------------------------------------------------
+  // // Begin Slideshow
+
+  // mountSlideshow = () => {
+  //   this.slideShow( sliderIndex );
+  //   myTimer = setInterval(() => {
+  //     this.plusSlides(1);
+  //   }, 4000);
+  // }
+
+  // // -----------------------------------------------------
+  // // Navigate to any slide based on red nav button
+
+  // currentSlide = ( n ) => {
+  //   clearInterval(myTimer);
+  //   this.slideShow( sliderIndex = n );
+  //   if ( n = -1 ) {
+  //     myTimer = setInterval(() => {
+  //       this.plusSlides( n + 2 );
+  //     }, 4000);
+  //   } else {
+  //     myTimer = setInterval(() => {
+  //       this.plusSlides( n + 1 );
+  //     }, 4000);
+  //   }
+  // }
+
+  // // -------------------------------------------------
+  // // Navigate slide by next / previous buttons
+
+  // var leftSlide = document.getElementsByClassName("slideleft");
+  // var rightSlide = document.getElementsByClassName("slideright");
+
+  // leftSlide.addEventListener("click", plusSlides(-1));
+  // rightSlide.addEventListener("click", plusSlides(1));
   
 
 
