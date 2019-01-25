@@ -25,7 +25,7 @@
     <div class="sliderIndicator">
 
       <% news.slice(-3).reverse().forEach( ( news ) => { %> 
-        <a href="#" class="sliderArticleInd"><div class="square"></div></a>
+        <div href="#" class="sliderArticleInd"><div class="square"></div></div>
       <% }); %>
 
     </div>
@@ -109,9 +109,10 @@
 
   </section>
 
-  <script>
-   // Change Layout of News Article Container depending on if the image is wider than it is tall.
 
+  <script>
+    // ===================================================
+   // Change Layout of News Article Container depending on if the image is wider than it is tall.
 
   var newsLinkContainers = document.getElementsByClassName("newsLinkRow");
   var newsPhotos = document.getElementsByClassName("newsPhotoRow");
@@ -127,33 +128,113 @@
     });
   });
 
+  // =====================================================
+  // Slideshow display logic;
 
-// Slideshow display logic;
-var sliderIndex = 0;
-slideShow();
+  var sliderIndex;
+  var myTimer;
 
-function slideShow() {
-  var sliderListItems = document.getElementsByClassName("sliderLI");
-  var articleIndicators = document.getElementsByClassName("square");
+  function slideShow( n ) {
+    var i;
+    // Grab Elements and convert Node list to Array
+    var sliderListItems = Array.from(document.getElementsByClassName("sliderLI"));
+    var articleIndicators = Array.from(document.getElementsByClassName("square"));
 
-  var sliderListArray = Array.from(sliderListItems);
-  var articleIndArray = Array.from(articleIndicators);
+    // var sliderListArray = Array.from(sliderListItems);
+    // var articleIndArray = Array.from(articleIndicators);
 
-  sliderListArray.forEach( (li) => {
-    li.style.display = "none";
-  });
-  articleIndArray.forEach( (ind) => {
-    ind.classList.remove("active");
-  });
-
-  sliderIndex++;
-  if( sliderIndex > sliderListArray.length) {
-    sliderIndex = 1;
+    // Remove visibility and active class from buttons
+  for (i = 0; i < sliderListItems.length; i++) {
+    sliderListItems[i].style.display = "none";
   }
 
-  sliderListArray[sliderIndex-1].style.display = "flex";
-  articleIndArray[sliderIndex-1].classList.add("active");
-  setTimeout(slideShow, 4000);
-}
+  for (i = 0; i < articleIndicators.length; i++) {
+    articleIndicators[i].classList.remove("active");
+    articleIndicators[i].addEventListener("click", currentSlide ( i + 1 ));
+  }
+
+    // sliderListItems.forEach( (li) => {
+    //   li.style.display = "none";
+    // });
+    // articleIndicators.forEach( (ind, index) => {
+    //   ind.classList.remove("active");
+
+      // Add currentSlide function to article Indicators (red buttons)
+    //   ind.addEventListener("click",currentSlide( index+1 ));
+    // });
+
+    // Set SliderIndex based on var n passed in
+
+    if ( n > sliderListItems.length) {
+      sliderIndex = 1;
+    }
+
+    if ( n < 1 ) {
+      sliderIndex = sliderListItems.length;
+    }
+
+    // Show buttons and list item based on sliderIndex
+
+    sliderListItems[sliderIndex-1].style.display = "flex";
+    articleIndicators[sliderIndex-1].classList.add("active");
+  }
+
+  // -----------------------------------------------------
+  // Next / Previous Logic
+
+  plusSlides = ( n ) => {
+    clearInterval(myTimer);
+    this.slideShow( sliderIndex += n );
+    if ( n = -1 ) {
+      myTimer = setInterval(() => {
+        this.plusSlides( n + 2 );
+      }, 4000);
+    } else {
+      myTimer = setInterval(() => {
+        this.plusSlides( n + 1 );
+      }, 4000);
+    }
+  }
+
+  // ------------------------------------------------------
+  // Begin Slideshow
+
+  mountSlideshow = () => {
+    this.slideShow( sliderIndex );
+    myTimer = setInterval(() => {
+      this.plusSlides(1);
+    }, 4000);
+  }
+
+  // -----------------------------------------------------
+  // Navigate to any slide based on red nav button
+
+  currentSlide = ( n ) => {
+    clearInterval(myTimer);
+    this.slideShow( sliderIndex = n );
+    if ( n = -1 ) {
+      myTimer = setInterval(() => {
+        this.plusSlides( n + 2 );
+      }, 4000);
+    } else {
+      myTimer = setInterval(() => {
+        this.plusSlides( n + 1 );
+      }, 4000);
+    }
+  }
+
+  // -------------------------------------------------
+  // Navigate slide by next / previous buttons
+
+  var leftSlide = document.getElementsByClassName("slideleft");
+  var rightSlide = document.getElementsByClassName("slideright");
+
+  leftSlide.addEventListener("click", plusSlides(-1));
+  rightSlide.addEventListener("click", plusSlides(1));
+  
+
+
+
+
   </script>
 <% include ./partials/footer %>
