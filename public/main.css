@@ -36,6 +36,7 @@ a {
 
 a:not(.btn .subscribeToNewsletterBtn):hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .btn {
@@ -212,16 +213,24 @@ h1 {
 
 /* NAV STYLE */
 
-.navlist {
+.navcontainer {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: hsl(49, 100%, 96%);
+  justify-content: center;
   width: 100%;
-  padding: 3px 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: hsl(39, 11%, 69%);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 5;
+}
+
+.navlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(49, 100%, 96%);
+  width: 90%;
   background-color: hsl(39, 11%, 69%);
 }
 
@@ -231,7 +240,49 @@ h1 {
   font-weight: bold;
 }
 
-.navli a,
+.navli {
+  position: relative;
+  display: inline-block;
+  padding: 3px 0;
+}
+
+.navli:hover {
+  border-left: 2px solid hsl(360, 85%, 25%);
+}
+
+.navli > a {
+  padding: 0 3px;
+}
+
+.navliContent {
+  position: absolute;
+  width: max-content;
+  background-color: hsl(40, 15%, 80%);
+  border-radius: 4px;
+  z-index: 5;
+  padding: 0 5px;
+  display: none;
+}
+
+.navli:hover .navliContent {
+  display: block;
+}
+
+.navliContent a {
+  display: block;
+  font-weight: normal;
+  margin: 10px 5px;
+  padding: 5px;
+  color: hsl(42, 15%, 13%);
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.navliContent a:hover {
+  background-color: hsl(40, 23%, 97%);
+}
+
+.navli > a,
 .search-icon {
   color: hsl(42, 15%, 13%)
 }
@@ -239,7 +290,7 @@ h1 {
 .search-bar {
   display: flex;
   justify-content: center;
-  border: 1px solid hsl(42, 15%, 13%);
+  /* border: 1px solid hsl(42, 15%, 13%); */
   border-radius: 4px;
 }
 
@@ -423,6 +474,7 @@ h1 {
   padding-bottom: 5px;
   color: hsl(15, 86%, 30%);
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .announceText {
@@ -469,7 +521,7 @@ h1 {
 
 .newsText h4,
 .newsText p {
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 .newsDate {
