@@ -22,15 +22,22 @@
 
       </ul>
     </div>
+
+    <!-- Square Article Nav Buttons below slideshow -->
+
     <div class="sliderIndicator">
 
       <% news.slice(-3).reverse().forEach( ( news ) => { %> 
-        <div href="#" class="sliderArticleInd"><div class="square"></div></div>
+        <div class="square"></div>
       <% }); %>
 
     </div>
+
+    <!-- Left and Right Nav buttons on slideshow -->
+
     <button class="slideleft"><i class="fas fa-arrow-left"></i></button>
     <button class="slideright"><i class="fas fa-arrow-right"></i></button>
+
   </section>
 
   <section class='announcements'>
@@ -42,18 +49,18 @@
     <div class="announcementsContainer">
 
       <% announcement.slice(-3).reverse().forEach( function (announcement){ %>
-
         <a class="announcediv" href="/announcements/<%=announcement.id%>">
           <p class="announceDate"><%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY, h:mm a")%></p>
           <p class="announceText"><%=announcement.body.substring(0,200)%>...</p>
         </a>
-
       <% }) %>
 
     </div>
+
     <div class="btnDiv">
       <a href="/announcements" class="readMoreBtn btn moreAnnouncements">Read More Announcements</a>
     </div>
+
   </section>
   
   <section class='news'>
@@ -64,7 +71,6 @@
     <div class="newsContainer">
 
       <% news.slice(-2).reverse().forEach( function( news ) { %>
-
         <a href="/news/<%=news._id%>" class="newsLink newsLinkRow">
           <img src="<%=news.coverImage%>" alt="#" class="newsPhotoRow">
           <div class="newsText">
@@ -73,7 +79,6 @@
             <p class="newsDesc"><%=news.body.substring(0,150)%>...</p>
           </div>
         </a>
-
       <% }) %>
 
     </div>
