@@ -21,7 +21,7 @@ nav, ul {
 }
 
 p {
-  line-height: 1.5rem;
+  line-height: 1.4rem;
   hyphens: auto;
 }
 
@@ -407,16 +407,16 @@ h1 {
 .announcementsContainer, .newsContainer {
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  width: 90%;
   justify-content: space-around;
   align-items: flex-start;
   padding: 20px 0;
 }
 
 .announcediv {
-  height: 250;
   width: 30%;
   padding: 20px 20px 30px;
+  font-size: 14px;
 }
 
 .announceDate {
@@ -728,7 +728,7 @@ input[type="date"] {
 textarea,
 textarea::placeholder {
   padding: 3px;
-  line-height: 1.5
+  line-height: 1.2rem;
 }
 
 label {
@@ -1055,7 +1055,7 @@ u {
 
 
 .newsShowContainer {
-  width: 70%;
+  width: 40%;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
@@ -1066,7 +1066,6 @@ u {
 .newsShowImgContainer {
   width: 100%;
   padding-bottom: 20px;
-  /* margin-left: 20px; */
   margin-right: 10px;
   grid-area: image;
   display: flex;
