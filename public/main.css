@@ -223,6 +223,7 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 5;
+  padding: 3px 0;
 }
 
 .navlist {
@@ -262,6 +263,7 @@ h1 {
   z-index: 5;
   padding: 0 5px;
   display: none;
+  margin-top: 3px;
 }
 
 .navli:hover .navliContent {
