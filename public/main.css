@@ -39,16 +39,55 @@ a:not(.btn .subscribeToNewsletterBtn):hover {
   cursor: pointer;
 }
 
-.btn {
-  box-shadow: 0 2px 2px hsl(40, 15%, 80%);
+.primaryBtn {
+  border: none;
+  background-color: hsl(360, 85%, 25%);
+  font: normal 16px sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: hsl(40, 23%, 97%);
+  border-radius: 4px;
+  padding: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 4px 1px hsl(41, 8%, 61%);
+  transform: translatey(-4px);
+}
+
+.primaryBtn:hover {
+  box-shadow: 0 2px 2px hsl(41, 8%, 61%);
+  transform: translatey(-2px);
+}
+
+.primaryBtn:active {
+  box-shadow: 0 0 0 hsl(41, 8%, 61%);
+  transform: translatey(0px);
+}
+
+.secondaryBtn {
+  border: none;
+  background-color: hsl(40, 15%, 80%);
+  font: normal 16px sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: hsl(42, 15%, 13%);
+  border-radius: 4px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 4px 4px 1px hsl(39, 11%, 69%);
+  transform: translatey(-4px);
+}
+
+.secondaryBtn:hover {
+  box-shadow: 0 2px 2px hsl(39, 11%, 69%);
+  transform: translatey(-2px);
+}
+
+.secondaryBtn:active {
+  box-shadow: 0 0 0 hsl(39, 11%, 69%);
+  transform: translatey(0px);
 }
 
 button {
   border: none;
-  color: hsl(40, 23%, 97%);
-  background-color: hsl(15, 86%, 30%);
-  font: normal 16px sans-serif;
-  font-family: 'Roboto', sans-serif;
 }
 
 button:hover {
@@ -112,11 +151,18 @@ input[value] {
   color: hsl(40, 23%, 97%);
   padding: 5px 20px;
   margin: 20px 0;
+  box-shadow: 0 2px 2px .5px hsl(39, 11%, 69%);
+  transform: translatey(-2px);
 }
 
-.btnDiv:hover {
-  transform: translate(0, -2px);
-  box-shadow: 0 4px 6px hsl(41, 8%, 61%);
+.readMoreBtn:hover {
+  box-shadow: 0 1px 1px hsl(39, 11%, 69%);
+  transform: translatey(-1px);
+}
+
+.readMoreBtn:active {
+  box-shadow: 0 0 0 hsl(39, 11%, 69%);
+  transform: translatey(0px);
 }
 
 /* ================================================ */
@@ -255,8 +301,9 @@ h1 {
   padding: 3px 0;
 }
 
-.navli:hover {
-  border-left: 2px solid hsl(360, 85%, 25%);
+.navli a:hover {
+  text-decoration: underline;
+  color: hsl(184, 91%, 17%);
 }
 
 .navli > a {
@@ -286,10 +333,6 @@ h1 {
   color: hsl(42, 15%, 13%);
   font-weight: bold;
   border-radius: 4px;
-}
-
-.navliContent a:hover {
-  background-color: hsl(40, 23%, 97%);
 }
 
 .navli > a,
@@ -562,12 +605,18 @@ h1 {
   color: hsl(42, 15%, 13%);
   padding: 10px 20px;
   font-size: 20px;
-  box-shadow: 0 2px 2px hsl(39, 11%, 69%);
+  box-shadow: 0 4px 4px 1px hsl(41, 8%, 61%);
+  transform: translatey(-4px);
 }
 
 .reportCrimesBtn:hover {
-  transform: translate(0, -2px);
-  box-shadow: 0 4px 6px hsl(41, 8%, 61%);
+  box-shadow: 0 2px 2px hsl(41, 8%, 61%);
+  transform: translatey(-2px);
+}
+
+.reportCrimesBtn:active {
+  box-shadow: 0 0 0 hsl(41, 8%, 61%);
+  transform: translatey(0);
 }
 
 /* ------------------------------------------ */
@@ -886,7 +935,18 @@ td a {
   background-color: hsl(81, 78%, 21%);
   color: hsl(40, 23%, 97%);
   border-radius: 4px;
+  box-shadow: 0 4px 4px 1px hsl(39, 11%, 69%);
+  transform: translatey(-4px);
+}
+
+#createAnnouncement:hover {
   box-shadow: 0 2px 2px hsl(39, 11%, 69%);
+  transform: translatey(-2px);
+}
+
+#createAnnouncement:active {
+  box-shadow: 0 0 0 hsl(39, 11%, 69%);
+  transform: translatey(0);
 }
 
 .announcementContainer {
@@ -928,6 +988,10 @@ td a {
   flex: 1 1 100%;
 }
 
+.announcementBody:hover {
+  box-shadow: inset 0 0 40px 5px hsl(40, 15%, 80%);
+}
+
 .updateAnnouncement {
   display: flex;
   flex-direction: column;
@@ -954,14 +1018,20 @@ td a {
   border-radius: 0 15px 15px 0;
 }
 
-.deleteAnnouncement form,
-.deleteAnnouncement form button {
+.deleteAnnouncement button {
   background-color: hsl(360, 71%, 66%);
   color: hsl(40, 13%, 23%);
   font-size: 16px;
   height: 100%;
   width: 100%;
   border-radius: 0 15px 15px 0;
+}
+
+.updateAnnouncement:hover,
+.deleteAnnouncement:hover,
+.deleteAnnouncement button:hover {
+  transform: perspective(10px) translate3d( 0, 0, .5px);
+  border-radius: 15px;
 }
 
 
@@ -1157,4 +1227,48 @@ u {
   width: 100%;
   text-indent: 15px;
   grid-area: body;
+}
+
+
+/* ======================================== */
+/* login and register page styles */
+/* ======================================== */
+
+.authenticationCon {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authenticationCon form,
+.authenticationCon form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.authenticationCon form div {
+  border-radius: 4px;
+  padding: 10px 0;
+}
+
+.authenticationCon form div label {
+  align-self: flex-start;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+.authenticationCon form div input {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid hsl(41, 8%, 61%);
+  height: 1.5rem;
+}
+
+#emaildiv {
+  padding-bottom: 40px;
 }

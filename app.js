@@ -99,12 +99,14 @@ app.locals.moment = require('moment');
 var reportRoutes        = require('./routes/reports')
     announcementRoutes  = require('./routes/announcements'),
     newsRoutes          = require('./routes/news')
-    commentRoutes       = require('./routes/comments');
+    commentRoutes       = require('./routes/comments'),
+    authRoutes          = require('./routes/auth');
 
 app.use(reportRoutes);
 app.use(announcementRoutes);
 app.use(newsRoutes);
 app.use(commentRoutes);
+app.use(authRoutes);
 
 
   //Home

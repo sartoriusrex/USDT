@@ -12,7 +12,7 @@
               </a>
               <p class="sliderDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
               <p><%=news.body.substring(0,250)%>...</p>
-              <a class="sliderArticleBtn btn btnDiv" href='/news/<%=news._id%>'>Read Full Text</a>
+              <a class="sliderArticleBtn readMoreBtn" href='/news/<%=news._id%>'>Read Full Text</a>
             </div>
             <a href="/news/<%=news._id%>" class ='sliderPhotoLink'>
               <img class='sliderPhoto' src="<%=news.coverImage%>" alt="science truth">
@@ -57,8 +57,8 @@
 
     </div>
 
-    <div class="btnDiv">
-      <a href="/announcements" class="readMoreBtn btn moreAnnouncements">Read More Announcements</a>
+    <div class="readMoreBtn">
+      <a href="/announcements" >Read More Announcements</a>
     </div>
 
   </section>
@@ -82,8 +82,8 @@
       <% }) %>
 
     </div>
-    <div class="btnDiv">
-      <a href="/news" class="readMoreBtn btn moreNews">Read More News</a>
+    <div class="readMoreBtn">
+      <a href="/news">Read More News</a>
     </div>
   </section>
 
@@ -95,7 +95,7 @@
     <p>We have entered the Post-Truth Era. Though they may be subtle, crimes which distort, twist, or confound the truth  are equivalent to lies and pose the greatest threat to Democracy today.</p>
     <p>Lies sow mistrust in institutions which rely on accurate information to serve the public. It is only through the constant pruning of lies that the rich and diverse garden of Democracy can thrive.</p>
     <p>If you witness or suspect that a crime involving the mis-use of information has occurred, is occurring, or will occurr, please file a report using the link below.</p>
-    <a href="/reports/new" class="reportCrimesBtn btn">Report a Crime</a>
+    <a href="/reports/new" class="reportCrimesBtn">Report a Crime</a>
   </section>
 
   <section class="newsletterSubscribe">
