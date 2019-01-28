@@ -9,23 +9,21 @@
     <p><strong>Last Updated <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%></strong></p>
   </div>
 
-  <div>
+  <div id="announcementShowBody">
     <p ><%=announcement.body%></p>
   </div>
 
   <div class="announceShowNavBtns">
-    <a class="readMoreBtn" href="/announcements">Go Back</a>
+    <a class="secondaryBtn" href="/announcements">Go Back</a>
     <div class="announceShowEdits">
       <a class="updateAnnouncementShow" href="/announcements/<%=announcement._id%>/edit">
         <div>
             <i class="fas fa-edit"></i> Update
         </div>
       </a>
-      <div class="deleteAnnouncementShow">
-        <form action="/announcements/<%= announcement._id %>?_method=DELETE" method="POST">
-          <button><i class="fas fa-trash-alt"></i> Delete</button>
-        </form>
-      </div>
+      <form class="deleteAnnouncementShow" action="/announcements/<%= announcement._id %>?_method=DELETE" method="POST">
+        <button><i class="fas fa-trash-alt"></i> Delete</button>
+      </form>
     </div>
   </div>
 
