@@ -5,8 +5,12 @@ const   express     = require('express'),
 // Login Routes
 
 // ---Login Form---
-router.get('/login', (req, res ) => {
+router.get('/login', ( req, res ) => {
   res.render("authorization/login");;
+});
+
+router.get('/register', ( req, res ) => {
+  res.render("authorization/register")
 });
 
 module.exports = router;

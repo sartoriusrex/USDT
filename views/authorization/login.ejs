@@ -2,19 +2,24 @@
 
 <section class="loginSection">
   <h2>Login</h2>
-  <div class="authenticationCon">
+  <div class="authenticationContainer">
     <form action="post" class="login">
       <div id="usernamediv">
         <label for="username">username: </label>
         <input type="text" id="username" name="username">
       </div>
+      <p id="loginPor">or</p>
       <div id="emaildiv">
         <label for="email">e-mail: </label>
         <input type="email" id="email" name="email">
       </div>
+      <div id="password">
+        <label for="password">password: </label>
+        <input type="password" id="password" name="password">
+      </div>
       <button class="primaryBtn" type="submit">login</button>
     </form>
-    <div class="forgotAuth">
+    <div id="forgotAuth">
       <a href="#" class="forgotpass">forgot password</a>
       <a href="#" class="forgotuser">forgot username</a>
     </div>
