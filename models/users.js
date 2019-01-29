@@ -9,7 +9,10 @@ const UsersSchema = new Schema ({
     required: true,
     unique: true
   },
-  password: String,
+  password: {
+    type: String,
+    required: true,
+  },
   resetPasswordToken: String,
   resetPasswordExpires: Date,
   isAdmin: {
@@ -19,7 +22,7 @@ const UsersSchema = new Schema ({
   firstName: String,
   middleInitial: String,
   lastName: String,
-  dob: String,
+  dob: Date,
   primaryContactMethod: String,
   email: {
     type: String,
@@ -45,7 +48,7 @@ const UsersSchema = new Schema ({
   },
   maritalStatus: String,
   occupation: String,
-  dateCreated: Date
+  dateCreated: { type: Date, default: Date.now }
 });
 
 UsersSchema.plugin(passportLocalMongoose);

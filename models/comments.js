@@ -4,7 +4,13 @@ const mongoose      = require('mongoose'),
 const CommentsSchema = new Schema ({
   dateCreated: Date,
   title: String,
-  author: String,
+  author: {
+    username: String,
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  },
   body: String,
   parent: String
 });

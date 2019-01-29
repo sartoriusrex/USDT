@@ -2,7 +2,13 @@ const mongoose      = require('mongoose'),
       Schema        = mongoose.Schema;
 
 const AnnouncementsSchema = new Schema({
-  author: String,
+  author: {
+    username: String,
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  },
   dateCreated: { type: Date, default: Date.now },
   dateLastUpdate: { type: Date, default: Date.now },
   body: String,
