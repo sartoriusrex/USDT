@@ -1294,6 +1294,9 @@ u {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: hsl(40, 15%, 80%);
+  border-radius: 15px;
+  padding-bottom: 20px;
 }
 
 .authenticationContainer form,
@@ -1306,11 +1309,18 @@ u {
 
 .authenticationContainer form {
   padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .authenticationContainer form div {
   border-radius: 4px;
   padding-bottom: 10px;
+}
+
+.authenticationContainer button {
+  width: 50%;
 }
 
 #loginPor{
@@ -1323,13 +1333,6 @@ u {
   align-self: flex-start;
   padding-bottom: 2px;
   font-size: 14px;
-}
-
-.authenticationContainer form div input {
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid hsl(41, 8%, 61%);
-  height: 1.5rem;
 }
 
 #password,
@@ -1372,18 +1375,20 @@ u {
 .twoStepDivInput {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;;
   padding: 5px;
+  width: 50%;
 }
 
 .twoStepDivInput input {
-  max-width: 50%;
+  width: 2rem;
   padding: 5px 5px;
   margin: 5px 5px;
+  border: 0px;
 }
 
 .twoStepDivInput label {
-  max-width: 50%;
+  width: 6rem;
   padding: 5px 5px;
   margin: 5px 5px;
 }
