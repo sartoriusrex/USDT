@@ -1407,30 +1407,28 @@ u {
 
 #flashContainer {
   background-color: hsl(41, 8%, 61%);
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3rem;
-  /* display: none; */
+  height: 2rem;
+  display: none;
 }
 
-.successAlert {
-  background-color: hsl(83, 64%, 42%);
+.successAlert,
+.failureAlert  {
   color: hsl(42, 15%, 13%);
   width: 100%;
-  border-radius: 4px;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
 .failureAlert {
   background-color: hsl(42, 87%, 55%);
-  color: hsl(42, 15%, 13%);
-  width: 100%;
-  border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  height: 100%;
+}
+
+.successAlert {
+  background-color: hsl(83, 64%, 42%);
 }

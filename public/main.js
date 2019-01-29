@@ -1,5 +1,8 @@
 // Flash Message Display Logic
 
 var message = Array.from(document.getElementsByTagName('h5'));
-var flashmessage = document.getElementById('flashContainer');
+var flashContainer = document.getElementById('flashContainer');
 
+if (message[0]) {
+  flashContainer.style.display = "flex";
+}
