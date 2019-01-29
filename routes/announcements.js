@@ -27,8 +27,8 @@ router.get('/announcements/new', (req,res) => {
 
 router.post('/announcements', (req,res) => {
   var author = {
-      username: req.user.username,
-      id: req.user._id
+      id: req.user._id,
+      username: req.user.username
       },
       body = req.body.body;
   var newAnnouncement = {

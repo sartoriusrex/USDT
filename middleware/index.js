@@ -10,7 +10,7 @@ middlewareObj.checkAnnouncementOwnership = (req, res, next) => {
         req.flash("error","Announcement not found!");
         res.redirect("back");
       } else {
-        if (foundAnnouncement.author.id.equals(req.user._id) || req.user.isAdmin) {
+        if ( req.user.isAdmin || foundAnnouncement.author.id.equals(req.user._id) ) {
           next();
         } else {
           req.flash("error","You do not have permission to perform action");

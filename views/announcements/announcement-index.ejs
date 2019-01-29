@@ -16,7 +16,7 @@
       <p><%= moment(announcement.dateLastUpdate).fromNow() %></p>
     </div>
     <a class="announcementBody" href="/announcements/<%=announcement._id%>">
-      <p><em>Author: <%= announcement.author %></em></p>
+      <p><em>Author: <%= announcement.author.username %></em></p>
       <br>
       <p><%= announcement.body %></p>
     </a>

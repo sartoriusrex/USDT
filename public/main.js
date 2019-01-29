@@ -6,6 +6,3 @@ var flashContainer = document.getElementById('flashContainer');
 if (message[0]) {
   flashContainer.style.display = "flex";
 }
-
-// Show Login / Register || Profile / Logout / Settings Buttons based on Session
-
