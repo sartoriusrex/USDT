@@ -4,8 +4,7 @@ const   express     = require('express'),
         router      = express.Router();
 
 
-// Login Routes
-
+// ===Login===
 // ---Login Form---
 router.get('/login', ( req, res ) => {
   res.render("authorization/login");
@@ -20,6 +19,18 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true
 }), ( req, res ) => {});
 
+
+// ===Logout===
+// Login Logic
+
+router.get("/logout", ( req,res ) => {
+  req.logout();
+  req.flash("success","Logged Out. We're still watching you, though.");
+  res.redirect("/");
+});
+
+
+// ===Register===
 // ---Register Form---
 router.get('/register', ( req, res ) => {
   res.render("authorization/register");
@@ -28,23 +39,22 @@ router.get('/register', ( req, res ) => {
 // ---Register Logic---
 
 router.post('/register', ( req, res ) => {
+
+  var username = req.body.username,
+      first    = req.body.firstName,
+      middle   = req.body.middle,
+      last     = req.body.last,
+      email    = req.body.email;
   var newUser = new User( {
     anonymous: false,
-    username: req.body.username,
-    firstName: req.body.first,
-    middleInitial: req.body.middle,
-    lastName: req.body.last,
-    dob: req.body.dob,
-    ssn: req.body.ssn,
-    email: req.body.email,
-    primaryPhone: req.body.primaryPhone,
-    secondaryPhone: req.body.secondaryPhone,
-    mailingAddress: req.body.mailingAddress,
-    mailingCity: req.body.mailingCity,
-    mailingState: req.body.mailingState
+    username: username,
+    firstName: first,
+    middleInitial: middle,
+    lastName: last,
+    email: email,
   });
 
-  if(req.body.adminCode = "iamanadmin") {
+  if(req.body.adminCode === "iamanadmin") {
     newUser.isAdmin = true;
   }
 
@@ -57,7 +67,7 @@ router.post('/register', ( req, res ) => {
         req.flash("success","Thank you for registering, " + user.username);
         res.redirect("/");
     });
-});
+  });
 
 });
 

@@ -9,10 +9,7 @@ const UsersSchema = new Schema ({
     required: true,
     unique: true
   },
-  password: {
-    type: String,
-    required: true,
-  },
+  password: String,
   resetPasswordToken: String,
   resetPasswordExpires: Date,
   isAdmin: {
@@ -22,7 +19,6 @@ const UsersSchema = new Schema ({
   firstName: String,
   middleInitial: String,
   lastName: String,
-  primaryContactMethod: String,
   email: {
     type: String,
     unique: true,
