@@ -1,7 +1,7 @@
 const mongoose      = require('mongoose'),
       Schema        = mongoose.Schema;
 
-const newsSchema = new Schema ({
+const NewsSchema = new Schema ({
   dateCreated: { type: Date, default: Date.now},
   title: String,
   subtitle: String,
@@ -11,6 +11,6 @@ const newsSchema = new Schema ({
   comments: {}
 });
 
-const News = mongoose.model("Newsarticle",newsSchema);
+const News = mongoose.model("Newsarticle",NewsSchema);
 
 module.exports = News;

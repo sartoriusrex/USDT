@@ -1,7 +1,7 @@
 const mongoose  = require('mongoose'),
       Schema    = mongoose.Schema;
 
-const reportsSchema = new Schema({
+const ReportsSchema = new Schema({
   first: String,
   middle: String,
   last: String,
@@ -22,7 +22,7 @@ const reportsSchema = new Schema({
   author: String
 });
 
-const Report = mongoose.model("Report",reportsSchema);
+const Report = mongoose.model("Report",ReportsSchema);
 
 module.exports = Report;
 

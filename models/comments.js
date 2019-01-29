@@ -1,7 +1,7 @@
 const mongoose      = require('mongoose'),
       Schema        = mongoose.Schema;
 
-const commentsSchema = new Schema ({
+const CommentsSchema = new Schema ({
   dateCreated: Date,
   title: String,
   author: String,
@@ -9,6 +9,6 @@ const commentsSchema = new Schema ({
   parent: String
 });
 
-const Comment = mongoose.model("Comment",commentsSchema);
+const Comment = mongoose.model("Comment",CommentsSchema);
 
 module.exports = Comment;

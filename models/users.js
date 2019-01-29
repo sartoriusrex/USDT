@@ -1,14 +1,31 @@
 const mongoose    = require('mongoose'),
-      Schema      = mongoose.Schema;
+      Schema      = mongoose.Schema,
+      passportLocalMongoose = require("passport-local-mongoose");
 
-const usersSchema = new Schema ({
+const UsersSchema = new Schema ({
   anonymous: Boolean,
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: String,
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
+  isAdmin: {
+    type: Boolean,
+    default: false
+  },
   firstName: String,
   middleInitial: String,
   lastName: String,
   dob: String,
   primaryContactMethod: String,
-  email: String,
+  email: {
+    type: String,
+    unique: true,
+    required: true
+  },
   primaryPhone: String,
   secondaryPhone: String,
   mailingAddress: String,
@@ -31,6 +48,8 @@ const usersSchema = new Schema ({
   dateCreated: Date
 });
 
-const User = mongoose.model("User",usersSchema);
+UsersSchema.plugin(passportLocalMongoose);
+
+const User = mongoose.model("User",UsersSchema);
 
 module.exports = User;

@@ -74,6 +74,7 @@ const express         = require("express"),
 // MONGOOSE SETTINGS
 mongoose.set("useFindAndModify", false);
 mongoose.connect("mongodb://localhost/USDT", {useNewUrlParser: true});
+mongoose.set('useCreateIndex', true);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -105,16 +106,16 @@ app.use(require("express-session")({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-// app.use(function(req,res, next){
-//  res.locals.currentUser = req.user;
-//  res.locals.error = req.flash("error");
-//  res.locals.success = req.flash("success");
-//  next();
-// });
+app.use(function(req,res, next){
+ res.locals.currentUser = req.user;
+ res.locals.error = req.flash("error");
+ res.locals.success = req.flash("success");
+ next();
+});
 
 
 // =======================================
