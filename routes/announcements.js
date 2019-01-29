@@ -26,7 +26,10 @@ router.get('/announcements/new', (req,res) => {
 //Create Announcement Post Page
 
 router.post('/announcements', (req,res) => {
-  var author = req.body.author,
+  var author = {
+      username: req.user.username,
+      id: req.user._id
+      },
       body = req.body.body;
   var newAnnouncement = {
     author: author,
