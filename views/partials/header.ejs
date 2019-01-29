@@ -95,62 +95,75 @@
       </div>
     </div>
   </header>
+
+  <div class="flashContainer">
+    <% if (error && error.length > 0) { %>
+      <div>
+        <h5> <%= error %> </h5>
+      </div>
+    <% } %>
+    <% if (success && success.length > 0) { %>
+      <div>
+        <h5> <%= success %> </h5>
+      </div>
+    <% } %>
+  </div>
   
-    <div class="navcontainer">
-      <nav class='navlist'>
-        <li class="navli">
-          <a href="#">About</a>
-          <div class="navliContent">
-            <a href="#">Who We Are</a>
-            <a href="#">What We Do</a>
-            <a href="#">The Secretary of Truth</a>
-            <a href="#">Policies</a>
-          </div>
-        </li>
-        <li class="navli">
-          <a href="#">Forms & Reporting</a>
-          <div class="navliContent">
-            <a href="#">Report Crimes</a>
-            <a href="#">Application for Propaganda</a>
-            <a href="#">Report for Service</a>
-          </div>
-        </li>
-        <li class="navli">
-          <a href="#">Press & News</a>
-          <div class="navliContent">
-            <a href="#">Announcements</a>
-            <a href="#">News</a>
-            <a href="#">Press Releases</a>
-            <a href="#">Newsletter Archive</a>
-            <a href="#">Events</a>
-            <a href="#">Sponsorships</a>
-          </div>
-        </li>
-        <li class="navli">
-          <a href="#">Research</a>
-          <div class="navliContent">
-            <a href="#">Sciences</a>
-            <a href="#">Pseudo-science</a>
-            <a href="#">Philosophy</a>
-          </div>
-        </li>
-        <li class="navli">
-          <a href="#">Bureaus & Offices</a>
-          <div class="navliContent">
-            <a href="#">State & Local Offices</a>
-            <a href="#">Federal Offices</a>
-            <a href="#">International Offices</a>
-          </div>
-        </li>
-        <li class="navli">
-          <a href="#">FAQ</a>
-        </li>
-        <li class="navli">
-          <a href="#">Contact</a>
-        </li>
-        <div class="search-bar">
-          <input type="text" placeholder="Search">
-          <div class="search-icon"><a href="#"><i class="fas fa-search"></i></a></div>
+  <div class="navcontainer">
+    <nav class='navlist'>
+      <li class="navli">
+        <a href="#">About</a>
+        <div class="navliContent">
+          <a href="#">Who We Are</a>
+          <a href="#">What We Do</a>
+          <a href="#">The Secretary of Truth</a>
+          <a href="#">Policies</a>
         </div>
-      </nav>
-    </div>
+      </li>
+      <li class="navli">
+        <a href="#">Forms & Reporting</a>
+        <div class="navliContent">
+          <a href="#">Report Crimes</a>
+          <a href="#">Application for Propaganda</a>
+          <a href="#">Report for Service</a>
+        </div>
+      </li>
+      <li class="navli">
+        <a href="#">Press & News</a>
+        <div class="navliContent">
+          <a href="#">Announcements</a>
+          <a href="#">News</a>
+          <a href="#">Press Releases</a>
+          <a href="#">Newsletter Archive</a>
+          <a href="#">Events</a>
+          <a href="#">Sponsorships</a>
+        </div>
+      </li>
+      <li class="navli">
+        <a href="#">Research</a>
+        <div class="navliContent">
+          <a href="#">Sciences</a>
+          <a href="#">Pseudo-science</a>
+          <a href="#">Philosophy</a>
+        </div>
+      </li>
+      <li class="navli">
+        <a href="#">Bureaus & Offices</a>
+        <div class="navliContent">
+          <a href="#">State & Local Offices</a>
+          <a href="#">Federal Offices</a>
+          <a href="#">International Offices</a>
+        </div>
+      </li>
+      <li class="navli">
+        <a href="#">FAQ</a>
+      </li>
+      <li class="navli">
+        <a href="#">Contact</a>
+      </li>
+      <div class="search-bar">
+        <input type="text" placeholder="Search">
+        <div class="search-icon"><a href="#"><i class="fas fa-search"></i></a></div>
+      </div>
+    </nav>
+  </div>

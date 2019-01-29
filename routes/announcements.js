@@ -1,6 +1,7 @@
 const   express           = require('express'),
         router            = express.Router(),
-        Announcement      = require('../models/announcements');
+        Announcement      = require('../models/announcements'),
+        middleware        = require('../middleware/index');
 
 
 //Index Page - Announcements
@@ -56,7 +57,7 @@ router.get('/announcements/:id', ( req, res ) => {
 
 //Edit Page for Announcements
 
-router.get('/announcements/:id/edit', (req,res) => {
+router.get('/announcements/:id/edit', middleware.checkAnnouncementOwnership, (req,res) => {
   Announcement.findById(req.params.id, (err, foundAnnouncement) => {
     if (err || !foundAnnouncement) {
       console.log(err);

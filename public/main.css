@@ -1392,3 +1392,7 @@ u {
   padding: 5px 5px;
   margin: 5px 5px;
 }
+
+.flashContainer {
+  width: 100%;
+}

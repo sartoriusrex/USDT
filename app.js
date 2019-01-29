@@ -69,7 +69,8 @@ app.use(function(req,res, next){
 
 //ROUTES
 
-var reportRoutes        = require('./routes/reports')
+var indexRoutes         = require('./routes/index'),
+    reportRoutes        = require('./routes/reports'),
     announcementRoutes  = require('./routes/announcements'),
     newsRoutes          = require('./routes/news')
     commentRoutes       = require('./routes/comments'),
@@ -80,32 +81,9 @@ app.use(announcementRoutes);
 app.use(newsRoutes);
 app.use(commentRoutes);
 app.use(authRoutes);
+app.use(indexRoutes);
 
 
-  //Home
-
-app.get('/', (req,res) => {
-  Announcement.find({}, ( err, allAnnouncements) => {
-    if( err ) {
-      console.log( err );
-      News.find({}, ( err, allNews ) => {
-        if ( err ) {
-          console.log ( err );
-        } else {
-          res.render('index', { announcement: allAnnouncements, news: allNews });
-        }
-      });
-    } else {
-      News.find({}, ( err, allNews ) => {
-        if ( err ) {
-          console.log ( err );
-        } else {
-          res.render('index', { announcement: allAnnouncements, news: allNews });
-        }
-      });
-    }
-  });
-});
 
 // =======================================
 
