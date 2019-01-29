@@ -103,3 +103,5 @@ function addSlideNavDot(){
 }
 
 addSlideNavDot();
+
+// Flash Message Display Logic

@@ -52,7 +52,7 @@
           </a>
         </div>
         <div class="signedIn">
-          <a href="#">
+          <a href="/logout">
             <i class="fas fa-sign-out-alt"></i>
             Log Out
           </a>
@@ -96,14 +96,14 @@
     </div>
   </header>
 
-  <div class="flashContainer">
+  <div id="flashContainer">
     <% if (error && error.length > 0) { %>
-      <div>
+      <div class="failureAlert">
         <h5> <%= error %> </h5>
       </div>
     <% } %>
     <% if (success && success.length > 0) { %>
-      <div>
+      <div class="successAlert">
         <h5> <%= success %> </h5>
       </div>
     <% } %>
