@@ -1,4 +1,6 @@
-const   Announcement      = require('../models/announcements');
+const   Announcement      = require('../models/announcements'),
+        News              = require('../models/news'),
+        Comments          = require('../models/comments');
 
 var middlewareObj = {};
 
@@ -22,6 +24,14 @@ middlewareObj.checkAnnouncementOwnership = (req, res, next) => {
     req.flash("error", "Please Log In.");
     res.redirect("back");
   }
+};
+
+middlewareObj.isLoggedIn = ( req,res,next ) => {
+  if( req.isAuthenticated() ) {
+      return next();
+  }
+  req.flash("error","You must register or login to perform that action.");
+  res.redirect("/login");
 };
 
 

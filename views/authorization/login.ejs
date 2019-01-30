@@ -1,8 +1,8 @@
 <% include ../partials/header %>
 
 <section class="loginSection">
-  <h2>Login</h2>
   <div class="authenticationContainer">
+    <h2>Login</h2>
     <form action="/login" method="POST" class="login">
       <div class="formInputDiv" id="usernamediv">
         <label for="username">username: </label>
@@ -24,6 +24,18 @@
       <a href="#" class="forgotuser">forgot username</a>
     </div>
   </div>
+  <a href="/register" class="regRedirectDiv">
+    <div>
+      <h3>New?</h3>
+    </div>
+    <div>
+      <p>Register</p>
+      <p>Here</p>
+    </div>
+    <div class='rightArrow'>
+      <i class="fas fa-arrow-circle-right"></i>
+    </div>
+  </a>
 </section>
 
 <% include ../partials/footer %>
