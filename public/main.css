@@ -271,6 +271,10 @@ h1 {
 
 /* NAV STYLE */
 
+.hamburgerDiv {
+  display: none;
+}
+
 .navcontainer {
   display: flex;
   justify-content: center;
