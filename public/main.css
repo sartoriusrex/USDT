@@ -1470,7 +1470,7 @@ u {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2.5rem;
+  min-height: 2.5rem;
   display: none;
   position: absolute;
   opacity: 0.9;
@@ -1479,7 +1479,7 @@ u {
 .successAlert,
 .failureAlert  {
   color: hsl(42, 15%, 13%);
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
