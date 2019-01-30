@@ -19,13 +19,13 @@ router.get('/announcements', (req,res) => {
 
 //New Announcement Form Page
 
-router.get('/announcements/new', (req,res) => {
+router.get('/announcements/new', middleware.isLoggedIn, (req,res) => {
   res.render('announcements/announcement-new');
 });
 
 //Create Announcement Post Page
 
-router.post('/announcements', (req,res) => {
+router.post('/announcements', middleware.isLoggedIn, (req,res) => {
   var author = {
       id: req.user._id,
       username: req.user.username
@@ -72,7 +72,7 @@ router.get('/announcements/:id/edit', middleware.checkAnnouncementOwnership, (re
 
 // Update Page for Announcements
 
-router.put('/announcements/:id', (req,res) => {
+router.put('/announcements/:id', middleware.checkAnnouncementOwnership, (req,res) => {
   var today = new Date(),
       dd    = today.getDate(),
       mm    = today.getMonth() + 1,
@@ -101,7 +101,7 @@ router.put('/announcements/:id', (req,res) => {
 
 // Delete Route for Announcements
 
-router.delete('/announcements/:id', (req,res) => {
+router.delete('/announcements/:id', middleware.checkAnnouncementOwnership, (req,res) => {
   Announcement.findByIdAndDelete(req.params.id, (err) => {
     if( err ) {
       console.log(err);
