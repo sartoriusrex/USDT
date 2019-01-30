@@ -51,6 +51,7 @@ router.get('/announcements/:id', ( req, res ) => {
   Announcement.findById(req.params.id, ( err, foundAnnouncement ) => {
     if ( err || !foundAnnouncement ) {
       console.log( err );
+      req.flash("error","There was an error. Does that announcement exist?");
       res.redirect("back");
     } else {
       res.render("announcements/announcement-show", { announcement: foundAnnouncement });
@@ -64,6 +65,8 @@ router.get('/announcements/:id/edit', middleware.checkAnnouncementOwnership, (re
   Announcement.findById(req.params.id, (err, foundAnnouncement) => {
     if (err || !foundAnnouncement) {
       console.log(err);
+      req.flash("error","You are trying to edit an announcement which does not exist.");
+      res.redirect('back');
     } else {
       res.render('announcements/announcement-edit', {announcement: foundAnnouncement});
     }
@@ -92,6 +95,7 @@ router.put('/announcements/:id', middleware.checkAnnouncementOwnership, (req,res
   Announcement.findByIdAndUpdate(req.params.id, updatedAnnouncement, (err,foundAnnouncement) => {
     if( err || !foundAnnouncement ) {
       console.log(err);
+      req.flash("error","You are trying to edit an announcement which does not exist.");
       res.redirect('back');
     } else {
       res.redirect('/announcements');
@@ -105,6 +109,7 @@ router.delete('/announcements/:id', middleware.checkAnnouncementOwnership, (req,
   Announcement.findByIdAndDelete(req.params.id, (err) => {
     if( err ) {
       console.log(err);
+      req.flash("error","An error occurred with your request.");
       res.redirect('back');
     } else {
       res.redirect('/announcements');

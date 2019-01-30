@@ -14,10 +14,11 @@ router.get('/login', ( req, res ) => {
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  successFlash: true,
+  successFlash: "Welcome back. Did you clear your cookies?",
   failureRedirect: '/login',
   failureFlash: true
-}), ( req, res ) => {});
+}), ( req, res ) => {
+});
 
 
 // ===Logout===
@@ -64,7 +65,7 @@ router.post('/register', ( req, res ) => {
         return res.render("authorization/register",{"error": err.message});
     }
     passport.authenticate("local")(req,res, () => {
-        req.flash("success","Thank you for registering, " + user.username);
+        req.flash("success","Thank you for registering, " + user.username + ". We're watching you.");
         res.redirect("/");
     });
   });

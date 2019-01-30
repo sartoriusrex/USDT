@@ -41,6 +41,7 @@ router.get('/news/:id', (req,res) => {
   News.findById(req.params.id, ( err, foundArticle) => {
     if ( err || !foundArticle) {
       console.log(err);
+      req.flash("error","There was an error. Does that article exist?");
       res.redirect("back");
     } else {
       res.render("news/news-show", { news: foundArticle });

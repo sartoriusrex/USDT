@@ -27,6 +27,19 @@
 
   <body>
 
+  <div id="flashContainer">
+    <% if (error && error.length > 0) { %>
+      <div class="failureAlert">
+        <h4 class="message"> <%= error %> </h4>
+      </div>
+    <% } %>
+    <% if (success && success.length > 0) { %>
+      <div class="successAlert">
+        <h4 class="message"> <%= success %> </h4>
+      </div>
+    <% } %>
+  </div>
+
   <header class='header'>
 
     <a href="/" class="logoAndText">
@@ -40,32 +53,40 @@
     <div class="headerUtilities">
       <div class="userLoginDiv">
         <% if(!currentUser) { %> 
-          <div class="signedOut">
+          <div>
             <a href="/login">
               <i class="fas fa-user-circle"></i>
               Login
             </a>
           </div>
-          <div class="signedOut">
+          <div>
             <a href="/register">
               <i class="fab fa-wpforms"></i>
               Register
             </a>
           </div>
         <% } else { %>
-          <div class="signedIn">
+          <div>
             <a href="/logout">
               <i class="fas fa-sign-out-alt"></i>
               Log Out
             </a>
           </div>
-          <div class="signedIn">
+          <% if(currentUser.isAdmin) { %> 
+          <div>
+            <a href="/reports">
+              <i class="fas fa-user-secret"></i>
+              View Reports
+            </a>
+          </div>
+          <% } %>
+          <div>
             <a href="#">
               <i class="fas fa-user-circle"></i>
               Profile
             </a>
           </div>
-          <div class="signedIn">
+          <div>
             <a href="#">
               <i class="fas fa-cog"></i>
               Settings
@@ -74,43 +95,24 @@
         <% } %>
       </div>
       <div class="socialMedia">
-        <a href="#" class="smcontainer">
+        <a href="https://twitter.com/DepartmentTruth" class="smcontainer">
           <img src="/icons/social-media-logos/svg/008-twitter.svg" class="socialMediaIcon">
         </a>
-        <a href="#" class="smcontainer">
+        <a href="https://www.youtube.com/channel/UC2DWMCqYOvHuFSkv556R3-w" class="smcontainer">
           <img src="/icons/social-media-logos/svg/001-youtube.svg" class="socialMediaIcon">
         </a>
         <a href="#" class="smcontainer">
           <img src="/icons/social-media-logos/svg/018-reddit.svg" class="socialMediaIcon">
         </a>
-        <a href="#" class="smcontainer">
+        <a href="https://medium.com/@us_department_of_truth" class="smcontainer">
           <img src="/icons/social-media-logos/svg/026-medium.svg" class="socialMediaIcon">
         </a>
-        <a href="#" class="smcontainer">
-          <img src="/icons/social-media-logos/svg/027-linkedin.svg" class="socialMediaIcon">
-        </a>
-        <a href="#" class="smcontainer">
-          <img src="/icons/social-media-logos/svg/029-instagram.svg" class="socialMediaIcon">
-        </a>
-        <a href="#" class="smcontainer">
+        <a href="http://fb.me/usdepartmentoftruth" class="smcontainer">
           <img src="/icons/social-media-logos/svg/036-facebook.svg" class="socialMediaIcon">
         </a>
       </div>
     </div>
   </header>
-
-  <div id="flashContainer">
-    <% if (error && error.length > 0) { %>
-      <div class="failureAlert">
-        <h4 class="message"> <%= error %> </h4>
-      </div>
-    <% } %>
-    <% if (success && success.length > 0) { %>
-      <div class="successAlert">
-        <h4 class="message"> <%= success %> </h4>
-      </div>
-    <% } %>
-  </div>
   
   <div class="navcontainer">
     <nav class='navlist'>

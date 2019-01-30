@@ -229,14 +229,6 @@ h1 {
   padding: 5px 10px;
 }
 
-.signedIn {
-  display: block;
-}
-
-.signedOut {
-  display: block;
-}
-
 .socialMedia {
   display: flex;
   flex-direction: row;
