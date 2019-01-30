@@ -72,7 +72,8 @@
 
       <% news.slice(-2).reverse().forEach( function( news ) { %>
         <a href="/news/<%=news._id%>" class="newsLink newsLinkRow">
-          <img src="<%=news.coverImage%>" alt="#" class="newsPhotoRow">
+          <img src="<%=news.coverImage%>" alt="#" class=
+          "newsPhotoRow">
           <div class="newsText">
             <h4><%=news.title%></h4>
             <p class="newsDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
@@ -115,7 +116,7 @@
   </section>
 
   <script>
-    
+
     // Change Layout of News Article Container depending on if the image is wider than it is tall.
   var newsLinkContainers = document.getElementsByClassName("newsLinkRow");
 var newsPhotos = document.getElementsByClassName("newsPhotoRow");
@@ -221,4 +222,5 @@ addSlideNav();
   
   addSlideNavDot();
   </script>
+  
 <% include ./partials/footer %>

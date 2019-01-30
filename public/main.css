@@ -964,7 +964,7 @@ td a {
   width: 90%;
   min-height: 150px;
   background-color: hsl(40, 23%, 97%);
-  border-radius: 15px;
+  border-radius: 4px;
   box-shadow: 0 2px 4px hsl(39, 11%, 69%);
   margin-bottom: 15px;
 }
@@ -974,10 +974,10 @@ td a {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 10%;
+  max-width: 10%;
   flex: 1 1 100%;
   padding: 5px;
-  border-radius: 15px 0 0 15px;
+  border-radius: 4px 0 0 4px;
   background-color: hsl(184, 80%, 74%);
 }
 
@@ -995,6 +995,7 @@ td a {
   min-width: 70%;
   flex: 1 1 100%;
   background-color: hsl(40, 23%, 97%);
+  border-radius: 4px;
 }
 
 .announcementBody:hover {
@@ -1024,7 +1025,7 @@ td a {
   background-color: hsl(360, 71%, 66%);
   width: 10%;
   flex: 0 1 100%;
-  border-radius: 0 15px 15px 0;
+  border-radius: 0 4px 4px 0;
 }
 
 .deleteAnnouncement button {
@@ -1039,11 +1040,11 @@ td a {
 .updateAnnouncement:hover,
 .deleteAnnouncement:hover {
   transform: perspective(10px) translate3d( 0, 0, .5px);
-  border-radius: 15px;
+  border-radius: 4px;
 }
 
 .deleteAnnouncement button:hover {
-  border-radius: 15px;
+  border-radius: 4px;
 }
 
 

@@ -20,14 +20,16 @@
       <br>
       <p><%= announcement.body %></p>
     </a>
-    <a class="updateAnnouncement" href="/announcements/<%=announcement._id%>/edit">
-      <div>
-          <i class="fas fa-edit"></i> Update
-      </div>
-    </a>
+    <% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>
+      <a class="updateAnnouncement" href="/announcements/<%=announcement._id%>/edit">
+        <div>
+            <i class="fas fa-edit"></i> Update
+        </div>
+      </a>
       <form class="deleteAnnouncement" action="/announcements/<%= announcement._id %>?_method=DELETE" method="POST">
         <button><i class="fas fa-trash-alt"></i> Delete</button>
       </form>
+    <% } %>
   </div>
 <% }) %>
 
