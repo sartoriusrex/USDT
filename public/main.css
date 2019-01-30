@@ -1319,6 +1319,7 @@ u {
   background-color: hsl(40, 23%, 97%);
   border-radius: 15px;
   padding-bottom: 20px;
+  box-shadow: 0 5px 10px 5px hsl(39, 11%, 69%);
 }
 
 .authenticationContainer h2 {
@@ -1395,17 +1396,19 @@ u {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: hsl(83, 88%, 94%);
+  border: 2px solid hsl(360, 85%, 25%);
+  background-color: hsl(40, 23%, 97%);
   border-radius: 15px;
   padding: 20px 5px;
   position: absolute;
   right: 20%;
+  box-shadow: 1px 3px 4px 2px hsl(39, 11%, 69%);
 }
 
 .rightArrow {
   position: absolute;
   right: -15px;
-  background-color: hsl(83, 88%, 94%);
+  background-color: hsl(40, 23%, 97%);
   border-radius: 50%;
 }
 
@@ -1413,8 +1416,13 @@ u {
   font-size: 2rem;
 }
 
-.regRedirectDiv div h3 {
+.regRedirectDiv div h2 {
   padding-bottom: 20px;
+}
+
+.registerText p {
+  font-weight: bold;
+  color: hsl(360, 85%, 25%);
 }
 
 
