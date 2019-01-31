@@ -9,9 +9,9 @@
             <div class="sliderText">
               <a href='/news/<%=news._id%>'>
                 <h2><%=news.title%></h2>
+                <p class="sliderDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
+                <p class="sliderBody"><%=news.body.substring(0,250)%>...</p>
               </a>
-              <p class="sliderDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
-              <p><%=news.body.substring(0,250)%>...</p>
               <a class="sliderArticleBtn readMoreBtn" href='/news/<%=news._id%>'>Read Full Text</a>
             </div>
             <a href="/news/<%=news._id%>" class ='sliderPhotoLink'>
@@ -21,6 +21,10 @@
         <% }); %>
 
       </ul>
+       <!-- Left and Right Nav buttons on slideshow -->
+
+      <button class="slideleft"><i class="fas fa-arrow-left"></i></button>
+      <button class="slideright"><i class="fas fa-arrow-right"></i></button>
     </div>
 
     <!-- Square Article Nav Buttons below slideshow -->
@@ -33,10 +37,7 @@
 
     </div>
 
-    <!-- Left and Right Nav buttons on slideshow -->
-
-    <button class="slideleft"><i class="fas fa-arrow-left"></i></button>
-    <button class="slideright"><i class="fas fa-arrow-right"></i></button>
+   
 
   </section>
 
@@ -222,5 +223,5 @@ addSlideNav();
   
   addSlideNavDot();
   </script>
-  
+
 <% include ./partials/footer %>

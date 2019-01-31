@@ -387,8 +387,8 @@ h1 {
 
 @media screen and (max-width: 900px) {
   #loginIcon,
-  #socialIcon,
-  #navIcon {
+  #socialIcon
+   {
     display: block;
     font-size: 16px;
     color: hsl(42, 15%, 13%);
@@ -400,6 +400,16 @@ h1 {
 
   .socialMedia a {
     display: none;
+  }
+
+  
+}
+
+@media screen and (max-width: 750px) {
+  #navIcon {
+    display: block;
+    font-size: 16px;
+    color: hsl(42, 15%, 13%);
   }
 
   .navli {
@@ -430,8 +440,11 @@ h1 {
 /* SLIDER GENERAL STYLE */
 
 .slider {
-  position: relative; /*to position nav arrows on left and right */
   overflow: hidden;
+}
+
+.sliderContainer {
+  position: relative; /*to position nav arrows on left and right */
 }
 
 .sliderContainer,
@@ -458,28 +471,25 @@ h1 {
 }
 
 .sliderText,
-.sliderPhoto {
+.sliderPhotoLink {
+  display: flex;
   flex: 1 1 100%;
+  max-width: 50%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .sliderText {
-  padding-right: 30px;
-  max-width: 50%;
-  display: flex;
+  padding: 0 20px;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.sliderPhotoLink {
-  max-width: 50%;
-  max-height: 100%;
+  justify-content: space-between;
 }
 
 
 .sliderPhoto {
   max-width: 100%;
-  max-height: 40vh;
+  max-height: 100%;
 }
 
 .sliderText h2 {
@@ -569,15 +579,64 @@ h1 {
 
 .slideleft {
   top: 40%;
-  left: -25px;
+  left: -90px;
   box-shadow: 4px 2px 10px hsl(39, 11%, 69%);
 }
 
 .slideright {
   top: 40%;
-  right: -25px;
+  right: -90px;
   box-shadow: -4px 2px 10px hsl(39, 11%, 69%);
 }
+
+/* ===SLIDE SECTION RESPONSIVENESS== */
+
+@media screen and (max-width: 900px) {
+  .sliderBody {
+    display: none;
+  }
+
+  .sliderContainer,
+  .sliderContainer ul,
+  .sliderLI {
+    height: 250px;
+  }
+
+  .sliderText h2 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .sliderText h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sliderPhotoLink {
+    display: none;
+  }
+
+  .sliderText {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .slideleft {
+    left: -30px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .slideright {
+    right: -30px;
+    height: 40px;
+    width: 40px;
+  }
+
+}
+
 
 
 /* =================================================== */
