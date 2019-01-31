@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
   box-sizing: border-box;
+  outline: 1px solid red;
 }
 
 html {
@@ -14,6 +15,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: hsl(40, 23%, 97%);
+  display: block;
 }
 
 nav, ul {
@@ -88,6 +90,8 @@ a:not(.btn .subscribeToNewsletterBtn):hover {
 
 button {
   border: none;
+  background-color: transparent;
+  color: hsl(40, 23%, 97%);
 }
 
 button:hover {
@@ -215,6 +219,20 @@ h1 {
   align-items: flex-end;
   color: hsl(49, 100%, 96%);
   padding-right: 20px;
+}
+
+
+/* Text button that opens menu to login/register, etc */
+#loginIcon {
+  display: none;
+}
+
+#socialIcon {
+  display: none;
+}
+
+#navIcon {
+  display: none;
 }
 
 .userLoginDiv {
@@ -365,6 +383,46 @@ h1 {
   padding: 5px;
 }
 
+/* =======HEADER AND NAV BAR RESPONSIVENESS================ */
+
+@media screen and (max-width: 900px) {
+  #loginIcon,
+  #socialIcon,
+  #navIcon {
+    display: block;
+    font-size: 16px;
+    color: hsl(42, 15%, 13%);
+  }
+
+  .userLoginDiv > div {
+    display: none;
+  }
+
+  .socialMedia a {
+    display: none;
+  }
+
+  .navli {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 1rem;
+  }
+
+  .logotext p {
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .logotext p {
+    font-size: .6rem;
+    line-height: 1rem;
+  }
+}
 
 /* =================================================== */
 
@@ -1258,9 +1316,9 @@ u {
   width: 40%;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   grid-template-areas: 
-    "image title" "body body";
+    "image title" "image title" "body body";
 }
 
 .newsShowImgContainer {

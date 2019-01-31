@@ -6,3 +6,4 @@ var flashContainer = document.getElementById('flashContainer');
 if (message[0]) {
   flashContainer.style.display = "flex";
 }
+
