@@ -224,10 +224,12 @@ h1 {
 
 /* Text button that opens menu to login/register, etc */
 #loginIcon {
+  color: hsl(49, 100%, 96%);
   display: none;
 }
 
 #socialIcon {
+  color: hsl(49, 100%, 96%);
   display: none;
 }
 
@@ -391,7 +393,6 @@ h1 {
    {
     display: block;
     font-size: 16px;
-    color: hsl(42, 15%, 13%);
   }
 
   .userLoginDiv > div {
@@ -402,6 +403,9 @@ h1 {
     display: none;
   }
 
+  .headerUtilities {
+    align-items: center;
+  }
   
 }
 
@@ -604,6 +608,21 @@ h1 {
 
   .sliderText h2 {
     font-size: 24px;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+  .slideleft {
+    left: -50px;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .slideright {
+    right: -50px;
+    height: 60px;
+    width: 60px;
   }
 }
 
