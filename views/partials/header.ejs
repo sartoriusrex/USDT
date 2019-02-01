@@ -53,7 +53,10 @@
     <div class="headerUtilities">
       <div class="userLoginDiv">
         <button id="loginIcon">
-          <i class="fas fa-user-circle"></i>
+          <div id="closeLogin">
+            <i class="far fa-times-circle"></i>
+          </div>
+          <i id="openLogin" class="fas fa-user-circle"></i>
         </button>
         <% if(!currentUser) { %> 
           <div>
