@@ -232,21 +232,10 @@ h1 {
   font-size: 42px;
 }
 
-#loginIcon:hover,
-#socialIcon:hover {
-  color: hsl(44, 92%, 63%);
-}
-
 #navIcon,
 #closeLogin,
 #closeSocial {
   display: none;
-}
-
-#navIcon:hover,
-#closeLogin:hover,
-#closeSocial:hover {
-  color: hsl(44, 92%, 63%);
 }
 
 .userLoginDiv {
@@ -304,7 +293,9 @@ h1 {
 
 /* NAV STYLE */
 
-.hamburgerDiv {
+#closeMenu {
+  font-size: 42px;
+  order: -2;
   display: none;
 }
 
@@ -525,11 +516,6 @@ h1 {
 
   /* Navbar Responsiveness */
 
-  #closeMenu {
-    font-size: 42px;
-    order: -2;
-  }
-
   .navlist.responsive {
     position: absolute;
     top: 0;
@@ -542,6 +528,10 @@ h1 {
     width: 100%;
     background-color: hsl(42, 15%, 13%);
     padding: 5px;
+  }
+
+  .navlist.responsive #closeMenu {
+    display: block;
   }
 
   .navlist.responsive #navIcon {
