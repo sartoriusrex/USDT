@@ -229,7 +229,7 @@ h1 {
 #socialIcon {
   color: hsl(49, 100%, 96%);
   display: none;
-  font-size: 32px;
+  font-size: 42px;
 }
 
 #loginIcon:hover,
@@ -424,6 +424,22 @@ h1 {
     padding: 5px 10px;
   }
 
+  .smcontainer {
+    margin: 5px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .socialMediaIcon {
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    margin: 5px;
+  }
+
   /* State of Elements in Menu when clicked */
 
   /* Menu */
@@ -439,7 +455,7 @@ h1 {
     background-color: hsl(42, 15%, 13%);
     padding: 5px;
     border-radius: 4px;
-    font-size: 24px;
+    font-size: 42px;
   }
 
   .socialMedia.responsiveSocial {
@@ -476,7 +492,7 @@ h1 {
     display: none;
   }
 
-  /* Position Menu above all items in top right */
+  /* Position Menus above all items in top center */
 
   body {
     position: relative;
@@ -486,9 +502,9 @@ h1 {
   .headerUtilities.responsiveSocial {
     position: absolute;
     top: 0;
-    left: 25%;
+    left: 10%;
     padding: 0;
-    width: 50%;
+    width: 80%;
   }
 }
 
@@ -530,8 +546,9 @@ h1 {
     font-size: 16px;
   }
 
-  .userLoginDiv.responsive {
-    font-size: 20px;
+  .headerUtilities.responsive,
+  .headerUtilities.responsiveSocial {
+    font-size: 42;
   }
 }
 

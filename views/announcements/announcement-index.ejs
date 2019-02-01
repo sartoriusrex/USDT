@@ -3,11 +3,16 @@
 <section class="allAnnouncements">
 
 <h2>All Announcements</h2>
+
+<% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>
+
 <a href="/announcements/new" id="createAnnouncement">
   <div>
       <i class="fas fa-plus"></i> Create Announcement
   </div>
 </a>
+
+<% } %>
 
 <% announcement.slice().reverse().forEach(function(announcement){ %>
   <div class="announcementContainer">
