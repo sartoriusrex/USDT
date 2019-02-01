@@ -225,21 +225,28 @@ h1 {
 
 
 /* Text button that opens menu to login/register, etc */
-#loginIcon {
-  color: hsl(49, 100%, 96%);
-  display: none;
-  font-size: 32px;
-}
-
+#loginIcon,
 #socialIcon {
   color: hsl(49, 100%, 96%);
   display: none;
   font-size: 32px;
 }
 
+#loginIcon:hover,
+#socialIcon:hover {
+  color: hsl(44, 92%, 63%);
+}
+
 #navIcon,
-#closeLogin {
+#closeLogin,
+#closeSocial {
   display: none;
+}
+
+#navIcon:hover,
+#closeLogin:hover,
+#closeSocial:hover {
+  color: hsl(44, 92%, 63%);
 }
 
 .userLoginDiv {
@@ -251,7 +258,7 @@ h1 {
   z-index: 1;
 }
 
-.userLoginDiv > div {
+.userLoginDiv > a {
   padding: 5px 10px;
 }
 
@@ -404,7 +411,7 @@ h1 {
   }
 
   /* All Actual Links and Icons in Login Menu: no display */
-  .userLoginDiv > div {
+  .userLoginDiv > a {
     display: none;
   }
 
@@ -417,16 +424,11 @@ h1 {
     padding: 5px 10px;
   }
 
-  /* Close Button */
-
-  #closeLogin:hover {
-    color: hsl(44, 92%, 63%);
-  }
-
   /* State of Elements in Menu when clicked */
 
   /* Menu */
-  .userLoginDiv.responsive {
+  .userLoginDiv.responsive,
+  .socialMedia.responsiveSocial {
     display: block;
     flex-direction: column;
     justify-content: space-evenly;
@@ -440,21 +442,37 @@ h1 {
     font-size: 24px;
   }
 
-  /* Links in meniu */
-  .userLoginDiv.responsive > div {
-    display: block;
+  .socialMedia.responsiveSocial {
+    display: flex;
+  }
+
+  /* Links in menus */
+  .userLoginDiv.responsive > a {
+    display: flex;
     width: 100%;
     padding: 5px;
+    justify-content: center;
+  }
+
+  .userLoginDiv a:hover {
+    background-color: hsl(49, 100%, 96%);
+    color: hsl(42, 15%, 13%);
+  }
+
+  .socialMedia.responsiveSocial > a {
+    display: block;
   }
 
   /* X Button */
-  .userLoginDiv.responsive #loginIcon #closeLogin {
+  .userLoginDiv.responsive #loginIcon #closeLogin,
+  .socialMedia.responsiveSocial #socialIcon #closeSocial {
     display: block;
   }
 
   /* Open menu button and Icon Links = no display */
   .userLoginDiv.responsive #loginIcon #openLogin,
-  .userLoginDiv.responsive > div > a > i {
+  .userLoginDiv.responsive > a > i,
+  .socialMedia.responsiveSocial #socialIcon #openSocial {
     display: none;
   }
 
@@ -464,18 +482,20 @@ h1 {
     position: relative;
   }
   
-  .headerUtilities.responsive {
+  .headerUtilities.responsive,
+  .headerUtilities.responsiveSocial {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 25%;
     padding: 0;
+    width: 50%;
   }
 }
 
 @media screen and (max-width: 750px) {
   #navIcon {
     display: block;
-    font-size: 16px;
+    font-size: 32px;
     color: hsl(42, 15%, 13%);
   }
 
@@ -505,8 +525,13 @@ h1 {
     font-size: 10px;
     line-height: .9rem;
   }
+
   h1 {
     font-size: 16px;
+  }
+
+  .userLoginDiv.responsive {
+    font-size: 20px;
   }
 }
 

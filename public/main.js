@@ -7,24 +7,55 @@ if (message[0]) {
   flashContainer.style.display = "flex";
 }
 
+
 // ===Responsive Menu Displays======
 
-// login menu
+// login & Social Menu
 
 var openLoginIcon = document.getElementById("openLogin");
 var closeLoginIcon = document.getElementById("closeLogin");
 
+var openSocialIcon = document.getElementById("openSocial");
+var closeSocialIcon = document.getElementById("closeSocial");
+
 openLoginIcon.addEventListener("click", function (){
-  makeResponsive();
+  makeLoginResponsive();
 });
 closeLoginIcon.addEventListener("click", function(){
-  makeResponsive();
+  makeLoginResponsive();
 });
 
-function makeResponsive() {
+openSocialIcon.addEventListener("click", function (){
+  openSocialResponsive();
+});
+closeSocialIcon.addEventListener("click", function (){
+  closeSocialResponsive();
+});
+
+function makeLoginResponsive() {
   var userLoginDiv = document.getElementsByClassName("userLoginDiv");
   var headerUtil = document.getElementsByClassName("headerUtilities");
 
   userLoginDiv[0].classList.toggle("responsive");
   headerUtil[0].classList.toggle("responsive");
+}
+
+function openSocialResponsive() {
+  toggleSocialResponsiveness();
+  var userLoginDiv = document.getElementsByClassName("userLoginDiv");
+  userLoginDiv[0].style.display = "none";
+}
+
+function closeSocialResponsive() {
+  toggleSocialResponsiveness();
+  var userLoginDiv = document.getElementsByClassName("userLoginDiv");
+  userLoginDiv[0].style.display = "flex";
+}
+
+function toggleSocialResponsiveness () {
+  var socialMediaDiv = document.getElementsByClassName("socialMedia");
+  var headerUtil = document.getElementsByClassName("headerUtilities");
+
+  socialMediaDiv[0].classList.toggle("responsiveSocial");
+  headerUtil[0].classList.toggle("responsiveSocial");
 }

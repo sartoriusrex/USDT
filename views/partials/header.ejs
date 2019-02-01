@@ -59,50 +59,51 @@
           <i id="openLogin" class="fas fa-user-circle"></i>
         </button>
         <% if(!currentUser) { %> 
-          <div>
-            <a href="/login">
-              <i class="fas fa-user-circle"></i>
-              Login
-            </a>
-          </div>
-          <div>
-            <a href="/register">
-              <i class="fab fa-wpforms"></i>
-              Register
-            </a>
-          </div>
+
+          <a href="/login">
+            <i class="fas fa-user-circle"></i>
+            Login
+          </a>
+          <a href="/register">
+            <i class="fab fa-wpforms"></i>
+            Register
+          </a>
+          
         <% } else { %>
-          <div>
-            <a href="/logout">
-              <i class="fas fa-sign-out-alt"></i>
-              Log Out
-            </a>
-          </div>
-          <% if(currentUser.isAdmin) { %> 
-          <div>
-            <a href="/reports">
-              <i class="fas fa-user-secret"></i>
-              View Reports
-            </a>
-          </div>
-          <% } %>
-          <div>
-            <a href="#">
-              <i class="fas fa-user-circle"></i>
-              Profile
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <i class="fas fa-cog"></i>
-              Settings
-            </a>
-          </div>
+          
+          <a href="/logout">
+            <i class="fas fa-sign-out-alt"></i>
+            Log Out
+          </a>
+          
+        <% if(currentUser.isAdmin) { %> 
+          
+          <a href="/reports">
+            <i class="fas fa-user-secret"></i>
+            View Reports
+          </a>
+          
         <% } %>
+          
+          <a href="#">
+            <i class="fas fa-user-circle"></i>
+            Profile
+          </a>
+          <a href="#">
+            <i class="fas fa-cog"></i>
+            Settings
+          </a>
+          
+        <% } %>
+
       </div>
+      
       <div class="socialMedia">
         <button id="socialIcon">
-          <i class="fas fa-share-square"></i>
+          <div id="closeSocial">
+            <i class="far fa-times-circle"></i>
+          </div>
+          <i id="openSocial" class="fas fa-share-square"></i>
         </button>
         <a href="https://twitter.com/DepartmentTruth" class="smcontainer">
           <img src="/icons/social-media-logos/svg/008-twitter.svg" class="socialMediaIcon">
