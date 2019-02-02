@@ -172,7 +172,7 @@ function changeNewsShowLayout () {
 var slideIndex = 1;
 
 
-if (pageURL.split("\/").length-1 === 3) {
+if (pageURL.split("\/").length-1 === 3 && pageURL.endsWith("\/")) {
   changeNewsLayout();
   addSlideNavDot();
   mountComponent();
