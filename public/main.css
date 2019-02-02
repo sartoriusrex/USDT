@@ -1953,6 +1953,32 @@ u {
   margin: 5px 5px;
 }
 
+/* ===Register Responsive Styling=== */
+
+@media screen and (max-width: 650px) {
+  .formDataArea {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .formSection {
+    flex-direction: column;
+  }
+
+  .formSectionName {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .formDataArea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
 /* ================================= */
 
 /* Flash message Styling */
