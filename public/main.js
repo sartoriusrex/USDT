@@ -155,18 +155,20 @@ if (pageURL.includes(newsString)) {
 
 
 function changeNewsShowLayout () {
-
+  var newsShowContainer = document.getElementsByClassName("newsShowContainer");
+  
 }
 
 
 // ===HOME PAGE LAYOUT================================
-// if Home, make slideshow happen and change layout of news articles
-var homeString = "\\/";
+// if Home, make slideshow happen and change layout of news articles--
+// Check if home by counting number of "/". If it is 3, then run script
 
 // slidexIndex var
 var slideIndex = 1;
 
-if (pageURL.indexOf(homeString) === -1) {
+
+if (pageURL.split("\/").length-1 === 3) {
   changeNewsLayout();
   addSlideNavDot();
   mountComponent();
@@ -191,8 +193,6 @@ function changeNewsLayout() {
 }
 
 // ======Slideshow Logic======
-
-
 
 // ----------begin slideshow----------------
 
