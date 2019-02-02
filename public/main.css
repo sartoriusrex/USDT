@@ -1559,6 +1559,41 @@ td a {
   border-radius: 4px;
 }
 
+/* ===ANNOUNCEMENT INDEX RESPONSIVENESS=== */
+
+@media screen and (max-width: 900px){
+  .announcementContainer {
+    flex-direction: column;
+  }
+
+  .dateUpdated {
+    flex-direction: row;
+    max-width: 100%;
+    border-radius: 4px 4px 0 0;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+
+  .dateUpdated h4 {
+    padding: 0 5px 0 0;
+  }
+
+  .updateAnnouncement {
+    width: 100%;
+    height: 30px;
+  }
+
+  .deleteAnnouncement {
+    width: 100%;
+    height: 30px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .deleteAnnouncement button {
+    border-radius: 0 0 4px 4px;
+  }
+}
+
 
 /* ========================================== */
 
@@ -1669,6 +1704,11 @@ td a {
   border-radius: 0 15px 15px 0;
   text-transform: uppercase;
 }
+
+/* ===ANNOUNCEMENT SHOW RESPONSIVENESS=== */
+
+
+
 /* =================================================== */
 /* =================================================== */
 /* =================================================== */
