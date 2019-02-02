@@ -4,7 +4,7 @@
   <div class="newsShowContainer">
 
     <div class="newsShowImgContainer">
-      <img src="<%=news.coverImage%>" alt="">
+      <img id="showPhoto" src="<%=news.coverImage%>" alt="">
     </div>
 
     <div class="titleContainer">
@@ -13,14 +13,17 @@
     </div>
 
     <div class="subtitleContainer">
-      <h4><%=news.subtitle%></h3>
+      <h4><%=news.subtitle%></h4>
       <p>By <em></em><%=news.author%></em></p>
     </div>
     
     <div class="newsShowBody">
       <p><%=news.body%></p>
     </div>
+
   </div>
+
+  <a class="secondaryBtn" href="/news">Go Back</a>
   
 </section>
 

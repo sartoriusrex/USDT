@@ -156,7 +156,11 @@ if (pageURL.includes(newsString)) {
 
 function changeNewsShowLayout () {
   var newsShowContainer = document.getElementsByClassName("newsShowContainer");
-  
+  var newsShowPhoto = document.getElementById("showPhoto");
+
+  if (newsShowPhoto.naturalHeight > newsShowPhoto.naturalWidth) {
+    newsShowContainer[0].classList.add("newsShowContainerLong");
+  }
 }
 
 
