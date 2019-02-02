@@ -15,6 +15,8 @@
 
   <div class="announceShowNavBtns">
     <a class="secondaryBtn" href="/announcements">Go Back</a>
+    
+    <% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>
     <div class="announceShowEdits">
       <a class="updateAnnouncementShow" href="/announcements/<%=announcement._id%>/edit">
         <div>
@@ -25,6 +27,8 @@
         <button><i class="fas fa-trash-alt"></i> Delete</button>
       </form>
     </div>
+    <% } %>
+
   </div>
 
 </section>

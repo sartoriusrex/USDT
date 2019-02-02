@@ -1626,11 +1626,11 @@ td a {
 
 .announceShowEdits {
   display: flex;
-  max-width: 50%;
+  max-width: 70%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 60%
+  width: 70%
 }
 
 .updateAnnouncementShow {
@@ -1707,7 +1707,35 @@ td a {
 
 /* ===ANNOUNCEMENT SHOW RESPONSIVENESS=== */
 
+@media screen and (max-width: 800px) {
+  .announcementShowContainer h2 {
+    max-width: 90%;
+  }
 
+  #announcementShowBody {
+    width: 90%;
+  }
+
+  .announceShowNavBtns {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .announceShowNavBtns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .announceShowNavBtns > a {
+    margin-bottom: 10px;
+  }
+
+  .announceShowEdits {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
 /* =================================================== */
 /* =================================================== */
