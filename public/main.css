@@ -1139,6 +1139,14 @@ footer {
   padding: 10px 20px;
 }
 
+.closeFooterIndices,
+.closeFooterPolicies,
+.closeFooterContact {
+  display: none;
+  font-size: 32px;
+  width: 100%;
+}
+
 @media screen and (max-width: 650px) {
   .footerNavShown {
     display: none;
@@ -1160,6 +1168,52 @@ footer {
     padding-bottom: 10px;
     flex: 0 1 50%;
   }
+
+  .footer-contact,
+  .footer-online-policies,
+  .footer-indices {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* ===FOOTER NAV MENUS WHEN CLICKED=== */
+
+  .footer-contact.responsive,
+  .footer-online-policies.responsive,
+  .footer-indices.responsive {
+    background-color: hsl(42, 15%, 13%);
+    padding: 5px;
+    border-radius: 4px;
+  }
+
+  .footer-contact.responsive .footerNavIcon,
+  .footer-online-policies.responsive .footerNavIcon,
+  .footer-indices.responsive .footerNavIcon {
+    display: none;
+  }
+
+  .footer-contact.responsive .closeFooterContact,
+  .footer-online-policies.responsive .closeFooterPolicies,
+  .footer-indices.responsive .closeFooterIndices {
+    display: block;
+  }
+
+  .footer-contact.responsive .footerNavShown,
+  .footer-online-policies.responsive .footerNavShown,
+  .footer-indices.responsive .footerNavShown {
+    display: flex;
+  }
+
+  .footer-contact.responsive .footerNavShown a,
+  .footer-online-policies.responsive .footerNavShown a,
+  .footer-indices.responsive .footerNavShown a {
+    font-size: 24px;
+    padding: 5px;
+    width: 100%;
+  }
+
 }
 
 
