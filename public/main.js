@@ -90,7 +90,7 @@ function toggleNavMenu (){
 var openFooterContact = document.getElementsByClassName(" openFooterContact");
 var closeFooterContact = document.getElementsByClassName(" closeFooterContact");
 
-openFooterContact.addEventListener("click", function (){
+openFooterContact[0].addEventListener("click", function (){
   toggleFooterContact();
 });
 closeFooterContact[0].addEventListener("click", function (){
@@ -108,10 +108,10 @@ function toggleFooterContact() {
 var  openFooterPolicies = document.getElementsByClassName(" openFooterPolicies");
 var  closeFooterPolicies = document.getElementsByClassName(" closeFooterPolicies");
 
-openFooterPolicies.addEventListener("click", function (){
+openFooterPolicies[0].addEventListener("click", function (){
   toggleFooterPolicies();
 });
-closeFooterPolicies.addEventListener("click", function (){
+closeFooterPolicies[0].addEventListener("click", function (){
   toggleFooterPolicies();
 });
 
@@ -126,10 +126,10 @@ function toggleFooterPolicies() {
 var  openFooterIndices = document.getElementsByClassName(" openFooterIndices");
 var  closeFooterIndices = document.getElementsByClassName(" closeFooterIndices");
 
-openFooterIndices.addEventListener("click", function (){
+openFooterIndices[0].addEventListener("click", function (){
   toggleFooterIndicies();
 });
-closeFooterIndices.addEventListener("click", function (){
+closeFooterIndices[0].addEventListener("click", function (){
   toggleFooterIndicies();
 });
 
