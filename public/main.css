@@ -778,6 +778,11 @@ h1 {
     height: 250px;
   }
 
+  .sliderText {
+    justify-content: center;
+    align-items: center;
+  }
+
   .sliderText h2 {
     font-size: 24px;
   }
