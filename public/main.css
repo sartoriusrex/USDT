@@ -4,7 +4,7 @@
 	margin: 0;
 	padding: 0;
   box-sizing: border-box;
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
 }
 
 html {
@@ -1808,8 +1808,18 @@ u {
 
 /* ===NEWS INDEX RESPONSIVENESS=== */
 
-@media screen and (max-width: 550px) {
-  
+@media screen and (max-width: 500px) {
+  .coverImageContainer {
+    display: none;
+  }
+
+  .textContainer {
+    padding: 5px;
+    max-width: 100%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
 }
 
 
@@ -1823,40 +1833,60 @@ u {
   width: 40%;
   display: grid;
   grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: 
+    "image image" "title title" "subtitle subtitle" "body body";
+}
+
+.newsShowContainerLong {
+  width: 40%;
+  display: grid;
+  grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
   grid-template-areas: 
-    "image title" "image title" "body body";
+    "image title" "subtitle subtitle" "body body";
 }
 
 .newsShowImgContainer {
   width: 100%;
   padding-bottom: 20px;
-  margin-right: 10px;
   grid-area: image;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.newsShowContainer > div > img{
-  max-height: 100%;
-  max-width: 90%;
+.newsShowContainerLong .newsShowImgContainer {
+  justify-content: flex-start;
+}
+
+.newsShowImgContainer > img{
+  max-width: 100%;
   object-fit: scale-down;
+}
+
+.newsShowContainerLong > div > img{
+  max-width: 100%;
+  object-fit: scale-down;
+  max-height: 100%;
 }
 
 .titleContainer {
   width: 100%;
-  margin-left: 10px;
-  margin-right: 20px;
   grid-area: title;
 }
 
-.titleContainer * {
-  padding-bottom: 10px;
+.subtitleContainer {
+  width: 100%;
+  grid-area: subtitle;
+}
+
+.titleContainer *,
+.subtitleContainer * {
+  padding-bottom: 20px;
 }
 
 .newsShowBody {
-  margin: auto 20px;
   width: 100%;
   text-indent: 15px;
   grid-area: body;
