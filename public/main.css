@@ -1906,6 +1906,7 @@ u {
   .newsShowContainer {
     width: 90%;
   }
+}
 
 @media screen and (max-width: 500px) {
   .newsShowContainerLong {
@@ -1913,6 +1914,7 @@ u {
     grid-template-areas: 
       "image image" "title title" "subtitle subtitle" "body body";
   }
+  
 
   .newsShowContainerLong > div > img {
     max-height: none;
@@ -2080,14 +2082,14 @@ u {
 
 /* ===Register Responsive Styling=== */
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
   .formDataArea {
     display: flex;
     flex-direction: column;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .formSection {
     flex-direction: column;
   }
