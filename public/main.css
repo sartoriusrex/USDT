@@ -784,7 +784,7 @@ h1 {
   }
 
   .sliderText h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
 }
@@ -805,7 +805,7 @@ h1 {
 
 @media screen and (max-width: 650px) {
   .sliderText h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -927,6 +927,7 @@ h1 {
 }
 
 /* ===NEWS RESPONSIVENESS=== */
+
 
 @media screen and (max-width: 750px) {
   .newsLinkColumn,
