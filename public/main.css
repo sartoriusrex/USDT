@@ -1842,7 +1842,7 @@ u {
 .newsShowContainerLong {
   grid-template-rows: auto auto auto;
   grid-template-areas: 
-    "image title" "subtitle subtitle" "body body";
+    "image title" "image subtitle" "body body";
 }
 
 .newsShowImgContainer {
@@ -1891,7 +1891,16 @@ u {
   grid-area: body;
 }
 
-@media screen and (max-width: 800px) {
+/* NEWS SHOW REPSONSIVENESS */
+
+@media screen and (max-width: 1100px) {
+  .newsShowContainerLong {
+    grid-template-areas: 
+      "image title" "subtitle subtitle" "body body";
+  }
+}
+
+@media screen and (max-width: 900px) {
   .newsShowContainer {
     width: 70%;
   }
