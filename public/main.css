@@ -154,7 +154,7 @@ input[value] {
 
 .readMoreBtn {
   background-color:hsl(41, 8%, 48%);
-  border-radius: 5px;
+  border-radius: 8px;
   color: hsl(40, 23%, 97%);
   padding: 5px 20px;
   margin: 20px 0;
@@ -683,7 +683,7 @@ h1 {
 
 .sliderArticleBtn {
   background-color:hsl(41, 8%, 48%);
-  border-radius: 5px;
+  border-radius: 8px;
   color: hsl(40, 23%, 97%);
   padding: 5px 10px;
 }
@@ -1011,7 +1011,7 @@ h1 {
 
 .emailSubscribeInput {
   height: 100%;
-  border-radius: 5px 0 0 5px;
+  border-radius: 8px 0 0 8px;
   text-indent: 10px;
   flex: 1 1 75%;
   border: 1px solid hsl(360, 85%, 25%);
@@ -1025,7 +1025,7 @@ h1 {
   height: 100%;
   background-color: hsl(360, 85%, 25%);
   color: hsl(40, 23%, 97%);
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 8px 8px 0;
   border: none;
   font-size: 20px;
   flex: 1 1 25%;
@@ -1054,13 +1054,13 @@ h1 {
   .emailSubscribeInput {
     max-height: 30%;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
   }
 
   .subscribeToNewsletterBtn {
     max-height: 30%;
     width: 50%;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: 0 2px 2px .5px hsl(39, 11%, 69%);
     transform: translatey(-2px);
   }
@@ -1537,7 +1537,7 @@ td a {
   background-color: hsl(360, 71%, 66%);
   width: 10%;
   flex: 0 1 100%;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 8px 8px 0;
 }
 
 .deleteAnnouncement button {
@@ -1569,7 +1569,7 @@ td a {
   .dateUpdated {
     flex-direction: row;
     max-width: 100%;
-    border-radius: 8px 4px 0 0;
+    border-radius: 8px 8px 0 0;
     justify-content: flex-start;
     align-items: baseline;
   }
@@ -1586,11 +1586,11 @@ td a {
   .deleteAnnouncement {
     width: 100%;
     height: 30px;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 8px 8px;
   }
 
   .deleteAnnouncement button {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 8px 8px;
   }
 }
 
@@ -1769,13 +1769,13 @@ td a {
   justify-content: flex-end;
   background-color: none;
   margin-right: 10px;
-  border-radius: 8px 0 0 4px;
+  border-radius: 8px 0 0 8px;
 }
 
 .coverImageContainer img {
   max-height: 100%;
   max-width: 100%;
-  border-radius: 8px 0 0 4px;
+  border-radius: 8px 0 0 8px;
   object-fit: contain;
 }
 
