@@ -4,5 +4,5 @@ This is a personal project website for a ficticious US Government Agency called 
 
 Technologies used:
 1. HTML, CSS, Javascript
-2. node.js, express, ejs, Mongodb
-3. oAuth, moment.js, google reCaptcha
+2. node.js, express, ejs, Mongodb, mongoose
+3. Passport, moment.js, Heroku, mlab

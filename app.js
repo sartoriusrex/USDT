@@ -16,10 +16,14 @@ const express         = require("express"),
 
 // ========================================
 
-
 // MONGOOSE SETTINGS
+var dbURL = process.env.DATABASEURL || localDatabase;
+
+var localDatabase = "mongodb://localhost/USDT";
+
+
 mongoose.set("useFindAndModify", false);
-mongoose.connect("mongodb://localhost/USDT", {useNewUrlParser: true});
+mongoose.connect(dbURL, {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 
 var db = mongoose.connection;
@@ -91,6 +95,6 @@ app.use(indexRoutes);
 
 
 //LISTENING ON PORT
-app.listen(3000, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
   console.log("listening");
 });
