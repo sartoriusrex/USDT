@@ -46,7 +46,7 @@ a:not(.btn .subscribeToNewsletterBtn):hover {
   font: normal 16px sans-serif;
   font-family: 'Roboto', sans-serif;
   color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 10px;
   text-transform: uppercase;
   box-shadow: 0 4px 4px 1px hsl(41, 8%, 61%);
@@ -69,7 +69,7 @@ a:not(.btn .subscribeToNewsletterBtn):hover {
   font: normal 16px sans-serif;
   font-family: 'Roboto', sans-serif;
   color: hsl(42, 15%, 13%);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 10px;
   text-transform: uppercase;
   font-weight: bold;
@@ -345,7 +345,7 @@ h1 {
   position: absolute;
   width: max-content;
   background-color: hsl(40, 15%, 80%);
-  border-radius: 4px;
+  border-radius: 8px;
   z-index: 5;
   padding: 0 5px;
   display: none;
@@ -362,7 +362,7 @@ h1 {
   padding: 5px;
   color: hsl(42, 15%, 13%);
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .navli > a,
@@ -373,11 +373,11 @@ h1 {
 .search-bar {
   display: flex;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .search-bar input {
-  border-radius: 4px;
+  border-radius: 8px;
   border: none;
 }
 
@@ -425,7 +425,7 @@ h1 {
     position: relative;
     background-color: hsl(42, 15%, 13%);
     padding: 5px;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 42px;
   }
 
@@ -710,7 +710,7 @@ h1 {
   height: 15px;
   width: 15px;
   margin: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   opacity: 0.4;
 }
 
@@ -962,7 +962,7 @@ h1 {
 
 .reportCrimesBtn {
   background-color:hsl(44, 92%, 63%);
-  border-radius: 4px;
+  border-radius: 8px;
   color: hsl(42, 15%, 13%);
   padding: 10px 20px;
   font-size: 20px;
@@ -1005,7 +1005,7 @@ h1 {
   justify-content: center;
   align-items: flex-end;
   box-shadow: 0 2px 2px hsl(40, 15%, 80%);
-  border-radius: 4px;
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 
@@ -1190,7 +1190,7 @@ footer {
   .footer-indices.responsive {
     background-color: hsl(42, 15%, 13%);
     padding: 5px;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 
   .footer-contact.responsive .footerNavIcon,
@@ -1290,14 +1290,14 @@ footer {
   width: 100%;
   height: 30px;
   border: 1px solid hsl(40, 15%, 80%);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .formInputDiv textarea {
   width: 100%;
   height: 120px;
   border: 1px solid hsl(40, 15%, 80%);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .gridArea2124 {
@@ -1316,7 +1316,7 @@ footer {
 .formBtn {
   text-transform: uppercase;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 8px;
   margin: 0 5px;
 }
 
@@ -1426,7 +1426,7 @@ td a {
   padding: 3px;
   background-color: hsl(29, 80%, 44%);
   color: hsl(43, 13%, 90%);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .homeBtn {
@@ -1435,7 +1435,7 @@ td a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 
@@ -1454,7 +1454,7 @@ td a {
   align-items: center;
   background-color: hsl(81, 78%, 21%);
   color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: 0 4px 4px 1px hsl(39, 11%, 69%);
   transform: translatey(-4px);
 }
@@ -1476,7 +1476,7 @@ td a {
   width: 90%;
   min-height: 150px;
   background-color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: 0 2px 4px hsl(39, 11%, 69%);
   margin-bottom: 15px;
 }
@@ -1489,7 +1489,7 @@ td a {
   max-width: 10%;
   flex: 1 1 100%;
   padding: 5px;
-  border-radius: 4px 0 0 4px;
+  border-radius: 8px 0 0 4px;
   background-color: hsl(184, 80%, 74%);
 }
 
@@ -1507,7 +1507,7 @@ td a {
   min-width: 70%;
   flex: 1 1 100%;
   background-color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .announcementBody:hover {
@@ -1552,11 +1552,11 @@ td a {
 .updateAnnouncement:hover,
 .deleteAnnouncement:hover {
   transform: perspective(10px) translate3d( 0, 0, .5px);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .deleteAnnouncement button:hover {
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 /* ===ANNOUNCEMENT INDEX RESPONSIVENESS=== */
@@ -1569,7 +1569,7 @@ td a {
   .dateUpdated {
     flex-direction: row;
     max-width: 100%;
-    border-radius: 4px 4px 0 0;
+    border-radius: 8px 4px 0 0;
     justify-content: flex-start;
     align-items: baseline;
   }
@@ -1644,7 +1644,7 @@ td a {
   margin-right: 10px;
   border: none;
   color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 10px;
   text-transform: uppercase;
   box-shadow: 0 4px 4px 1px hsl(41, 8%, 61%);
@@ -1678,7 +1678,7 @@ td a {
   font: normal 16px sans-serif;
   font-family: 'Roboto', sans-serif;
   color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 10px;
   text-transform: uppercase;
   box-shadow: 0 4px 4px 1px hsl(41, 8%, 61%);
@@ -1752,7 +1752,7 @@ td a {
   width: 90%;
   margin: 5px 5px 20px 5px;
   background-color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: 0 2px hsl(39, 11%, 69%);
   padding: 5px;
 }
@@ -1769,13 +1769,13 @@ td a {
   justify-content: flex-end;
   background-color: none;
   margin-right: 10px;
-  border-radius: 4px 0 0 4px;
+  border-radius: 8px 0 0 4px;
 }
 
 .coverImageContainer img {
   max-height: 100%;
   max-width: 100%;
-  border-radius: 4px 0 0 4px;
+  border-radius: 8px 0 0 4px;
   object-fit: contain;
 }
 
@@ -1889,6 +1889,12 @@ u {
   width: 100%;
   text-indent: 15px;
   grid-area: body;
+  margin-bottom: 20px;
+}
+
+.newsShowSection > a {
+  align-self: flex-start;
+  margin-left: 30%;
 }
 
 /* NEWS SHOW REPSONSIVENESS */
@@ -1909,11 +1915,21 @@ u {
     grid-template-areas: 
       "image title" "image subtitle" "body body";
   }
+
+  .newsShowSection > a {
+    align-self: flex-start;
+    margin-left: 15%;
+  }
 }
 
 @media screen and (max-width: 700px) {
   .newsShowContainer {
     width: 90%;
+  }
+
+  .newsShowSection > a {
+    align-self: flex-start;
+    margin-left: 5%;
   }
 }
 
@@ -1998,7 +2014,7 @@ u {
 }
 
 .authenticationContainer form div input {
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 #password,
@@ -2031,7 +2047,7 @@ u {
   justify-content: center;
   align-items: center;
   background-color: hsl(40, 23%, 97%);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 5px;
 }
 

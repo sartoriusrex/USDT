@@ -4,7 +4,6 @@
   "description": "US Dep of Truth, Satirical Website, Personal Project, MIT Licence",
   "main": "app.js",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^11.2.0",
     "async": "^2.6.1",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
