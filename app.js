@@ -17,10 +17,10 @@ const express         = require("express"),
 // ========================================
 
 // MONGOOSE SETTINGS
+
 var dbURL = process.env.DATABASEURL || localDatabase;
 
 var localDatabase = "mongodb://localhost/USDT";
-
 
 mongoose.set("useFindAndModify", false);
 mongoose.connect(dbURL, {useNewUrlParser: true});
@@ -78,7 +78,7 @@ app.use(function( req,res,next){
 var indexRoutes         = require('./routes/index'),
     reportRoutes        = require('./routes/reports'),
     announcementRoutes  = require('./routes/announcements'),
-    newsRoutes          = require('./routes/news')
+    newsRoutes          = require('./routes/news'),
     commentRoutes       = require('./routes/comments'),
     authRoutes          = require('./routes/auth');
 
@@ -95,6 +95,8 @@ app.use(indexRoutes);
 
 
 //LISTENING ON PORT
-app.listen(process.env.PORT, process.env.IP, function(){
+var port = process.env.PORT || 3000;
+
+app.listen(port, function(){
   console.log("listening");
 });
