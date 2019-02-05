@@ -20,6 +20,7 @@ Features not yet implemented:
 - Profile or settings pages
 - Any links in nav bar of footer
 - Small Web Store
+- Form Validation (in any forms) - will come soon during next major deploy
 
 Features coming soon:
 - FAQ and About Pages
@@ -27,3 +28,5 @@ Features coming soon:
 - Newsletter and password recovery (within several months)
 - Actual Pages and social media posts with "relevant" content
 - SCSS with Grunt
+- Form Validation
+- Password Reset and Account Recovery
