@@ -318,6 +318,7 @@ h1 {
   color: hsl(49, 100%, 96%);
   width: 90%;
   background-color: hsl(39, 11%, 69%);
+  z-index: 10;
 }
 
 .navlist li,
