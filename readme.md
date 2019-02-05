@@ -30,3 +30,5 @@ Features coming soon:
 - SCSS with Grunt
 - Form Validation
 - Password Reset and Account Recovery
+- HTML WCAG compliance coming very soon
+
