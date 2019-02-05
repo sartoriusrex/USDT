@@ -5,7 +5,8 @@ This is a personal project website for a ficticious US Government Agency called 
 Technologies used:
 1. HTML, CSS, Javascript
 2. node.js, express, ejs, Mongodb, mongoose
-3. Passport, moment.js, Heroku, mlab
+3. Passport, moment.js, Heroku, mlab, Inkscape(svg)
+
 
 Important Note: 
 
@@ -18,8 +19,11 @@ Features not yet implemented:
 - email Newsletter
 - Profile or settings pages
 - Any links in nav bar of footer
+- Small Web Store
 
 Features coming soon:
 - FAQ and About Pages
 - Article Creation
 - Newsletter and password recovery (within several months)
+- Actual Pages and social media posts with "relevant" content
+- SCSS with Grunt
