@@ -228,7 +228,7 @@ h1 {
 #socialIcon {
   color: hsl(49, 100%, 96%);
   display: none;
-  font-size: 42px;
+  font-size: 32px;
 }
 
 #navIcon,
@@ -427,7 +427,7 @@ h1 {
     background-color: hsl(42, 15%, 13%);
     padding: 5px;
     border-radius: 8px;
-    font-size: 42px;
+    font-size: 32px;
   }
 
   .socialMedia.responsiveSocial {
@@ -502,7 +502,7 @@ h1 {
 @media screen and (max-width: 750px) {
   #navIcon {
     display: block;
-    font-size: 32px;
+    font-size: 28px;
     color: hsl(42, 15%, 13%);
   }
 
@@ -606,7 +606,7 @@ h1 {
 
   .headerUtilities.responsive,
   .headerUtilities.responsiveSocial {
-    font-size: 42;
+    font-size: 32;
   }
 }
 
