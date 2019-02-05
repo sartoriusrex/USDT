@@ -996,6 +996,7 @@ h1 {
 
 .newsletterSubscribe > p {
   padding-bottom: 40px;
+  max-width: 90%;
 }
 
 .subscribeGroup {
