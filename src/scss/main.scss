@@ -1,0 +1,61 @@
+@import '_variables';
+
+// Global styles - both layout and components
+@import 'global';
+
+// button classes
+@import '_button';
+
+// Brand Header
+@import 'brand';
+
+// Header nav menu - login and social media
+@import 'header-nav';
+
+// Navbar menu
+@import 'navbar';
+
+// Slider section
+@import 'slider.scss';
+
+// Announcement section
+@import 'announcement';
+
+// News section
+@import 'news';
+
+// Reports section
+@import 'reports';
+
+// Newsletter subscribe section
+@import 'newsletter';
+
+// Footer section
+@import 'footer';
+
+// Report form
+@import 'report-form';
+
+// Report index page;
+@import 'report-index';
+
+// Announce index page
+@import 'announcement-index';
+
+// Announce show page
+@import 'announcement-show';
+
+// News index page
+@import 'news-index';
+
+// News show page
+@import 'news-show';
+
+// Login page
+@import 'login';
+
+// Register page
+@import 'register';
+
+// Flash message component
+@import 'flash';

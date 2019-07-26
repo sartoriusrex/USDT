@@ -1,0 +1,68 @@
+@import '_variables';
+
+.primaryBtn {
+  border: none;
+  background-color: $red-two;
+  font: $font-normal;
+  font-family: $font-family-primary;
+  color: $white-one;
+  border-radius: $border-radius-normal;
+  padding: $padding-normal;
+  text-transform: uppercase;
+  box-shadow: 0 4px 4px 1px $gray-one;
+  transform: translatey(-4px);
+}
+
+.primaryBtn:hover {
+  box-shadow: 0 2px 2px $gray-one;
+  transform: translatey(-2px);
+}
+
+.primaryBtn:active {
+  box-shadow: 0 0 0 $gray-one;
+  transform: translatey(0px);
+}
+
+.secondaryBtn {
+  border: none;
+  background-color: $white-four;
+  font: $font-normal;
+  font-family: $font-family-primary;
+  color: $black-color;
+  border-radius: $border-radius-normal;
+  padding: $padding-normal;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 4px 4px 1px $white-five;
+  transform: translatey(-4px);
+}
+
+.secondaryBtn:hover {
+  box-shadow: 0 2px 2px $white-five;
+  transform: translatey(-2px);
+}
+
+.secondaryBtn:active {
+  box-shadow: 0 0 0 $white-five;
+  transform: translatey(0px);
+}
+
+.readMoreBtn {
+  background-color:$gray-two;
+  border-radius: $border-radius-normal;
+  color: $white-one;
+  padding: 5px 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 2px .5px $white-five;
+  transform: translatey(-2px);
+}
+
+.readMoreBtn:hover {
+  box-shadow: 0 1px 1px $white-five;
+  transform: translatey(-1px);
+}
+
+.readMoreBtn:active {
+  box-shadow: 0 0 0 $white-five;
+  transform: translatey(0px);
+}

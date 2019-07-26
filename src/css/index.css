@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font: normal 16px san-serif;
+  color: #26231c; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f8f6;
+  display: block; }
+
+nav, ul {
+  list-style: none; }
+
+p {
+  line-height: 1.5rem;
+  hyphens: auto; }
+
+h4 {
+  hyphens: auto; }
+
+a {
+  text-decoration: none;
+  color: inherit; }

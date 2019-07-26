@@ -1,0 +1,149 @@
+@import '_variables';
+
+#createAnnouncement {
+  margin-bottom: 20px;
+  padding: $padding-normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $green-one;
+  color: $white-one;
+  border-radius: $border-radius-normal;
+  box-shadow: 0 4px 4px 1px $white-five;
+  transform: translatey(-4px);
+}
+
+#createAnnouncement:hover {
+  box-shadow: 0 2px 2px $white-five;
+  transform: translatey(-2px);
+}
+
+#createAnnouncement:active {
+  box-shadow: 0 0 0 $white-five;
+  transform: translatey(0);
+}
+
+.announcementContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 90%;
+  min-height: 150px;
+  background-color: $white-one;
+  border-radius: $border-radius-normal;
+  box-shadow: 0 2px 4px $white-five;
+  margin-bottom: 15px;
+}
+
+.dateUpdated {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 10%;
+  flex: 1 1 100%;
+  padding: 5px;
+  border-radius: 8px 0 0 4px;
+  background-color: $blue-two;
+}
+
+.dateUpdated h4 {
+  padding-bottom: 5px;
+}
+
+.announcementBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  height: 100%;
+  min-width: 70%;
+  flex: 1 1 100%;
+  background-color: $white-one;
+  border-radius: $border-radius-normal;
+}
+
+.announcementBody:hover {
+  box-shadow: inset 0 0 40px 5px $white-four;
+}
+
+.updateAnnouncement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $yellow-two;
+  width: 10%;
+  flex: 0 1 100%;
+}
+
+.updateAnnouncement div {
+  background-color: $yellow-two;
+  color: $gray-five;
+}
+
+.deleteAnnouncement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $red-five;
+  width: 10%;
+  flex: 0 1 100%;
+  border-radius: 0 8px 8px 0;
+}
+
+.deleteAnnouncement button {
+  background-color: $red-five;
+  color: $gray-five;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 15px 15px 0;
+}
+
+.updateAnnouncement:hover,
+.deleteAnnouncement:hover {
+  transform: perspective(10px) translate3d( 0, 0, .5px);
+  border-radius: $border-radius-normal;
+}
+
+.deleteAnnouncement button:hover {
+  border-radius: $border-radius-normal;
+}
+
+/* ===ANNOUNCEMENT INDEX RESPONSIVENESS=== */
+
+@media screen and (max-width: 900px){
+  .announcementContainer {
+    flex-direction: column;
+  }
+
+  .dateUpdated {
+    flex-direction: row;
+    max-width: 100%;
+    border-radius: 8px 8px 0 0;
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+
+  .dateUpdated h4 {
+    padding: 0 5px 0 0;
+  }
+
+  .updateAnnouncement {
+    width: 100%;
+    height: 30px;
+  }
+
+  .deleteAnnouncement {
+    width: 100%;
+    height: 30px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .deleteAnnouncement button {
+    border-radius: 0 0 8px 8px;
+  }
+}

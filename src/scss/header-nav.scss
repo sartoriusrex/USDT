@@ -1,0 +1,192 @@
+@import '_variables';
+
+.headerUtilities {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  color: $white-two;
+  padding-right: 20px;
+}
+
+
+/* Text button that opens menu to login/register, etc */
+#loginIcon,
+#socialIcon {
+  color: $white-two;
+  display: none;
+  font-size: 32px;
+}
+
+#navIcon,
+#closeLogin,
+#closeSocial {
+  display: none;
+}
+
+.userLoginDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.userLoginDiv > a {
+  padding: 5px 10px;
+}
+
+.userLoginDiv a:hover {
+  border-bottom: 2px solid $white-two;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 10px;
+  flex: 0 1 50%;
+}
+
+.socialMedia a:hover,
+#socialMediaFooter a:hover {
+  transform: scale3d(1.1,1.1,1.1);
+}
+
+.smcontainer {
+  border-radius: 40%;
+  background-color: $white-three;
+  margin: 3px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialMediaIcon {
+  height: 30px;
+  width: 30px;
+  padding: 2px;
+  margin: 3px;
+}
+
+/* ====HEADER AND NAV BAR RESPONSIVENESS==== */
+
+@media screen and (max-width: 800px) {
+  #loginIcon,
+  #socialIcon
+   {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* All Actual Links and Icons in Login Menu: no display */
+  .userLoginDiv > a {
+    display: none;
+  }
+
+  .socialMedia a {
+    display: none;
+  }
+
+  .headerUtilities {
+    align-items: center;
+    padding: 5px 10px;
+  }
+
+  /* State of Elements in Menu when clicked */
+
+  /* Menu */
+  .userLoginDiv.responsive,
+  .socialMedia.responsiveSocial {
+    display: block;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    z-index: 15;
+    position: relative;
+    background-color: $black-color;
+    padding: 5px;
+    border-radius: $border-radius-normal;
+    font-size: 32px;
+  }
+
+  .socialMedia.responsiveSocial {
+    display: flex;
+  }
+
+  /* Links in menus */
+  .userLoginDiv.responsive > a {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    justify-content: center;
+  }
+
+  .userLoginDiv a:hover {
+    background-color: $white-two;
+    color: $black-color;
+  }
+
+  .socialMedia.responsiveSocial > a {
+    display: block;
+  }
+
+  .socialMedia.responsiveSocial .smcontainer {
+    margin: 5px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .socialMedia.responsiveSocial .socialMediaIcon {
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  /* X Button */
+  .userLoginDiv.responsive #loginIcon #closeLogin,
+  .socialMedia.responsiveSocial #socialIcon #closeSocial {
+    display: block;
+  }
+
+  /* Open menu button and Icon Links = no display */
+  .userLoginDiv.responsive #loginIcon #openLogin,
+  .userLoginDiv.responsive > a > i,
+  .socialMedia.responsiveSocial #socialIcon #openSocial {
+    display: none;
+  }
+
+  /* Position Menus above all items in top center */
+
+  body {
+    position: relative;
+  }
+  
+  .headerUtilities.responsive,
+  .headerUtilities.responsiveSocial {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    padding: 0;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .headerUtilities.responsive,
+  .headerUtilities.responsiveSocial {
+    font-size: 32;
+  }
+}

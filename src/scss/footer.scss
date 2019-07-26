@@ -1,0 +1,139 @@
+@import '_variables';
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $red-one;
+}
+
+#socialMediaFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 10px;
+  flex: 0 1 50%;
+  padding: $padding-normal;
+}
+
+#socialMediaFooter {
+  padding: 5px;
+  margin: 5px;
+}
+
+.footerNavIcon {
+  display: none;
+  font-size: 16px;
+}
+
+.footerNavIcon button {
+  display: block;
+  height: 100%;
+  font: $font-family-primary;
+  font-size: 16px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.footerLinks div ul li {
+  padding: 3px 0;
+  margin: 2px 0;
+}
+
+.footerLinks div ul li a,
+.madeby,
+.madeby a {
+  color: $white-one;
+}
+
+/* Attribution for Social Media Icons */
+.madeby {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.closeFooterIndices,
+.closeFooterPolicies,
+.closeFooterContact {
+  display: none;
+  font-size: 42px;
+  width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  .footerNavShown {
+    display: none;
+  }
+
+  .footerNavIcon {
+    display: block;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #socialMediaFooter {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 10px;
+    flex: 0 1 50%;
+  }
+
+  .footer-contact,
+  .footer-online-policies,
+  .footer-indices {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  /* ===FOOTER NAV MENUS WHEN CLICKED=== */
+
+  .footer-contact.responsive,
+  .footer-online-policies.responsive,
+  .footer-indices.responsive {
+    background-color: $black-color;
+    padding: 5px;
+    border-radius: $border-radius-normal;
+  }
+
+  .footer-contact.responsive .footerNavIcon,
+  .footer-online-policies.responsive .footerNavIcon,
+  .footer-indices.responsive .footerNavIcon {
+    display: none;
+  }
+
+  .footer-contact.responsive .closeFooterContact,
+  .footer-online-policies.responsive .closeFooterPolicies,
+  .footer-indices.responsive .closeFooterIndices {
+    display: block;
+  }
+
+  .footer-contact.responsive .footerNavShown,
+  .footer-online-policies.responsive .footerNavShown,
+  .footer-indices.responsive .footerNavShown {
+    display: flex;
+  }
+
+  .footer-contact.responsive .footerNavShown a,
+  .footer-online-policies.responsive .footerNavShown a,
+  .footer-indices.responsive .footerNavShown a {
+    font-size: 24px;
+    padding: 5px;
+    width: 100%;
+  }
+
+}

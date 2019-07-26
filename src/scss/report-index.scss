@@ -1,0 +1,71 @@
+@import '_variables';
+
+/* REPORTS INDEX STYLING */
+
+table {
+  width: 90%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 2px solid $red-one;
+  background-color: $white-one;
+  margin-bottom: 20px;
+  padding: 5px;
+  word-wrap: break-word;
+}
+
+thead {
+  background-color: $red-two;
+}
+
+th {
+  color: $white-three;
+  font-weight: normal;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+thead tr{
+  border-bottom: 2px solid $red-one;
+}
+
+thead th:nth-child(1),
+thead th:nth-child(2),
+thead th:nth-child(7) {
+  width: 10%;
+}
+
+thead th:nth-child(3),
+thead th:nth-child(5),
+thead th:nth-child(6) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 25%;
+}
+
+tr:nth-child(even) {
+  background-color: $white-four;
+}
+
+td a {
+  padding: 3px;
+  background-color: $orange-one;
+  color: $white-three;
+  border-radius: $border-radius-normal;
+}
+
+.homeBtn {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-normal;
+}
+

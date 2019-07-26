@@ -1,0 +1,42 @@
+@import '_variables';
+
+/* Flash message Styling */
+
+#flashContainer {
+  background-color: $white-one;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2.5rem;
+  display: none;
+  position: absolute;
+  opacity: 0.9;
+}
+
+.successAlert,
+.failureAlert  {
+  color: $black-color;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 100;
+}
+
+.failureAlert {
+  background-color: $white-one;
+}
+
+.failureAlert h4 {
+  border-bottom: 4px solid hsl(360, 72%, 38%);
+}
+
+.successAlert {
+  background-color: $white-one;
+}
+
+.successAlert h4 {
+  border-bottom: 4px solid hsl(83, 70%, 34%);
+}

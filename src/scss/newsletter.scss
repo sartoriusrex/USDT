@@ -1,0 +1,85 @@
+@import "_variables";
+
+.newsletterSubscribe > p {
+  padding-bottom: 40px;
+  max-width: 90%;
+}
+
+.subscribeGroup {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  height: 40px;
+  justify-content: center;
+  align-items: flex-end;
+  box-shadow: 0 2px 2px $white-four;
+  border-radius: $border-radius-normal;
+  margin-bottom: 20px;
+}
+
+.emailSubscribeInput {
+  height: 100%;
+  border-radius: 8px 0 0 8px;
+  text-indent: 10px;
+  flex: 1 1 75%;
+  border: 1px solid $red-two;
+}
+
+.emailSubscribeInput::placeholder {
+  text-indent: 10px;
+}
+
+.subscribeToNewsletterBtn {
+  height: 100%;
+  background-color: $red-two;
+  color: $white-one;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  font-size: 20px;
+  flex: 1 1 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===Newsletter Responsiveness=== */
+
+@media screen and (max-width: 650px) {
+  .subscribeGroup {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .subscribeGroup {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    box-shadow: none;
+  }
+
+  .emailSubscribeInput {
+    max-height: 30%;
+    width: 100%;
+    border-radius: $border-radius-normal;
+  }
+
+  .subscribeToNewsletterBtn {
+    max-height: 30%;
+    width: 50%;
+    border-radius: $border-radius-normal;
+    box-shadow: 0 2px 2px .5px $white-five;
+    transform: translatey(-2px);
+  }
+
+  .subscribeToNewsletterBtn:hover {
+    box-shadow: 0 1px 1px $white-five;
+    transform: translatey(-1px);
+  }
+
+  .subscribeToNewsletterBtn:active {
+    box-shadow: 0 0 0 $white-five;
+    transform: translatey(0px);
+  }
+}

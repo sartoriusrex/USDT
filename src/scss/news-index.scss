@@ -1,0 +1,78 @@
+@import '_variables';
+
+.articleContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 90%;
+  margin: 5px 5px 20px 5px;
+  background-color: $white-one;
+  border-radius: $border-radius-normal;
+  box-shadow: 0 2px $white-five;
+  padding: 5px;
+}
+
+.articleContainer:hover {
+  box-shadow: inset 0 0 40px 5px $white-four;
+}
+
+.coverImageContainer {
+  max-width: 30%;
+  max-height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: none;
+  margin-right: 10px;
+  border-radius: 8px 0 0 8px;
+}
+
+.coverImageContainer img {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 8px 0 0 8px;
+  object-fit: contain;
+}
+
+.textContainer {
+  padding-left: 30px;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.textContainer h3,
+.textContainer p{
+  padding-bottom: 5px;
+}
+
+.textContainer h3 {
+  padding-top: 20px;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 2px solid $black-color;
+}
+
+.textContainer h4 {
+  padding-bottom: 10px;
+}
+
+/* ===NEWS INDEX RESPONSIVENESS=== */
+
+@media screen and (max-width: 500px) {
+  .coverImageContainer {
+    display: none;
+  }
+
+  .textContainer {
+    padding: 5px;
+    max-width: 100%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}

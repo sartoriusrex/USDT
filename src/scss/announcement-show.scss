@@ -1,0 +1,138 @@
+@import '_variables';
+
+.announcementShowContainer > div:not(.announceShowNavBtns) {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.announcementShowContainer div p {
+  padding-bottom: 20px;
+}
+
+#announcementShowBody {
+  padding-bottom: 40px;
+}
+
+.announceShowNavBtns {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.announceShowEdits {
+  display: flex;
+  max-width: 70%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%
+}
+
+.updateAnnouncementShow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $yellow-two;
+  max-width: 50%;
+  flex: 0 1 100%;
+  margin-right: 10px;
+  border: none;
+  color: $white-one;
+  border-radius: $border-radius-normal;
+  padding: $padding-normal;
+  text-transform: uppercase;
+  box-shadow: 0 4px 4px 1px $gray-one;
+  transform: translatey(-4px);
+}
+
+.updateAnnouncementShow:hover {
+  box-shadow: 0 2px 2px 0 $gray-one;
+  transform: translatey(-2px);
+}
+
+.updateAnnouncementShow:active {
+  box-shadow: 0 0 0 0 $gray-one;
+  transform: translatey(0);
+}
+
+.updateAnnouncementShow div {
+  background-color: $yellow-two;
+  color: $gray-five;
+}
+
+.deleteAnnouncementShow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $red-five;
+  max-width: 50%;
+  flex: 0 1 100%;
+  border: none;
+  font: $font-normal;
+  font-family: $font-family-primary;
+  color: $white-one;
+  border-radius: $border-radius-normal;
+  padding: $padding-normal;
+  text-transform: uppercase;
+  box-shadow: 0 4px 4px 1px $gray-one;
+  transform: translatey(-4px);
+}
+
+.deleteAnnouncementShow:hover {
+  box-shadow: 0 2px 2px 0 $gray-one;
+  transform: translatey(-2px);
+}
+
+.deleteAnnouncementShow:active {
+  box-shadow: 0 0 0 0 $gray-one;
+  transform: translatey(0);
+}
+
+.deleteAnnouncementShow button {
+  background-color: $red-five;
+  color: $gray-five;
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 15px 15px 0;
+  text-transform: uppercase;
+}
+
+/* ===ANNOUNCEMENT SHOW RESPONSIVENESS=== */
+
+@media screen and (max-width: 800px) {
+  .announcementShowContainer h2 {
+    max-width: 90%;
+  }
+
+  #announcementShowBody {
+    width: 90%;
+  }
+
+  .announceShowNavBtns {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .announceShowNavBtns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .announceShowNavBtns > a {
+    margin-bottom: 10px;
+  }
+
+  .announceShowEdits {
+    width: 100%;
+    max-width: 100%;
+  }
+}

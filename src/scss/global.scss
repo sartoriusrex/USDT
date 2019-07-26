@@ -1,0 +1,144 @@
+@import '_variables';
+
+/* GENERAL STYLES */
+
+* {
+	margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: $font-family-primary;
+  background-color: $white-one;
+  display: block;
+}
+
+nav, ul {
+  list-style: none;
+}
+
+p {
+  line-height: 1.5rem;
+  hyphens: auto;
+}
+
+h4 {
+  hyphens: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:not(.btn .subscribeToNewsletterBtn):hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: $white-one;
+  font: $font-family-primary;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 0;
+}
+
+section > h2 {
+  padding-bottom: 20px;
+}
+
+section:not(slider):nth-child(even) {
+  background-color: $white-three;
+}
+
+.sectionTitleDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionTitleDiv i {
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+hr {
+  background-color: $gray-one;
+  width: 90%;
+  margin: 10px 0;
+  padding: 0.5px;
+  border-radius: 50%;
+}
+
+input,
+textarea,
+select {
+  border: none;
+  text-indent: 5px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input[value] {
+  color: $black-color;
+}
+
+input,
+select,
+textarea,
+input[type="date"] {
+  color: $gray-three;
+  font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color:$white-five;
+  font-size: 14px;
+}
+
+textarea,
+textarea::placeholder {
+  padding: 3px;
+  line-height: 1.2rem;
+}
+
+label {
+  margin-bottom: 3px;
+}
+
+.announcementsContainer, 
+.newsContainer {
+  display: flex;
+  flex-flow: row wrap;
+  width: 90%;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.report .sectionTitleDiv,
+.newsletterSubscribe .sectionTitleDiv {
+  padding-bottom: 40px;
+}

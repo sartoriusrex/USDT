@@ -1,0 +1,118 @@
+@import '_variables';
+
+.loginSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.authenticationContainer {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white-one;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  box-shadow: 0 5px 10px 5px $white-five;
+}
+
+.authenticationContainer h2 {
+  padding-top: 20px;
+}
+
+.authenticationContainer form,
+.authenticationContainer form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.authenticationContainer form {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authenticationContainer form div {
+  border-radius: 10%;
+  width: 80%;
+}
+
+.authenticationContainer button {
+  width: 50%;
+}
+
+#loginPor{
+  padding-bottom: 10px;
+  font-size: 14px;
+  align-self: center;
+}
+
+.authenticationContainer form div label {
+  align-self: flex-start;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+.authenticationContainer form div input {
+  border-radius: $border-radius-normal;
+}
+
+#password,
+#email {
+  margin-bottom: 20px;
+}
+
+#forgotAuth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+#forgotAuth a {
+  text-transform: lowercase;
+  font-size: 14px;
+  padding: 5px;
+}
+
+#forgotAuth a:hover {
+  text-decoration: underline;
+}
+
+.regRedirectDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $white-one;
+  border-radius: $border-radius-normal;
+  padding: 5px;
+}
+
+.regRedirectDiv:hover {
+  color: $white-one;
+  background-color: $black-color;
+}
+
+/* ===LOGIN RESPONSIVE STYLE=== */
+
+@media screen and (max-width: 900px) {
+  .authenticationContainer {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .authenticationContainer {
+    width: 90%;
+  }
+}

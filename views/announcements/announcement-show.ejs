@@ -2,7 +2,7 @@
 
 <section class="announcementShowContainer">
 
-  <h2>Announcement from <%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY, h:mm a")%></h2>
+  <h2><%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY, h:mm a")%></h2>
 
   <div>
     <p>Created by <em><%=announcement.author%></em></p>
@@ -14,7 +14,7 @@
   </div>
 
   <div class="announceShowNavBtns">
-    <a class="secondaryBtn" href="/announcements">Go Back</a>
+    <a class="secondaryBtn" href="/announcements">All Announcements</a>
     
     <% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>
     <div class="announceShowEdits">

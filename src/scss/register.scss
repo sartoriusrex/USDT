@@ -1,0 +1,56 @@
+@import '_variables';
+
+#twoStepDiv {
+  align-items: center;
+}
+
+#twoStepp {
+  padding-bottom: 2px;
+}
+
+.twoStepDivInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;;
+  padding: 5px;
+  width: 50%;
+}
+
+.twoStepDivInput input {
+  width: 2rem;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  border: 0px;
+}
+
+.twoStepDivInput label {
+  width: 6rem;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
+
+/* ===Register Responsive Styling=== */
+
+@media screen and (max-width: 800px) {
+  .formDataArea {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .formSection {
+    flex-direction: column;
+  }
+
+  .formSectionName {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .formDataArea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

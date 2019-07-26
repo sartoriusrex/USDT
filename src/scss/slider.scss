@@ -1,0 +1,221 @@
+@import '_variables';
+
+/* SLIDER GENERAL STYLE */
+
+.slider {
+  overflow: hidden;
+}
+
+.sliderContainer {
+  position: relative; /*to position nav arrows on left and right */
+}
+
+.sliderContainer,
+.sliderLI {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 350px;
+}
+
+.sliderLI {
+  width: 100%;
+}
+
+.slideFade {
+  animation: .5s fade ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity: .3;}
+
+  to {opacity: 1;}
+}
+
+.sliderText,
+.sliderPhotoLink {
+  display: flex;
+  flex: 1 1 100%;
+  max-width: 50%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sliderText {
+  padding: 0 20px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.sliderPhoto {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.sliderText h2 {
+  color: $red-one;
+  width: inherit;
+}
+
+.sliderText p {
+  padding: 10px 0;
+  width: inherit;
+}
+
+.sliderDate {
+  font-weight: bold;
+}
+
+.sliderArticleBtn {
+  background-color:$gray-two;
+  border-radius: $border-radius-normal;
+  color: $white-one;
+  padding: 5px 10px;
+}
+
+.sliderArticleBtn:hover,
+.square:hover {
+  cursor: pointer;
+}
+
+
+/* ------------------------------------------ */
+
+/* Slider Article Small Thumbnail */
+
+.sliderIndicator {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.square {
+  background-color: $red-one;
+  height: 15px;
+  width: 15px;
+  margin: 10px;
+  border-radius: $border-radius-normal;
+  opacity: 0.4;
+}
+
+.active {
+  background-color: $red-one;
+  opacity: 1;
+  box-shadow: 0 0 10px $red-two;
+}
+
+/* ------------------------------------------ */
+
+/* Slider Nav Button Styles */
+
+.slideleft, .slideright {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: $red-one;
+  z-index: 1;
+  opacity: .9;
+  position: absolute;
+  font-size: 30px;
+  color: $white-two;
+}
+
+.slideleft:hover {
+  transform: translate(4px)
+}
+
+.slideleft:active {
+  transform: translate(2px)
+}
+
+.slideright:hover {
+  transform: translate(-4px);
+}
+
+.slideright:active {
+  transform: translate(-2px);
+}
+
+.slideleft {
+  top: 40%;
+  left: -90px;
+  box-shadow: 4px 2px 10px $white-five;
+}
+
+.slideright {
+  top: 40%;
+  right: -90px;
+  box-shadow: -4px 2px 10px $white-five;
+}
+
+/* ===SLIDE SECTION RESPONSIVENESS== */
+
+@media screen and (max-width: 900px) {
+  .sliderBody {
+    display: none;
+  }
+
+  .sliderContainer,
+  .sliderContainer ul,
+  .sliderLI {
+    height: 250px;
+  }
+
+  .sliderText {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sliderText h2 {
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+  .slideleft {
+    left: -50px;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .slideright {
+    right: -50px;
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .sliderText h2 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sliderPhotoLink {
+    display: none;
+  }
+
+  .sliderText {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .slideleft {
+    left: -30px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .slideright {
+    right: -30px;
+    height: 40px;
+    width: 40px;
+  }
+
+}

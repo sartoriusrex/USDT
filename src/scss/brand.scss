@@ -1,0 +1,61 @@
+/* HEADER STYLE */
+
+@import '_variables';
+
+.header {
+  background-color: $red-two;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+}
+
+.logoAndText {
+  display: flex;
+  flex-direction: row;
+}
+
+.usdtLogo {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.logotext {
+  color: $white-one;
+  padding: $padding-normal;
+}
+
+h1 {
+  text-shadow: 0 0 15px black; 
+  font-family: $font-family-secondary;;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.logotext p {
+  text-shadow: 0 0 5px black;
+  font-family: $font-family-secondary;;
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .logotext p {
+    font-size: 12px;
+    line-height: .9rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logotext p {
+    font-size: 10px;
+    line-height: .9rem;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+}

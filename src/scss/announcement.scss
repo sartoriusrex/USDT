@@ -1,0 +1,27 @@
+@import '_variables';
+
+.announcediv {
+  width: 30%;
+  padding: 20px 20px 30px;
+  font-size: 14px;
+}
+
+.announceDate {
+  padding-bottom: 5px;
+  color: $red-three;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ===ANNOUNCEMENT RESPONSIVENESS=== */
+
+@media screen and (max-width: 750px) {
+  .announcementsContainer,
+  .newsContainer {
+    flex-flow: column nowrap;
+  }
+
+  .announcediv {
+    width: 100%;
+  }
+}

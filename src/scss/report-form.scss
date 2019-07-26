@@ -1,0 +1,112 @@
+@import '_variables';
+
+.formdiv,
+.newForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  padding: 30px 0;
+}
+
+.formSectionName {
+  width: 30%;
+}
+
+.formSectionName h3 {
+  padding-bottom: 20px;
+}
+
+.formSectionName p {
+  padding-right: 20px;
+  font-size: 14px;
+}
+
+.formDataArea {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.gridTemplateTwoRow {
+  grid-template-rows: repeat(2,auto);
+}
+
+.formInputDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 5px 20px;
+}
+
+.formInputDiv label {
+  padding: 0 5px 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.formInputDiv input,
+.formInputDiv select {
+  width: 100%;
+  height: 30px;
+  border: 1px solid $white-four;
+  border-radius: $border-radius-normal;
+}
+
+.formInputDiv textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid $white-four;
+  border-radius: $border-radius-normal;
+}
+
+.gridArea2124 {
+  grid-area: 2/1/2/4;
+}
+
+.formBtns {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.formBtn {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: $border-radius-normal;
+  margin: 0 5px;
+}
+
+.backBtn,
+.homeBtn {
+  background-color: $white-one;
+  color: $gray-five;
+}
+
+.submitBtn {
+  background-color: $red-three;
+}
+
+.submitBtn:hover {
+  background-color: $red-four;
+}
+
+.submitBtn input {
+  background-color: transparent;
+  color: $white-one;
+  text-transform: uppercase;
+  font-family: $font-family-primary;
+  font-size: 16px;
+}
