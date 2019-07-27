@@ -2,79 +2,12 @@
 
 <%include ./partials/slider %>
 
-  <section class='announcements'>
-    <div class='sectionTitleDiv'>
-      <i class="fas fa-scroll"></i>
-      <h2>Announcements</h2>
-    </div>
+<%include ./partials/announcements %>
 
-    <div class="announcementsContainer">
+<%include ./partials/news %>
 
-      <% announcement.slice(-3).reverse().forEach( function (announcement){ %>
-        <a class="announcediv" href="/announcements/<%=announcement.id%>">
-          <p class="announceDate"><%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY, h:mm a")%></p>
-          <p class="announceText"><%=announcement.body.substring(0,200)%>...</p>
-        </a>
-      <% }) %>
+<%include ./partials/reports %>
 
-    </div>
-
-    <div class="readMoreBtn">
-      <a href="/announcements" >Read More Announcements</a>
-    </div>
-
-  </section>
-  
-  <section class='news'>
-    <div class="sectionTitleDiv">
-      <i class="fas fa-newspaper"></i>
-      <h2>News</h2>
-    </div>
-    <div class="newsContainer">
-
-      <% news.slice(-2).reverse().forEach( function( news ) { %>
-        <a href="/news/<%=news._id%>" class="newsLink newsLinkRow">
-          <img src="<%=news.coverImage%>" alt="#" class=
-          "newsPhotoRow">
-          <div class="newsText">
-            <h4><%=news.title%></h4>
-            <p class="newsDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
-            <p class="newsDesc"><%=news.body.substring(0,150)%>...</p>
-          </div>
-        </a>
-      <% }) %>
-
-    </div>
-    <div class="readMoreBtn">
-      <a href="/news">Read More News</a>
-    </div>
-  </section>
-
-  <section class='report'>
-    <div class="sectionTitleDiv">
-      <i class="fas fa-user-secret"></i>
-      <h2>Truth Crimes</h2>
-    </div> 
-    <p>We have entered the Post-Truth Era. Though they may be subtle, crimes which distort, twist, or confound the truth  are equivalent to lies and pose the greatest threat to Democracy today.</p>
-    <p>Lies sow mistrust in institutions which rely on accurate information to serve the public. It is only through the constant pruning of lies that the rich and diverse garden of Democracy can thrive.</p>
-    <p>If you witness or suspect that a crime involving the mis-use of information has occurred, is occurring, or will occurr, please file a report using the link below.</p>
-    <a href="/reports/new" class="reportCrimesBtn">Report a Crime</a>
-  </section>
-
-  <section class="newsletterSubscribe">
-
-    <div class="sectionTitleDiv">
-      <i class="far fa-envelope"></i>
-      <h2>Newsletter</h2>
-    </div>
-    <p>Read the USDT Newsletter and get all the Truthy Bits</p>
-    <div class="subscribeGroup">
-      <input class="emailSubscribeInput" type="email" id="emailSubscribe" name="emailSubscribe" placeholder="tom.i_can_handle_the_truth@cruise.com">
-      <div class="subscribeToNewsletterBtn">
-        <a href="#">Sign Up</a>
-      </div>
-    </div>
-
-  </section>
+<%include ./partials/newslettersubscribe %>
 
 <% include ./partials/footer %>

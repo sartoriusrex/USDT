@@ -1,0 +1,23 @@
+<section class='announcements'>
+  
+  <div class='sectionTitleDiv'>
+    <i class="fas fa-scroll"></i>
+    <h2>Announcements</h2>
+  </div>
+
+  <div class="announcementsContainer">
+
+    <% announcement.slice(-3).reverse().forEach( function (announcement){ %>
+      <a class="announcediv" href="/announcements/<%=announcement.id%>">
+        <p class="announceDate"><%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY, h:mm a")%></p>
+        <p class="announceText"><%=announcement.body.substring(0,200)%>...</p>
+      </a>
+    <% }) %>
+
+  </div>
+
+  <div class="readMoreBtn">
+    <a href="/announcements" >Read More Announcements</a>
+  </div>
+
+</section>

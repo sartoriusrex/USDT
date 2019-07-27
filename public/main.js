@@ -230,7 +230,7 @@ function mountComponent() {
 
 function showSlides( n ) {
   var i;
-  var slides = Array.from(document.getElementsByClassName("sliderLI"));
+  var slides = Array.from(document.getElementsByClassName("slider-item"));
   var dots = Array.from(document.getElementsByClassName("square"));
 
   if (n > slides.length) {slideIndex = 1;}
@@ -271,8 +271,8 @@ function currentSlide( n ) {
 // Add slideshow controls to buttons
 
 function addSlideNav(){
-  var leftNav = Array.from(document.getElementsByClassName("sliderleft"));
-  var rightNav = Array.from(document.getElementsByClassName("slideright"));
+  var leftNav = Array.from(document.getElementsByClassName("slider-btn-left"));
+  var rightNav = Array.from(document.getElementsByClassName("slider-btn-right"));
 
   leftNav[0].addEventListener("click",function (){
     plusSlides(-1);

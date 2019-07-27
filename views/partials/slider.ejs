@@ -1,42 +1,69 @@
-<section class='slider'>
-    <div class="sliderContainer">
-      <ul>
+<section class='slider-section'>
 
-        <% news.slice(-3).reverse().forEach( ( news ) => { %> 
-          <li class="sliderLI slideFade">
-            <div class="sliderText">
-              <a href='/news/<%=news._id%>'>
-                <h2><%=news.title%></h2>
-                <p class="sliderDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
-                <p class="sliderBody"><%=news.body.substring(0,250)%>...</p>
-              </a>
-              <a class="sliderArticleBtn readMoreBtn" href='/news/<%=news._id%>'>Read Full Text</a>
-            </div>
-            <a href="/news/<%=news._id%>" class ='sliderPhotoLink'>
-              <img class='sliderPhoto' src="<%=news.coverImage%>" alt="science truth">
+  <div class="slider-container">
+    <ul>
+      <% news.slice(-3).reverse().forEach( ( news ) => { %>
+
+        <li class="slider-item">
+
+          <div class="slider-item-text">
+
+            <a href='/news/<%=news._id%>'>
+
+              <h2><%=news.title%></h2>
+              
+              <p class="slider-item-date">
+                <%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%>
+              </p>
+
+              <p class="slider-item-body">
+                <%=news.body.substring(0,250)%>...
+              </p>
+
             </a>
-          </li>
-        <% }); %>
 
-      </ul>
+            <a 
+              class="slider-item-btn readMoreBtn" 
+              href='/news/<%=news._id%>'
+            >
+              Read Full Text
+            </a>
 
-       <!-- Left and Right Nav buttons on slideshow -->
+          </div>
 
-      <button class="sliderleft"><i class="fas fa-arrow-left"></i></button>
-      <button class="slideright"><i class="fas fa-arrow-right"></i></button>
+          <a href="/news/<%=news._id%>" class ='slider-item-img-container'>
+            <img 
+              class='slider-item-img'
+              src="<%=news.coverImage%>"
+              alt="science truth"
+            >
+          </a>
 
-    </div>
-
-    <!-- Square Article Nav Buttons below slideshow -->
-
-    <div class="sliderIndicator">
-
-      <% news.slice(-3).reverse().forEach( ( news ) => { %> 
-        <div class="square"></div>
+        </li>
       <% }); %>
+    </ul>
 
-    </div>
+      <!-- Left and Right Nav buttons on slideshow -->
 
-   
+    <button class="slider-btn-left">
+      <i class="fas fa-arrow-left"></i>
+    </button>
 
-  </section>
+    <button class="slider-btn-right">
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+  </div>
+
+  <!-- Square Article Nav Buttons below slideshow -->
+
+  <div class="slider-indicator">
+
+    <% news.slice(-3).reverse().forEach( ( news ) => { %> 
+      <div class="square"></div>
+    <% }); %>
+
+  </div>
+
+
+</section>
