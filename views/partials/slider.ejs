@@ -1,0 +1,42 @@
+<section class='slider'>
+    <div class="sliderContainer">
+      <ul>
+
+        <% news.slice(-3).reverse().forEach( ( news ) => { %> 
+          <li class="sliderLI slideFade">
+            <div class="sliderText">
+              <a href='/news/<%=news._id%>'>
+                <h2><%=news.title%></h2>
+                <p class="sliderDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
+                <p class="sliderBody"><%=news.body.substring(0,250)%>...</p>
+              </a>
+              <a class="sliderArticleBtn readMoreBtn" href='/news/<%=news._id%>'>Read Full Text</a>
+            </div>
+            <a href="/news/<%=news._id%>" class ='sliderPhotoLink'>
+              <img class='sliderPhoto' src="<%=news.coverImage%>" alt="science truth">
+            </a>
+          </li>
+        <% }); %>
+
+      </ul>
+
+       <!-- Left and Right Nav buttons on slideshow -->
+
+      <button class="sliderleft"><i class="fas fa-arrow-left"></i></button>
+      <button class="slideright"><i class="fas fa-arrow-right"></i></button>
+
+    </div>
+
+    <!-- Square Article Nav Buttons below slideshow -->
+
+    <div class="sliderIndicator">
+
+      <% news.slice(-3).reverse().forEach( ( news ) => { %> 
+        <div class="square"></div>
+      <% }); %>
+
+    </div>
+
+   
+
+  </section>

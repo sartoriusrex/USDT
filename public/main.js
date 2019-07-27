@@ -1,39 +1,60 @@
 // Flash Message Display Logic
 
-var message = Array.from(document.getElementsByClassName('message'));
-var flashContainer = document.getElementById('flashContainer');
+var message = Array.from(document.getElementsByClassName('alert-message'));
+var flashContainer = Array.from(document.getElementsByClassName('container__flash'));
 
-if (message[0]) {
-  flashContainer.style.display = "flex";
+if ( message[0] ) {
+  flashContainer[0].style.display = "flex";
 }
 
 
 // ===Responsive Menu Displays======
 
 // login Menu
+  // Open Login Menu
+  // reference dom element
+var openLoginIcon = document.getElementById("header__open-login-icon");
 
-var openLoginIcon = document.getElementById("openLogin");
-var closeLoginIcon = document.getElementById("closeLogin");
-
+// Add click event and invoke function to add class
 openLoginIcon.addEventListener("click", function (){
-  makeLoginResponsive();
+  openLoginMenu();
 });
+
+// Close Login  Menu
+var closeLoginIcon = document.getElementById("header__close-login-icon");
+
 closeLoginIcon.addEventListener("click", function(){
-  makeLoginResponsive();
+  closeLoginMenu();
 });
 
-function makeLoginResponsive() {
-  var userLoginDiv = document.getElementsByClassName("userLoginDiv");
-  var headerUtil = document.getElementsByClassName("headerUtilities");
+function openLoginMenu(){
+  toggleLoginResponsive();
 
-  userLoginDiv[0].classList.toggle("responsive");
+  var socialDiv = document.getElementsByClassName("header__social-container");
+
+  socialDiv[0].style.display = "none";
+}
+
+function closeLoginMenu(){
+  toggleLoginResponsive();
+
+  var socialDiv = document.getElementsByClassName("header__social-container");
+
+  socialDiv[0].style.display = "flex";
+}
+
+function toggleLoginResponsive() {
+  var loginDiv = document.getElementsByClassName("header__login-container");
+  var headerUtil = document.getElementsByClassName("header__menu-container");
+
+  loginDiv[0].classList.toggle("responsive");
   headerUtil[0].classList.toggle("responsive");
 }
 
 // Social menu
 
-var openSocialIcon = document.getElementById("openSocial");
-var closeSocialIcon = document.getElementById("closeSocial");
+var openSocialIcon = document.getElementById("header__open-social-icon");
+var closeSocialIcon = document.getElementById("header__close-social-icon");
 
 openSocialIcon.addEventListener("click", function (){
   openSocialResponsive();
@@ -45,22 +66,22 @@ closeSocialIcon.addEventListener("click", function (){
 function openSocialResponsive() {
   toggleSocialResponsiveness();
 
-  var userLoginDiv = document.getElementsByClassName("userLoginDiv");
+  var loginDiv = document.getElementsByClassName("header__login-container");
 
-  userLoginDiv[0].style.display = "none";
+  loginDiv[0].style.display = "none";
 }
 
 function closeSocialResponsive() {
   toggleSocialResponsiveness();
 
-  var userLoginDiv = document.getElementsByClassName("userLoginDiv");
+  var loginDiv = document.getElementsByClassName("header__login-container");
 
-  userLoginDiv[0].style.display = "flex";
+  loginDiv[0].style.display = "flex";
 }
 
 function toggleSocialResponsiveness () {
-  var socialMediaDiv = document.getElementsByClassName("socialMedia");
-  var headerUtil = document.getElementsByClassName("headerUtilities");
+  var socialMediaDiv = document.getElementsByClassName("header__social-container");
+  var headerUtil = document.getElementsByClassName("header__menu-container");
 
   socialMediaDiv[0].classList.toggle("responsiveSocial");
   headerUtil[0].classList.toggle("responsiveSocial");
@@ -80,7 +101,7 @@ openMenu.addEventListener("click", function (){
 });
 
 function toggleNavMenu (){
-  var navlist = document.getElementsByClassName("navlist");
+  var navlist = document.getElementsByClassName("nav-list");
 
   navlist[0].classList.toggle("responsive");
 }
@@ -250,7 +271,7 @@ function currentSlide( n ) {
 // Add slideshow controls to buttons
 
 function addSlideNav(){
-  var leftNav = Array.from(document.getElementsByClassName("slideleft"));
+  var leftNav = Array.from(document.getElementsByClassName("sliderleft"));
   var rightNav = Array.from(document.getElementsByClassName("slideright"));
 
   leftNav[0].addEventListener("click",function (){

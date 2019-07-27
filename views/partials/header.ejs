@@ -27,164 +27,21 @@
 
   <body>
 
-  <div id="flashContainer">
-    <% if (error && error.length > 0) { %>
-      <div class="failureAlert">
-        <h4 class="message"> <%= error %> </h4>
-      </div>
-    <% } %>
-    <% if (success && success.length > 0) { %>
-      <div class="successAlert">
-        <h4 class="message"> <%= success %> </h4>
-      </div>
-    <% } %>
-  </div>
+  <% include ./flash %>
 
   <header class='header'>
 
-    <a href="/" class="logoAndText">
-      <img class="usdtLogo" src="/Logo/USDT_LOGO.svg">
-      <div class="logotext">
-        <h1>US Department of Truth</h1>
+    <a href="/" class="header__logo">
+      <img class="logo" src="/Logo/USDT_LOGO.svg">
+      <div class="header__brand-text">
+        <h1 class="header__title">US Department of Truth</h1>
+        <h1 class="header__title-sm">USDT</h1>
         <p>Protecting the Integrity of Information</p>
       </div>
     </a>
+
+    <% include ./header-menu %>
     
-    <div class="headerUtilities">
-      <div class="userLoginDiv">
-        <button id="loginIcon">
-          <div id="closeLogin">
-            <i class="far fa-times-circle"></i>
-          </div>
-          <i id="openLogin" class="fas fa-user-circle"></i>
-        </button>
-        <% if(!currentUser) { %> 
-
-          <a href="/login">
-            <i class="fas fa-user-circle"></i>
-            Login
-          </a>
-          <a href="/register">
-            <i class="fab fa-wpforms"></i>
-            Register
-          </a>
-          
-        <% } else { %>
-          
-          <a href="/logout">
-            <i class="fas fa-sign-out-alt"></i>
-            Log Out
-          </a>
-          
-        <% if(currentUser.isAdmin) { %> 
-          
-          <a href="/reports">
-            <i class="fas fa-user-secret"></i>
-            View Reports
-          </a>
-          
-        <% } %>
-          
-          <a href="#">
-            <i class="fas fa-user-circle"></i>
-            Profile
-          </a>
-          <a href="#">
-            <i class="fas fa-cog"></i>
-            Settings
-          </a>
-          
-        <% } %>
-
-      </div>
-      
-      <div class="socialMedia">
-        <button id="socialIcon">
-          <div id="closeSocial">
-            <i class="far fa-times-circle"></i>
-          </div>
-          <i id="openSocial" class="fas fa-share-square"></i>
-        </button>
-        <a href="https://twitter.com/DepartmentTruth" class="smcontainer">
-          <img src="/icons/social-media-logos/svg/008-twitter.svg" class="socialMediaIcon">
-        </a>
-        <a href="https://www.youtube.com/channel/UC2DWMCqYOvHuFSkv556R3-w" class="smcontainer">
-          <img src="/icons/social-media-logos/svg/001-youtube.svg" class="socialMediaIcon">
-        </a>
-        <a href="#" class="smcontainer">
-          <img src="/icons/social-media-logos/svg/018-reddit.svg" class="socialMediaIcon">
-        </a>
-        <a href="https://medium.com/@us_department_of_truth" class="smcontainer">
-          <img src="/icons/social-media-logos/svg/026-medium.svg" class="socialMediaIcon">
-        </a>
-        <a href="http://fb.me/usdepartmentoftruth" class="smcontainer">
-          <img src="/icons/social-media-logos/svg/036-facebook.svg" class="socialMediaIcon">
-        </a>
-      </div>
-    </div>
   </header>
   
-  <div class="navcontainer">
-    <nav class='navlist'>
-      <button id="closeMenu">
-        <i class="far fa-times-circle"></i>
-      </button>
-      <button id="navIcon">
-        <i class="fas fa-bars"></i>
-      </button>
-      <li class="navli">
-        <a href="#" onclick="return false;">About</a>
-        <div class="navliContent">
-          <a href="#">Who We Are</a>
-          <a href="#">What We Do</a>
-          <a href="#">The Secretary of Truth</a>
-          <a href="#">Policies</a>
-          <a href="#">FAQ</a>
-        </div>
-      </li>
-      <li class="navli">
-        <a href="#" onclick="return false;">Forms</a>
-        <div class="navliContent">
-          <a href="#">Report Crimes</a>
-          <a href="#">Application for Propaganda</a>
-          <a href="#">Report for Service</a>
-        </div>
-      </li>
-      <li class="navli">
-        <a href="#" onclick="return false;">Press & News</a>
-        <div class="navliContent">
-          <a href="#">Announcements</a>
-          <a href="#">News</a>
-          <a href="#">Press Releases</a>
-          <a href="#">Newsletter Archive</a>
-          <a href="#">Events</a>
-          <a href="#">Sponsorships</a>
-        </div>
-      </li>
-      <li class="navli">
-        <a href="#" onclick="return false;">Research</a>
-        <div class="navliContent">
-          <a href="#">Sciences</a>
-          <a href="#">Pseudo-science</a>
-          <a href="#">Philosophy</a>
-        </div>
-      </li>
-      <li class="navli">
-        <a href="#" onclick="return false;">Offices</a>
-        <div class="navliContent">
-          <a href="#">State & Local Offices</a>
-          <a href="#">Federal Bureau</a>
-          <a href="#">International Offices</a>
-        </div>
-      </li>
-      <li class="navli">
-        <a href="#" onclick="return false;">Contact</a>
-      </li>
-    </nav>
-    <div class="search-bar">
-      <input type="text" placeholder="Search">
-      <div class="search-icon">
-        <a href="#"><i class="fas fa-search"></i></a>
-      </div>
-    </div>  
-  </div>
+  <% include ./navbar %>

@@ -1,0 +1,103 @@
+<div class="header__menu-container">
+    <div class="header__login-container">
+
+      <button id="header__login-button">
+        <div id="header__close-login-icon">
+          <i class="far fa-times-circle"></i>
+        </div>
+        <i id="header__open-login-icon" class="fas fa-user-circle"></i>
+      </button>
+
+      <% if(!currentUser) { %> 
+
+        <a href="/login">
+          <i class="fas fa-user-circle"></i>
+          Login
+        </a>
+        <a href="/register">
+          <i class="fab fa-wpforms"></i>
+          Register
+        </a>
+        
+      <% } else { %>
+        
+        <a href="/logout">
+          <i class="fas fa-sign-out-alt"></i>
+          Log Out
+        </a>
+        
+      <% if(currentUser.isAdmin) { %> 
+        
+        <a href="/reports">
+          <i class="fas fa-user-secret"></i>
+          View Reports
+        </a>
+        
+      <% } %>
+        
+        <a href="#">
+          <i class="fas fa-user-circle"></i>
+          Profile
+        </a>
+        <a href="#">
+          <i class="fas fa-cog"></i>
+          Settings
+        </a>
+        
+      <% } %>
+
+    </div>
+    
+    <div class="header__social-container">
+
+      <button id="header__social-button">
+        <div id="header__close-social-icon">
+          <i class="far fa-times-circle"></i>
+        </div>
+        <i id="header__open-social-icon" class="fas fa-share-square"></i>
+      </button>
+
+      <a 
+        href="https://twitter.com/DepartmentTruth" class="header__social-media-link"
+      >
+        <img 
+          src="/icons/social-media-logos/svg/008-twitter.svg" class="socialMediaIcon"
+        >
+        <p class="socialMediaText">Twitter</p>
+      </a>
+      <a 
+        href="https://www.youtube.com/channel/UC2DWMCqYOvHuFSkv556R3-w" 
+        class="header__social-media-link"
+      >
+        <img 
+          src="/icons/social-media-logos/svg/001-youtube.svg" class="socialMediaIcon"
+        >
+        <p class="socialMediaText">Youtube</p>
+      </a>
+      <a 
+        href="#" 
+        class="header__social-media-link"
+      >
+        <img 
+          src="/icons/social-media-logos/svg/018-reddit.svg" class="socialMediaIcon"
+        >
+        <p class="socialMediaText">Reddit</p>
+      </a>
+      <a 
+        href="https://medium.com/@us_department_of_truth" class="header__social-media-link"
+      >
+        <img 
+          src="/icons/social-media-logos/svg/026-medium.svg" class="socialMediaIcon"
+        >
+        <p class="socialMediaText">Medium</p>
+      </a>
+      <a 
+        href="http://fb.me/usdepartmentoftruth" class="header__social-media-link"
+      >
+        <img 
+          src="/icons/social-media-logos/svg/036-facebook.svg" class="socialMediaIcon"
+        >
+        <p class="socialMediaText">Facebook</p>
+      </a>
+    </div>
+  </div>
