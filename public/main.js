@@ -108,8 +108,8 @@ function toggleNavMenu (){
 
 // ===FOOTER MENUS===
 
-var openFooterContact = document.getElementsByClassName(" openFooterContact");
-var closeFooterContact = document.getElementsByClassName(" closeFooterContact");
+var openFooterContact = document.getElementsByClassName(" footer__open-contact-button");
+var closeFooterContact = document.getElementsByClassName(" footer__close-contact-button");
 
 openFooterContact[0].addEventListener("click", function (){
   toggleFooterContact();
@@ -119,15 +119,15 @@ closeFooterContact[0].addEventListener("click", function (){
 });
 
 function toggleFooterContact() {
-  var footerContact = document.getElementsByClassName("footer-contact");
+  var footerContact = document.getElementsByClassName("footer__contact-container");
   
   footerContact[0].classList.toggle("responsive");
 }
 
 // -----
 
-var  openFooterPolicies = document.getElementsByClassName(" openFooterPolicies");
-var  closeFooterPolicies = document.getElementsByClassName(" closeFooterPolicies");
+var  openFooterPolicies = document.getElementsByClassName(" footer__open-policies-button");
+var  closeFooterPolicies = document.getElementsByClassName(" footer__close-policies-button");
 
 openFooterPolicies[0].addEventListener("click", function (){
   toggleFooterPolicies();
@@ -137,15 +137,15 @@ closeFooterPolicies[0].addEventListener("click", function (){
 });
 
 function toggleFooterPolicies() {
-  var footerPolicies = document.getElementsByClassName("footer-online-policies");
+  var footerPolicies = document.getElementsByClassName("footer__policies-container");
   
   footerPolicies[0].classList.toggle("responsive");
 }
 
 // -----
 
-var  openFooterIndices = document.getElementsByClassName(" openFooterIndices");
-var  closeFooterIndices = document.getElementsByClassName(" closeFooterIndices");
+var  openFooterIndices = document.getElementsByClassName(" footer__open-indices-button");
+var  closeFooterIndices = document.getElementsByClassName(" footer__close-indices-button");
 
 openFooterIndices[0].addEventListener("click", function (){
   toggleFooterIndicies();
@@ -155,7 +155,7 @@ closeFooterIndices[0].addEventListener("click", function (){
 });
 
 function toggleFooterIndicies() {
-  var footerIndicies = document.getElementsByClassName("footer-indices");
+  var footerIndicies = document.getElementsByClassName("footer__indices-container");
   
   footerIndicies[0].classList.toggle("responsive");
 }
@@ -203,15 +203,15 @@ if (pageURL.split("\/").length-1 === 3 && pageURL.endsWith("\/")) {
 // ===NewsLayout based on image size===
 
 function changeNewsLayout() {
-  var newsLinkContainers = document.getElementsByClassName("newsLinkRow");
-  var newsPhotos = document.getElementsByClassName("newsPhotoRow");
+  var newsLinkContainers = document.getElementsByClassName("news-link-row");
+  var newsPhotos = document.getElementsByClassName("news-image-row");
   Array.from(newsLinkContainers).forEach( ( newslinkcontainer ) => {
     Array.from(newsPhotos).forEach( ( newsphoto ) => {
       if ( newsphoto.naturalHeight < newsphoto.naturalWidth ) {
-        newslinkcontainer.classList.add("newsLinkColumn");
-        newslinkcontainer.classList.remove("newsLinkRow");
-        newsphoto.classList.add("newsPhotoColumn");
-        newsphoto.classList.remove("newsPhotoRow");
+        newslinkcontainer.classList.add("news-link-column");
+        newslinkcontainer.classList.remove("news-link-row");
+        newsphoto.classList.add("news-image-column");
+        newsphoto.classList.remove("news-image-row");
       }
     });
   });

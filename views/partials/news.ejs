@@ -1,26 +1,26 @@
 <section class='news'>
 
-  <div class="sectionTitleDiv">
+  <div class="section-title">
     <i class="fas fa-newspaper"></i>
     <h2>News</h2>
   </div>
-  <div class="newsContainer">
+  <div class="news-container">
 
     <% news.slice(-2).reverse().forEach( function( news ) { %>
-      <a href="/news/<%=news._id%>" class="newsLink newsLinkRow">
+      <a href="/news/<%=news._id%>" class="news-link news-link-row">
         <img src="<%=news.coverImage%>" alt="#" class=
-        "newsPhotoRow">
-        <div class="newsText">
+        "news-image-row">
+        <div class="news-text">
           <h4><%=news.title%></h4>
-          <p class="newsDate"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
-          <p class="newsDesc"><%=news.body.substring(0,150)%>...</p>
+          <p class="news-date"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
+          <p class="news-desc"><%=news.body.substring(0,150)%>...</p>
         </div>
       </a>
     <% }) %>
 
   </div>
-  
-  <div class="readMoreBtn">
+
+  <div class="btn-read-more">
     <a href="/news">Read More News</a>
   </div>
 

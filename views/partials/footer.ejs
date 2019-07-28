@@ -1,93 +1,64 @@
-
 <footer>
-  <div class="footerLinks">
-    <div class="footer-logo-social">
-      <div id="socialMediaFooter">
-        <a href="https://twitter.com/DepartmentTruth" class="header__social-media-link">
-          <img src="/icons/social-media-logos/svg/008-twitter.svg" class="socialMediaIcon">
-        </a>
-        <a href="https://www.youtube.com/channel/UC2DWMCqYOvHuFSkv556R3-w" class="header__social-media-link">
-          <img src="/icons/social-media-logos/svg/001-youtube.svg" class="socialMediaIcon">
-        </a>
-        <a href="#" class="header__social-media-link">
-          <img src="/icons/social-media-logos/svg/018-reddit.svg" class="socialMediaIcon">
-        </a>
-        <a href="https://medium.com/@us_department_of_truth" class="header__social-media-link">
-          <img src="/icons/social-media-logos/svg/026-medium.svg" class="socialMediaIcon">
-        </a>
-        <a href="http://fb.me/usdepartmentoftruth" class="header__social-media-link">
-          <img src="/icons/social-media-logos/svg/036-facebook.svg" class="socialMediaIcon">
-        </a>
-      </div>
-    </div>
-    <div class="footer-contact">
-      <button class="closeFooterContact">
-        <i class="far fa-times-circle"></i>
-      </button>
-      <ul>
-        <li class="footerNavIcon openFooterContact">
-          <button>Contact USDT</button>
-        </li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">www.usdeptruth.com</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">3253 Veracity Street SW, <br>Washington, DC 20554</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Phone: 1-888-487-3253</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">TTY: 1-888-487-2543</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">ASL Videophone: 1-844-382-5724</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Fax: 1-866-382-53222</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Contact Us</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Careers</a></li>
-      </ul>
-    </div>
-    <div class="footer-online-policies">
-      <button class="closeFooterPolicies">
-        <i class="far fa-times-circle"></i>
-      </button>
-      <ul>
-        <li class="footerNavIcon openFooterPolicies">
-          <button>USDT Online Policies</button>
-        </li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Freedom of Information Act (FOIA)</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Privacy & Security Statement</a></li>
-        <li class="footerNavShown"><a href="#">Disclaimers</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Important Website Policies & Notices</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Plug-Ins Used on usdeptruth.com</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Disability Rights & Accessibility Statement</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">No Fear Act Data</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Digital Strategy</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Open Government Directive</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Plain Writing Act</a></li>
-      </ul>
-    </div>
-    <div class="footer-indices">
-      <button class="closeFooterIndices">
-        <i class="far fa-times-circle"></i>
-      </button>
-      <ul>
-        <li class="footerNavIcon openFooterIndices">
-          <button>USDT Indices</button>
-        </li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">About USDT</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Español</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Office of Secretary of Truth</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Subscribe to the USDT Newsletter</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Read the USDT Newsletter</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Read All Announcements</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Read All News Articles</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Policy Enforcement</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Media</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">Offices</a></li>
-        <li class="footerNavShown"><a href="#" onclick="return false;">A to Z Index</a></li>
-      </ul>
-    </div>
+  <div class="footer__links-container">
+
+    <% include ./footer-social %>
+
+    <% include ./footer-links %>
+
   </div>
-  <div class='madeby'>Icons made by
-    <a href="http://www.freepik.com/" title="Freepik">Freepik</a>
-    from <a href="https://www.flaticon.com/" 		    title="Flaticon">www.flaticon.com</a>
-    is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 		    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-    <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-    <div>
-        <p>&copy;Sartoriusrex 2018-2019</p>
+
+  <div class='footer_icon-attribution'>Icons made by
+    <a 
+      href="http://www.freepik.com/" 
+      title="Freepik"
+    >
+      Freepik
+    </a>
+    from 
+    <a
+      href="https://www.flaticon.com/" 
+      title="Flaticon"
+    >
+      www.flaticon.com
+    </a>
+    is licensed by 
+    <a 
+      href="http://creativecommons.org/licenses/by/3.0/" 		    
+      title="Creative Commons BY 3.0" 
+      target="_blank"
+    >
+      CC 3.0 BY
+    </a>
+
+    <div>Icons made by 
+      <a 
+        href="https://www.flaticon.com/authors/smashicons" 
+        title="Smashicons"
+      >
+        Smashicons
+      </a> 
+      from 
+      <a 
+        href="https://www.flaticon.com/" 			    
+        title="Flaticon"
+      >
+        www.flaticon.com
+      </a> 
+        is licensed by 
+      <a 
+        href="http://creativecommons.org/licenses/by/3.0/" 			 title="Creative Commons BY 3.0" 
+        target="_blank"
+      >
+        CC 3.0 BY
+      </a>
     </div>
+
+    <div>
+      <p>
+        &copy;Dennis Mai 2018-2019
+      </p>
+    </div>
+
   </div>
   
 </footer>

@@ -1,12 +1,12 @@
 @import '_variables';
 
-.announcediv {
+.announcement-link {
   width: 30%;
   padding: 20px 20px 30px;
   font-size: 14px;
 }
 
-.announceDate {
+.announcement-date {
   padding-bottom: 5px;
   color: $red-three;
   font-weight: bold;
@@ -16,12 +16,12 @@
 /* ===ANNOUNCEMENT RESPONSIVENESS=== */
 
 @media screen and (max-width: 750px) {
-  .announcementsContainer,
+  .announcements-container,
   .newsContainer {
     flex-flow: column nowrap;
   }
 
-  .announcediv {
+  .announcement-link {
     width: 100%;
   }
 }

@@ -8,92 +8,87 @@ footer {
   background-color: $red-one;
 }
 
-#socialMediaFooter {
+.footer__social-media-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding-bottom: 10px;
-  flex: 0 1 50%;
-  padding: $padding-normal;
+  margin: 10px 15px 15px;
 }
 
-#socialMediaFooter {
-  padding: 5px;
-  margin: 5px;
-}
-
-.footerNavIcon {
+.footer__open-contact-button,
+.footer__open-policies-button,
+.footer__open-indices-button {
   display: none;
-  font-size: 16px;
+  font-size: 18px;
+
+  button {
+    display: block;
+    height: 100%;
+    font: $font-family-primary;
+    font-size: 16px;
+  }
 }
 
-.footerNavIcon button {
-  display: block;
-  height: 100%;
-  font: $font-family-primary;
-  font-size: 16px;
-}
-
-.footerLinks {
+.footer__links-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-evenly;
   padding: 20px 0;
   width: 100%;
-}
 
-.footerLinks div ul li {
-  padding: 3px 0;
-  margin: 2px 0;
-}
+  div ul li {
+    padding: 3px 0;
+    margin: 2px 0;
 
-.footerLinks div ul li a,
-.madeby,
-.madeby a {
-  color: $white-one;
+    a {
+      color: $white-one;
+    }
+  }
 }
 
 /* Attribution for Social Media Icons */
-.madeby {
+.footer_icon-attribution {
   width: 100%;
   padding: 10px 20px;
+  color: $white-one;
 }
 
-.closeFooterIndices,
-.closeFooterPolicies,
-.closeFooterContact {
+.footer__close-indices-button,
+.footer__close-policies-button,
+.footer__close-contact-button {
   display: none;
   font-size: 42px;
   width: 100%;
 }
 
-@media screen and (max-width: 650px) {
-  .footerNavShown {
+@media screen and (max-width: 700px) {
+  .footer__link {
     display: none;
   }
 
-  .footerNavIcon {
+  .footer__open-contact-button,
+  .footer__open-policies-button,
+  .footer__open-indices-button {
     display: block;
   }
 
-  .footerLinks {
+  .footer__links-container {
     flex-direction: column;
     align-items: center;
   }
 
-  #socialMediaFooter {
+  .footer__social-media-container {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding-bottom: 10px;
-    flex: 0 1 50%;
+    margin: 0 15px;
   }
 
-  .footer-contact,
-  .footer-online-policies,
-  .footer-indices {
+  .footer__contact-container,
+  .footer__policies-container,
+  .footer__indices-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -102,38 +97,37 @@ footer {
 
   /* ===FOOTER NAV MENUS WHEN CLICKED=== */
 
-  .footer-contact.responsive,
-  .footer-online-policies.responsive,
-  .footer-indices.responsive {
+  .footer__contact-container.responsive,
+  .footer__policies-container.responsive,
+  .footer__indices-container.responsive {
     background-color: $black-color;
     padding: 5px;
     border-radius: $border-radius-normal;
   }
 
-  .footer-contact.responsive .footerNavIcon,
-  .footer-online-policies.responsive .footerNavIcon,
-  .footer-indices.responsive .footerNavIcon {
+  .footer__contact-container.responsive .footer__open-contact-button,
+  .footer__policies-container.responsive .footer__open-policies-button,
+  .footer__indices-container.responsive .footer__open-indices-button {
     display: none;
   }
 
-  .footer-contact.responsive .closeFooterContact,
-  .footer-online-policies.responsive .closeFooterPolicies,
-  .footer-indices.responsive .closeFooterIndices {
+  .footer__contact-container.responsive .footer__close-contact-button,
+  .footer__policies-container.responsive .footer__close-policies-button,
+  .footer__indices-container.responsive .footer__close-indices-button {
     display: block;
   }
 
-  .footer-contact.responsive .footerNavShown,
-  .footer-online-policies.responsive .footerNavShown,
-  .footer-indices.responsive .footerNavShown {
+  .footer__contact-container.responsive .footer__link,
+  .footer__policies-container.responsive .footer__link,
+  .footer__indices-container.responsive .footer__link {
     display: flex;
   }
 
-  .footer-contact.responsive .footerNavShown a,
-  .footer-online-policies.responsive .footerNavShown a,
-  .footer-indices.responsive .footerNavShown a {
+  .footer__contact-container.responsive .footer__link a,
+  .footer__policies-container.responsive .footer__link a,
+  .footer__indices-container.responsive .footer__link a {
     font-size: 24px;
     padding: 5px;
     width: 100%;
   }
-
 }

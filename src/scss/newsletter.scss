@@ -1,11 +1,11 @@
 @import "_variables";
 
-.newsletterSubscribe > p {
-  padding-bottom: 40px;
+.newsletter-subscribe > p {
+  padding: 40px 0;
   max-width: 90%;
 }
 
-.subscribeGroup {
+.subscribe-input-container {
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -17,19 +17,20 @@
   margin-bottom: 20px;
 }
 
-.emailSubscribeInput {
+.subscribe-input {
   height: 100%;
   border-radius: 8px 0 0 8px;
   text-indent: 10px;
   flex: 1 1 75%;
   border: 1px solid $red-two;
+
+  &::placeholder {
+    text-indent: 10px;
+  }
 }
 
-.emailSubscribeInput::placeholder {
-  text-indent: 10px;
-}
 
-.subscribeToNewsletterBtn {
+.subscribe-button {
   height: 100%;
   background-color: $red-two;
   color: $white-one;
@@ -45,13 +46,13 @@
 /* ===Newsletter Responsiveness=== */
 
 @media screen and (max-width: 650px) {
-  .subscribeGroup {
+  .subscribe-input-container {
     width: 80%;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .subscribeGroup {
+  .subscribe-input-container {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -59,27 +60,27 @@
     box-shadow: none;
   }
 
-  .emailSubscribeInput {
+  .subscribe-input {
     max-height: 30%;
     width: 100%;
     border-radius: $border-radius-normal;
   }
 
-  .subscribeToNewsletterBtn {
+  .subscribe-button {
     max-height: 30%;
     width: 50%;
     border-radius: $border-radius-normal;
     box-shadow: 0 2px 2px .5px $white-five;
     transform: translatey(-2px);
-  }
 
-  .subscribeToNewsletterBtn:hover {
-    box-shadow: 0 1px 1px $white-five;
-    transform: translatey(-1px);
-  }
+    &:hover {
+      box-shadow: 0 1px 1px $white-five;
+      transform: translatey(-1px);
+    }
 
-  .subscribeToNewsletterBtn:active {
-    box-shadow: 0 0 0 $white-five;
-    transform: translatey(0px);
+    &:active {
+      box-shadow: 0 0 0 $white-five;
+      transform: translatey(0px);
+    }
   }
 }

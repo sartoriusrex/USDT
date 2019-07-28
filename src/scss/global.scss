@@ -60,25 +60,21 @@ section {
   align-items: center;
   justify-content: space-around;
   padding: 40px 0;
+
+  &:not(.slider):nth-child(even) {
+    background-color: $white-three;
+  }
 }
 
-section > h2 {
-  padding-bottom: 20px;
-}
-
-section:not(slider):nth-child(even) {
-  background-color: $white-three;
-}
-
-.sectionTitleDiv {
+.section-title {
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.sectionTitleDiv i {
-  padding-right: 10px;
-  font-size: 20px;
+  i {
+    padding-right: 10px;
+    font-size: 20px;
+  }
 }
 
 hr {
@@ -128,8 +124,8 @@ label {
   margin-bottom: 3px;
 }
 
-.announcementsContainer, 
-.newsContainer {
+.announcements-container, 
+.news-container {
   display: flex;
   flex-flow: row wrap;
   width: 90%;
@@ -138,7 +134,7 @@ label {
   padding: 20px 0;
 }
 
-.report .sectionTitleDiv,
-.newsletterSubscribe .sectionTitleDiv {
+.report .section-title,
+.newsletterSubscribe .section-title {
   padding-bottom: 40px;
 }

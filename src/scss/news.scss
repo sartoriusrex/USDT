@@ -1,6 +1,6 @@
 @import '_variables';
 
-.newsLinkRow{
+.news-link-row{
   max-width: 40%;
   padding: $padding-normal;
   flex: 1 1 100%;
@@ -9,7 +9,7 @@
   justify-content: space-between;
 }
 
-.newsLinkColumn{
+.news-link-column{
   max-width: 40%;
   padding: $padding-normal;
   flex: 1 1 100%;
@@ -19,30 +19,29 @@
   justify-content: space-between;
 }
 
-.newsPhotoRow {
+.news-image-row {
   width: 50%;
   padding-right: 2%;
 }
 
-.newsPhotoColumn {
+.news-image-column {
   width: 90%;
   padding-bottom: 2%;
 }
 
-.newsText {
+.news-text {
   width: 90%;
+
+  h4, p {
+    padding-bottom: 15px;
+  }
 }
 
-.newsText h4,
-.newsText p {
-  padding-bottom: 15px;
-}
-
-.newsDate {
+.news-date {
   color: $red-three;
 }
 
-.newsDesc {
+.news-desc {
   font-size: 16px;
 }
 
@@ -50,19 +49,19 @@
 
 
 @media screen and (max-width: 750px) {
-  .newsLinkColumn,
-  .newsLinkRow {
+  .news-link-column,
+  .news-link-row {
     width: 100%;
     max-width: 100%;
     padding: 20px 20px 30px;
     display: block;
   }
 
-  .newsContainer img {
+  .news-container img {
     display: none;
   }
 
-  .newsText {
+  .news-text {
     width: 100%;
   }
 }

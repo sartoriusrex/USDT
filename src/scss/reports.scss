@@ -5,7 +5,7 @@
   padding-bottom: 40px;
 }
 
-.reportCrimesBtn {
+.report-btn {
   background-color:$yellow-one;
   border-radius: $border-radius-normal;
   color: $black-color;
@@ -13,16 +13,16 @@
   font-size: 20px;
   box-shadow: 0 4px 4px 1px $gray-one;
   transform: translatey(-4px);
-}
 
-.reportCrimesBtn:hover {
-  box-shadow: 0 2px 2px $gray-one;
-  transform: translatey(-2px);
-}
+  &:hover {
+    box-shadow: 0 2px 2px $gray-one;
+    transform: translatey(-2px);
+  }
 
-.reportCrimesBtn:active {
-  box-shadow: 0 0 0 $gray-one;
-  transform: translatey(0);
+  &:active {
+    box-shadow: 0 0 0 $gray-one;
+    transform: translatey(0);
+  }
 }
 
 /* ===Report Section Responsiveness=== */
