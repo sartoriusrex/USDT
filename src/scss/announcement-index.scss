@@ -11,16 +11,16 @@
   border-radius: $border-radius-normal;
   box-shadow: 0 4px 4px 1px $white-five;
   transform: translatey(-4px);
-}
 
-#createAnnouncement:hover {
-  box-shadow: 0 2px 2px $white-five;
-  transform: translatey(-2px);
-}
+  &:hover {
+    box-shadow: 0 2px 2px $white-five;
+    transform: translatey(-2px);
+  }
 
-#createAnnouncement:active {
-  box-shadow: 0 0 0 $white-five;
-  transform: translatey(0);
+  &:active {
+    box-shadow: 0 0 0 $white-five;
+    transform: translatey(0);
+  }
 }
 
 .announcementContainer {
@@ -45,10 +45,10 @@
   padding: 5px;
   border-radius: 8px 0 0 4px;
   background-color: $blue-two;
-}
 
-.dateUpdated h4 {
-  padding-bottom: 5px;
+  h4 {
+    padding-bottom: 5px;
+  }
 }
 
 .announcementBody {
@@ -62,10 +62,10 @@
   flex: 1 1 100%;
   background-color: $white-one;
   border-radius: $border-radius-normal;
-}
 
-.announcementBody:hover {
-  box-shadow: inset 0 0 40px 5px $white-four;
+  &:hover {
+    box-shadow: inset 0 0 40px 5px $white-four;
+  }
 }
 
 .updateAnnouncement {
@@ -76,11 +76,11 @@
   background-color: $yellow-two;
   width: 10%;
   flex: 0 1 100%;
-}
 
-.updateAnnouncement div {
-  background-color: $yellow-two;
-  color: $gray-five;
+  div {
+    background-color: $yellow-two;
+    color: $gray-five;
+  }
 }
 
 .deleteAnnouncement {
@@ -92,24 +92,24 @@
   width: 10%;
   flex: 0 1 100%;
   border-radius: 0 8px 8px 0;
-}
 
-.deleteAnnouncement button {
-  background-color: $red-five;
-  color: $gray-five;
-  font-size: 16px;
-  height: 100%;
-  width: 100%;
-  border-radius: 0 15px 15px 0;
+  button {
+    background-color: $red-five;
+    color: $gray-five;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 15px 15px 0;
+
+    &:hover {
+      border-radius: $border-radius-normal;
+    }
+  }
 }
 
 .updateAnnouncement:hover,
 .deleteAnnouncement:hover {
   transform: perspective(10px) translate3d( 0, 0, .5px);
-  border-radius: $border-radius-normal;
-}
-
-.deleteAnnouncement button:hover {
   border-radius: $border-radius-normal;
 }
 
@@ -126,10 +126,10 @@
     border-radius: 8px 8px 0 0;
     justify-content: flex-start;
     align-items: baseline;
-  }
 
-  .dateUpdated h4 {
-    padding: 0 5px 0 0;
+    h4 {
+      padding: 0 5px 0 0;
+    }
   }
 
   .updateAnnouncement {
@@ -141,9 +141,9 @@
     width: 100%;
     height: 30px;
     border-radius: 0 0 8px 8px;
-  }
 
-  .deleteAnnouncement button {
-    border-radius: 0 0 8px 8px;
+    button {
+      border-radius: 0 0 8px 8px;
+    }
   }
 }
