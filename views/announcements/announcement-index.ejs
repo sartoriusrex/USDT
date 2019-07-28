@@ -1,12 +1,14 @@
 <% include ../partials/header %>
 
-<section class="allAnnouncements">
+<section>
 
 <h2>All Announcements</h2>
 
 <% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>
 
-<a href="/announcements/new" id="createAnnouncement">
+<a 
+  href="/announcements/new" class="announcement-index__create-announcement-button"
+>
   <div>
       <i class="fas fa-plus"></i> Create Announcement
   </div>
@@ -21,8 +23,6 @@
       <p><%= moment(announcement.dateLastUpdate).fromNow() %></p>
     </div>
     <a class="announcementBody" href="/announcements/<%=announcement._id%>">
-      <p><em>Author: <%= announcement.author.username %></em></p>
-      <br>
       <p><%= announcement.body %></p>
     </a>
     <% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>

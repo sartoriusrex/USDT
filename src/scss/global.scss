@@ -61,6 +61,11 @@ section {
   justify-content: space-around;
   padding: 40px 0;
 
+  + h2 {
+    padding-bottom: 20px;
+    border: 1px solid red;
+  }
+
   &:not(.slider):nth-child(even) {
     background-color: $white-three;
   }
