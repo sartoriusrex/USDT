@@ -1,15 +1,16 @@
-// const { watch, series, src, dest } = require('gulp');
-// const autoprefixer = require('gulp-autoprefixer');
-// const browserSync = require('browser-sync').create();
-// const reload = browserSync.reload;
-// const sass = require('gulp-sass');
-// const cleanCSS = require('gulp-clean-css');
-// const sourcemaps = require('gulp-sourcemaps');
-// const concat = require('gulp-concat');
+const { watch, series, src, dest } = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
+const sass = require('gulp-sass');
+const cleanCSS = require('gulp-clean-css');
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
 // const imagemin = require('gulp-imagemin');
 // const changed = require('gulp-changed');
-// const uglify = require('gulp-uglify');
-// const nodemon = require('gulp-nodemon');
+const uglify = require('gulp-uglify');
+const nodemon = require('gulp-nodemon');
 
 // // Steps
 // // Concat all scss files to main scss file
@@ -21,24 +22,27 @@
 // // start up nodemon
 // // watch for changes to scss files and javascript files
 
-// function concatSass() {
-//   return src([ 'src/scss/*.scss' ])
-//   .pipe( sourcemaps.init({loadMaps: true, largeFile: true}))
-//   .pipe( concat( 'style.min.scss' ) )
-//   .pipe( cleanCSS() ) 
-//   .pipe( sourcemaps.write( './maps/' ) )
-//   .pipe( gulp.dest( 'public/css' ) );
-// }
+function compileScss() {
+  return src([ 'src/scss/main.scss' ])
+  .pipe( sourcemaps.init({ loadMaps: true }))
+  .pipe( sass({
+    outputStyle: 'expanded'
+    }).on( 'error', sass.logError))
+  .pipe( autoprefixer( 'last 2 versions' ) )
+  .pipe( sourcemaps.write() )
+  .pipe( dest( 'src/css' ) );
+}
 
-// function compileSass() {
-//   return src([ 'src/scss/*.scss' ])
-//   .pipe( sass() )
-//   .pipe( dest( 'src/css' ));
-// }
+function minifyCss() {
+  return src( 'src/css/main.css')
+  .pipe( sourcemaps.init({ loadMaps: true }))
+  .pipe( cleanCSS() )
+  .pipe( sourcemaps.write() )
+  .pipe( rename( 'main.minified.css') )
+  .pipe( dest( 'public/css') )
+}
 
-// function minifyCss() {
-//   return src( 'src/css/main.css')
-// }
+exports.default = series( compileScss, minifyCss );
 
 // function initNodemon(){
 //   nodemon({
@@ -88,13 +92,7 @@
 
 // // function compileCss() {
 // //   return gulp.src( [ 'src/scss/*.scss' ] )
-// //   .pipe( sourcemaps.init({ loadMaps: true }))
-// //   .pipe( sass({
-// //     outputStyle: 'expanded'
-// //     }).on( 'error', sass.logError))
-// //   .pipe( autoprefixer( 'last 2 versions' ) )
-// //   .pipe( sourcemaps.write() )
-// //   .pipe( gulp.dest( 'public/css' ) );
+ 
 // // }
 
 // // function concatCss() {
