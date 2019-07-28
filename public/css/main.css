@@ -1177,11 +1177,9 @@ footer {
 .formSectionName {
   width: 30%;
 }
-
 .formSectionName h3 {
   padding-bottom: 20px;
 }
-
 .formSectionName p {
   padding-right: 20px;
   font-size: 14px;
@@ -1203,24 +1201,21 @@ footer {
   align-items: flex-start;
   padding: 0px 5px 20px;
 }
-
 .formInputDiv label {
   padding: 0 5px 3px;
   text-transform: uppercase;
   font-size: 14px;
 }
-
+.formInputDiv textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #d4cfc4;
+  border-radius: 4px;
+}
 .formInputDiv input,
 .formInputDiv select {
   width: 100%;
   height: 30px;
-  border: 1px solid #d4cfc4;
-  border-radius: 4px;
-}
-
-.formInputDiv textarea {
-  width: 100%;
-  height: 120px;
   border: 1px solid #d4cfc4;
   border-radius: 4px;
 }
@@ -1254,11 +1249,9 @@ footer {
 .submitBtn {
   background-color: #8e2c0b;
 }
-
 .submitBtn:hover {
   background-color: #be3a0e;
 }
-
 .submitBtn input {
   background-color: transparent;
   color: #f9f8f6;
@@ -1624,7 +1617,6 @@ td a {
   max-width: 100%;
   border-radius: 8px 0 0 8px;
   object-fit: contain;
-  outline: 1px solid red;
 }
 
 .news-index__text-container {

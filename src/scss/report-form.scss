@@ -20,15 +20,15 @@
 
 .formSectionName {
   width: 30%;
-}
 
-.formSectionName h3 {
-  padding-bottom: 20px;
-}
+  h3 {
+    padding-bottom: 20px;
+  }
 
-.formSectionName p {
-  padding-right: 20px;
-  font-size: 14px;
+  p {
+    padding-right: 20px;
+    font-size: 14px;
+  }
 }
 
 .formDataArea {
@@ -46,27 +46,27 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px 5px 20px;
-}
 
-.formInputDiv label {
-  padding: 0 5px 3px;
-  text-transform: uppercase;
-  font-size: 14px;
-}
+  label {
+    padding: 0 5px 3px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
 
-.formInputDiv input,
-.formInputDiv select {
-  width: 100%;
-  height: 30px;
-  border: 1px solid $white-four;
-  border-radius: $border-radius-normal;
-}
+  textarea {
+    width: 100%;
+    height: 120px;
+    border: 1px solid $white-four;
+    border-radius: $border-radius-normal;
+  }
 
-.formInputDiv textarea {
-  width: 100%;
-  height: 120px;
-  border: 1px solid $white-four;
-  border-radius: $border-radius-normal;
+  input,
+  select {
+    width: 100%;
+    height: 30px;
+    border: 1px solid $white-four;
+    border-radius: $border-radius-normal;
+  }
 }
 
 .gridArea2124 {
@@ -97,16 +97,16 @@
 
 .submitBtn {
   background-color: $red-three;
-}
 
-.submitBtn:hover {
-  background-color: $red-four;
-}
+  &:hover {
+    background-color: $red-four;
+  }
 
-.submitBtn input {
-  background-color: transparent;
-  color: $white-one;
-  text-transform: uppercase;
-  font-family: $font-family-primary;
-  font-size: 16px;
+  input {
+    background-color: transparent;
+    color: $white-one;
+    text-transform: uppercase;
+    font-family: $font-family-primary;
+    font-size: 16px;
+  }
 }
