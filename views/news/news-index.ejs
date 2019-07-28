@@ -6,13 +6,13 @@
 
 <% news.slice().reverse().forEach( function(news){ %>
 
-<a class="articleContainer" href="news/<%=news._id%>">
+<a class="news-index__news-container" href="news/<%=news._id%>">
 
-  <div class="coverImageContainer">
+  <div class="news-index__image-container">
     <img src="./<%=news.coverImage%>" alt="">
   </div>
 
-  <div class="textContainer">
+  <div class="news-index__text-container">
     <h3><u><%=news.title%></u></h3>
     <h4><%=news.subtitle%></h4>
     <p>By <em><%=news.author%></em></p>

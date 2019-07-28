@@ -1,6 +1,6 @@
 @import '_variables';
 
-.newsShowContainer {
+.news-show__container {
   width: 40%;
   display: grid;
   padding-bottom: 20px;
@@ -10,60 +10,60 @@
     "image image" "title title" "subtitle subtitle" "body body";
 }
 
-.newsShowContainerLong {
+.news-show__container-long {
   grid-template-rows: auto auto auto;
   grid-template-areas: 
     "image title" "image subtitle" "body body";
+
+  > div > img {
+    max-width: 100%;
+    object-fit: scale-down;
+    max-height: 100%;
+  }
 }
 
-.newsShowImgContainer {
+.news-show__image-container {
   width: 100%;
   padding-bottom: 20px;
   grid-area: image;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  > img {
+    max-width: 100%;
+    object-fit: scale-down;
+  }
 }
 
-.newsShowContainerLong .newsShowImgContainer {
+.news-show__container-long .news-show__image-container {
   justify-content: flex-start;
   padding-right: 10px;
 }
 
-.newsShowImgContainer > img{
-  max-width: 100%;
-  object-fit: scale-down;
-}
-
-.newsShowContainerLong > div > img{
-  max-width: 100%;
-  object-fit: scale-down;
-  max-height: 100%;
-}
-
-.titleContainer {
+.news-show__title {
   width: 100%;
   grid-area: title;
 }
 
-.subtitleContainer {
+.news-show__subtitle {
   width: 100%;
   grid-area: subtitle;
 }
 
-.titleContainer *,
-.subtitleContainer * {
+.news-show__title *,
+.news-show__subtitle * {
   padding-bottom: 20px;
 }
 
-.newsShowBody {
+.news-show__body {
   width: 100%;
   text-indent: 15px;
   grid-area: body;
   margin-bottom: 20px;
 }
 
-.newsShowSection > a {
+.news-show__all-news-button {
   align-self: flex-start;
   margin-left: 30%;
 }
@@ -71,50 +71,49 @@
 /* NEWS SHOW REPSONSIVENESS */
 
 @media screen and (max-width: 1100px) {
-  .newsShowContainerLong {
+  .news-show__container-long {
     grid-template-areas: 
       "image title" "subtitle subtitle" "body body";
   }
 }
 
 @media screen and (max-width: 900px) {
-  .newsShowContainer {
+  .news-show__container {
     width: 70%;
   }
 
-  .newsShowContainerLong {
+  .news-show__container-long {
     grid-template-areas: 
       "image title" "image subtitle" "body body";
   }
 
-  .newsShowSection > a {
+  .news-show__all-news-button {
     align-self: flex-start;
     margin-left: 15%;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .newsShowContainer {
+  .news-show__container {
     width: 90%;
   }
 
-  .newsShowSection > a {
+  .news-show__all-news-button {
     align-self: flex-start;
     margin-left: 5%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .newsShowContainerLong {
+  .news-show__container-long {
     grid-template-rows: auto auto auto auto;
     grid-template-areas: 
       "image image" "title title" "subtitle subtitle" "body body";
-  }
-  
 
-  .newsShowContainerLong > div > img {
-    max-height: none;
-    max-width: none;
-    width: 100%;
+    > div > img {
+      max-height: none;
+      max-width: none;
+      width: 100%;
+    }
   }
 }

@@ -1,22 +1,24 @@
 @import '_variables';
 
-.announcementShowContainer > div:not(.announceShowNavBtns) {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  justify-content: flex-start;
-  align-items: center;
+.announcement-show__container {
+  > div:not(.announcement-show__button-container) {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  div p {
+    padding-bottom: 20px;
+  }
 }
 
-.announcementShowContainer div p {
-  padding-bottom: 20px;
-}
-
-#announcementShowBody {
+.announcement-show__body {
   padding-bottom: 40px;
 }
 
-.announceShowNavBtns {
+.announcement-show__button-container {
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -24,7 +26,7 @@
   align-items: baseline;
 }
 
-.announceShowEdits {
+.announcement-show__admin-container {
   display: flex;
   max-width: 70%;
   flex-direction: row;
@@ -33,7 +35,7 @@
   width: 70%
 }
 
-.updateAnnouncementShow {
+.announcement-show__edit-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,24 +51,24 @@
   text-transform: uppercase;
   box-shadow: 0 4px 4px 1px $gray-one;
   transform: translatey(-4px);
+
+  &:hover {
+    box-shadow: 0 2px 2px 0 $gray-one;
+    transform: translatey(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 0 0 0 $gray-one;
+    transform: translatey(0);
+  }
+
+  div {
+    background-color: $yellow-two;
+    color: $gray-five;
+  }
 }
 
-.updateAnnouncementShow:hover {
-  box-shadow: 0 2px 2px 0 $gray-one;
-  transform: translatey(-2px);
-}
-
-.updateAnnouncementShow:active {
-  box-shadow: 0 0 0 0 $gray-one;
-  transform: translatey(0);
-}
-
-.updateAnnouncementShow div {
-  background-color: $yellow-two;
-  color: $gray-five;
-}
-
-.deleteAnnouncementShow {
+.announcement-show__delete-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,55 +85,55 @@
   text-transform: uppercase;
   box-shadow: 0 4px 4px 1px $gray-one;
   transform: translatey(-4px);
-}
 
-.deleteAnnouncementShow:hover {
-  box-shadow: 0 2px 2px 0 $gray-one;
-  transform: translatey(-2px);
-}
+  &:hover {
+    box-shadow: 0 2px 2px 0 $gray-one;
+    transform: translatey(-2px);
+  }
 
-.deleteAnnouncementShow:active {
-  box-shadow: 0 0 0 0 $gray-one;
-  transform: translatey(0);
-}
+  &:active {
+    box-shadow: 0 0 0 0 $gray-one;
+    transform: translatey(0);
+  }
 
-.deleteAnnouncementShow button {
-  background-color: $red-five;
-  color: $gray-five;
-  font-size: 16px;
-  height: 100%;
-  width: 100%;
-  border-radius: 0 15px 15px 0;
-  text-transform: uppercase;
+  button {
+    background-color: $red-five;
+    color: $gray-five;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 15px 15px 0;
+    text-transform: uppercase;
+  }
 }
 
 /* ===ANNOUNCEMENT SHOW RESPONSIVENESS=== */
 
 @media screen and (max-width: 800px) {
-  .announcementShowContainer h2 {
+  .announcement-show__container h2 {
     max-width: 90%;
   }
 
-  #announcementShowBody {
+  .announcement-show__body {
     width: 90%;
   }
 
-  .announceShowNavBtns {
+  .announcement-show__button-container {
     width: 90%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .announceShowNavBtns {
+  .announcement-show__button-container {
     flex-direction: column;
     align-items: center;
+
+    > a {
+      margin-bottom: 10px;
+    }
   }
 
-  .announceShowNavBtns > a {
-    margin-bottom: 10px;
-  }
-
-  .announceShowEdits {
+  .announcement-show__admin-container {
     width: 100%;
     max-width: 100%;
   }

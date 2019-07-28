@@ -23,7 +23,7 @@
   }
 }
 
-.announcementContainer {
+.announcement-index__announcement-container {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -35,7 +35,7 @@
   margin-bottom: 15px;
 }
 
-.dateUpdated {
+.announcement-index__announcement-date {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,7 @@
   }
 }
 
-.announcementBody {
+.announcement-index__announcement-body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -68,7 +68,7 @@
   }
 }
 
-.updateAnnouncement {
+.announcement-index__update-anouncement-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,7 +83,7 @@
   }
 }
 
-.deleteAnnouncement {
+.announcement-index__delete-anouncement-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,8 +107,8 @@
   }
 }
 
-.updateAnnouncement:hover,
-.deleteAnnouncement:hover {
+.announcement-index__update-anouncement-button:hover,
+.announcement-index__delete-anouncement-button:hover {
   transform: perspective(10px) translate3d( 0, 0, .5px);
   border-radius: $border-radius-normal;
 }
@@ -116,7 +116,7 @@
 /* ===ANNOUNCEMENT INDEX RESPONSIVENESS=== */
 
 @media screen and (max-width: 900px){
-  .announcementContainer {
+  .announcement-index__announcement-container {
     flex-direction: column;
   }
 
@@ -132,12 +132,12 @@
     }
   }
 
-  .updateAnnouncement {
+  .announcement-index__update-anouncement-button {
     width: 100%;
     height: 30px;
   }
 
-  .deleteAnnouncement {
+  .announcement-index__delete-anouncement-button {
     width: 100%;
     height: 30px;
     border-radius: 0 0 8px 8px;

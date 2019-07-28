@@ -176,11 +176,11 @@ if (pageURL.includes(newsString)) {
 
 
 function changeNewsShowLayout () {
-  var newsShowContainer = document.getElementsByClassName("newsShowContainer");
-  var newsShowPhoto = document.getElementById("showPhoto");
+  var newsShowContainer = document.getElementsByClassName("news-show__container");
+  var newsShowPhoto = document.getElementById("news-show__image");
 
   if (newsShowPhoto.naturalHeight > newsShowPhoto.naturalWidth) {
-    newsShowContainer[0].classList.add("newsShowContainerLong");
+    newsShowContainer[0].classList.add("news-show__container-long");
   }
 }
 

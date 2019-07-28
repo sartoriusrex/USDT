@@ -6,34 +6,50 @@
 
 <% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>
 
-<a 
-  href="/announcements/new" class="announcement-index__create-announcement-button"
->
-  <div>
-      <i class="fas fa-plus"></i> Create Announcement
-  </div>
-</a>
+  <a 
+    href="/announcements/new" class="announcement-index__create-announcement-button"
+  >
+    <div>
+      <i class="fas fa-plus"></i>
+      Create Announcement
+    </div>
+  </a>
 
 <% } %>
 
 <% announcement.slice().reverse().forEach(function(announcement){ %>
-  <div class="announcementContainer">
-    <div class="dateUpdated">
+  <div class="announcement-index__announcement-container">
+    <div class="announcement-index__announcement-date">
+
       <h4>Updated:</h4>
       <p><%= moment(announcement.dateLastUpdate).fromNow() %></p>
+
     </div>
-    <a class="announcementBody" href="/announcements/<%=announcement._id%>">
+
+    <a class="announcement-index__announcement-body" href="/announcements/<%=announcement._id%>">
       <p><%= announcement.body %></p>
     </a>
+
     <% if (locals.currentUser !== undefined && locals.currentUser.isAdmin) { %>
-      <a class="updateAnnouncement" href="/announcements/<%=announcement._id%>/edit">
+
+      <a class="announcement-index__update-anouncement-button" href="/announcements/<%=announcement._id%>/edit">
         <div>
-            <i class="fas fa-edit"></i> Update
+          <i class="fas fa-edit"></i>
+          Update
         </div>
       </a>
-      <form class="deleteAnnouncement" action="/announcements/<%= announcement._id %>?_method=DELETE" method="POST">
-        <button><i class="fas fa-trash-alt"></i> Delete</button>
+
+      <form 
+        class="announcement-index__delete-anouncement-button"
+        action="/announcements/<%= announcement._id %>?_method=DELETE" 
+        method="POST"
+      >
+        <button>
+          <i class="fas fa-trash-alt"></i>
+          Delete
+        </button>
       </form>
+
     <% } %>
   </div>
 <% }) %>

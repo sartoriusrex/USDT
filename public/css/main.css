@@ -55,6 +55,9 @@ section {
   justify-content: space-around;
   padding: 40px 0;
 }
+section > h2 {
+  padding-bottom: 20px;
+}
 section:not(.slider):nth-child(even) {
   background-color: #e9e7e2;
 }
@@ -1279,6 +1282,22 @@ table {
 thead {
   background-color: #760a0a;
 }
+thead tr {
+  border-bottom: 2px solid #620404;
+}
+thead th:nth-child(1),
+thead th:nth-child(2),
+thead th:nth-child(7) {
+  width: 10%;
+}
+thead th:nth-child(3),
+thead th:nth-child(5),
+thead th:nth-child(6) {
+  width: 15%;
+}
+thead th:nth-child(4) {
+  width: 25%;
+}
 
 th {
   color: #e9e7e2;
@@ -1290,26 +1309,6 @@ th, td {
   text-align: left;
   overflow: hidden;
   white-space: nowrap;
-}
-
-thead tr {
-  border-bottom: 2px solid #620404;
-}
-
-thead th:nth-child(1),
-thead th:nth-child(2),
-thead th:nth-child(7) {
-  width: 10%;
-}
-
-thead th:nth-child(3),
-thead th:nth-child(5),
-thead th:nth-child(6) {
-  width: 15%;
-}
-
-thead th:nth-child(4) {
-  width: 25%;
 }
 
 tr:nth-child(even) {
@@ -1353,7 +1352,7 @@ td a {
   transform: translatey(0);
 }
 
-.announcementContainer {
+.announcement-index__announcement-container {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -1365,7 +1364,7 @@ td a {
   margin-bottom: 15px;
 }
 
-.dateUpdated {
+.announcement-index__announcement-date {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1376,11 +1375,11 @@ td a {
   border-radius: 8px 0 0 4px;
   background-color: #88ebf2;
 }
-.dateUpdated h4 {
+.announcement-index__announcement-date h4 {
   padding-bottom: 5px;
 }
 
-.announcementBody {
+.announcement-index__announcement-body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1392,11 +1391,11 @@ td a {
   background-color: #f9f8f6;
   border-radius: 4px;
 }
-.announcementBody:hover {
+.announcement-index__announcement-body:hover {
   box-shadow: inset 0 0 40px 5px #d4cfc4;
 }
 
-.updateAnnouncement {
+.announcement-index__update-anouncement-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1405,12 +1404,12 @@ td a {
   width: 10%;
   flex: 0 1 100%;
 }
-.updateAnnouncement div {
+.announcement-index__update-anouncement-button div {
   background-color: #fadb61;
   color: #423d33;
 }
 
-.deleteAnnouncement {
+.announcement-index__delete-anouncement-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1420,7 +1419,7 @@ td a {
   flex: 0 1 100%;
   border-radius: 0 8px 8px 0;
 }
-.deleteAnnouncement button {
+.announcement-index__delete-anouncement-button button {
   background-color: #e66b6b;
   color: #423d33;
   font-size: 16px;
@@ -1428,19 +1427,19 @@ td a {
   width: 100%;
   border-radius: 0 15px 15px 0;
 }
-.deleteAnnouncement button:hover {
+.announcement-index__delete-anouncement-button button:hover {
   border-radius: 4px;
 }
 
-.updateAnnouncement:hover,
-.deleteAnnouncement:hover {
+.announcement-index__update-anouncement-button:hover,
+.announcement-index__delete-anouncement-button:hover {
   transform: perspective(10px) translate3d(0, 0, 0.5px);
   border-radius: 4px;
 }
 
 /* ===ANNOUNCEMENT INDEX RESPONSIVENESS=== */
 @media screen and (max-width: 900px) {
-  .announcementContainer {
+  .announcement-index__announcement-container {
     flex-direction: column;
   }
 
@@ -1455,37 +1454,36 @@ td a {
     padding: 0 5px 0 0;
   }
 
-  .updateAnnouncement {
+  .announcement-index__update-anouncement-button {
     width: 100%;
     height: 30px;
   }
 
-  .deleteAnnouncement {
+  .announcement-index__delete-anouncement-button {
     width: 100%;
     height: 30px;
     border-radius: 0 0 8px 8px;
   }
-  .deleteAnnouncement button {
+  .announcement-index__delete-anouncement-button button {
     border-radius: 0 0 8px 8px;
   }
 }
-.announcementShowContainer > div:not(.announceShowNavBtns) {
+.announcement-show__container > div:not(.announcement-show__button-container) {
   display: flex;
   flex-direction: column;
   width: 50%;
   justify-content: flex-start;
   align-items: center;
 }
-
-.announcementShowContainer div p {
+.announcement-show__container div p {
   padding-bottom: 20px;
 }
 
-#announcementShowBody {
+.announcement-show__body {
   padding-bottom: 40px;
 }
 
-.announceShowNavBtns {
+.announcement-show__button-container {
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -1493,7 +1491,7 @@ td a {
   align-items: baseline;
 }
 
-.announceShowEdits {
+.announcement-show__admin-container {
   display: flex;
   max-width: 70%;
   flex-direction: row;
@@ -1502,7 +1500,7 @@ td a {
   width: 70%;
 }
 
-.updateAnnouncementShow {
+.announcement-show__edit-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1519,23 +1517,20 @@ td a {
   box-shadow: 0 4px 4px 1px #a49e94;
   transform: translatey(-4px);
 }
-
-.updateAnnouncementShow:hover {
+.announcement-show__edit-button:hover {
   box-shadow: 0 2px 2px 0 #a49e94;
   transform: translatey(-2px);
 }
-
-.updateAnnouncementShow:active {
+.announcement-show__edit-button:active {
   box-shadow: 0 0 0 0 #a49e94;
   transform: translatey(0);
 }
-
-.updateAnnouncementShow div {
+.announcement-show__edit-button div {
   background-color: #fadb61;
   color: #423d33;
 }
 
-.deleteAnnouncementShow {
+.announcement-show__delete-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1553,18 +1548,15 @@ td a {
   box-shadow: 0 4px 4px 1px #a49e94;
   transform: translatey(-4px);
 }
-
-.deleteAnnouncementShow:hover {
+.announcement-show__delete-button:hover {
   box-shadow: 0 2px 2px 0 #a49e94;
   transform: translatey(-2px);
 }
-
-.deleteAnnouncementShow:active {
+.announcement-show__delete-button:active {
   box-shadow: 0 0 0 0 #a49e94;
   transform: translatey(0);
 }
-
-.deleteAnnouncementShow button {
+.announcement-show__delete-button button {
   background-color: #e66b6b;
   color: #423d33;
   font-size: 16px;
@@ -1576,34 +1568,33 @@ td a {
 
 /* ===ANNOUNCEMENT SHOW RESPONSIVENESS=== */
 @media screen and (max-width: 800px) {
-  .announcementShowContainer h2 {
+  .announcement-show__container h2 {
     max-width: 90%;
   }
 
-  #announcementShowBody {
+  .announcement-show__body {
     width: 90%;
   }
 
-  .announceShowNavBtns {
+  .announcement-show__button-container {
     width: 90%;
   }
 }
 @media screen and (max-width: 500px) {
-  .announceShowNavBtns {
+  .announcement-show__button-container {
     flex-direction: column;
     align-items: center;
   }
-
-  .announceShowNavBtns > a {
+  .announcement-show__button-container > a {
     margin-bottom: 10px;
   }
 
-  .announceShowEdits {
+  .announcement-show__admin-container {
     width: 100%;
     max-width: 100%;
   }
 }
-.articleContainer {
+.news-index__news-container {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -1614,12 +1605,11 @@ td a {
   box-shadow: 0 2px #b9b3a7;
   padding: 5px;
 }
-
-.articleContainer:hover {
+.news-index__news-container:hover {
   box-shadow: inset 0 0 40px 5px #d4cfc4;
 }
 
-.coverImageContainer {
+.news-index__image-container {
   max-width: 30%;
   max-height: 200px;
   display: flex;
@@ -1629,15 +1619,15 @@ td a {
   margin-right: 10px;
   border-radius: 8px 0 0 8px;
 }
-
-.coverImageContainer img {
+.news-index__image-container img {
   max-height: 100%;
   max-width: 100%;
   border-radius: 8px 0 0 8px;
   object-fit: contain;
+  outline: 1px solid red;
 }
 
-.textContainer {
+.news-index__text-container {
   padding-left: 30px;
   max-width: 70%;
   display: flex;
@@ -1645,32 +1635,23 @@ td a {
   justify-content: flex-start;
   align-items: flex-start;
 }
-
-.textContainer h3,
-.textContainer p {
-  padding-bottom: 5px;
-}
-
-.textContainer h3 {
+.news-index__text-container h3 {
   padding-top: 20px;
 }
-
-u {
-  text-decoration: none;
-  border-bottom: 2px solid #26231c;
+.news-index__text-container h3 p {
+  padding-bottom: 5px;
 }
-
-.textContainer h4 {
+.news-index__text-container h4 {
   padding-bottom: 10px;
 }
 
 /* ===NEWS INDEX RESPONSIVENESS=== */
 @media screen and (max-width: 500px) {
-  .coverImageContainer {
+  .news-index__image-container {
     display: none;
   }
 
-  .textContainer {
+  .news-index__text-container {
     padding: 5px;
     max-width: 100%;
     justify-content: center;
@@ -1678,7 +1659,7 @@ u {
     align-items: center;
   }
 }
-.newsShowContainer {
+.news-show__container {
   width: 40%;
   display: grid;
   padding-bottom: 20px;
@@ -1687,12 +1668,17 @@ u {
   grid-template-areas: "image image" "title title" "subtitle subtitle" "body body";
 }
 
-.newsShowContainerLong {
+.news-show__container-long {
   grid-template-rows: auto auto auto;
   grid-template-areas: "image title" "image subtitle" "body body";
 }
+.news-show__container-long > div > img {
+  max-width: 100%;
+  object-fit: scale-down;
+  max-height: 100%;
+}
 
-.newsShowImgContainer {
+.news-show__image-container {
   width: 100%;
   padding-bottom: 20px;
   grid-area: image;
@@ -1700,87 +1686,79 @@ u {
   justify-content: center;
   align-items: flex-start;
 }
+.news-show__image-container > img {
+  max-width: 100%;
+  object-fit: scale-down;
+}
 
-.newsShowContainerLong .newsShowImgContainer {
+.news-show__container-long .news-show__image-container {
   justify-content: flex-start;
   padding-right: 10px;
 }
 
-.newsShowImgContainer > img {
-  max-width: 100%;
-  object-fit: scale-down;
-}
-
-.newsShowContainerLong > div > img {
-  max-width: 100%;
-  object-fit: scale-down;
-  max-height: 100%;
-}
-
-.titleContainer {
+.news-show__title {
   width: 100%;
   grid-area: title;
 }
 
-.subtitleContainer {
+.news-show__subtitle {
   width: 100%;
   grid-area: subtitle;
 }
 
-.titleContainer *,
-.subtitleContainer * {
+.news-show__title *,
+.news-show__subtitle * {
   padding-bottom: 20px;
 }
 
-.newsShowBody {
+.news-show__body {
   width: 100%;
   text-indent: 15px;
   grid-area: body;
   margin-bottom: 20px;
 }
 
-.newsShowSection > a {
+.news-show__all-news-button {
   align-self: flex-start;
   margin-left: 30%;
 }
 
 /* NEWS SHOW REPSONSIVENESS */
 @media screen and (max-width: 1100px) {
-  .newsShowContainerLong {
+  .news-show__container-long {
     grid-template-areas: "image title" "subtitle subtitle" "body body";
   }
 }
 @media screen and (max-width: 900px) {
-  .newsShowContainer {
+  .news-show__container {
     width: 70%;
   }
 
-  .newsShowContainerLong {
+  .news-show__container-long {
     grid-template-areas: "image title" "image subtitle" "body body";
   }
 
-  .newsShowSection > a {
+  .news-show__all-news-button {
     align-self: flex-start;
     margin-left: 15%;
   }
 }
 @media screen and (max-width: 700px) {
-  .newsShowContainer {
+  .news-show__container {
     width: 90%;
   }
 
-  .newsShowSection > a {
+  .news-show__all-news-button {
     align-self: flex-start;
     margin-left: 5%;
   }
 }
 @media screen and (max-width: 500px) {
-  .newsShowContainerLong {
+  .news-show__container-long {
     grid-template-rows: auto auto auto auto;
     grid-template-areas: "image image" "title title" "subtitle subtitle" "body body";
   }
-
-  .newsShowContainerLong > div > img {
+  .news-show__container-long > div > img {
     max-height: none;
     max-width: none;
     width: 100%;
