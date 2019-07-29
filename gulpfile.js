@@ -7,8 +7,8 @@ const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
-// const imagemin = require('gulp-imagemin');
-// const changed = require('gulp-changed');
+const imagemin = require('gulp-imagemin');
+const changed = require('gulp-changed');
 const uglify = require('gulp-uglify');
 const nodemon = require('gulp-nodemon');
 
@@ -42,14 +42,35 @@ function minifyCss() {
   .pipe( dest( 'public/css') )
 }
 
-function concatJs() {
+function concatAndMinifyJs() {
   return src( [ 'src/js/*.js' ] )
   .pipe( concat( 'main.min.js' ))
   .pipe( uglify() )
   .pipe( dest( 'public/js' ))
 }
 
-exports.default = series( compileScss, minifyCss, concatJs );
+function imageMin() {
+  return src( ['public/src/photos/*.jpg', 'public/src/photos/*.svg'] )
+  .pipe(changed( 'public/src/photos' ))
+  .pipe( imagemin([
+    imagemin.gifsicle({interlaced: true}),
+    imagemin.jpegtran({progressive: true}),
+    imagemin.optipng({optimizationLevel: 5})
+  ]))
+  .pipe( dest( 'public/src/photos' ) );
+}
+
+function watchFiles() {
+  watch( ['src/scss/*.scss'], series( compileScss, minifyCss ) );
+  watch( ['src/js/*.js'], concatAndMinifyJs );
+  watch( ['public/photos/*.jpg', 'public/photos/*.svg'], imageMin );
+}
+
+function build( done ){
+  return series( compileScss, minifyCss, concatAndMinifyJs, imageMin )( done );
+}
+
+exports.default = series( build, watchFiles );
 
 // function initNodemon(){
 //   nodemon({
@@ -119,14 +140,14 @@ exports.default = series( compileScss, minifyCss, concatJs );
 // // }
 
 // // function imgmin() {
-// //   return gulp.src( imgSrc )
-// //   .pipe(changed( imgDest))
-// //       .pipe( imagemin([
-// //         imagemin.gifsicle({interlaced: true}),
-// //         imagemin.jpegtran({progressive: true}),
-// //         imagemin.optipng({optimizationLevel: 5})
-// //       ]))
-// //       .pipe( gulp.dest( imgDest ) );
+//   return gulp.src( imgSrc )
+//   .pipe(changed( imgDest))
+//       .pipe( imagemin([
+//         imagemin.gifsicle({interlaced: true}),
+//         imagemin.jpegtran({progressive: true}),
+//         imagemin.optipng({optimizationLevel: 5})
+//       ]))
+//       .pipe( gulp.dest( imgDest ) );
 // // }
 
 // // function build() {
