@@ -189,7 +189,6 @@ function changeNewsShowLayout () {
 // if Home, make slideshow happen and change layout of news articles--
 // Check if home by counting number of "/". If it is 3, then run script
 
-// slidexIndex var
 var slideIndex = 1;
 
 
@@ -223,7 +222,7 @@ function changeNewsLayout() {
 
 function mountComponent() {
   this.showSlides(slideIndex);
-  myTimer = setInterval(() => {this.plusSlides(1);}, 3500);
+  myTimer = setInterval( function(){ this.plusSlides(1) } , 3500);
 }
 
 // ----------Remove visibility and add visibility based on index-------------
@@ -235,10 +234,10 @@ function showSlides( n ) {
 
   if (n > slides.length) {slideIndex = 1;}
   if (n < 1) {slideIndex = slides.length;}
-  for (i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+  for (let i = 0; i < dots.length; i++) {
     dots[i].classList.remove("active");
   }
 
@@ -251,20 +250,20 @@ function showSlides( n ) {
 function plusSlides( n ) {
   clearInterval(myTimer);
   this.showSlides(slideIndex += n);
-  if ( n = -1 ) {
-    myTimer = setInterval(() => {this.plusSlides(n+2);}, 3500);
+  if ( n === -1 ) {
+    myTimer = setInterval( function(){ this.plusSlides(n+2) } , 3500);
   } else {
-    myTimer = setInterval(() => {this.plusSlides(n+1);}, 3500);
+    myTimer = setInterval( function(){ this.plusSlides(n+1) } , 3500);
   }
 }
 
 function currentSlide( n ) {
   clearInterval(myTimer);
   this.showSlides( slideIndex = n );
-  if ( n = -1 ) {
-    myTimer = setInterval(() => {this.plusSlides(n+2);}, 3500);
+  if ( n === -1 ) {
+    myTimer = setInterval( function(){ this.plusSlides(n+2) } , 3500);
   } else {
-    myTimer = setInterval(() => {this.plusSlides(n+1);}, 3500);
+    myTimer = setInterval( function(){ this.plusSlides(n+1) } , 3500);
   }
 }
 
@@ -293,4 +292,3 @@ function addSlideNavDot(){
     });
   });
 }
-

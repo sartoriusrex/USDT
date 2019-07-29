@@ -38,11 +38,18 @@ function minifyCss() {
   .pipe( sourcemaps.init({ loadMaps: true }))
   .pipe( cleanCSS() )
   .pipe( sourcemaps.write() )
-  .pipe( rename( 'main.minified.css') )
+  .pipe( rename( 'main.min.css') )
   .pipe( dest( 'public/css') )
 }
 
-exports.default = series( compileScss, minifyCss );
+function concatJs() {
+  return src( [ 'src/js/*.js' ] )
+  .pipe( concat( 'main.min.js' ))
+  .pipe( uglify() )
+  .pipe( dest( 'public/js' ))
+}
+
+exports.default = series( compileScss, minifyCss, concatJs );
 
 // function initNodemon(){
 //   nodemon({
