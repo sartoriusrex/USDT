@@ -12,47 +12,56 @@
   padding: 5px;
 
   &:hover {
-    box-shadow: inset 0 0 40px 5px $white-four;
+    box-shadow: 0 0 40px 5px $white-four;
   }
 }
 
 .news-index__image-container {
-  max-width: 30%;
-  max-height: 200px;
+  width: 30%;
+  height: 200px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: none;
   margin-right: 10px;
-  border-radius: 8px 0 0 8px;
 
   img {
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 8px 0 0 8px;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
   }
 }
 
 .news-index__text-container {
   padding-left: 30px;
-  max-width: 70%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 
   h3 {
-    padding-top: 20px;
-    
-    p {
-      padding-bottom: 5px;
-    }
+    padding: 20px 0 5px;
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 12px;
   }
 
   h4 {
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    font-weight: normal;
   }
+}
+
+.news-index__subtext-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px 0 0;
 }
 
 /* ===NEWS INDEX RESPONSIVENESS=== */
