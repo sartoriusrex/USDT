@@ -23,7 +23,7 @@ var dbURL = process.env.DATABASEURL || localDatabase;
 var localDatabase = "mongodb://localhost/USDT";
 
 mongoose.set("useFindAndModify", false);
-mongoose.connect(localDatabase, {useNewUrlParser: true});
+mongoose.connect(dbURL, {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 
 var db = mongoose.connection;
