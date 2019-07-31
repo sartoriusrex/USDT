@@ -17,10 +17,9 @@ const express         = require("express"),
 // ========================================
 
 // MONGOOSE SETTINGS
+var localDatabase = "mongodb://localhost/USDT";
 
 var dbURL = process.env.DATABASEURL || localDatabase;
-
-var localDatabase = "mongodb://localhost/USDT";
 
 mongoose.set("useFindAndModify", false);
 mongoose.connect(dbURL, {useNewUrlParser: true});
