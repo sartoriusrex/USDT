@@ -9,13 +9,13 @@
   height: 120px;
 }
 
-.header__logo {
+.header__logo-container {
   display: flex;
   align-items: center;
   max-width: 70%;
 }
 
-.logo {
+.header__logo {
   height: 95%;
   padding: 5px;;
 }
@@ -44,7 +44,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  .header__logo {
+  .header__logo-container {
     max-width: 90%;
   }
 }
@@ -70,10 +70,14 @@
     font-size: 24px;
   }
 
-  .header__brand-text p {
-    font-size: 10px;
-    line-height: .9rem;
-  }
+  .header__brand-text{
+    
+
+    p {
+      font-size: 10px;
+      line-height: .9rem;
+    }
+  } 
 
   h1 {
     font-size: 16px;
