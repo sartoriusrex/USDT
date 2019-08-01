@@ -193,13 +193,26 @@
 }
 
 @media screen and (max-width: 450px) {
+  .slider-item {
+    position: relative;
+  }
+
   .slider-item-img-container {
-    display: none;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    opacity: .1;
+    min-width: 100%;
+    min-height: 100%;
   }
 
   .slider-item-text {
     width: 100%;
     max-width: 100%;
+    z-index: 1;
   }
 
   .slider-btn-left {

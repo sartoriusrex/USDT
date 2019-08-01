@@ -139,6 +139,32 @@ label {
 }
 
 .report .section-title,
-.newsletterSubscribe .section-title {
+.newsletter-subscribe .section-title {
   padding-bottom: 40px;
+}
+
+@media screen and (max-width: 400px) {
+  section {
+    padding: 20px 0;
+  
+    > h2 {
+      padding-bottom: 10px;
+    }
+  
+    &:not(.slider):nth-child(even) {
+      background-color: $white-three;
+    }
+  }
+
+  .report .section-title,
+  .newsletter-subscribe .section-title,
+  .announcements .section-title,
+  .news .section-title {
+    padding-bottom: 20px;
+  }
+
+  .announcements-container,
+  .news-container {
+    padding: 0;
+  }
 }
