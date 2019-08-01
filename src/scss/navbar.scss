@@ -1,8 +1,12 @@
 @import '_variables';
 
-#closeMenu {
+.nav-container__close-menu-button {
   font-size: 42px;
   order: -2;
+  display: none;
+}
+
+.nav-container__open-menu-button {
   display: none;
 }
 
@@ -32,7 +36,7 @@
   font-weight: bold;
 }
 
-.navli {
+.nav-container__nav-list-item {
   position: relative;
   display: inline-block;
   padding: 3px 0;
@@ -47,7 +51,7 @@
   }
 }
 
-.navliContent {
+.nav-list-item-link-container {
   position: absolute;
   width: max-content;
   background-color: $white-four;
@@ -67,11 +71,11 @@
   }
 }
 
-.navli:hover .navliContent {
+.nav-container__nav-list-item:hover .nav-list-item-link-container {
   display: block;
 }
 
-.navli > a,
+.nav-container__nav-list-item > a,
 .search-icon {
   color: $black-color
 }
@@ -98,7 +102,7 @@
 /* ===NAV BAR RESPONSIVENESS=== */
 
 @media screen and (max-width: 750px) {
-  #navIcon {
+  .nav-container__open-menu-button {
     display: block;
     font-size: 28px;
     color: $black-color;
@@ -108,7 +112,7 @@
     justify-content: space-between;
   }
 
-  .navli {
+  .nav-container__nav-list-item {
     display: none;
   }
 
@@ -128,21 +132,21 @@
     padding: 5px;
   }
 
-  .nav-list.responsive #closeMenu {
+  .nav-list.responsive .nav-container__close-menu-button {
     display: block;
   }
 
-  .nav-list.responsive #navIcon {
+  .nav-list.responsive .nav-container__open-menu-button {
     display: none;
   }
 
-  .nav-list.responsive .navli,
+  .nav-list.responsive .nav-container__nav-list-item,
   .nav-list.responsive .search-bar {
     padding: 5px;
     width: 100%;
   }
 
-  .nav-list.responsive .navli {
+  .nav-list.responsive .nav-container__nav-list-item {
     display: flex;
     margin: 0;
   }
@@ -153,12 +157,12 @@
     justify-content: flex-start;
   }
 
-  .nav-list.responsive .navli > a {
+  .nav-list.responsive .nav-container__nav-list-item > a {
     width: 100%;
     font-size: 32px;
   }
 
-  .nav-list.responsive .navli > a,
+  .nav-list.responsive .nav-container__nav-list-item > a,
   .nav-list.responsive .search-icon {
     color: $white-one;
   }
@@ -167,14 +171,14 @@
     width: 70%;
   }
 
-  .nav-list.responsive .navli .navliContent {
+  .nav-list.responsive .nav-container__nav-list-item .nav-list-item-link-container {
     width: 70%;
     background-color: $gray-four;
     top: 0;
     right: 0;
   }
   
-  .nav-list.responsive .navli .navliContent a {
+  .nav-list.responsive .nav-container__nav-list-item .nav-list-item-link-container a {
     display: block;
     color: $white-one;
     font-size: 24px;

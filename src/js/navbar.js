@@ -1,13 +1,13 @@
 // ===HAMBURGER MENU AND SUBMENUS===
 
-var closeMenu = document.getElementById("closeMenu");
-var openMenu = document.getElementById("navIcon");
+var closeMenu = document.getElementsByClassName("nav-container__close-menu-button");
+var openMenu = document.getElementsByClassName("nav-container__open-menu-button");
 
-closeMenu.addEventListener("click", function (){
+closeMenu[0].addEventListener("click", function (){
   toggleNavMenu();
 });
 
-openMenu.addEventListener("click", function (){
+openMenu[0].addEventListener("click", function (){
   toggleNavMenu();
 });
 
