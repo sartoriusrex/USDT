@@ -26,16 +26,11 @@
   align-self: start;
 }
 
-.header__title,
-.header__title-sm {
+.header__title {
   text-shadow: 0 0 15px black; 
   font-family: $font-family-secondary;;
   font-weight: 700;
   padding-bottom: 5px;
-}
-
-.header__title-sm {
-  display: none;
 }
 
 .header__brand-text p {
@@ -61,17 +56,17 @@
 }
 
 @media screen and (max-width: 400px) {
-  .header__title{
-    display: none;
+  .header__logo {
+    height: 75%;
   }
 
-  .header__title-sm{
-    display: block;
-    font-size: 24px;
+  .header__title{
+    font-size: 18px;
   }
 
   .header__brand-text{
-    
+    align-self: center;
+    padding: 0 10px 0 0;
 
     p {
       font-size: 10px;

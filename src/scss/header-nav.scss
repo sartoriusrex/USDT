@@ -174,10 +174,16 @@
 @media screen and (max-width: 400px) {
   .header__menu-container {
     width: 15%;
+    margin: 0;
   }
 
   .header__menu-container.responsive,
   .header__menu-container.responsiveSocial {
     font-size: 32;
+  }
+
+  #header__open-login-icon,
+  #header__open-social-icon {
+    font-size: 24px;
   }
 }
