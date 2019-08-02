@@ -13,6 +13,8 @@ Important Note:
 
 Date: July, 23 2019: This is a personal project, for fun and learning. It is still being built, and the majority of the pages are not yet built, nor are many of the major features or specifications.
 
+#Version 1.0.0
+
 Features not yet implemented:
 - Recover/ Reset Password
 - Login with email
@@ -31,4 +33,3 @@ Features coming soon:
 - Form Validation
 - Password Reset and Account Recovery
 - HTML WCAG compliance coming very soon
-
