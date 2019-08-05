@@ -12,6 +12,7 @@ const changed                       = require('gulp-changed');
 const uglify                        = require('gulp-uglify');
 const nodemon                       = require('gulp-nodemon');
 
+
 // ============= SCSS and CSS ============
 
 function compileScss() {
@@ -118,8 +119,9 @@ exports.initServer = initServer;
 
 function watchFiles() {
   watch( ['src/scss/*.scss'], series( compileScss, minifyCss ) );
-  watch( ['src/js/*.js'], concatAndMinifyJs );
-  watch( ['public/photos/*.jpg', 'public/photos/*.svg'], imageMin );
+  watch( ['src/js/*.js'], series( concatAndMinifyJs, reload ) );
+  watch( ['views/**/*.ejs'], series( initNodemon, reload ))
+  watch( ['public/photos/*.jpg', 'public/photos/*.svg'], series( imageMin, initNodemon, reload ) );
   watch( [ 
     'public/css/*.css', 
     'public/js/*.js', 
