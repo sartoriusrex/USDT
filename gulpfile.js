@@ -1,3 +1,12 @@
+const $ = require('gulp-load-plugins')({
+  pattern: ['*'],
+  scope: ['devDependencies']
+});
+const pkg = require('./package.json');
+
+$.fancyLog("-> Compiling scss");
+
+
 const { watch, series, src, dest }  = require('gulp');
 const autoprefixer                  = require('gulp-autoprefixer');
 const browserSync                   = require('browser-sync').create();
