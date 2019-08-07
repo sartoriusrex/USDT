@@ -1,8 +1,13 @@
 {
+  "author": "sartoriusrex",
+  "license": "MIT",
   "name": "usdt",
   "version": "1.0.0",
   "description": "US Dep of Truth, Satirical Website, Personal Project, MIT Licence",
   "main": "app.js",
+  "engine": {
+    "node": "10.13.0"
+  },
   "dependencies": {
     "async": "^2.6.1",
     "body-parser": "^1.18.3",
@@ -38,13 +43,45 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2"
   },
-  "engine": {
-    "node": "10.13.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "sartoriusrex",
-  "license": "ISC"
+  "paths": {
+    "src": {
+      "base": "./src",
+      "scss": "./src/scss",
+      "css": "./src/css",
+      "js": "./src/js",
+      "img": "./src/img"
+    },
+    "dist": {
+      "base": "./public/",
+      "css": "./public/css/",
+      "js": "./public/js/",
+      "fonts": "./public/fonts/",
+      "img": "./public/img/"
+    },
+    "build": {
+      "base": "./build/",
+      "css": "./build/css/",
+      "fontello": "./build/fonts/fontello/",
+      "fonts": "./build/fonts/",
+      "js": "./build/js/",
+      "html": "./build/html/",
+      "img": "./build/img/"
+    },
+    "favicon": {
+      "src": "./src/img/favicon_src.png",
+      "dest": "./public/img/site/",
+      "path": "/img/site/"
+    },
+    "scss": [],
+    "templates": "./views/"
+  },
+  "vars": {
+    "siteCssName": "site.combined.min.css",
+    "scssName": "style.scss",
+    "cssName": "style.css"
+  }
 }

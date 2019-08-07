@@ -2,9 +2,12 @@ const $ = require('gulp-load-plugins')({
   pattern: ['*'],
   scope: ['devDependencies']
 });
+
 const pkg = require('./package.json');
 
-$.fancyLog("-> Compiling scss");
+const onError = (err) => {
+  console.log(err);
+};
 
 
 const { watch, series, src, dest }  = require('gulp');
@@ -25,6 +28,7 @@ const nodemon                       = require('gulp-nodemon');
 // ============= SCSS and CSS ============
 
 function compileScss() {
+  $.fancyLog("-> Compiling scss:");
   return src([ 'src/scss/main.scss' ])
   .pipe( sourcemaps.init({ loadMaps: true }))
   .pipe( sass({
@@ -38,6 +42,7 @@ function compileScss() {
 exports.compileScss = compileScss;
 
 function minifyCss() {
+  $.fancyLog("-> Minifying css:");
   return src( 'src/css/main.css')
   .pipe( sourcemaps.init({ loadMaps: true }))
   .pipe( cleanCSS() )
@@ -51,6 +56,7 @@ exports.minifyCss = minifyCss;
 // ============= JS =============
 
 function concatAndMinifyJs() {
+  $.fancyLog("-> Concatenating all JS files and Minifying");
   return src( [ 'src/js/*.js' ] )
   .pipe( concat( 'main.min.js' ))
   .pipe( uglify() )
@@ -62,6 +68,7 @@ exports.concatAndMinifyJs = concatAndMinifyJs;
 // ============= media ============
 
 function imageMin() {
+  $.fancyLog("-> Optimizing Media");
   return src( ['public/src/photos/*.jpg', 'public/src/photos/*.svg'] )
   .pipe(changed( 'public/src/photos' ))
   .pipe( imagemin([
@@ -127,6 +134,7 @@ exports.initServer = initServer;
 // ============= WATCH ============
 
 function watchFiles() {
+  $.fancyLog("-> Watching Files");
   watch( ['src/scss/*.scss'], series( compileScss, minifyCss ) );
   watch( ['src/js/*.js'], series( concatAndMinifyJs, reload ) );
   watch( ['views/**/*.ejs'], series( initNodemon, reload ))
