@@ -2,11 +2,13 @@
 
 <section class="announcement-show__container">
 
-  <h2><%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY, h:mm a")%></h2>
+  <h3 class="announcement-show__title">Last Updated <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%></h3>
 
-  <div>
-    <p>Created by <em><%=announcement.author%></em></p>
-    <p><strong>Last Updated <%=moment(announcement.dateLastUpdate).format("ddd, MMM Do YYYY")%></strong></p>
+  <div class="announcement-show__subtitle-container">
+    <p>Created by <em><%=announcement.author%></em> on </p>
+    <p><em>
+      <%=moment(announcement.dateCreated).format("ddd, MMM Do YYYY, h:mm a")%>
+    </em></p>
   </div>
 
   <div class="announcement-show__body">

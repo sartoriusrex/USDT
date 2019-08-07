@@ -101,7 +101,7 @@ function initBrowserSync( done ) {
   browserSync.init({
     open: 'external',
     proxy: 'http://localhost:3000',
-    port: 8000,
+    port: 3000,
     files: [ "public/**/*.*" ],
     browser: "google chrome",
   }, done );
@@ -120,13 +120,12 @@ exports.initServer = initServer;
 function watchFiles() {
   watch( ['src/scss/*.scss'], series( compileScss, minifyCss ) );
   watch( ['src/js/*.js'], series( concatAndMinifyJs, reload ) );
-  watch( ['views/**/*.ejs'], series( initNodemon, reload ))
   watch( ['public/photos/*.jpg', 'public/photos/*.svg'], series( imageMin, initNodemon, reload ) );
   watch( [ 
     'public/css/*.css', 
     'public/js/*.js', 
     'public/photos/*.jpg', 
-    'public/photos/*.svg' 
+    'public/photos/*.svg',
   ])
   .on( 'change', reload );
 }

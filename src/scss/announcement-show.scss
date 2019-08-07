@@ -1,29 +1,33 @@
 @import '_variables';
 
 .announcement-show__container {
-  > div:not(.announcement-show__button-container) {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    justify-content: flex-start;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  div p {
-    padding-bottom: 20px;
-  }
+.announcement-show__title,
+.announcement-show__subtitle-container {
+  margin-bottom: 1em;
 }
 
 .announcement-show__body {
   padding-bottom: 40px;
+  width: 50%;
 }
 
 .announcement-show__button-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 50%;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+
+  > a {
+    margin-bottom: 1em;
+  }
 }
 
 .announcement-show__admin-container {
@@ -110,14 +114,7 @@
 /* ===ANNOUNCEMENT SHOW RESPONSIVENESS=== */
 
 @media screen and (max-width: 800px) {
-  .announcement-show__container h2 {
-    max-width: 90%;
-  }
-
-  .announcement-show__body {
-    width: 90%;
-  }
-
+  .announcement-show__body,
   .announcement-show__button-container {
     width: 90%;
   }

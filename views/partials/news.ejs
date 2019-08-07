@@ -6,14 +6,26 @@
   </div>
   <div class="news-container">
 
-    <% news.slice(-2).reverse().forEach( function( news ) { %>
-      <a href="/news/<%=news._id%>" class="news-link news-link-row">
-        <img src="<%=news.coverImage%>" alt="#" class=
-        "news-image-row">
-        <div class="news-text">
-          <h4><%=news.title%></h4>
-          <p class="news-date"><%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%></p>
-          <p class="news-desc"><%=news.body.substring(0,150)%>...</p>
+    <% news.slice(-3).reverse().forEach( function( news ) { %>
+      <a 
+        href="/news/<%=news._id%>" 
+        class="news-link news-link-row"
+      >
+        <h3 class="news-title"><%=news.title%></h3>
+        <img 
+          src="<%=news.coverImage%>" 
+          alt="News Story Cover" 
+          class="news-image-row"
+        >
+        <div class="news-text-container">
+          <h3><%=news.title%></h3>
+          <p class="news-date">
+            <%=moment(news.dateCreated).format("ddd, MMM Do YYYY")%>
+          </p>
+          <p class="news-desc">
+            <%=news.body.substring(0,150)%>...
+          </p>
+
         </div>
       </a>
     <% }) %>
