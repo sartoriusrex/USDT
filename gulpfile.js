@@ -119,8 +119,9 @@ function initBrowserSync( done ) {
   }, done );
 }
 
-function reload(){
+function reload( done ){
   browserSync.reload();
+  done();
 }
 
 exports.initBrowserSync = initBrowserSync;
@@ -155,7 +156,7 @@ function watchFiles() {
     'public/photos/*.jpg', 
     'public/photos/*.svg',
   ] )
-  .on( 'change', reload );
+  .on( 'change', series( reload ) );
 }
 
 exports.watchFiles = watchFiles;
