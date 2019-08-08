@@ -8,7 +8,10 @@ const $ = require('gulp-load-plugins')({
 const { watch, series, src, dest }  = require('gulp');
 const cleanCss                      = require('gulp-clean-css');
 const browserSync                   = $.browserSync.create();
-const reload                        = browserSync.reload;
+
+const onError = err => {
+  console.log( err );
+};
 
 
 // ============= SCSS and CSS ============
@@ -16,13 +19,14 @@ const reload                        = browserSync.reload;
 function compileScss() {
   $.fancyLog("-> Compiling scss:");
   return src([ pkg.paths.src.scss + 'main.scss' ])
-  .pipe( $.sourcemaps.init({ loadMaps: true }))
-  .pipe( $.sass({
-    outputStyle: 'expanded'
-    }).on( 'error', $.sass.logError))
-  .pipe( $.autoprefixer( 'last 2 versions' ) )
-  .pipe( $.sourcemaps.write() )
-  .pipe( dest( pkg.paths.src.css ) );
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.sourcemaps.init({ loadMaps: true }))
+    .pipe( $.sass({
+      outputStyle: 'expanded'
+      }).on( 'error', $.sass.logError))
+    .pipe( $.autoprefixer( 'last 2 versions' ) )
+    .pipe( $.sourcemaps.write() )
+    .pipe( dest( pkg.paths.src.css ) );
 }
 
 exports.compileScss = compileScss;
@@ -30,11 +34,12 @@ exports.compileScss = compileScss;
 function minifyCss() {
   $.fancyLog("-> Minifying css:");
   return src( pkg.paths.src.css + '/' + 'main.css' )
-  .pipe( $.sourcemaps.init({ loadMaps: true }))
-  .pipe( cleanCss() )
-  .pipe( $.sourcemaps.write() )
-  .pipe( $.rename( 'main.min.css' ) )
-  .pipe( dest( pkg.paths.dist.css ) )
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.sourcemaps.init({ loadMaps: true }))
+    .pipe( cleanCss() )
+    .pipe( $.sourcemaps.write() )
+    .pipe( $.rename( 'main.min.css' ) )
+    .pipe( dest( pkg.paths.dist.css ) )
 }
 
 exports.minifyCss = minifyCss;
@@ -44,9 +49,10 @@ exports.minifyCss = minifyCss;
 function concatAndMinifyJs() {
   $.fancyLog("-> Concatenating all JS files and Minifying");
   return src( [ pkg.paths.src.js ] )
-  .pipe( $.concat( 'main.min.js' ))
-  .pipe( $.uglify() )
-  .pipe( dest( pkg.paths.dist.js ))
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.concat( 'main.min.js' ))
+    .pipe( $.uglify() )
+    .pipe( dest( pkg.paths.dist.js ))
 }
 
 exports.concatAndMinifyJs = concatAndMinifyJs;
@@ -56,13 +62,14 @@ exports.concatAndMinifyJs = concatAndMinifyJs;
 function imageMin() {
   $.fancyLog("-> Optimizing Media");
   return src( ['public/src/photos/*.jpg', 'public/src/photos/*.svg'] )
-  .pipe( $.changed( 'public/src/photos' ))
-  .pipe( $.imagemin([
-    $.imagemin.gifsicle({interlaced: true}),
-    $.imagemin.jpegtran({progressive: true}),
-    $.imagemin.optipng({optimizationLevel: 5})
-  ]))
-  .pipe( dest( 'public/src/photos' ) );
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.changed( 'public/src/photos' ))
+    .pipe( $.imagemin([
+      $.imagemin.gifsicle({interlaced: true}),
+      $.imagemin.jpegtran({progressive: true}),
+      $.imagemin.optipng({optimizationLevel: 5})
+    ]))
+    .pipe( dest( 'public/src/photos' ) );
 }
 
 exports.imageMin = imageMin;
@@ -106,6 +113,11 @@ function initBrowserSync( done ) {
     port: 8000,
     browser: "google chrome",
   }, done );
+}
+
+function reload( done ){
+  browserSync.reload();
+  done();
 }
 
 exports.initBrowserSync = initBrowserSync;

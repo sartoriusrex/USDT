@@ -19,39 +19,39 @@
     padding-top: 20px;
   }
 
-  form {
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      border-radius: 10%;
-      width: 80%;
-
-      label {
-        align-self: flex-start;
-        padding-bottom: 2px;
-        font-size: 14px;
-      }
-    }
-  }
-
   button {
     width: 50%;
   }
+
+  p {
+    padding-bottom: 10px;
+    font-size: 14px;
+    align-self: center;
+  }
 }
 
-#loginPor{
-  padding-bottom: 10px;
-  font-size: 14px;
-  align-self: center;
+.login-section__form {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10%;
+    width: 80%;
+
+    label {
+      align-self: flex-start;
+      padding-bottom: 2px;
+      font-size: 14px;
+    }
+  }
 }
 
 .login-section__container form div label {
@@ -73,26 +73,26 @@
   margin-bottom: 20px;
 }
 
-#forgotAuth {
+.login-section__forgotpassword-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding-bottom: 10px;
+
+  a {
+    text-transform: lowercase;
+    font-size: 14px;
+    padding: 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-#forgotAuth a {
-  text-transform: lowercase;
-  font-size: 14px;
-  padding: 5px;
-}
-
-#forgotAuth a:hover {
-  text-decoration: underline;
-}
-
-.regRedirectDiv {
+.login-section__redirect-to-register {
   display: flex;
   flex-direction: column;
   justify-content: center;
