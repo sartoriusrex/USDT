@@ -5,7 +5,7 @@ const   express           = require('express'),
 
 //Home
 
-router.get('/', (req,res) => {
+router.get('/', ( req,res ) => {
   Announcement.find({}, ( err, allAnnouncements) => {
     if( err ) {
       console.log( err );
@@ -26,6 +26,10 @@ router.get('/', (req,res) => {
       });
     }
   });
+});
+
+router.get( '/whoweare', ( req, res ) => {
+  res.render( 'about/whoweare' );
 });
 
 module.exports = router;

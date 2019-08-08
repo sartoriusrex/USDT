@@ -1,8 +1,13 @@
 {
+  "author": "sartoriusrex",
+  "license": "MIT",
   "name": "usdt",
   "version": "1.0.0",
   "description": "US Dep of Truth, Satirical Website, Personal Project, MIT Licence",
   "main": "app.js",
+  "engine": {
+    "node": "10.13.0"
+  },
   "dependencies": {
     "async": "^2.6.1",
     "body-parser": "^1.18.3",
@@ -23,6 +28,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "fancy-log": "^1.3.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-changed": "^4.0.0",
@@ -31,19 +37,59 @@
     "gulp-imagemin": "^6.0.0",
     "gulp-load-plugins": "^2.0.0",
     "gulp-nodemon": "^2.4.2",
+    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2"
   },
-  "engine": {
-    "node": "10.13.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "sartoriusrex",
-  "license": "ISC"
+  "paths": {
+    "src": {
+      "base": "./src",
+      "scss": "./src/scss/",
+      "css": "./src/css",
+      "js": "./src/js/*.js",
+      "img": "./src/img"
+    },
+    "dist": {
+      "base": "./public/",
+      "css": "./public/css",
+      "js": "./public/js",
+      "fonts": "./public/fonts/",
+      "img": "./public/img/"
+    },
+    "watch": {
+      "scss": "src/scss/*.scss",
+      "jsSrc": "src/js/*.js",
+      "jsDist": "public/js/*.js",
+      "views": "views/**/*.ejs",
+      "css": "public/css/*.css"
+    },
+    "build": {
+      "base": "./build/",
+      "css": "./build/css/",
+      "fontello": "./build/fonts/fontello/",
+      "fonts": "./build/fonts/",
+      "js": "./build/js/",
+      "html": "./build/html/",
+      "img": "./build/img/"
+    },
+    "favicon": {
+      "src": "./src/img/favicon_src.png",
+      "dest": "./public/img/site/",
+      "path": "/img/site/"
+    },
+    "scss": [],
+    "templates": "./views/"
+  },
+  "vars": {
+    "siteCssName": "site.combined.min.css",
+    "scssName": "style.scss",
+    "cssName": "style.css"
+  }
 }
