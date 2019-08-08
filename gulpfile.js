@@ -1,9 +1,9 @@
+const pkg = require('./package.json');
+
 const $ = require('gulp-load-plugins')({
   pattern: ['*'],
   scope: ['devDependencies']
 });
-
-const pkg = require('./package.json');
 
 const onError = (err) => {
   console.log(err);
@@ -133,24 +133,34 @@ exports.initServer = initServer;
 
 // ============= WATCH ============
 
+
 function watchFiles() {
   $.fancyLog("-> Watching Files");
-  watch( ['src/scss/*.scss'], series( compileScss, minifyCss ) );
-  watch( ['src/js/*.js'], series( concatAndMinifyJs, reload ) );
-  watch( ['views/**/*.ejs'], series( initNodemon, reload ))
-  watch( ['public/photos/*.jpg', 'public/photos/*.svg'], series( imageMin, initNodemon, reload ) );
+  watch( 
+    ['src/scss/*.scss'], 
+    series( compileScss, minifyCss ) 
+  );
+  watch( 
+    ['src/js/*.js'], 
+    series( concatAndMinifyJs ) 
+  );
+  watch( 
+    ['public/photos/*.jpg', 'public/photos/*.svg'], 
+    series( imageMin ) 
+  );
   watch( [ 
     'public/css/*.css', 
     'public/js/*.js', 
     'public/photos/*.jpg', 
-    'public/photos/*.svg' 
+    'public/photos/*.svg',
+    'views/**/*.ejs', 
   ])
   .on( 'change', reload );
 }
 
 exports.watchFiles = watchFiles;
 
-// ============= execute ============
+// ============= execute gulp commmands ============
 
 function build( done ){
   return series( compileScss, minifyCss, concatAndMinifyJs, imageMin )( done );
