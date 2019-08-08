@@ -32,4 +32,16 @@ router.get( '/whoweare', ( req, res ) => {
   res.render( 'about/whoweare' );
 });
 
+router.get( '/secoftruth', ( req, res ) => {
+  res.render( 'about/secoftruth' );
+});
+
+router.get( '/policies', ( req, res ) => {
+  res.render( 'about/policies' );
+});
+
+router.get( '/faq', ( req, res ) => {
+  res.render( 'about/faq' );
+});
+
 module.exports = router;
