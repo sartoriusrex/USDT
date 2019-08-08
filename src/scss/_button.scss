@@ -21,6 +21,10 @@
     box-shadow: 0 0 0 $gray-one;
     transform: translatey(0px);
   }
+
+  &:focus {
+    box-shadow: 0 0 5px 5px $gray-one;
+  }
 }
 
 .secondaryBtn {
@@ -45,6 +49,10 @@
     box-shadow: 0 0 0 $white-five;
     transform: translatey(0px);
   }
+
+  &:focus {
+    box-shadow: 0 0 5px 5px $gray-one;
+  }
 }
 
 .btn-read-more {
@@ -64,5 +72,9 @@
   &:active {
     box-shadow: 0 0 0 $white-five;
     transform: translatey(0px);
+  }
+
+  &:focus {
+    box-shadow: 0 0 5px 5px $gray-one;
   }
 }

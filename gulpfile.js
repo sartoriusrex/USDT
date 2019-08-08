@@ -133,10 +133,10 @@ function watchFiles() {
     [ 'public/photos/*.jpg', 'public/photos/*.svg' ], 
     series( imageMin ) 
   );
-  watch( [ pkg.paths.watch.views ], series( reload ) );
   watch( [ 
     pkg.paths.watch.css, 
     pkg.paths.watch.jsDist, 
+    pkg.paths.watch.views,
     'public/photos/*.jpg', 
     'public/photos/*.svg',
   ] )
