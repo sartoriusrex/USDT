@@ -132,10 +132,10 @@ label {
 .news-container {
   display: flex;
   flex-flow: row wrap;
-  width: 90%;
+  width: 100%;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 20px 0;
+  padding: 20px 2%;
 }
 
 .report .section-title,
