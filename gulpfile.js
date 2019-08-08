@@ -26,7 +26,8 @@ function compileScss() {
       }).on( 'error', $.sass.logError))
     .pipe( $.autoprefixer( 'last 2 versions' ) )
     .pipe( $.sourcemaps.write() )
-    .pipe( dest( pkg.paths.src.css ) );
+    .pipe( dest( pkg.paths.src.css ) )
+    .pipe( browserSync.stream());
 }
 
 exports.compileScss = compileScss;
@@ -40,6 +41,7 @@ function minifyCss() {
     .pipe( $.sourcemaps.write() )
     .pipe( $.rename( 'main.min.css' ) )
     .pipe( dest( pkg.paths.dist.css ) )
+    .pipe( browserSync.stream());
 }
 
 exports.minifyCss = minifyCss;
@@ -53,6 +55,7 @@ function concatAndMinifyJs() {
     .pipe( $.concat( 'main.min.js' ))
     .pipe( $.uglify() )
     .pipe( dest( pkg.paths.dist.js ))
+    .pipe( browserSync.stream());
 }
 
 exports.concatAndMinifyJs = concatAndMinifyJs;
@@ -69,7 +72,8 @@ function imageMin() {
       $.imagemin.jpegtran({progressive: true}),
       $.imagemin.optipng({optimizationLevel: 5})
     ]))
-    .pipe( dest( 'public/src/photos' ) );
+    .pipe( dest( 'public/src/photos' ) )
+    .pipe( browserSync.stream());
 }
 
 exports.imageMin = imageMin;
@@ -115,9 +119,8 @@ function initBrowserSync( done ) {
   }, done );
 }
 
-function reload( done ){
+function reload(){
   browserSync.reload();
-  done();
 }
 
 exports.initBrowserSync = initBrowserSync;
