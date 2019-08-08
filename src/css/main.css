@@ -265,6 +265,11 @@ label {
           transform: translatey(0px);
 }
 
+.primaryBtn:focus {
+  -webkit-box-shadow: 0 0 5px 5px #a49e94;
+          box-shadow: 0 0 5px 5px #a49e94;
+}
+
 .secondaryBtn {
   border: none;
   background-color: #d4cfc4;
@@ -295,6 +300,11 @@ label {
           transform: translatey(0px);
 }
 
+.secondaryBtn:focus {
+  -webkit-box-shadow: 0 0 5px 5px #a49e94;
+          box-shadow: 0 0 5px 5px #a49e94;
+}
+
 .btn-read-more {
   background-color: #847e71;
   border-radius: 4px;
@@ -319,6 +329,11 @@ label {
           box-shadow: 0 0 0 #b9b3a7;
   -webkit-transform: translatey(0px);
           transform: translatey(0px);
+}
+
+.btn-read-more:focus {
+  -webkit-box-shadow: 0 0 5px 5px #a49e94;
+          box-shadow: 0 0 5px 5px #a49e94;
 }
 
 /* HEADER STYLE */
@@ -2439,7 +2454,7 @@ td a {
   }
 }
 
-.loginSection {
+.login-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2455,7 +2470,7 @@ td a {
           align-items: center;
 }
 
-.authenticationContainer {
+.login-section__container {
   width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2470,36 +2485,25 @@ td a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #f9f8f6;
-  border-radius: 15px;
   padding-bottom: 20px;
-  -webkit-box-shadow: 0 5px 10px 5px #b9b3a7;
-          box-shadow: 0 5px 10px 5px #b9b3a7;
 }
 
-.authenticationContainer h2 {
+.login-section__container h2 {
   padding-top: 20px;
 }
 
-.authenticationContainer form,
-.authenticationContainer form div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
+.login-section__container button {
+  width: 50%;
 }
 
-.authenticationContainer form {
+.login-section__container p {
+  padding-bottom: 10px;
+  font-size: 14px;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.login-section__form {
   padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2511,33 +2515,49 @@ td a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
-.authenticationContainer form div {
+.login-section__form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
   border-radius: 10%;
   width: 80%;
 }
 
-.authenticationContainer button {
-  width: 50%;
-}
-
-#loginPor {
-  padding-bottom: 10px;
-  font-size: 14px;
-  -ms-flex-item-align: center;
-      align-self: center;
-}
-
-.authenticationContainer form div label {
+.login-section__form div label {
   -ms-flex-item-align: start;
       align-self: flex-start;
   padding-bottom: 2px;
   font-size: 14px;
 }
 
-.authenticationContainer form div input {
+.login-section__container form div label {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-bottom: 2px;
+  font-size: 14px;
+}
+
+.login-section__container form div input {
   border-radius: 4px;
+}
+
+.login-section__container form div input:focus {
+  -webkit-box-shadow: 0 0 2px 5px #f9f8f6;
+          box-shadow: 0 0 2px 5px #f9f8f6;
 }
 
 #password,
@@ -2545,7 +2565,7 @@ td a {
   margin-bottom: 20px;
 }
 
-#forgotAuth {
+.login-section__forgotpassword-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2563,17 +2583,17 @@ td a {
   padding-bottom: 10px;
 }
 
-#forgotAuth a {
+.login-section__forgotpassword-container a {
   text-transform: lowercase;
   font-size: 14px;
   padding: 5px;
 }
 
-#forgotAuth a:hover {
+.login-section__forgotpassword-container a:hover {
   text-decoration: underline;
 }
 
-.regRedirectDiv {
+.login-section__redirect-to-register {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2587,25 +2607,24 @@ td a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #f9f8f6;
   border-radius: 4px;
   padding: 5px;
 }
 
-.regRedirectDiv:hover {
+.login-section__redirect-to-register:hover {
   color: #f9f8f6;
   background-color: #26231c;
 }
 
 /* ===LOGIN RESPONSIVE STYLE=== */
 @media screen and (max-width: 900px) {
-  .authenticationContainer {
+  .login-section__container {
     width: 60%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .authenticationContainer {
+  .login-section__container {
     width: 90%;
   }
 }

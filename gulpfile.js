@@ -1,40 +1,45 @@
+const pkg = require('./package.json');
+
+const $ = require('gulp-load-plugins')({
+  pattern: ['*'],
+  scope: ['devDependencies']
+});
+
 const { watch, series, src, dest }  = require('gulp');
-const autoprefixer                  = require('gulp-autoprefixer');
-const browserSync                   = require('browser-sync').create();
-const reload                        = browserSync.reload;
-const sass                          = require('gulp-sass');
-const cleanCSS                      = require('gulp-clean-css');
-const rename                        = require('gulp-rename');
-const sourcemaps                    = require('gulp-sourcemaps');
-const concat                        = require('gulp-concat');
-const imagemin                      = require('gulp-imagemin');
-const changed                       = require('gulp-changed');
-const uglify                        = require('gulp-uglify');
-const nodemon                       = require('gulp-nodemon');
+const cleanCss                      = require('gulp-clean-css');
+const browserSync                   = $.browserSync.create();
+
+const onError = err => {
+  console.log( err );
+};
 
 
 // ============= SCSS and CSS ============
 
 function compileScss() {
-  return src([ 'src/scss/main.scss' ])
-  .pipe( sourcemaps.init({ loadMaps: true }))
-  .pipe( sass({
-    outputStyle: 'expanded'
-    }).on( 'error', sass.logError))
-  .pipe( autoprefixer( 'last 2 versions' ) )
-  .pipe( sourcemaps.write() )
-  .pipe( dest( 'src/css' ) );
+  $.fancyLog("-> Compiling scss:");
+  return src([ pkg.paths.src.scss + 'main.scss' ])
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.sourcemaps.init({ loadMaps: true }))
+    .pipe( $.sass({
+      outputStyle: 'expanded'
+      }).on( 'error', $.sass.logError))
+    .pipe( $.autoprefixer( 'last 2 versions' ) )
+    .pipe( $.sourcemaps.write() )
+    .pipe( dest( pkg.paths.src.css ) );
 }
 
 exports.compileScss = compileScss;
 
 function minifyCss() {
-  return src( 'src/css/main.css')
-  .pipe( sourcemaps.init({ loadMaps: true }))
-  .pipe( cleanCSS() )
-  .pipe( sourcemaps.write() )
-  .pipe( rename( 'main.min.css') )
-  .pipe( dest( 'public/css') )
+  $.fancyLog("-> Minifying css:");
+  return src( pkg.paths.src.css + '/' + 'main.css' )
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.sourcemaps.init({ loadMaps: true }))
+    .pipe( cleanCss() )
+    .pipe( $.sourcemaps.write() )
+    .pipe( $.rename( 'main.min.css' ) )
+    .pipe( dest( pkg.paths.dist.css ) )
 }
 
 exports.minifyCss = minifyCss;
@@ -42,10 +47,12 @@ exports.minifyCss = minifyCss;
 // ============= JS =============
 
 function concatAndMinifyJs() {
-  return src( [ 'src/js/*.js' ] )
-  .pipe( concat( 'main.min.js' ))
-  .pipe( uglify() )
-  .pipe( dest( 'public/js' ))
+  $.fancyLog("-> Concatenating all JS files and Minifying");
+  return src( [ pkg.paths.src.js ] )
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.concat( 'main.min.js' ))
+    .pipe( $.uglify() )
+    .pipe( dest( pkg.paths.dist.js ))
 }
 
 exports.concatAndMinifyJs = concatAndMinifyJs;
@@ -53,14 +60,16 @@ exports.concatAndMinifyJs = concatAndMinifyJs;
 // ============= media ============
 
 function imageMin() {
+  $.fancyLog("-> Optimizing Media");
   return src( ['public/src/photos/*.jpg', 'public/src/photos/*.svg'] )
-  .pipe(changed( 'public/src/photos' ))
-  .pipe( imagemin([
-    imagemin.gifsicle({interlaced: true}),
-    imagemin.jpegtran({progressive: true}),
-    imagemin.optipng({optimizationLevel: 5})
-  ]))
-  .pipe( dest( 'public/src/photos' ) );
+    .pipe( $.plumber({ errorHandler: onError }))
+    .pipe( $.changed( 'public/src/photos' ))
+    .pipe( $.imagemin([
+      $.imagemin.gifsicle({interlaced: true}),
+      $.imagemin.jpegtran({progressive: true}),
+      $.imagemin.optipng({optimizationLevel: 5})
+    ]))
+    .pipe( dest( 'public/src/photos' ) );
 }
 
 exports.imageMin = imageMin;
@@ -70,7 +79,7 @@ exports.imageMin = imageMin;
 function initNodemon( done ) {
   const STARTUP_TIMEOUT = 5000;
 
-  const server = nodemon({
+  const server = $.nodemon({
     script: 'app.js',
     stdout: false // without this line the stdout event won't fire
   });
@@ -101,10 +110,14 @@ function initBrowserSync( done ) {
   browserSync.init({
     open: 'external',
     proxy: 'http://localhost:3000',
-    port: 3000,
-    files: [ "public/**/*.*" ],
+    port: 8000,
     browser: "google chrome",
   }, done );
+}
+
+function reload( done ){
+  browserSync.reload();
+  done();
 }
 
 exports.initBrowserSync = initBrowserSync;
@@ -117,22 +130,34 @@ exports.initServer = initServer;
 
 // ============= WATCH ============
 
+
 function watchFiles() {
-  watch( ['src/scss/*.scss'], series( compileScss, minifyCss ) );
-  watch( ['src/js/*.js'], series( concatAndMinifyJs, reload ) );
-  watch( ['public/photos/*.jpg', 'public/photos/*.svg'], series( imageMin, initNodemon, reload ) );
+  $.fancyLog("-> Watching Files");
+  watch( 
+    [ pkg.paths.watch.scss ], 
+    series( compileScss, minifyCss ) 
+  );
+  watch( 
+    [ pkg.paths.watch.jsSrc ], 
+    series( concatAndMinifyJs ) 
+  );
+  watch( 
+    [ 'public/photos/*.jpg', 'public/photos/*.svg' ], 
+    series( imageMin ) 
+  );
   watch( [ 
-    'public/css/*.css', 
-    'public/js/*.js', 
+    pkg.paths.watch.css, 
+    pkg.paths.watch.jsDist, 
+    pkg.paths.watch.views,
     'public/photos/*.jpg', 
     'public/photos/*.svg',
-  ])
+  ] )
   .on( 'change', reload );
 }
 
 exports.watchFiles = watchFiles;
 
-// ============= execute ============
+// ============= execute gulp commmands ============
 
 function build( done ){
   return series( compileScss, minifyCss, concatAndMinifyJs, imageMin )( done );

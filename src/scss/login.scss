@@ -1,67 +1,71 @@
 @import '_variables';
 
-.loginSection {
+.login-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.authenticationContainer {
+.login-section__container {
   width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: $white-one;
-  border-radius: 15px;
   padding-bottom: 20px;
-  box-shadow: 0 5px 10px 5px $white-five;
+
+  h2 {
+    padding-top: 20px;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  p {
+    padding-bottom: 10px;
+    font-size: 14px;
+    align-self: center;
+  }
 }
 
-.authenticationContainer h2 {
-  padding-top: 20px;
-}
-
-.authenticationContainer form,
-.authenticationContainer form div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.authenticationContainer form {
+.login-section__form {
   padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10%;
+    width: 80%;
+
+    label {
+      align-self: flex-start;
+      padding-bottom: 2px;
+      font-size: 14px;
+    }
+  }
 }
 
-.authenticationContainer form div {
-  border-radius: 10%;
-  width: 80%;
-}
-
-.authenticationContainer button {
-  width: 50%;
-}
-
-#loginPor{
-  padding-bottom: 10px;
-  font-size: 14px;
-  align-self: center;
-}
-
-.authenticationContainer form div label {
+.login-section__container form div label {
   align-self: flex-start;
   padding-bottom: 2px;
   font-size: 14px;
 }
 
-.authenticationContainer form div input {
+.login-section__container form div input {
   border-radius: $border-radius-normal;
+
+  &:focus {
+    box-shadow: 0 0 2px 5px $white-one;
+  }
 }
 
 #password,
@@ -69,50 +73,49 @@
   margin-bottom: 20px;
 }
 
-#forgotAuth {
+.login-section__forgotpassword-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding-bottom: 10px;
+
+  a {
+    text-transform: lowercase;
+    font-size: 14px;
+    padding: 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-#forgotAuth a {
-  text-transform: lowercase;
-  font-size: 14px;
-  padding: 5px;
-}
-
-#forgotAuth a:hover {
-  text-decoration: underline;
-}
-
-.regRedirectDiv {
+.login-section__redirect-to-register {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $white-one;
   border-radius: $border-radius-normal;
   padding: 5px;
-}
 
-.regRedirectDiv:hover {
-  color: $white-one;
-  background-color: $black-color;
+  &:hover {
+    color: $white-one;
+    background-color: $black-color;
+  }
 }
 
 /* ===LOGIN RESPONSIVE STYLE=== */
 
 @media screen and (max-width: 900px) {
-  .authenticationContainer {
+  .login-section__container {
     width: 60%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .authenticationContainer {
+  .login-section__container {
     width: 90%;
   }
 }

@@ -86,6 +86,10 @@ app.use(commentRoutes);
 app.use(authRoutes);
 app.use(indexRoutes);
 
+app.use(function (req, res, next) {
+  res.status(404).render('NoResult');
+})
+
 
 
 // =======================================
