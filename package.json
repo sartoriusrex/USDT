@@ -50,17 +50,24 @@
   "paths": {
     "src": {
       "base": "./src",
-      "scss": "./src/scss",
+      "scss": "./src/scss/",
       "css": "./src/css",
-      "js": "./src/js",
+      "js": "./src/js/*.js",
       "img": "./src/img"
     },
     "dist": {
       "base": "./public/",
-      "css": "./public/css/",
-      "js": "./public/js/",
+      "css": "./public/css",
+      "js": "./public/js",
       "fonts": "./public/fonts/",
       "img": "./public/img/"
+    },
+    "watch": {
+      "scss": "src/scss/*.scss",
+      "jsSrc": "src/js/*.js",
+      "jsDist": "public/js/*.js",
+      "views": "views/**/*.ejs",
+      "css": "public/css/*.css"
     },
     "build": {
       "base": "./build/",
