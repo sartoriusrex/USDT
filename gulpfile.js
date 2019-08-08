@@ -118,7 +118,6 @@ function initBrowserSync( done ) {
     open: 'external',
     proxy: 'http://localhost:3000',
     port: 8000,
-    files: [ "public/**/*.*" ],
     browser: "google chrome",
   }, done );
 }
@@ -148,13 +147,13 @@ function watchFiles() {
     ['public/photos/*.jpg', 'public/photos/*.svg'], 
     series( imageMin ) 
   );
+  watch( [ 'views/**/*.ejs' ], series( reload ) );
   watch( [ 
     'public/css/*.css', 
     'public/js/*.js', 
     'public/photos/*.jpg', 
     'public/photos/*.svg',
-    'views/**/*.ejs', 
-  ])
+  ] )
   .on( 'change', reload );
 }
 
