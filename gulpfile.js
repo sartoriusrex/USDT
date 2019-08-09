@@ -8,6 +8,7 @@ const $ = require('gulp-load-plugins')({
 const { watch, series, src, dest }  = require('gulp');
 const cleanCss                      = require('gulp-clean-css');
 const browserSync                   = $.browserSync.create();
+const reload                        = browserSync.reload;
 
 const onError = err => {
   console.log( err );
@@ -26,7 +27,7 @@ function compileScss() {
       }).on( 'error', $.sass.logError))
     .pipe( $.autoprefixer( 'last 2 versions' ) )
     .pipe( $.sourcemaps.write() )
-    .pipe( dest( pkg.paths.src.css ) );
+    .pipe( dest( pkg.paths.src.css ) )
 }
 
 exports.compileScss = compileScss;
@@ -69,7 +70,7 @@ function imageMin() {
       $.imagemin.jpegtran({progressive: true}),
       $.imagemin.optipng({optimizationLevel: 5})
     ]))
-    .pipe( dest( 'public/src/photos' ) );
+    .pipe( dest( 'public/src/photos' ) )
 }
 
 exports.imageMin = imageMin;
@@ -112,12 +113,8 @@ function initBrowserSync( done ) {
     proxy: 'http://localhost:3000',
     port: 8000,
     browser: "google chrome",
+    reloadDebounce: 2000
   }, done );
-}
-
-function reload( done ){
-  browserSync.reload();
-  done();
 }
 
 exports.initBrowserSync = initBrowserSync;
