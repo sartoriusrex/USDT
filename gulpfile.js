@@ -113,7 +113,8 @@ function initBrowserSync( done ) {
     proxy: 'http://localhost:3000',
     port: 8000,
     browser: "google chrome",
-    reloadDebounce: 2000
+    reloadDebounce: 5000,
+    reloadThrottle: 5000
   }, done );
 }
 
