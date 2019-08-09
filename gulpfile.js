@@ -8,6 +8,7 @@ const $ = require('gulp-load-plugins')({
 const { watch, series, src, dest }  = require('gulp');
 const cleanCss                      = require('gulp-clean-css');
 const browserSync                   = $.browserSync.create();
+const reload                        = browserSync.reload;
 
 const onError = err => {
   console.log( err );
@@ -27,7 +28,6 @@ function compileScss() {
     .pipe( $.autoprefixer( 'last 2 versions' ) )
     .pipe( $.sourcemaps.write() )
     .pipe( dest( pkg.paths.src.css ) )
-    .pipe( browserSync.stream());
 }
 
 exports.compileScss = compileScss;
@@ -41,7 +41,6 @@ function minifyCss() {
     .pipe( $.sourcemaps.write() )
     .pipe( $.rename( 'main.min.css' ) )
     .pipe( dest( pkg.paths.dist.css ) )
-    .pipe( browserSync.stream());
 }
 
 exports.minifyCss = minifyCss;
@@ -55,7 +54,6 @@ function concatAndMinifyJs() {
     .pipe( $.concat( 'main.min.js' ))
     .pipe( $.uglify() )
     .pipe( dest( pkg.paths.dist.js ))
-    .pipe( browserSync.stream());
 }
 
 exports.concatAndMinifyJs = concatAndMinifyJs;
@@ -73,7 +71,6 @@ function imageMin() {
       $.imagemin.optipng({optimizationLevel: 5})
     ]))
     .pipe( dest( 'public/src/photos' ) )
-    .pipe( browserSync.stream());
 }
 
 exports.imageMin = imageMin;
@@ -116,12 +113,8 @@ function initBrowserSync( done ) {
     proxy: 'http://localhost:3000',
     port: 8000,
     browser: "google chrome",
+    reloadDebounce: 2000
   }, done );
-}
-
-function reload( done ){
-  browserSync.reload();
-  done();
 }
 
 exports.initBrowserSync = initBrowserSync;
@@ -156,7 +149,7 @@ function watchFiles() {
     'public/photos/*.jpg', 
     'public/photos/*.svg',
   ] )
-  .on( 'change', series( reload ) );
+  .on( 'change', reload );
 }
 
 exports.watchFiles = watchFiles;

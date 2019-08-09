@@ -2,6 +2,7 @@
 	h2 {
 		text-align: center;
 		margin-top: 40px;
+		font-size: 32px;
 	}
 
 	article {
@@ -29,7 +30,7 @@
 	}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
 	.policies-page {
 		section {
 			width: 90%;

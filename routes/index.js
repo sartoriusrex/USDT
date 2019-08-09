@@ -44,4 +44,8 @@ router.get( '/faq', ( req, res ) => {
   res.render( 'about/faq' );
 });
 
+router.get( '/comingsoon', ( req, res ) => {
+  res.render( 'comingsoon' );
+})
+
 module.exports = router;
