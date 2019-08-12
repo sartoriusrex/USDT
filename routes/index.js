@@ -58,7 +58,8 @@ router.post( '/subscribe-to-newsletter', ( req, res ) => {
     res.redirect( '/' );
   })
   .catch( err => {
-    req.flash( 'err', message.message );
+    console.log( err );
+    req.flash( 'error', message.message );
     res.redirect( '/' );
   });
 });
