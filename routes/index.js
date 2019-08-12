@@ -1,7 +1,8 @@
-const   express           = require('express'),
-        Announcement      = require('../models/announcements'),
-        News              = require('../models/news'),
-        router            = express.Router();
+const   express               = require('express'),
+        Announcement          = require('../models/announcements'),
+        News                  = require('../models/news'),
+        router                = express.Router();
+        subscribeToNewsletter  = require('../handlers/sendmail');
 
 //Home
 
@@ -46,6 +47,20 @@ router.get( '/faq', ( req, res ) => {
 
 router.get( '/comingsoon', ( req, res ) => {
   res.render( 'comingsoon' );
-})
+});
+
+router.post( '/subscribe-to-newsletter', ( req, res ) => {
+  let email = req.body.subscribeEmail;
+
+  subscribeToNewsletter( email )
+  .then( message => {
+    req.flash( 'success', message.message );
+    res.redirect( '/' );
+  })
+  .catch( err => {
+    req.flash( 'err', message.message );
+    res.redirect( '/' );
+  });
+});
 
 module.exports = router;

@@ -7,12 +7,16 @@
 
   <p class="newsletter-p">Read the USDT Newsletter and get all the Truthy Bits</p>
 
-  <form class="subscribe-input-container">
+  <form 
+    class="subscribe-input-container" 
+    action="/subscribe-to-newsletter" 
+    method="POST"
+  >
     <input 
       class="subscribe-input" 
       type="email" 
       id="subscribe-input" 
-      name="subscribe-input" 
+      name="subscribeEmail" 
       placeholder="tom.i_can_handle_the_truth@cruise.com"
     >
     <div class="subscribe-button">
