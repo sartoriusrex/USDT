@@ -46,7 +46,8 @@ router.post('/register', ( req, res ) => {
       middle   = req.body.middle,
       last     = req.body.last,
       email    = req.body.email;
-  var newUser = new User( {
+
+  var newUser = new User({
     anonymous: false,
     username: username,
     firstName: first,
@@ -55,18 +56,18 @@ router.post('/register', ( req, res ) => {
     email: email,
   });
 
-  if(req.body.adminCode === "iamanadmin") {
+  if( req.body.adminCode === "iamanadmin" ) {
     newUser.isAdmin = true;
   }
 
-  User.register(newUser, req.body.password, ( err, user ) => {
-    if(err){
-        console.log(err);
-        return res.render("authorization/register",{"error": err.message});
+  User.register( newUser, req.body.password, ( err, user ) => {
+    if( err ){
+      console.log( err );
+      return res.render("authorization/register", { "error": err.message });
     }
-    passport.authenticate("local")(req,res, () => {
-        req.flash("success","Thank you for registering, " + user.username + ". We're watching you.");
-        res.redirect("/");
+    passport.authenticate( "local" )( req,res, () => {
+      req.flash( "success", "Thank you for registering, " + user.username + ". We're watching you." );
+      res.redirect( "/" );
     });
   });
 

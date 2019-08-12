@@ -43,9 +43,9 @@ router.post('/reports', (req,res) => {
     incidentDetails: incidentDetails,
   };
 
-  Report.create(newReport, (err, aNewReport) => {
+  Report.create( newReport, ( err, aNewReport ) => {
     if ( err ) {
-      console.log(err);
+      console.log( err );
       res.redirect( 'back' );
     } else {
       res.redirect( '/' );

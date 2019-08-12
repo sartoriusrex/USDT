@@ -1,6 +1,7 @@
 const   express               = require('express'),
         Announcement          = require('../models/announcements'),
         News                  = require('../models/news'),
+        Subscriber                  = require('../models/subscribers'),
         router                = express.Router();
         subscribeToNewsletter  = require('../handlers/sendmail');
 
@@ -51,6 +52,15 @@ router.get( '/comingsoon', ( req, res ) => {
 
 router.post( '/subscribe-to-newsletter', ( req, res ) => {
   let email = req.body.subscribeEmail;
+
+  Subscriber.create(
+    { email: email },
+    ( err ) => {
+      if( err ) {
+        console.log( err );
+      }
+    }
+  );
 
   subscribeToNewsletter( email )
   .then( message => {
