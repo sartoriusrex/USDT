@@ -17,7 +17,7 @@ let transporter = nodemailer.createTransport({
 	}
 });
 
-async function subscribeToNewsletter( email ){
+const subscribeToNewsletter = async function( email ){
 	try {
 		let info = await transporter.sendMail({
 			from: '"USDT ADmin" <admin@usdep-truth.gov>',
@@ -48,4 +48,47 @@ async function subscribeToNewsletter( email ){
 	}
 }
 
-module.exports = subscribeToNewsletter;
+const sendAccountVerificationEmail = async function( verificationToken, email ) {
+	try {
+		let info = await transporter.sendMail({
+			from: '"USDT ADmin" <admin@usdep-truth.gov>',
+			to: [ email ], 
+			subject: "US Department of Truth - Verify Registration",
+			text: `
+				Thank you for registering an account with the US Department of Truth. You will receive emails until the end of eternity, with no options to cancel or change your email address or subscription settings. But as promised, we will not spam your inbox. Please follow the link below to confirmation your registration. https://usdt-satire.herokuapp.com/register/${ verificationToken }
+			`,
+			html: `
+				<p>Thank you for registering an account with the US Department of Truth. You will receive emails until the end of eternity, with no options to cancel or change your email address or subscription settings. But as promised, we will not spam your inbox. Please follow the link below to confirmation your registration.</p>
+				<p><a href="https://usdt-satire.herokuapp.com/register/${ verificationToken }">
+					Confirm Registration
+				<a></p>
+			`
+		});
+
+		console.log("Preview URL: %s", nodemailer.getTestMessageUrl( info ));
+
+		let message = {
+			message: "Please check your inbox to confirm your account registration.",
+			status: "success"
+		}
+
+		return message;
+
+	} catch ( err ) {
+		console.log( err );
+
+		let message = {
+			message: "There was an error in registering with the USDT.",
+			status: "failure"
+		}
+
+		return message;
+	}
+}
+
+const sendMail = {
+	sendAccountVerificationEmail: sendAccountVerificationEmail,
+	subscribeToNewsletter: subscribeToNewsletter
+}
+
+module.exports = sendMail;

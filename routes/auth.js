@@ -1,7 +1,9 @@
-const   express     = require('express'),
-        passport    = require('passport'),
-        User        = require('../models/users'),
-        router      = express.Router();
+const   express       = require('express'),
+        passport      = require('passport'),
+        User          = require('../models/users'),
+        crypto        = require( 'crypto' ),
+        sendMail      = require( "../handlers/sendmail" ),
+        router        = express.Router();
 
 
 // ===Login===
@@ -39,38 +41,76 @@ router.get('/register', ( req, res ) => {
 
 // ---Register Logic---
 
-router.post('/register', ( req, res ) => {
 
-  var username = req.body.username,
-      first    = req.body.firstName,
-      middle   = req.body.middle,
-      last     = req.body.last,
-      email    = req.body.email;
 
-  var newUser = new User({
-    anonymous: false,
-    username: username,
-    firstName: first,
-    middleInitial: middle,
-    lastName: last,
-    email: email,
-  });
+router.post( '/register' , ( req, res ) => {
+  const username = req.body.username,
+        first    = req.body.firstName,
+        middle   = req.body.middle,
+        last     = req.body.last,
+        email    = req.body.email;
 
-  if( req.body.adminCode === "iamanadmin" ) {
-    newUser.isAdmin = true;
-  }
+  const verificationtoken = crypto.randomBytes(20).toString( 'hex' );
 
-  User.register( newUser, req.body.password, ( err, user ) => {
-    if( err ){
-      console.log( err );
-      return res.render("authorization/register", { "error": err.message });
-    }
-    passport.authenticate( "local" )( req,res, () => {
-      req.flash( "success", "Thank you for registering, " + user.username + ". We're watching you." );
-      res.redirect( "/" );
+  sendMail.sendAccountVerificationEmail( verificationtoken, email )
+  .then( message => {
+    req.flash( 'success', message.message );
+    res.redirect('/');
+
+    let newUser = new User({
+      anonymous: false,
+      username: username,
+      firstName: first,
+      middleInitial: middle,
+      lastName: last,
+      email: email,
+      accountVerificationToken: verificationtoken,
+      isVerified: false
     });
-  });
+  
+    if( req.body.adminCode === "iamanadmin" ) {
+      newUser.isAdmin = true;
+    }
 
+    User.register( newUser, req.body.password, ( err ) => {
+      if( err ){
+        console.log( err );
+        return res.render( "authorization/register", { "error": err.message });
+      }
+    });
+  })
+  .catch( err => {
+    console.log( err );
+
+    req.flash( 'error', message.message );
+    res.redirect('/register');
+  });
+});
+
+router.get( '/register/:verificationtoken', async function( req, res ){
+  try {
+    let accountVerificationToken = req.params.verificationtoken;
+    let foundUser = await User.findOneAndUpdate(
+      { accountVerificationToken: accountVerificationToken },
+      {
+        isVerified: true,
+        accountVerificationToken: ""
+      }
+    )
+
+    // passport.authenticate( "local" )( req, res, () => {
+    //   req.flash( "success", "Thank you for registering, " + foundUser.username + ". We're watching you." );
+    //   res.redirect( "/" );
+    // });
+
+    res.redirect( "/");
+
+  } catch( err ) {
+    console.log( err );
+
+    req.flash( "error", "It seems there was a problem registering your account with us. Please try again.");
+    res.redirect('/register');
+  }
 });
 
 module.exports = router;
