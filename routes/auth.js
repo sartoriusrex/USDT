@@ -41,8 +41,6 @@ router.get('/register', ( req, res ) => {
 
 // ---Register Logic---
 
-
-
 router.post( '/register' , ( req, res ) => {
   const username = req.body.username,
         first    = req.body.firstName,
@@ -98,12 +96,7 @@ router.get( '/register/:verificationtoken', async function( req, res ){
       }
     )
 
-    // passport.authenticate( "local" )( req, res, () => {
-    //   req.flash( "success", "Thank you for registering, " + foundUser.username + ". We're watching you." );
-    //   res.redirect( "/" );
-    // });
-
-    res.redirect( "/");
+    res.redirect( '/login' )
 
   } catch( err ) {
     console.log( err );
