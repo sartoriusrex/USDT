@@ -14,12 +14,33 @@ router.get('/login', ( req, res ) => {
 
 // ---Login Logic---
 
-router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  successFlash: "Welcome back. Did you clear your cookies?",
-  failureRedirect: '/login',
-  failureFlash: true
-}), ( req, res ) => {
+router.post('/login', async function( req, res){
+  try {
+    let username = req.body.username;
+    
+    let foundUser = await User.findOne({
+      username: username,
+      isVerified: true,
+    });
+
+    if ( foundUser !== null ) {
+      passport.authenticate('local', {
+        successRedirect: '/',
+        successFlash: "Welcome back. Did you clear your cookies?",
+        failureRedirect: '/login',
+        failureFlash: true
+      })( req, res );
+    } else {
+      req.flash( "error", "Please check your email to verify your account");
+      res.redirect( '/login' );
+    }
+
+  } catch( err ) {
+    console.log( err );
+
+    req.flash( "error", err.message );
+    res.redirect( '/login' );
+  }
 });
 
 
