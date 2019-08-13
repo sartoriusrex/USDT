@@ -4,12 +4,12 @@ const   express     = require('express'),
 
 //Index Page - Reports
 
-router.get('/reports', (req,res) => {
-  Report.find({}, (err, allReports) => {
-    if (err){
-      console.log(err);
+router.get( '/reports', ( req, res ) => {
+  Report.find({}, ( err, allReports ) => {
+    if ( err ){
+      console.log( err );
     } else {
-      res.render("reports/report-index", {report: allReports});
+      res.render( "reports/report-index", { report: allReports });
     }
   });
 });
@@ -30,11 +30,8 @@ router.post('/reports', (req,res) => {
       incidentType = req.body.incidentType,
       incidentLocation = req.body.incidentLocation,
       incidentDate = req.body.incidentDate,
-      incidentDetails = req.body.incidentDetails,
-      author = {
-        username: req.user.username,
-        id: req.user._id
-      };
+      incidentDetails = req.body.incidentDetails;
+
   var newReport = {
     first: first,
     middle: middle,
@@ -44,14 +41,14 @@ router.post('/reports', (req,res) => {
     incidentLocation: incidentLocation,
     incidentDate: incidentDate,
     incidentDetails: incidentDetails,
-    author: author
   };
-  Report.create(newReport, (err, aNewReport) => {
-    if (err) {
-      console.log(err);
-      res.redirect('back');
+
+  Report.create( newReport, ( err, aNewReport ) => {
+    if ( err ) {
+      console.log( err );
+      res.redirect( 'back' );
     } else {
-      res.redirect('reports');
+      res.redirect( '/' );
     }
   });
 });

@@ -5,4 +5,8 @@ var flashContainer = Array.from(document.getElementsByClassName('container__flas
 
 if ( message[0] ) {
   flashContainer[0].style.display = "flex";
+
+  setTimeout( function(){
+    flashContainer[0].style.display = "none";
+  } , 3000)
 }

@@ -12,6 +12,8 @@ const UsersSchema = new Schema ({
   password: String,
   resetPasswordToken: String,
   resetPasswordExpires: Date,
+  accountVerificationToken: String,
+  isVerified: false,
   isAdmin: {
     type: Boolean,
     default: false
@@ -38,8 +40,8 @@ const UsersSchema = new Schema ({
   dateCreated: { type: Date, default: Date.now }
 });
 
-UsersSchema.plugin(passportLocalMongoose);
+UsersSchema.plugin( passportLocalMongoose );
 
-const User = mongoose.model("User",UsersSchema);
+const User = mongoose.model( "User", UsersSchema );
 
 module.exports = User;

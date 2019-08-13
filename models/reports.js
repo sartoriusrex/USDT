@@ -11,13 +11,6 @@ const ReportsSchema = new Schema({
   incidentDate: Date,
   incidentDetails: String,
   dateCreated: { type: Date, default: Date.now },
-  author: {
-    username: String,
-    id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  },
 });
 
 const Report = mongoose.model("Report",ReportsSchema);

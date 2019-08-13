@@ -79,15 +79,15 @@ var indexRoutes         = require('./routes/index'),
     commentRoutes       = require('./routes/comments'),
     authRoutes          = require('./routes/auth');
 
-app.use(reportRoutes);
-app.use(announcementRoutes);
-app.use(newsRoutes);
-app.use(commentRoutes);
-app.use(authRoutes);
-app.use(indexRoutes);
+app.use( reportRoutes );
+app.use( announcementRoutes );
+app.use( newsRoutes );
+app.use( commentRoutes );
+app.use( authRoutes );
+app.use( indexRoutes );
 
 app.use(function (req, res, next) {
-  res.status(404).render('NoResult');
+  res.status( 404 ).render( 'NoResult' );
 });
 
 
