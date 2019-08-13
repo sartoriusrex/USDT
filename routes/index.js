@@ -46,6 +46,10 @@ router.get( '/faq', ( req, res ) => {
   res.render( 'about/faq' );
 });
 
+router.get( '/index', ( req, res ) => {
+  res.render( 'indexingPage' );
+})
+
 router.get( '/comingsoon', ( req, res ) => {
   res.render( 'comingsoon' );
 });
