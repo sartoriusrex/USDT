@@ -68,7 +68,7 @@
   #header__social-button {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
 
@@ -90,25 +90,22 @@
   /* Menu */
   .header__login-container.responsive,
   .header__social-container.responsiveSocial {
-    display: block;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
     z-index: 15;
     position: relative;
     background-color: $black-color;
-    padding: 5px;
+    padding: 10px;
     border-radius: $border-radius-normal;
-    font-size: 32px;
-  }
+    font-size: 24px;
+    transition: all 200ms;
 
-  /* Links in menus */
-  .header__login-container.responsive,
-  .header__social-container.responsiveSocial {
-      > a {
+    > a {
       display: flex;
-      width: 100%;
+      width: auto;
       padding: 5px;
       justify-content: center;
 
@@ -144,6 +141,7 @@
   .header__login-container.responsive #header__login-button #header__close-login-icon,
   .header__social-container.responsiveSocial #header__social-button #header__close-social-icon {
     display: block;
+    font-size: 42px;
   }
 
   /* Open menu button and Icon Links = no display */
@@ -163,9 +161,10 @@
   .header__menu-container.responsiveSocial {
     position: absolute;
     top: 0;
-    left: 10%;
+    right: 0;
     padding: 0;
-    width: 80%;
+    width: auto;
+    margin: 0;
   }
 }
 
@@ -177,7 +176,7 @@
 
   .header__menu-container.responsive,
   .header__menu-container.responsiveSocial {
-    font-size: 32;
+    font-size: 32px;
   }
 
   #header__open-login-icon,

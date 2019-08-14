@@ -18,7 +18,7 @@
   position: sticky;
   top: 0;
   z-index: 5;
-  padding: 3px 5%;
+  padding: 1%;
 }
 
 .nav-list {
@@ -93,6 +93,7 @@
   border-radius: $border-radius-normal;
   border: 1px solid $black-color;
   margin: 0;
+  height: 2em;
 
   input {
     border-radius: 2px;
@@ -120,6 +121,9 @@
 
   .search-bar {
     border: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .search-icon {
@@ -137,9 +141,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     color: $white-two;
-    width: 100%;
+    width: 50%;
     background-color: $black-color;
     padding: 5px;
+    border-radius: $border-radius-normal;
+    transition: all 200ms;
   }
 
   .nav-list.responsive .nav-container__close-menu-button {
@@ -173,21 +179,25 @@
 
   .nav-list.responsive .nav-container__nav-list-item > a {
     width: 100%;
-    font-size: 32px;
+    font-size: 24px;
     color: $white-one;
-    width: 31px;
+    width: auto;
   }
 
   .nav-list.responsive .nav-container__nav-list-item .nav-list-item-link-container {
-    width: 70%;
+    width: 150%;
     background-color: $gray-four;
     top: 0;
-    right: 0;
+    right: -100%;
 
     a {
       display: block;
       color: $white-one;
-      font-size: 24px;
+      font-size: 20px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
