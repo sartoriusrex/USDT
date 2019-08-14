@@ -65,7 +65,7 @@ section {
     padding-bottom: 20px;
   }
 
-  &:not(.slider):nth-child(even) {
+  &:not(.slider):nth-child( odd ) {
     background-color: $white-three;
   }
 }
@@ -135,7 +135,7 @@ label {
   width: 100%;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 20px 2%;
+  padding: 20px 5px;
 }
 
 .report .section-title,

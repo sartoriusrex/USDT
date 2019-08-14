@@ -30,11 +30,11 @@
   min-height: 150px;
   background-color: $white-one;
   border-radius: $border-radius-normal;
-  box-shadow: 0 2px 4px $white-five;
-  margin-bottom: 15px;
+  box-shadow: 0 2px $white-five;
+  margin: 5px 5px 20px 5px;
 
   &:hover {
-    box-shadow: 0 5px 5px 10px $white-four;
+    box-shadow: 0 0 40px 5px $white-four;
   }
 }
 

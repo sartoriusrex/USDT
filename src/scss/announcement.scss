@@ -1,9 +1,18 @@
 @import '_variables';
 
 .announcement-link {
-  width: 30%;
-  padding: 20px 20px 30px;
+  width: 32%;
+  padding: 10px;
   font-size: 14px;
+  height: 100%;
+  margin-bottom: 10px;
+  background-color: $white-one;
+  border-radius: $border-radius-normal;
+  box-shadow: 0 2px $white-five;
+
+  &:hover {
+    box-shadow: 0 0 40px 5px $white-four;
+  }
 }
 
 .announcement-date {

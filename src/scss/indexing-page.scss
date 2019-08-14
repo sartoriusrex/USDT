@@ -20,7 +20,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	margin: 10px 0;
+	margin: 5px 5px 20px 5px;
 	background-color: $white-one;
 	border-radius: $border-radius-normal;
   box-shadow: 0 2px $white-five;
@@ -35,7 +35,7 @@
 	display: flex;
 	align-items: baseline;
 	width: 100%;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 
 	h3{
 		display: inline;
@@ -75,6 +75,10 @@
 }
 
 @media screen and (max-width: 700px){
+	.search-results-page__link-header-container{
+		flex-direction: column;
+	}
+
 	.search-results-page__image-container {
 		display: none;
 	}

@@ -28,27 +28,9 @@ var slideIndex = 1;
 
 
 if (pageURL.split("\/").length-1 === 3 && pageURL.endsWith("\/")) {
-  changeNewsLayout();
   addSlideNavDot();
   mountComponent();
   addSlideNav();
-}
-
-// ===NewsLayout based on image size===
-
-function changeNewsLayout() {
-  var newsLinkContainers = document.getElementsByClassName("news-link-row");
-  var newsPhotos = document.getElementsByClassName("news-image-row");
-  Array.from(newsLinkContainers).forEach( function( newslinkcontainer ){
-    Array.from(newsPhotos).forEach( function( newsphoto ){
-      if ( newsphoto.naturalHeight < newsphoto.naturalWidth ) {
-        newslinkcontainer.classList.add("news-link-column");
-        newslinkcontainer.classList.remove("news-link-row");
-        newsphoto.classList.add("news-image-column");
-        newsphoto.classList.remove("news-image-row");
-      }
-    });
-  });
 }
 
 // ======Slideshow Logic======
