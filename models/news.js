@@ -17,6 +17,22 @@ const NewsSchema = new Schema ({
   comments: {}
 });
 
+NewsSchema.index({
+  "title":"text",
+  "subtitle":"text",
+  "author.username":"text",
+  "body":"text",
+},{
+  weights: {
+    title: 10,
+    subtitle: 7,
+    author: 5,
+    body: 1
+  }
+});
+
+
+
 const News = mongoose.model("Newsarticle", NewsSchema);
 
 module.exports = News;
