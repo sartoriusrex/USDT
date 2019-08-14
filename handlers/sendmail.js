@@ -1,5 +1,6 @@
 "use strict";
 const nodemailer = require("nodemailer");
+const SG_PASSWORD = process.env.SG_PASSWORD;
 
 // let testAccount = nodemailer.createTestAccount( ( err, account ) => {
 // 	if ( err ) {
@@ -9,11 +10,11 @@ const nodemailer = require("nodemailer");
 // });
 
 let transporter = nodemailer.createTransport({
-	host: 'smtp.ethereal.email',
+	host: 'smtp.sendgrid.net',
 	port: 587,
 	auth: {
-			user: 'ellen82@ethereal.email',
-			pass: 'J73DbGvp4KRzTx71VQ'
+			user: "apikey",
+			pass: SG_PASSWORD
 	}
 });
 
@@ -26,8 +27,6 @@ const subscribeToNewsletter = async function( email ){
 			text: "Thank you for subscribing to the US Department of Truth Newsletter. You will receive emails until the end of eternity, with no options to cancel or change your email address or subscription settings. But as promised, we will not spam your inbox.",
 			html: "<p>Thank you for subscribing to the US Department of Truth Newsletter. You will receive emails until the end of eternity, with no options to cancel or change your email address or subscription settings. But as promised, we will not spam your inbox.</p>"
 		});
-
-		console.log("Preview URL: %s", nodemailer.getTestMessageUrl( info ));
 
 		let message = {
 			message: "Thank you, Citizen, for staying informed. USDT promises not to spam your inbox.",

@@ -5,7 +5,7 @@ This is a personal project website for a ficticious US Government Agency called 
 Technologies used:
 1. HTML, CSS, Vanilla Javascript
 2. node, express, ejs, Mongodb, mongoose
-3. Passport, moment.js, Heroku, mlab, Inkscape(svg)
+3. Passport, Nodemailer, SendGrid, moment.js, Heroku, mlab, Inkscape(svg)
 4. Scss, gulp
 
 

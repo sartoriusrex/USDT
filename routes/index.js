@@ -119,33 +119,40 @@ router.get( '/comingsoon', ( req, res ) => {
   res.render( 'comingsoon' );
 });
 
-router.post( '/subscribe-to-newsletter', ( req, res ) => {
+router.post( '/subscribe-to-newsletter', async function( req, res ) {
   let email = req.body.subscribeEmail;
+
+  let foundSubscriber = await Subscriber.find({ email: email });
 
   // We add the email to the subscriber model, which is simple a list of emails which must be unique. If there's a duplicate, it will throw an error. Otherwise it will attempt to send an email.
 
-  Subscriber.create(
-    { email: email },
-    ( err ) => {
-      if( err ) {
-        console.log( err );
-
-        res.flash( 'error', "That email address is already subscribed to the USDT Newsletter.")
-
-      } else {
-        sendMail.subscribeToNewsletter( email )
-        .then( message => {
-          req.flash( 'success', message.message );
-          res.redirect( '/' );
-        })
-        .catch( err => {
+  if( foundSubscriber.length === 0 ) {
+    Subscriber.create(
+      { email: email },
+      ( err ) => {
+        if( err ) {
           console.log( err );
-          req.flash( 'error', message.message );
-          res.redirect( '/' );
-        });
+
+          res.flash( 'error', "That email address is already subscribed to the USDT Newsletter.")
+
+        } else {
+          sendMail.subscribeToNewsletter( email )
+          .then( message => {
+            req.flash( 'success', message.message );
+            res.redirect( '/' );
+          })
+          .catch( err => {
+            console.log( err );
+            req.flash( 'error', message.message );
+            res.redirect( '/' );
+          });
+        }
       }
-    }
-  );
+    );
+  } else {
+    req.flash( "error", "That email address is already on our subscription list.");
+    res.redirect( '/' );
+  }
 });
 
 module.exports = router;
