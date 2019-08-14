@@ -11,7 +11,25 @@ Technologies used:
 
 Important Note: 
 
-Date: July, 23 2019: This is a personal project, for fun and learning. It is still being built, and the majority of the pages are not yet built, nor are many of the major features or specifications.
+Date: August 13 2019: This is a personal project, for fun and learning. It is still being built, and the majority of the pages are not yet built, nor are many of the major features or specifications.
+
+#Version 1.1.0
+
+Features to be implemented:
+- Recover/ Reset Password
+- Login with email
+- Login with oAuth, Facebook or Google
+- Profile or settings pages
+- Any links in nav bar of footer - halfway there
+- Form Validation (in any forms) - will come soon during next major deploy
+
+Features coming soon:
+- Article Creation
+- Password recovery (within several months)
+- Actual Pages and social media posts with "relevant" content
+- Form Validation
+- Password Reset and Account Recovery
+- HTML WCAG compliance coming very soon
 
 #Version 1.0.0
 
@@ -19,9 +37,9 @@ Features not yet implemented:
 - Recover/ Reset Password
 - Login with email
 - Login with oAuth, Facebook or Google
-- email Newsletter
+- ~~email Newsletter~~
 - Profile or settings pages
-- Any links in nav bar of footer
+- Any links in nav bar of footer - halfway there
 - Form Validation (in any forms) - will come soon during next major deploy
 
 Features coming soon:
