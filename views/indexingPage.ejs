@@ -1,0 +1,58 @@
+<% include ./partials/header %>
+
+<main>
+	<section class="search-results-page">
+		<h2>Search Results</h2>
+		<ul class="search-results-page__list">
+
+			<% results.forEach( function( result ){ %>
+				<a 
+					<% if ( result.coverImage ) { %>
+						href="/news/<%= result._id %>"
+					<% } else { %>
+						href="/announcements/<%=result._id %>"
+					<% } %>
+					class="search-results-page__link"
+				>
+
+					<div class="search-results-page__link-header-container">
+						<% if( result.coverImage ) { %> 
+							<h3>News Article</h3>
+							<p>
+								<%= moment( result.dateCreated ).format("ddd, MMM Do YYYY")%>
+							</p>
+						<% } else { %> 
+							<h3>Announcement</h3>
+							<p>
+								Last Update: <%= moment( result.dateLastUpdate ).format("ddd, MMM Do YYYY, h:mm a") %>
+							</p>
+						<% } %>
+					</div>
+
+					<div class="search-results-page__link-body-container">
+						<% if ( result.coverImage ) { %>
+							<div class="search-results-page__image-container">
+								<img 
+									src="<%= result.coverImage %>"
+									alt="News Story Thumbnail"
+								>
+							</div>
+						<% } %>
+						<div class="search-results-page__text-container">
+							<h4>
+								<%=result.title %> 
+							</h4>
+							<p>
+								<%=result.body.substring( 0,400 ) %>...
+							</p>
+						</div>
+					</div>
+
+				</a>
+			<% }) %>
+
+		</ul>
+	</section>
+</main>
+
+<% include ./partials/footer %>

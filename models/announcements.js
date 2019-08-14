@@ -14,6 +14,16 @@ const AnnouncementsSchema = new Schema({
   body: String,
 });
 
+AnnouncementsSchema.index({
+  "author.username":"text",
+  "body":"text",
+},{
+  weights: {
+    author: 2,
+    body: 1
+  }
+});
+
 const Announcement = mongoose.model("Announcement",AnnouncementsSchema);
 
 module.exports = Announcement;
